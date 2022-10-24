@@ -1,9 +1,10 @@
 % Luna SOAP analysis
 
-annot_dir = '/Users/sq566/Desktop/scorer_5';
-db_dir = '/Users/sq566/Desktop/scorer_5';
+base_dir = '/Users/sq566/Downloads/dreem-learning-evaluation-master/data';
+annot_dir = '/Users/sq566/Downloads/dreem-learning-evaluation-master/data/annot/scorer_4';
+db_dir = '/Users/sq566/Downloads/dreem-learning-evaluation-master/data/annot/scorer_4';
 edf_dir = '/Users/sq566/Downloads/dreem-learning-evaluation-master/data/edf';
-subs = readlines([annot_dir '/sub_name.txt'], "EmptyLineRule","skip");
+subs = readlines([base_dir '/sub.txt'], "EmptyLineRule","skip");
 pat = digitsPattern(1) + "-level classification: kappa = " + digitsPattern(1) + "." + digitsPattern(2);
 
 kappaTable(25) = struct('Kappa5',[], 'Kappa3',[]);

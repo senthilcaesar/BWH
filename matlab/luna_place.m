@@ -1,8 +1,8 @@
 % Luna PLACE analysis
 
-annot_dir = '/Users/sq566/Desktop/scorer_1';
+annot_dir = '/Users/sq566/Downloads/dreem-learning-evaluation-master/data/annot/scorer_1';
 edf_dir = '/Users/sq566/Downloads/dreem-learning-evaluation-master/data/edf';
-db_dir = '/Users/sq566/Desktop/scorer_1';
+db_dir = '/Users/sq566/Downloads/dreem-learning-evaluation-master/data/annot/scorer_1';
 subs = readlines([annot_dir '/place_sub.txt'], "EmptyLineRule","skip");
 
 for idx=1:length(subs)

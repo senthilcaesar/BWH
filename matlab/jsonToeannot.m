@@ -13,13 +13,13 @@ k = {'119f9726-eb4c-5a0e-a7bb-9e15256149a1.json','1da3544e-dc5c-5795-adc3-f50689
 '7ab8ff5f-a77f-567d-9882-f8bee0c3c9bf.json','7d778801-88e7-5086-ad1d-70f31a371876.json','a25b2296-343b-53f6-8792-ada2669d466e.json',...
 'a30245e3-4a71-565f-9636-92e7d2e825fc.json','b5d5785d-87ee-5078-b9b9-aac6abd4d8de.json','bb474ab0-c2ce-573b-8acd-ef86b0fa26a2.json',...
 'f2a69bdc-ed51-5e3f-b102-6b3f7d392be0.json'};
-v = {932,955,986,1063,620,947,990,1046,929,989,999,1008,1122,918,1142,960};
-mapping = containers.Map(k, v);
 
+v = {[1,932],[1,955],[1,986],[1,1063],[1,620],[61,1007],[2,992],[1,1046],[1,929],[1,989],[1,999],[1,1008],[1,1122],[61,978],[1,1142],[1,960]};
+mapping = containers.Map(k, v);
 
 % Convert JSON file to eannot
 hypno_map = containers.Map({'9','0','1','2','3','4'}, {'?', 'W', 'N1', 'N2', 'N3', 'R'});
-data_dir = '/Users/sq566/Desktop/scorer_5';
+data_dir = '/Users/sq566/Downloads/dreem-learning-evaluation-master/data/annot/scorer_5';
 subs = readlines([data_dir '/sub.txt'], "EmptyLineRule","skip");
 
 for idx=1:length(subs)
@@ -32,7 +32,8 @@ for idx=1:length(subs)
     hypno_val = values(hypno_map, cellstr(num2str(annot)));
 
     if any(strcmp(k,subname))
-        hypno_val = hypno_val(1:mapping(subname));
+        x = mapping(subname);
+        hypno_val = hypno_val(x(1):x(2));
     end
 
     subname_edit = erase(subname,".json");
