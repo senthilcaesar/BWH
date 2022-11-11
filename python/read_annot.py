@@ -20,8 +20,7 @@ loff              |
 l off             |	
 
 '''
-
-subjects = '/Users/sq566/Downloads/apples/data/subjects.txt'
+subjects = '/Users/sq566/Downloads/nsrr_studies/apples/data/subjects.txt'
 with open(subjects) as f:
     case_list = f.read().splitlines()     
 df_out = pd.DataFrame(index=range(0,len(case_list)), columns=['ID','LIGHTS_OFF'
@@ -30,7 +29,7 @@ df_out = pd.DataFrame(index=range(0,len(case_list)), columns=['ID','LIGHTS_OFF'
 for i, ID in enumerate(case_list):
 
     df_out.loc[i]['ID'] = ID
-    annot_file = f'/Users/sq566/Downloads/apples/data/csv/{ID}.csv'
+    annot_file = f'/Users/sq566/Downloads/nsrr_studies/apples/data/csv/{ID}.csv'
     df = pd.read_csv(annot_file, encoding = "ISO-8859-1")
     df['Event type'] = df['Event type'].str.lower()
     df['Event type'] = df['Event type'].str.replace('supine','',flags=re.I)
@@ -74,4 +73,4 @@ for i, ID in enumerate(case_list):
     print("--------------------------------------------------------------------------")
     del df
       
-df_out.to_csv('time.txt', sep ='\t', index=False) 
+df_out.to_csv('/Users/sq566/Downloads/nsrr_studies/apples/data/times.txt', sep ='\t', index=None) 
