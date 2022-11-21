@@ -1,0 +1,12 @@
+
+# Command to run the harmonmization and save the harmonized edf
+luna s.lst -s 'CANONICAL file=apples.sigs drop-originals & WRITE edf-dir=test/'
+
+
+# POPS prediction
+luna s.lst -o out.db -s POPS path=/Users/sq566/Downloads/pops_latest lib=v1 
+luna s.lst -o pops.db "alias=C4_M1|EEG_C4_A1" -s POPS path=/Users/sq566/Downloads/pops_latest lib=v1 
+
+
+# Posterior probability & Muti-taper spectrogram
+luna s.lst -t mtm -s MTM sig=EEG_C4_A1 nw=15 epoch
