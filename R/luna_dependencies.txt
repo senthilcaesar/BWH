@@ -1,0 +1,1 @@
+install.packages(c("git2r", "plotrix", "geosphere", "shiny", "DT", "shinyFiles", "xtable", "shinydashboard", "lubridate", "wkb", "digest", "aws.s3"))
