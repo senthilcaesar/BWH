@@ -31,3 +31,6 @@ export LDFLAGS="-L$HOME/Programme/bzip2-1.0.8/lib -L$HOME/Programme/xz-5.2.8/lib
 --with-blas \
 --with-lapack \
 --with-readline=no --with-x=no
+
+make
+make install
