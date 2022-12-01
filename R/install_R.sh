@@ -32,3 +32,8 @@ export LDFLAGS="-L$HOME/Programme/bzip2-1.0.8/lib -L$HOME/Programme/xz-5.2.8/lib
 --with-blas \
 --with-lapack \
 --with-readline=no --with-x=no
+
+make
+make install
+
+FFTW=/PHShome/sq566/Programme/fftw-3.3.8 R CMD INSTALL -l /PHShome/sq566/R/x86_64-pc-linux-gnu-library/3.6 luna
