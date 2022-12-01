@@ -11,6 +11,7 @@ export PATH=$HOME/Programme/zlib-1.2.13/bin:$PATH
 export PATH=$HOME/Programme/pcre-8.40/bin:$PATH
 export PATH=$HOME/Programme/curl-7.86.0/bin:$PATH
 export PATH=$HOME/Programme/openssl/bin:$PATH  
+
 export JAVA_HOME=$HOME/java/jdk/jdk-11.0.12+7
 export PATH="$JAVA_HOME/bin:$PATH"
 
@@ -31,6 +32,3 @@ export LDFLAGS="-L$HOME/Programme/bzip2-1.0.8/lib -L$HOME/Programme/xz-5.2.8/lib
 --with-blas \
 --with-lapack \
 --with-readline=no --with-x=no
-
-make
-make install
