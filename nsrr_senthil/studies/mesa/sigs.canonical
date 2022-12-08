@@ -1,0 +1,13 @@
+%MESA
+
+MESA	csEEG	C4_M1	.	100	uV
+MESA	csEMG	EMG	.	100	mV
+MESA	csLOC	E1	.	100	uV
+MESA	csROC	E2	.	100	uV
+MESA	csECG	ECG	.	100	mV
+MESA	csCAN	nas_pres	.	100	.
+MESA	csTRM	therm	.	100	.
+MESA	csTHX	thorax	.	100	.
+MESA	csABD	abdomen	.	100	.
+MESA	csOXY	spo2	.	4	.
+MESA	csPOS	position	.	1	.

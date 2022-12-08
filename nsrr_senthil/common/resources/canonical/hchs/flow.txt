@@ -1,0 +1,19 @@
+% -------------------------------------------------------------------------
+%
+% Airflow for HCHS: nasal pressure transducer
+%
+% -------------------------------------------------------------------------
+
+% nasal pressure transducer
+%since all hchs studies have A-Flow for nasal_pres and since this is not a common channel, it is %mapped seperately
+
+let nasal_pres=A-Flow
+
+% rules
+
+nasal_pres
+ group: 
+  HCHS
+ req:
+  sig = nasal_pres
+  

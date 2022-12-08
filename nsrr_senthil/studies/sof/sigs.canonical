@@ -1,0 +1,13 @@
+%SOF
+
+SOF	csEEG	C4	M1	100	uV
+SOF	csEMG	rchin	lchin	100	mV
+SOF	csLOC	E1	M2	100	uV
+SOF	csROC	E2	M2	100	uV
+SOF	csECG	ECG1	ECG2	100	mV
+SOF	csCAN	nas_pres	.	100	.
+SOF	csTRM	flow	.	100	.
+SOF	csTHX	thorax	.	100	.
+SOF	csABD	abdomen	.	100	.
+SOF	csOXY	spo2	.	4	.
+SOF	csPOS	position	.	1	.

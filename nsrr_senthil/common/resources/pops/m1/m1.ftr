@@ -1,0 +1,82 @@
+
+% --------------------------------------------------------------------------------
+%
+% Declare any channels used (required), sample rates
+%
+% --------------------------------------------------------------------------------
+
+CH C4_M1 C4 C4.M1 C4-M1 C4.A1 C4_A1 C4-A1 csC4 128 uV
+
+% --------------------------------------------------------------------------------
+%
+% Level 1 features
+%  block : feature {key=value key=value}
+%
+% --------------------------------------------------------------------------------
+
+% full power spectra, up to 30 Hz 
+spec1:  SPEC  C4_M1  lwr=0.5 upr=30
+vspec1: VSPEC C4_M1  lwr=0.5 upr=30
+
+% bands (relative band power)
+rband1: RBAND C4_M1
+
+% alternate metrics
+
+misc1: HJORTH   C4_M1
+misc1: SKEW     C4_M1
+misc1: KURTOSIS C4_M1
+
+misc2: FD       C4_M1
+misc2: PE from=5 to=5  C4_M1
+
+% indiv-level covariates 
+
+demo1: COVAR age male white
+
+% --------------------------------------------------------------------------------
+%
+% Epoch/row exclusions based on level-1 features
+%
+% --------------------------------------------------------------------------------
+
+misc1: OUTLIERS th=8
+
+% --------------------------------------------------------------------------------
+%
+% Level 2 features: 
+%  to-block: feature block=from-block {key=value}
+%
+% --------------------------------------------------------------------------------
+
+% SVD - in trainer model, writes this to myfile.txt (based on all individuals) 
+
+spec1.svd:  SVD block=spec1 nc=8 file=m1.spec1.svd
+vspec1.svd: SVD block=vspec1 nc=4 file=m1.vspec1.svd
+
+% temporal smoothing
+spec1.svd.smoothed: SMOOTH block=spec1.svd half-window=15
+spec1.svd.denoised: DENOISE block=spec1.svd lambda=0.5
+
+rband1.smoothed: SMOOTH block=rband1 half-window=15
+rband1.denoised: DENOISE block=rband1 lambda=0.5
+
+misc1.smoothed: SMOOTH block=misc1 half-window=15
+misc1.denoised: DENOISE block=misc1 lambda=0.5
+
+misc2.smoothed: SMOOTH block=misc2 half-window=15
+misc2.denoised: DENOISE block=misc2 lambda=0.5
+
+time1: TIME order=1
+
+rband.deriv: DERIV block=rband1 half-window=20
+spec1.svd.smoothed.deriv: DERIV block=spec1.svd.smoothed half-window=20
+
+
+% --------------------------------------------------------------------------------
+%
+% Final feature selection (blocks as defined above)
+%
+% --------------------------------------------------------------------------------
+
+SELECT demo1 rband1 misc1 misc2 spec1.svd vspec1.svd spec1.svd.smoothed spec1.svd.denoised rband1.smoothed rband1.denoised misc1.smoothed misc1.denoised misc2.smoothed misc2.denoised time1 rband.deriv spec1.svd.smoothed.deriv

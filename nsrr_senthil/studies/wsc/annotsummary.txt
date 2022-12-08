@@ -1,0 +1,14 @@
+| RESPIRATORY EVENT - DUR: 33.1 SEC. - HYPOPNEA - DESAT 90.6 %         |  |  |  |  |  | hypopnea            |
+|----------------------------------------------------------------------|--|--|--|--|--|---------------------|
+| DESATURATION - DUR: 35.6 SEC. - MIN 90.6 % - DROP 3.3 %              |  |  |  |  |  | desat               |
+| AROUSAL - DUR: 3.0 SEC. - SPONTANEOUS                                |  |  |  |  |  | arousal_spontaneous |
+| AROUSAL - DUR: 3.0 SEC. - RESPIRATORY EVENT                          |  |  |  |  |  | arousal_respiratory |
+| LM - DUR: 0.7 SEC. - ISOLATED                                        |  |  |  |  |  | lm                  |
+| AROUSAL - DUR: 3.0 SEC. - LM                                         |  |  |  |  |  | arousal_plm         |
+| RESPIRATORY EVENT - DUR: 47.0 SEC. - OBSTRUCTIVE APNEA - DESAT 76.4  |  |  |  |  |  | apnea_obstructive   |
+| RESPIRATORY EVENT - DUR: 10.6 SEC. - CENTRAL APNEA - DESAT 91.0 %    |  |  |  |  |  | apnea_central       |
+| POSITION - LEFT                                                      |  |  |  |  |  | pos_left            |
+| POSITION - PRONE                                                     |  |  |  |  |  | pos_prone           |
+| POSITION - SUPINE                                                    |  |  |  |  |  | pos_supine          |
+| POSITION - RIGHT                                                     |  |  |  |  |  | pos_right           |
+| POSITION - SITTING                                                   |  |  |  |  |  | pos_sit             |

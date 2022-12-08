@@ -1,0 +1,38 @@
+% -------------------------------------------------------------------------
+%
+% Respiratory effort (thoracic and abdominal)
+%
+% -------------------------------------------------------------------------
+
+let abdomen=abdomen,ABD,Abdmn,Abdo,ABDOM,Abdomen,Abd2,Abdominal
+let abdomen=Effort_ABD,ABDO_EFFORT,A-Effort,Abdomen_EG,Resp_Abdominal,Abdo_Res,Resp_Abdomen
+let abdomen=EEG_Abd,AbdDC,ABDM
+
+let thorax=thorax,Thoracic,THOR_RES,Thor,Thorax_EG,THO,THOR_EFFORT,Effort_THO,Resp_Thoracic
+let thorax=Chest,Chest1,Resp_Chest,EEG_Chest,RIB_CAGE,ChestDC
+
+let sum=sum,THOR+ABDO,Sum_
+
+% rules (note: variables are not expanded for canonical channel labels)
+
+abdomen
+ req:
+  sig = abdomen
+  unit=mV,uV,V,Volts,.,none
+ set:
+  unit=mV
+
+thorax
+ req:
+  sig = thorax
+  unit=mV,uV,V,Volts,.,none
+ set:
+  unit=mV
+
+sum
+ req:
+  sig = sum
+  unit=mV,uV,V,Volts,.,none
+ set:
+  unit=mV
+  

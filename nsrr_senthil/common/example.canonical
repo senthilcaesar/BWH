@@ -1,0 +1,119 @@
+% -------------------------------------------------------------------------
+% NSRR canonical signal definitions
+% version v0.2
+% 25-April-2021
+% -------------------------------------------------------------------------
+
+
+% -------------------------------------------------------------------------
+%
+% This file is designed to be used by the Luna command CANONICAL
+%   luna s.lst -s CANONICAL file=<this file> group=<group>
+%
+% It defines for every study canonical channels relevant to a typical PSG
+%     EEG  (right central EEG, mastoid reference, C4/M1) 
+%     LOC  (left eye, right mastoid reference, LOC/M2)  
+%     ROC  (right eye, right mastoid reference, ROC/M2)  ?? confirm
+%     EMG  ??
+%     ECG  ?? 
+%     < others >
+%
+%
+% These will generated, labeled EEG, LOC, etc, with 
+% re-referencing and resampling as necessary
+%
+% Note: this command uses any aliases already specified in the usual manner
+% e.g. if some SHHS C4 channels are labeled 'EEG(sec)' then we 
+% can still use the form 'EEG2' below, as long as a standard 
+% alias file is specified (via @includes) for that project/EDF
+%
+% Below, each non-commented line should have either six or seven tab-delimited 
+% columns:  minimally always NAME and CHANNEL need to have non-null values
+%
+%  GROUP   NAME    CHANNEL   REF   SR   UNIT    (NOTES) 
+%
+%  GROUP   matches the 'group' option on the CANONICAL command, to select
+%          the particular set of canonical channels, i.e. typically 'study';
+%          this can be set to period '.' meaning that it will be matched
+%          irrespective of the group option (unless a prior group-specific rule
+%          for the group has been encountered, in which case this rule will
+%          be ignored irrespective or whether or not those prior rules were
+%          satisfied
+%
+%  NAME    user-specified name for the new canoical channel, e.g. EEG, LOC, EMG, etc or csCEN, csFRT, csOCC, etc
+%
+%  CHANNEL the existing channel that represents the canonical form
+% 
+%  REF     if needed, the reference channel to achieve canonical form
+%          if not needed, enter period '.'
+%
+%  SR      sample rate for this canonical channel
+%          to leave as is, enter period '.'
+%
+%  UNIT    Physical units (V, mV or uV, otherwise enter period '.')
+%
+%  NOTES   (optional) any notes about the montage (i.e. if nonstandard)
+%
+% 
+%
+% ------------------------------------------------------------------------ 
+% 
+
+
+% Example usage:
+
+TEST	EEG	C4,EEG2	.	100	uV	If 'C4' not present, look for 'EEG2' instead
+TEST	EMG	Lchin	Rchin	100	uV
+TEST	LOC	LOC	M2,A2	100	uV	If 'M2' not present, look for 'A2' instead
+TEST	ROC	E2,ROC	M2,A2	100	uV	If 'E2' not present, look for 'ROC' instead
+TEST	ECG	ECG	.	100	uV
+
+
+% It is possible to have different rules, by listing on
+% different lines; Luna will select the first rule that matches.
+% For example, if within a given cohort some individuals have left/right
+% EMG as separate channels, but other individuals have a single channel
+% that is already left-right referenced.   i.e. for a 'canonical' EMG
+% in the first instance you'd want to take 'L' and 'R' as two channels, 
+% and perform the re-referencing; in the second instance, you'd want to 
+% take the already re-referenced channel as is:
+
+% TEST	EMG	lchin	rchin	100	 uV
+% TEST	EMG	chin	.	100	 uV
+
+% i.e. if Luna can't find 'lchin' and 'rchin' in the data, it will look
+% for 'chin' instead. 
+
+% Notes:
+
+% 1) Using a comma-delimited list on the same rule only means to take
+%  the first available% channel of that label; you cannot have a '.'
+%  included as part of a reference channel list
+%
+% TEST EEG  C4   M1,.  100   uV     <--- not allowed
+
+% 2) Do not assume that values are paired for signal and reference 
+%   comma-delimited lists: i.e. 
+% TEST EEG C4,C3  M1,M2   100
+%   does *not* imply that Luna will take either C4/M1, or else C3/M2, 
+%   (or nothing, if none of these exist)
+%   Rather, here, it would take C3 referenced against M1, if say, only C3 and M1
+%   were present in the EDF.  To specify the logic of 'C4/M1' or 'C3/M2' 
+%   instead use two different rules
+% TEST EEG C4  M1   100   uV
+% TEST EEG C3  M2   100   iV
+
+% 3) Do not replicate channel aliases in these files; i.e. these is intended to 
+%  be used with standard Luna channel aliases from @include files.  e.g. if EEG2 
+%  is already an alias for EEG(sec), "EEG 2", "EEG (sec)" , "EEG sec" 
+% 
+%  alias  EEG2|EEG(sec)|"EEG 2"|"EEG (sec)"|"EEG sec" 
+%
+%   then just use the form here
+%
+%  TEST EEG  EEG2 .  100   uV
+%
+% i.e. no need to add all the aliases in, i.e. assuming the Luna command includes them:
+%
+% luna s.list @sig.alias -s CANONICAL file={this-file} group=TEST
+

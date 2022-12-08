@@ -1,0 +1,18 @@
+% -------------------------------------------------------------------------
+%
+% Sound recording / snore channels
+%added P_snore from Stages, St. Lukes' PTAF's (nasal cannula) snore
+% -------------------------------------------------------------------------
+
+let snore=snore,Snore_CU,Snore_EG,Snorealias,Snore_2,SNORE2,SNORE_DR,A_snore,snor,snore_mic
+let snore=snore_mic_1,snoremic1,snoremic4,snore_sensor,snoresensor,Bipolar_Snore4,cannulasnore
+let snore=Cannula_Snore,EEG_Snore,P_snore
+
+sound
+ req:
+  sig = Mic,SOUND
+  sr-max = 500
+  
+snore
+ req:
+  sig = snore

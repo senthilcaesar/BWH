@@ -1,0 +1,9 @@
+%HEARTBEAT
+
+HEARTBEAT	csECG	ECG	.	100	mV
+HEARTBEAT	csCAN	nas_pres	.	100	.
+HEARTBEAT	csTRM	therm	.	100	.
+HEARTBEAT	csTHX	thorax	.	100	.
+HEARTBEAT	csABD	abdomen	.	100	.
+HEARTBEAT	csOXY	spo2	.	4	.
+HEARTBEAT	csPOS	position	.	1	.

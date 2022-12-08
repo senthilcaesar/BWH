@@ -1,0 +1,46 @@
+% -------------------------------------------------------------------------
+%
+% Misc. channels
+%
+% -------------------------------------------------------------------------
+
+
+% Capnogram (capnography wave form)
+
+let cap=cap,capno
+
+cap
+ req:
+  sig = cap
+
+% End tidal CO2 (derived value from capnography)
+
+let EtCO2=EtCO2,CO2_EndTidal,EtC02,ETC2,ETCO2__,ETCO2_,EtCO2_2,ETCO2_Digital,EtCO2_Neo,EtCO2___NK,EtCO2__NK,EtCO2_XT,NK_EtCO2
+
+EtCO2
+ req:
+  sig = EtCO2
+  
+
+let EtCO2_wave=EtCO2_Wave,ETCO2Wave,NK_EtCO2_Wave
+
+EtCO2_wave
+ req:
+  sig = EtCO2_wave
+
+%Transcutaneous CO2
+
+let TcCO2=TcCO2__,TcCO2,TCCO2_,TCCO2_Digital,TCO2,TcpCO2
+
+TcCO2
+ req:
+  sig = TcCO2
+ 
+% Body position
+
+pos
+ req:
+  sig = pos,position,Body,Pos_Sensor,Position_CU,PositionSen,PosSensor,Pt_Position
+  sig = BPOSdc1,BPOSdc2,Compumedics_Body,POSdc,POSdc1,Compumedics_Posi
+  sig = Positon,Postion,Postition,Bpos
+  sig = Pro_Tech_Positio,ProTech_Positio,ProTechPositione

@@ -1,0 +1,130 @@
+{
+  "class": "CommandLineTool",
+  "cwlVersion": "v1.1",
+  "$namespaces": {
+    "sbg": "https://sevenbridges.com"
+  },
+  "baseCommand": [],
+  "inputs": [
+    {
+      "id": "sigs_alias",
+      "type": "File"
+    },
+    {
+      "loadListing": "deep_listing",
+      "id": "input_dir",
+      "type": "Directory",
+      "inputBinding": {
+        "shellQuote": false,
+        "position": 4
+      }
+    },
+    {
+      "id": "input_conf",
+      "type": "File",
+      "inputBinding": {
+        "shellQuote": false,
+        "position": 5
+      }
+    },
+    {
+      "loadListing": "deep_listing",
+      "id": "definition_dir",
+      "type": "Directory"
+    },
+    {
+      "id": "run_name",
+      "type": "string"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "wrapper_output",
+      "type": "File?",
+      "outputBinding": {
+        "glob": "*.txt"
+      }
+    },
+    {
+      "id": "nap_output_tar",
+      "type": "File?",
+      "outputBinding": {
+        "glob": "*.tar.gz"
+      }
+    },
+    {
+      "id": "nap_output_dir",
+      "type": "Directory?",
+      "outputBinding": {
+        "glob": "${     return \"*_output\" }",
+        "loadListing": "deep_listing"
+      }
+    }
+  ],
+  "label": "nap",
+  "arguments": [
+    {
+      "prefix": "",
+      "shellQuote": false,
+      "position": 0,
+      "valueFrom": "${\n    return \"NAP_LUNA_ARGS=@\" + inputs.sigs_alias.basename\n}"
+    },
+    {
+      "prefix": "",
+      "shellQuote": false,
+      "position": 1,
+      "valueFrom": "${\n    return \"NAP_DEF_DIR=\" + inputs.definition_dir.basename\n}"
+    },
+    {
+      "prefix": "",
+      "shellQuote": false,
+      "position": 2,
+      "valueFrom": "/build/nsrr/nap/nap.sh"
+    },
+    {
+      "prefix": "",
+      "shellQuote": false,
+      "position": 3,
+      "valueFrom": "${\n    return inputs.run_name\n}\n"
+    },
+    {
+      "prefix": "",
+      "shellQuote": false,
+      "position": 6,
+      "valueFrom": ">> nap_wrapper_log.txt 2>&1"
+    }
+  ],
+  "requirements": [
+    {
+      "class": "ShellCommandRequirement"
+    },
+    {
+      "class": "LoadListingRequirement"
+    },
+    {
+      "class": "ResourceRequirement",
+      "ramMin": 100,
+      "coresMin": 1
+    },
+    {
+      "class": "DockerRequirement",
+      "dockerPull": "nsrr/nap:0.1"
+    },
+    {
+      "class": "InitialWorkDirRequirement",
+      "listing": [
+        {
+          "entry": "${\n    return inputs.sigs_alias\n}",
+          "writable": false
+        },
+        {
+          "entry": "${\n    return inputs.definition_dir \n}",
+          "writable": false
+        }
+      ]
+    },
+    {
+      "class": "InlineJavascriptRequirement"
+    }
+  ]
+}

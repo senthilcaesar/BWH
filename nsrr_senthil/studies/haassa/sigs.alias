@@ -1,0 +1,15 @@
+alias	abdomen|ABDO_RES
+alias	flow|AIRFLOW
+alias	ECG|ECG
+alias	C4_M1|EEG
+alias	C3_M2|EEG(sec)
+alias	EMG|EMG
+alias	E1|EOG(L)
+alias	E2|EOG(R)
+alias	hr|H.R.
+alias	light|LIGHT
+alias	oxstat|OX_stat
+alias	position|POSITION
+alias	spo2|SaO2
+alias	snore|SOUND
+alias	thorax|THOR_RES

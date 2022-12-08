@@ -1,0 +1,511 @@
+
+% -------------------------------------------------------------------------
+% NSRR harmonized EDF canonical signal definitions: electroencephalography (EEG)
+% version v2.0, 7-Apr-2022
+% -------------------------------------------------------------------------
+
+% -------------------------------------------------------------------------
+%
+% Variable definitions 
+%
+% -------------------------------------------------------------------------
+
+% left mastoids
+let left_mastoid=M1,M1_ref,M1-ref,EEG_M1,EEG_M1_REF,EEG_M1-REF
+let left_mastoid=A1,A1_ref,A1-ref,EEG_A1,EEG_A1_REF,EEG_A1-REF
+
+% right mastoids
+let right_mastoid=M2,M2_ref,M2-ref,EEG_M2,EEG_M2_REF,EEG_M2-REF
+let right_mastoid=A2,A2,A2_ref,A2-ref,EEG_A2,EEG_A2_REF,EEG_A2-REF
+
+% linked mastoids (pre-computed)
+let linked_mastoid=M1M2,A1A2,(M1+M2)/2,(A1+A2)/2,M1+M2,A1+A2
+
+% linked mastoids (computed on-the-fly) nb. quoted "L,R" syntax
+let linked_mastoid="M1,M2","M1_REF,M2_REF","M1-REF,M2-REF"
+let linked_mastoid="EEG_M1,EEG_M2","EEG_M1_REF,EEG_M2_REF","EEG_M1-REF,EEG_M2-REF"
+let linked_mastoid="A1,A2","A1_REF,A2_REF","A1-REF,A2-REF"
+let linked_mastoid="EEG_A1,EEG_A2","EEG_A1_REF,EEG_A2_REF","EEG_A1-REF,EEG_A2-REF"
+
+% channel w/ arbitrary recording reference
+let left_central=C3,C3-ref,C3_ref,EEG_C3,EEG_C3_ref,EEG_C3-ref
+let right_central=C4,C4-ref,C4_ref,EEG_C4,EEG_C4_ref,EEG_C4-ref
+let midline_central=CZ,CZ-ref,CZ_ref,EEG_CZ,EEG_CZ_ref,EEG_CZ-ref
+
+let left_frontal=F3,F3-ref,F3_ref,EEG_F3,EEG_F3_ref,EEG_F3-ref
+let right_frontal=F4,F4-ref,F4_ref,EEG_F4,EEG_F4_ref,EEG_F4-ref
+let midline_frontal=FZ,FZ-ref,FZ_ref,EEG_FZ,EEG_FZ_ref,EEG_FZ-ref
+
+let left_parietal=P3,P3-ref,P3_ref,EEG_P3,EEG_P3_ref,EEG_P3-ref
+let right_parietal=P4,P4-ref,P4_ref,EEG_P4,EEG_P4_ref,EEG_P4-ref
+let midline_parietal=PZ,PZ-ref,PZ_ref,EEG_PZ,EEG_PZ_ref,EEG_PZ-ref
+
+let left_temporal=T3,T3-ref,T3_ref,EEG_T3,EEG_T3_ref,EEG_T3-ref
+let right_temporal=T4,T4-ref,T4_ref,EEG_T4,EEG_T4_ref,EEG_T4-ref
+let midline_temporal=TZ,TZ-ref,TZ_ref,EEG_TZ,EEG_TZ_ref,EEG_TZ-ref
+
+let left_occipital=O1,O1-ref,O1_ref,EEG_O1,EEG_O1_ref,EEG_O1-ref
+let right_occipital=O2,O2-ref,O2_ref,EEG_O2,EEG_O2_ref,EEG_O2-ref
+let midline_occipital=OZ,OZ-ref,OZ_ref,EEG_OZ,EEG_OZ_ref,EEG_OZ-ref
+
+% pre-computed CM-referenced centrals (e.g. C3_M2)
+let left_central_cm_ref=C3_M2,C3-M2,C3/M2,EEG_C3-M2,EEG_C3_M2,EEG_C3/M2
+let left_central_cm_ref=C3_A2,C3-A2,C3/A2,EEG_C3-A2,EEG_C3_A2,EEG_C3/A2
+let right_central_cm_ref=C4_M1,C4-M1,C4/M1,EEG_C4-M1,EEG_C4_M1,EEG_C4/M1
+let right_central_cm_ref=C4_A1,C4-A1,C4/A1,EEG_C4-A1,EEG_C4_A1,EEG_C4/A1
+
+let left_frontal_cm_ref=F3_M2,F3-M2,F3/M2,EEG_F3-M2,EEG_F3_M2,EEG_F3/M2
+let left_frontal_cm_ref=F3_A2,F3-A2,F3/A2,EEG_F3-A2,EEG_F3_A2,EEG_F3/A2
+let right_frontal_cm_ref=F4_M1,F4-M1,F4/M1,EEG_F4-M1,EEG_F4_M1,EEG_F4/M1
+let right_frontal_cm_ref=F4_A1,F4-A1,F4/A1,EEG_F4-A1,EEG_F4_A1,EEG_F4/A1
+
+let left_parietal_cm_ref=P3_M2,P3-M2,P3/M2,EEG_P3-M2,EEG_P3_M2,EEG_P3/M2
+let left_parietal_cm_ref=P3_A2,P3-A2,P3/A2,EEG_P3-A2,EEG_P3_A2,EEG_P3/A2
+let right_parietal_cm_ref=P4_M1,P4-M1,P4/M1,EEG_P4-M1,EEG_P4_M1,EEG_P4/M1
+let right_parietal_cm_ref=P4_A1,P4-A1,P4/A1,EEG_P4-A1,EEG_P4_A1,EEG_P4/A1
+
+let left_temporal_cm_ref=T3_M2,T3-M2,T3/M2,EEG_T3-M2,EEG_T3_M2,EEG_T3/M2
+let left_temporal_cm_ref=T3_A2,T3-A2,T3/A2,EEG_T3-A2,EEG_T3_A2,EEG_T3/A2
+let right_temporal_cm_ref=T4_M1,T4-M1,T4/M1,EEG_T4-M1,EEG_T4_M1,EEG_T4/M1
+let right_temporal_cm_ref=T4_A1,T4-A1,T4/A1,EEG_T4-A1,EEG_T4_A1,EEG_T4/A1
+
+let left_occipital_cm_ref=O1_M2,O1-M2,O1/M2,EEG_O1-M2,EEG_O1_M2,EEG_O1/M2
+let left_occipital_cm_ref=O1_A2,O1-A2,O1/A2,EEG_O1-A2,EEG_O1_A2,EEG_O1/A2
+let right_occipital_cm_ref=O2_M1,O2-M1,O2/M1,EEG_O2-M1,EEG_O2_M1,EEG_O2/M1
+let right_occipital_cm_ref=O2_A1,O2-A1,O2/A1,EEG_O2-A1,EEG_O2_A1,EEG_O2/A1
+
+
+% pre-computed LM-referenced central (e.g. C3_LM)
+let left_central_lm_ref=C3_LM,C3-LM,C3/LM,EEG_C3-LM,EEG_C3_LM,EEG_C3/LM
+let right_central_lm_ref=C4_LM,C4-LM,C4/LM,EEG_C4-LM,EEG_C4_LM,EEG_C4/LM
+let midline_central_lm_ref=CZ_LM,CZ-LM,CZ/LM,EEG_CZ-LM,EEG_CZ_LM,EEG_CZ/LM
+
+let left_frontal_lm_ref=F3_LM,F3-LM,F3/LM,EEG_F3-LM,EEG_F3_LM,EEG_F3/LM
+let right_frontal_lm_ref=F4_LM,F4-LM,F4/LM,EEG_F4-LM,EEG_F4_LM,EEG_F4/LM
+let midline_frontal_lm_ref=FZ_LM,FZ-LM,FZ/LM,EEG_FZ-LM,EEG_FZ_LM,EEG_FZ/LM
+
+let left_parietal_lm_ref=P3_LM,P3-LM,P3/LM,EEG_P3-LM,EEG_P3_LM,EEG_P3/LM
+let right_parietal_lm_ref=P4_LM,P4-LM,P4/LM,EEG_P4-LM,EEG_P4_LM,EEG_P4/LM
+let midline_parietal_lm_ref=PZ_LM,PZ-LM,PZ/LM,EEG_PZ-LM,EEG_PZ_LM,EEG_PZ/LM
+
+let left_temporal_lm_ref=T3_LM,T3-LM,T3/LM,EEG_T3-LM,EEG_T3_LM,EEG_T3/LM
+let right_temporal_lm_ref=T4_LM,T4-LM,T4/LM,EEG_T4-LM,EEG_T4_LM,EEG_T4/LM
+let midline_temporal_lm_ref=TZ_LM,TZ-LM,TZ/LM,EEG_TZ-LM,EEG_TZ_LM,EEG_TZ/LM
+
+let left_occipital_lm_ref=O1_LM,O1-LM,O1/LM,EEG_O1-LM,EEG_O1_LM,EEG_O1/LM
+let right_occipital_lm_ref=O2_LM,O2-LM,O2/LM,EEG_O2-LM,EEG_O2_LM,EEG_O2/LM
+let midline_occipital_lm_ref=OZ_LM,OZ-LM,OZ/LM,EEG_OZ-LM,EEG_OZ_LM,EEG_OZ/LM
+
+
+% -------------------------------------------------------------------------
+%
+% Rules
+%
+% -------------------------------------------------------------------------
+
+%
+% central CM-referenced
+%
+
+C3_M2
+ req:
+  sig = left_central_cm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C3_M2
+ req:
+  sig = left_central
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C4_M1
+ req:
+  sig = right_central_cm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C4_M1
+ req:
+  sig = right_central
+  ref = left_mastoid
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+%
+% central LM-referenced
+%
+
+C3_LM
+ req:
+  sig = left_central_lm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C3_LM
+ req:
+  sig = left_central
+  ref = linked_mastoid 
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C4_LM
+ req:
+  sig = right_central_lm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C4_LM
+ req:
+  sig = right_central
+  ref = linked_mastoid 
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+
+%
+% Frontals
+%
+
+F3_M2
+ req:
+  sig = left_frontal_cm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F3_M2
+ req:
+  sig = left_frontal
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F4_M1
+ req:
+  sig = right_frontal_cm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F4_M1
+ req:
+  sig = right_frontal
+  ref = left_mastoid
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+%
+% frontal LM-referenced
+%
+
+F3_LM
+ req:
+  sig = left_frontal_lm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F3_LM
+ req:
+  sig = left_frontal
+  ref = linked_mastoid 
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F4_LM
+ req:
+  sig = right_frontal_lm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F4_LM
+ req:
+  sig = right_frontal
+  ref = linked_mastoid 
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+
+%
+% Occipitals
+%
+
+O1_M2
+ req:
+  sig = left_occipital_cm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O1_M2
+ req:
+  sig = left_occipital
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O2_M1
+ req:
+  sig = right_occipital_cm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O2_M1
+ req:
+  sig = right_occipital
+  ref = left_mastoid
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+%
+% occipital LM-referenced
+%
+
+O1_LM
+ req:
+  sig = left_occipital_lm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O1_LM
+ req:
+  sig = left_occipital
+  ref = linked_mastoid 
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O2_LM
+ req:
+  sig = right_occipital_lm_ref
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O2_LM
+ req:
+  sig = right_occipital
+  ref = linked_mastoid 
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+
+%
+% Midline LM-referenced channels
+%
+
+CZ_LM
+ req:
+  sig = midline_central_lm_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+CZ_LM
+ req:
+  sig = midline_central
+  ref = linked_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+% frontal
+
+FZ_LM
+ req:
+  sig = midline_frontal_lm_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+FZ_LM
+ req:
+  sig = midline_frontal
+  ref = linked_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+
+% parietal
+
+PZ_LM
+ req:
+  sig = midline_parietal_lm_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+PZ_LM
+ req:
+  sig = midline_parietal
+  ref = linked_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  trans = xyz,*
+  scale = AC
+ set:
+  unit = uV
+
+% occipital
+
+OZ_LM
+ req:
+  sig = midline_occipital_lm_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+OZ_LM
+ req:
+  sig = midline_occipital
+  ref = linked_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV

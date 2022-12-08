@@ -1,0 +1,32 @@
+% -------------------------------------------------------------------------
+%
+% CPAP channels 
+%
+% -------------------------------------------------------------------------
+
+% most relevant to ABC, HomePAP, BestAIR studies
+
+let cpap_flow=cpap_flow,pap_flow,CPAPFLOW,CPAP,CPAP.1,CPAP.2,CPAP.3,PAP.1,CFLO
+let cpap_flow=CFlow,C-flow,PAPFlow,maskflow,Mask_Flow,PAP_Patient_Flow,EPAP,PAP_FLOW, PAP_Pt_Flow
+
+let cpap_pres=pap_pres,Pmask,Pap,C-Pres,CPress,CPAP_Pressure,CPAPPressure,CPAP_Press
+let cpap_pres=CPRES,C-Pressure,PAPPress,PAP_Pressure,PAP_Press
+let cpap_pres=xPAP_EPAP,xPAP_IPAP,xPAP,xPAP_CPAP,Pressure
+let cpap_pres=Mask,CPAPMask, C_Pressure
+
+% rules
+
+cpap_flow
+ req:
+  sig = cpap_flow
+  unit = V,mV
+  unit=liters_per_minute,L/m,l/l/min
+  unit=unknown,.
+
+cpap_pressure
+ req:
+  sig = cpap_pres, pap_pres,PAPPress
+  unit = cmH20,mmH20
+  unit = unknown,. 
+
+  

@@ -1,0 +1,146 @@
+
+
+% -------------------------------------------------------------------------
+%
+% EOG channels; preferred both referenced against M2
+%
+% -------------------------------------------------------------------------
+
+%% aliases
+
+% EOG against recording reference
+let left_eog=E1,E1,LOC,EOG-L,L-EOG,EOG_Left,EOG_L,LEOG,EOG(L)
+let left_eog=EEG_E1,EOG_E1
+let left_eog=EOG_L_Ref
+
+let right_eog=E2,ROC,EOG-R,R-EOG,EOG_Right,EOG_R,REOG,EOG(R)
+let right_eog=EEG_E2,EOG_E2
+let right_eog=EOG_R_Ref
+
+% EOG against *right* mastoid ref
+let left_eog_right_mastoid_ref=E1_M2,E1-M2,E1_M2,E1_A2,E1-A2
+let left_eog_right_mastoid_ref=EOG_LOC-M2,EOG_LOC_M2,LOC/M2,LOC-M2,LOC_M2,EOGL-M2
+let left_eog_right_mastoid_ref=EOG_LOC-A2,EOG_LOC_A2,LOC/A2,LOC-A2,LOC_A2,EOGL-A2
+
+let right_eog_right_mastoid_ref=E2_M2,E2-M2,E2_M2,E2_A2,E2-A2
+let right_eog_right_mastoid_ref=EOG_ROC-M2,EOG_ROC_M2,ROC/M2,ROC-M2,ROC_M2,EOGR-M2
+let right_eog_right_mastoid_ref=EOG_ROC-A2,EOG_ROC_A2,ROC/A2,ROC-A2,ROC_A2,EOGR-A2
+
+% also include right EOG against left ref.
+let right_eog_left_mastoid_ref=E2_M1,E2-M1,E2_M1,E2_A1,E2-A1
+let right_eog_left_mastoid_ref=EOG_ROC-M1,EOG_ROC_M1,ROC/M1,ROC-M1,ROC_M1,EOGR-M1
+let right_eog_left_mastoid_ref=EOG_ROC-A1,EOG_ROC_A1,ROC/A1,ROC-A1,ROC_A1,EOGR-A1
+
+%% rules
+% AASM standard has LOC and ROC both referenced against M2
+% but include E2_M1 as a replacement for E2-M2, if the latter is not available
+
+LOC
+ req:
+  sig = left_eog_right_mastoid_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+LOC
+ req:
+  sig = left_eog
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+LOC
+ req:
+  sig = left_eog
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+% ROC - preferred also against right M2
+
+ROC
+ req:
+  sig = right_eog_right_mastoid_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+% ROC - alternativly, against left M1
+
+ROC
+ req:
+  sig = right_eog_left_mastoid_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog
+  ref = left_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+% also, if no mastoids present, assume any match is
+% already re-referenced, even if that is not explicit in
+% the name
+
+LOC
+ req:
+  sig = left_eog
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV

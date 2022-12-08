@@ -1,0 +1,26 @@
+
+missing	-nan
+missing	nan
+
+SS	factor	Sleep Stage
+
+DUR_OBS	num	Observed stage duration
+DUR_PRD	num	Predicted stage duration
+
+ACC	num	Accuracy
+ACC_3	num	Accuracy (NR/R/W)
+
+K	num	Kappa
+K_3	num	Kappa (NR/R/W)
+
+F1	num	F1
+F1_3	num	F1 (NR/R/W)
+
+MCC	num	Matthews correlation
+MCC_3	num	Matthews correlation (NR/R/W)
+
+PREC	num	Precision
+PREC_3	num	Precision (NR/R/W)
+
+RECALL	num	Recall
+RECALL_3	num	Recall (NR/R/W)

@@ -1,0 +1,105 @@
+% -------------------------------------------------------------------------
+% NSRR canonical signal definitions : first-level base EDF
+% version v0.4, 24-Feb-2022
+% -------------------------------------------------------------------------
+
+% process EDFs post the NSRR harmonization stage
+
+% -------------------------------------------------------------------------
+%
+% EEG - resample to 128 Hz and set to uV
+%
+% -------------------------------------------------------------------------
+
+.	csC3	C3_M2,C3_LM	.	128	uV
+.	csC4	C4_M1,C4_LM	.	128	uV
+
+.	csF3	F3_M2,F3_LM	.	128	uV
+.	csF4	F4_M1,F4_LM	.	128	uV
+
+.	csT3	T3_M2,T3_LM	.	128	uV
+.	csT4	T4_M1,T4_LM	.	128	uV
+
+.	csO1	O1_M2,O1_LM	.	128	uV
+.	csO2	O2_M1,O2_LM	.	128	uV
+
+
+% pick a single EEG that can be the best match for SOAP & POPS
+
+.	csCEN	csC4,csC3
+
+.	csFRT	csF4,csF3
+
+.	csEEG	csC4,csC3,csF4,csF3	.	128	uV
+.	csEEG	CZ_LM,FZ_LM	.	128	uV
+.	csEEG	C4_REF,C3_REF	.	128	uV
+
+% -------------------------------------------------------------------------
+%
+% EOG - resample to 128 Hz and set to uV
+%
+% -------------------------------------------------------------------------
+
+.	csLOC	LOC	.	128	uV
+
+.	csROC	ROC	.	128	uV
+
+
+% -------------------------------------------------------------------------
+%
+% EMG - resample to 128 Hz and set to uV
+%
+% -------------------------------------------------------------------------
+
+.	csEMG	csEMG	.	128	uV
+
+
+% -------------------------------------------------------------------------
+%
+% ECG - resample to 128 Hz and set to mV
+%
+% -------------------------------------------------------------------------
+
+%  expecting: ECG unspecified (may be bipolar)
+%             ECG1 Left subclavicular
+%             ECG2 Right subclavicular
+%             ECG3 Left rib cage or axillary
+
+
+.	csECG	ECGI,ECGII,ECGIII	.	128	mV
+
+
+% -------------------------------------------------------------------------
+%
+% Airflow channels: nasal pressure transducer and thermister (128 Hz)
+%
+% -------------------------------------------------------------------------
+
+.	csCAN	nas_pres	.	128
+
+.	csTRM	therm	.	128
+
+.	csAIR|cannula	csCAN
+
+.	csAIR|thermistor	csTRM
+
+.	csAIR|unspecified	airflow
+
+% -------------------------------------------------------------------------
+%
+% Respiratory effort (thoracic/chest & abdomenal) (128 Hz)
+%
+% -------------------------------------------------------------------------
+
+.	csTHX	thorax	.	128	.
+
+.	csABD	abdomen	.	128	.
+
+
+% -------------------------------------------------------------------------
+%
+% Oxygen saturation (4 Hz)
+%
+% -------------------------------------------------------------------------
+
+.	csOXY	SpO2	.	4

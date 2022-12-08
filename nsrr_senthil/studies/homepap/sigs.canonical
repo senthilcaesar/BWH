@@ -1,0 +1,12 @@
+%HOMEPAP
+
+HOMEPAP	csEEG	C4	M1	100	uV
+HOMEPAP	csEMG	rchin	lchin	100	mV
+HOMEPAP	csLOC	E1	M2	100	uV
+HOMEPAP	csROC	E2	M2	100	uV
+HOMEPAP	csECG	ECG1	ECG2	100	mV
+HOMEPAP	csCAN	nas_pres	.	100	.
+HOMEPAP	csTHX	thorax	.	100	.
+HOMEPAP	csABD	abdomen	.	100	.
+HOMEPAP	csOXY	spo2	.	4	.
+HOMEPAP	csPOS	position	.	1	.

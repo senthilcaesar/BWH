@@ -1,0 +1,16 @@
+
+% -------------------------------------------------------------------------
+% NSRR harmonized EDF canonical signal definitions: unit definitions
+% version v2.0, 7-Apr-2022
+% -------------------------------------------------------------------------
+
+% nb. first entry is always the preferred term
+
+% Voltage units (first entry of list is the preferred term)
+
+let volt  = V,volt
+
+let mvolt = mV,millivolt,milli-volt,mvolt,m-volt
+
+let uvolt = uV,microvolt,micro-volt,uvolt,u-volt
+

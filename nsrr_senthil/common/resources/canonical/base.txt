@@ -1,0 +1,190 @@
+
+% -------------------------------------------------------------------------
+% NSRR canonical signal definitions : base EDF
+% version v2.0, 11-Apr-2022
+% -------------------------------------------------------------------------
+
+% Raw EDF --> Harmonized EDF --> Base EDF
+% Pick from the harmonzied set; for voltage signals, apply uniform sampling
+% rate of 128 Hz and set units to uV
+
+% -------------------------------------------------------------------------
+%
+% EEG - resample to 128 Hz and set to uV
+%
+% -------------------------------------------------------------------------
+
+csC3
+ req:
+  sig = C3_M2,C3_LM
+ set:
+  unit = uV
+  sr = 128
+
+csC4
+ req:
+  sig = C4_M1,C4_LM
+ set:
+  unit = uV
+  sr = 128
+
+csF3
+ req:
+  sig = F3_M2,F3_LM
+ set:
+  unit = uV
+  sr = 128
+
+csF4
+ req:
+  sig = F4_M1,F4_LM
+ set:
+  unit = uV
+  sr = 128
+
+csO1
+ req:
+  sig = O1_M2,O1_LM
+ set:
+  unit = uV
+  sr = 128
+
+csO2
+ req:
+  sig = O2_M1,O2_LM
+ set:
+  unit = uV
+  sr = 128
+
+csCEN
+ req:
+  sig = csC4,csC3
+  
+csFRT
+ req:
+  sig = csF4,csF3
+
+csEEG
+ req:
+  sig = csCEN,csFRT,CZ_LM,FZ_LM
+  
+
+% -------------------------------------------------------------------------
+%
+% EOG - resample to 128 Hz and set to uV
+%
+% -------------------------------------------------------------------------
+
+csLOC
+ req:
+  sig = LOC
+ set:
+  unit = uV
+  sr = 128
+
+csROC
+ req:
+  sig = ROC
+ set:
+  unit = uV
+  sr = 128
+
+csEOG
+ req:
+  sig = LOC,ROC
+ set:
+  unit = uV
+  sr = 128
+
+
+% -------------------------------------------------------------------------
+%
+% EMG - resample to 128 Hz and set to uV
+%
+% -------------------------------------------------------------------------
+
+csEMG
+ req:
+  sig = EMG
+ set:
+  unit = uV
+  sr = 128
+  
+
+% -------------------------------------------------------------------------
+%
+% ECG - resample to 128 Hz and set to mV
+%
+% -------------------------------------------------------------------------
+
+%  expecting: ECG unspecified (may be bipolar)
+%             ECG1 Left subclavicular
+%             ECG2 Right subclavicular
+%             ECG3 Left rib cage or axillary
+
+csECG
+ req:
+  sig = ECGI,ECGII,ECGIII
+ set:
+  unit = mV
+  sr = 128
+  
+
+% -------------------------------------------------------------------------
+%
+% Airflow channels: nasal pressure transducer and thermister (128 Hz)
+%
+% -------------------------------------------------------------------------
+
+csCAN
+ req:
+  sig = nas_pres
+ set:
+  sr = 128
+  
+csTRM
+ req:
+  sig = therm
+ set:
+  sr = 128
+
+csAIR
+ unless:
+  csCAN
+  csTRM
+ req:
+  sig = airflow
+ set:
+  sr = 128
+
+
+% -------------------------------------------------------------------------
+%
+% Respiratory effort (thoracic/chest & abdomenal) (128 Hz)
+%
+% -------------------------------------------------------------------------
+
+csTHX
+ req:
+  sig = thorax
+ set:
+  sr = 128
+
+csABD
+ req:
+  sig = abdomen
+ set:
+  sr = 128
+  
+
+% -------------------------------------------------------------------------
+%
+% Oxygen saturation (4 Hz)
+%
+% -------------------------------------------------------------------------
+
+csOXY
+ req:
+  sig = SpO2
+ set:
+  sr = 4

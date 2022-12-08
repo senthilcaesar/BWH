@@ -1,0 +1,19 @@
+% -------------------------------------------------------------------------
+%
+% Airflow for SHHS1: thermistor
+%during the study the type of thermistor that was used was changed.  The original airflow was %collected on channel 12 on the unit, the new themistor used channel 17, studies collected after %the new thermistor was put in place will have both an 'airflow' and a 'new air' signal.  mapping %so that shhs studies with the new thermistor will have that signal mapped and the old airflow %signal ignored
+% -------------------------------------------------------------------------
+
+% thermistor
+
+let thermistor=NEW_AIR,newair,New_A_F,AUX,airlfow,Aux_AC,AIR,AIRFLOW
+
+
+% rules
+
+thermistor
+ group: 
+  SHHS1
+ req:
+  sig = thermistor
+  

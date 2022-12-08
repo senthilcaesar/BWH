@@ -1,0 +1,68 @@
+% -------------------------------------------------------------------------
+%
+% Airflow: thermistor & nasal pressure cannula
+%Stages St. Luke's uses Nasal_therm term for thermistor
+% -------------------------------------------------------------------------
+
+% thermistor
+%chat uses PVDF, we decided to map to thermistor
+
+let thermistor=therm,Thermistor,EEG_Therm,Thermistor_EG,AIRFLOW,nasalflow
+let airflow=air,Airflow1,AIR_FLOW,Flow_EG,NasalSn,Nasal_Therm
+let thermistor=oralflow,AIR,airlfow,NasOr,NasOr2
+
+
+% nasal pressure transducer
+% removed N_Pres and N.Press they were in the Stages cohort and were not legitimate signals
+
+let nasal_pres=CannulaFlow,CanulaFlow,Cannula,Cannula_Flow,CannulaFow,CannnulaFlow,CannlulaFlow,
+let nasal_pres=CannualFlow,CannulaNasal,Nasal_Cannula,NASAL_PRES,Nasal_Pressure
+let nasal_pres=Nasal,NASAL_PRESS,Nasal_EG, PTAF
+let nasal_pres=NP,Pressure,Pres,nas_pres,DC_Nasal_Canual
+
+
+% Unspecified airflow channels (info may be in the transducer fields)
+
+let airflow=flow,Flow_Patient
+let airflow=Resp_Airflow,Resp_Flow,Resp_FLOW-Ref,Resp_Airflow+-Re,NasalDC
+let airflow=Flow_Aux4
+
+
+% rules
+% TODO: add in transducer rules for generic airflow channels
+
+thermistor
+ req:
+  sig = thermistor
+  unit=mvolt
+  unit=uvolt
+  unit=unknown,.,*
+  
+
+nasal_pres
+ req:
+  sig = nasal_pres
+  unit=mvolt
+  unit=uvolt
+  unit=mbar
+  unit=ubar
+  unit=unknown,.
+
+nasal_pres
+ req:
+  sig = airflow
+  unit=mbar
+  unit=ubar
+
+airflow
+ unless:
+  thermistor
+  nasal_pres
+ req:
+  sig = airflow
+  unit=mvolt
+  unit=uvolt
+  unit=unknown,.
+ 
+
+

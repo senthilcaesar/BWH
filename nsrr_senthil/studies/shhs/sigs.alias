@@ -1,0 +1,5 @@
+alias	EEG|EEG1
+alias	EEG2|EEG(sec)|EEG_2|EEG(SEC)|EEG_sec
+eeg	EEG,EEG2
+alias   E1|"EOG(L)"
+alias   E2|"EOG(R)"

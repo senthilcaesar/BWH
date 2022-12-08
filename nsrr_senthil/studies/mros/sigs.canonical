@@ -1,0 +1,14 @@
+%MROS
+
+MROS	csEEG	C4	M1	100	uV
+MROS	csEEG	C3	M2	100	uV
+MROS	csEMG	rchin	lchin	100	mV
+MROS	csLOC	E1	M2	100	uV
+MROS	csROC	E2	M2	100	uV
+MROS	csECG	ECG1	ECG2	100	mV
+MROS	csCAN	nas_pres	.	100	.
+MROS	csTRM	flow	.	100	.
+MROS	csTHX	thorax	.	100	.
+MROS	csABD	abdomen	.	100	.
+MROS	csOXY	spo2	.	4	.
+MROS	csPOS	position	.	1	.

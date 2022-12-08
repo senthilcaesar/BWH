@@ -1,0 +1,8 @@
+%NUMOM2B
+
+NUMOM2B	csECG	ECG	.	100	mV
+NUMOM2B	csCAN	nas_pres	.	100	.
+NUMOM2B	csTHX	thorax	.	100	.
+NUMOM2B	csABD	abdomen	.	100	.
+NUMOM2B	csOXY	spo2	.	4	.
+NUMOM2B	csPOS	position	.	1	.

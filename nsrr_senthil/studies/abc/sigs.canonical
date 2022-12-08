@@ -1,0 +1,13 @@
+%ABC
+
+ABC	csEEG	C4	M1	100	uV
+ABC	csEMG	lchin	rchin	100	mV
+ABC	csLOC	E1	M2	100	uV
+ABC	csROC	E2	M2	100	uV
+ABC	csECG	ECG1	ECG2	100	mV
+ABC	csCAN	nas_pres	.	100	.
+ABC	csTRM	flow	.	100	.
+ABC	csTHX	thorax	.	100	.	
+ABC	csABD	abdomen	.	100	.
+ABC	csOXY	spo2	.	4	.
+ABC	csPOS	position	.	1	.

@@ -1,0 +1,69 @@
+
+% -------------------------------------------------------------------------
+%
+% Surface electromyography (EMG) 
+%
+% assumes 1,2,3 = C,L,R
+% assumes L-R and R-L are equivalent, etc
+% -------------------------------------------------------------------------
+
+let central_chin=EMG1,Chin1,Chin1_EMG,Chin-C,EMG/C,C_Chin,CCHin,Chin-Ctr
+let left_chin=EMG2,Chin2,Chin2_EMG,Chin-L,EMG/L,L_Chin,LChin
+let right_chin=EMG3,Chin3,Chin3_EMG,Chin-R,EMG/R,R_Chin,RChin
+
+let chin_left_central=chinI,Chin1-Chin2,Chin_1-Chin_2,EMG1-EMG2,EMG_Chin1-Chin2,CChin-LChin,C_Chin-L_Chin,EMG_Chin1_Chin2
+let chin_left_central=Chin2-Chin1,Chin_2-Chin_1,EMG2-EMG1,EMG_Chin2-Chin1,LChin-CChin,L_Chin-C_Chin,EMG_Chin2_Chin1
+
+let chin_right_central=chinII,Chin1-Chin3,Chin_1-Chin_3,EMG1-EMG3,EMG_Chin1-Chin3,CChin-RChin,C_Chin-R_Chin,EMG_Chin1_Chin3
+let chin_right_central=Chin3-Chin1,Chin_3-Chin_1,EMG3-EMG1,EMG_Chin3-Chin1,RChin-CChin,R_Chin-C_Chin,EMG_Chin3_Chin1
+
+let chin_left_right=chinIII,Chin2-Chin3,Chin_2-Chin_3,EMG2-EMG3,EMG_Chin2-Chin3,LChin-RChin,L_Chin-R_Chin,EMG_Chin2_Chin3
+let chin_left_right=chinIII=Chin3-Chin2,Chin_3-Chin_2,EMG3-EMG2,EMG_Chin3-Chin2,RChin-LChin,R_Chin-L_Chin,EMG_Chin3_Chin2
+
+let chin=chin,EMG,EMG_chin,Chin_EMG,Chin_EMG_Gnd
+
+EMG
+ req:
+  sig = chin_left_central,chin_right_central
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+EMG
+ req:
+  sig = left_chin,right_chin
+  ref = central_chin
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+EMG
+ req:
+  sig = left_chin
+  ref = right_chin
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+EMG
+ req:
+  sig = chin
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV

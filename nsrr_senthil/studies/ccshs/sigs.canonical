@@ -1,0 +1,13 @@
+%CCSHS
+
+CCSHS	csEEG	C4	M1	100	uV
+CCSHS	csEMG	EMG3	EMG2	100	mV
+CCSHS	csLOC	E1	M2	100	uV
+CCSHS	csROC	E2	M2	100	uV
+CCSHS	csECG	ECG1	ECG2	100	mV
+CCSHS	csCAN	nas_pres	.	100	.
+CCSHS	csTRM	flow	.	100	.
+CCSHS	csTHX	thorax	.	100	.
+CCSHS	csABD	abdomen	.	100	.
+CCSHS	csOXY	spo2	.	4	.
+CCSHS	csPOS	position	.	1	.

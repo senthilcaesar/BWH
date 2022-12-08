@@ -1,0 +1,323 @@
+% -------------------------------------------------------------------------
+
+%
+
+% Surface EMG monitoring of limb muscles
+
+%
+
+% -------------------------------------------------------------------------
+
+
+
+% generate LAT and RAT, allowing for three transducer types
+
+%  EMG, piezo and unknown
+
+%
+
+% expected EMG signals typically either two channels per leg (which
+
+% will need to be re-referenced to each other) or one bipolar signal
+
+% per leg (i.e. already re-referenced). Piezo will only have one
+
+% signal per leg
+
+
+
+
+
+%
+
+% Channel   + Transducer         --> Inferred type
+
+% -------------------------------------------------
+
+% EMG       + any/none           --> EMG
+
+% generic   + EMG                --> EMG
+
+% piezo     + any/none           --> piezo    (no current examples/rules)
+
+% generic   + piezo              --> piezo
+
+% generic   + unknown/none       --> unknown
+
+
+
+
+
+% as EMG has two leads per leg, versus piezo only has one,
+
+% assume that channels indicating >1 lead == EMG
+
+
+
+
+
+%
+
+% Define generic left/right leg fields
+
+%  (i.e. presumably piezo OR bipolar EMG)
+
+%
+let left_leg=LLEG,L_LEG,LEFT,Leg_L,LegL,Leg_Ltibial,L_Legs,LATl,LegsL_Leg1,L_Leg1,L_LEG_1
+let left_leg=LLeg3,L_Leg2,L_LEG_2,LLeg4,Leg_L_LEG,LAT
+
+let right_leg=RLEG,R_LEG,RIGHT,Leg_R,LegR,Leg_Rtibial,R_Legs,RAT,R_LEG1,RLEG1,RLeg5,RLEG_2
+let right_leg=RLEG2,RLeg6
+
+let leg=leg
+
+let leg1=leg_1
+
+let leg2=Leg_2
+
+%
+
+% EMG-specific rules (indicated by presence of >1 channel per leg in labels)
+
+%
+
+% 4-lead EMG channels (2 channels per leg: implies EMG)
+
+let left_leg1_emg=LLEG1,LEFT_LEG1,L_LEG1,L_LEG_1
+let left_leg1_emg=EEG_LLEG1,EEG_LEFT_LEG1,EEG_L_LEG1,EEG_L_LEG_1
+let left_leg1_emg=EMG_LLEG1,EMG_LEFT_LEG1,EMG_L_LEG1,EMG_L_LEG_1
+let left_leg2_emg=LLEG2,LEFT_LEG2,L_LEG2,L_LEG_2
+let left_leg2_emg=EEG_LLEG2,EEG_LEFT_LEG2,EEG_L_LEG2,EEG_L_LEG_2
+let left_leg2_emg=EMG_LLEG2,EMG_LEFT_LEG2,EMG_L_LEG2,EMG_L_LEG_2
+
+let right_leg1_emg=RLEG1,RIGHT_LEG1,R_LEG1,R_LEG_1
+let right_leg1_emg=EEG_RLEG1,EEG_RIGHT_LEG1,EEG_R_LEG1,EEG_R_LEG_1
+let right_leg1_emg=EMG_RLEG1,EMG_RIGHT_LEG1,EMG_R_LEG1,EMG_R_LEG_1
+let right_leg2_emg=RLEG2,RIGHT_LEG2,R_LEG2,R_LEG_2
+let right_leg2_emg=EEG_RLEG2,EEG_RIGHT_LEG2,EEG_R_LEG2,EEG_R_LEG_2
+let right_leg2_emg=EMG_RLEG2,EMG_RIGHT_LEG2,EMG_R_LEG2,EMG_R_LEG_2
+
+% 2-lead EMG channels (pre-computed bilateral LATs and RATs)
+
+%  assumption: requires that channel labels make referencing explicit
+
+let left_leg_emg=LLeg1_LLeg2,lleg1_2
+let left_leg_emg=EMG_LLEG_LLEG2,EMG_LLEG__LLEG_,EMG_LAT1_LAT2,LAT1_LAT2
+
+let right_leg_emg=RLEG1_RLeg2,rleg1_2
+let right_leg_emg=EMG_RLEG_RLEG2,EMG_RLEG__RLEG_,EMG_RAT1_RAT2,RAT1_RAT2
+
+let left_right_leg_emg=lleg_r,lleg1_2,EMG_LLeg_RLeg
+
+%
+
+% Define transducer fields
+
+% (first element = sets to this in final EDF)
+
+%
+
+let emg_transducer=EMG,EEG
+let emg_transducer=EMG.Tibialis-Leg.Left,EMG.Tibialis-Leg.Right,.,Legs
+
+let piezo_transducer=piezo,PiezoLeg,G13,Leg
+
+let unknown_transducer=unknown,?,E,.
+
+%
+
+% Canonical rules
+
+%
+
+% EMG channels (4-lead), explicit channel names
+
+LAT_emg
+ req:
+  sig=left_leg1_emg
+  ref=left_leg2_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV 
+
+LAT_emg
+ req:
+  sig=left_leg1_emg
+  ref=left_leg2_emg
+  trans=emg_transducer  
+
+RAT_emg
+ req:
+  sig=right_leg1_emg
+  ref=right_leg2_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+RAT_emg
+ req: 
+  sig=right_leg1_emg
+  ref=right_leg2_emg
+  trans=emg_transducer
+  
+% EMG channels (2-lead), explicit channel names
+
+LAT_emg
+ req:
+  sig=left_leg_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+LAT_emg
+ req: 
+  sig=left_leg_emg
+  trans=emg_transducer
+   
+RAT_emg
+ req:
+  sig=right_leg_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+RAT_emg
+ req:
+  sig=right_leg_emg
+  trans=emg_transducer  
+
+LAT_RAT_emg
+ req:  
+  sig=left_right_leg_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+LAT_RAT_emg
+ req:
+  sig=left_right_leg_emg
+  trans=emg_transducer
+
+% EMG channels (2-lead), based on transducer field
+
+LAT_emg
+ req:
+  sig=left_leg   
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+LAT_emg
+ req: 
+  sig=left_leg
+  trans=emg_transducer
+
+RAT_emg
+ req:
+  sig=right_leg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+RAT_emg
+ req:
+  sig=right_leg
+  trans=emg_transducer
+
+% Piezo channels (1 lead per leg), based on transducer field
+
+LAT_piezo
+ req:
+  sig=left_leg
+  trans=piezo_transducer 
+  unit=mV
+ set:
+  unit=uV
+
+LAT_piezo
+ req:
+  sig=left_leg
+  trans=piezo_transducer
+
+RAT_piezo
+ req:
+  sig=right_leg
+  trans=piezo_transducer
+  unit=mV  
+ set:
+  unit=uV
+
+RAT_piezo
+ req:
+  sig=right_leg
+  trans=piezo_transducer
+
+% Generic
+
+LAT_generic
+ req:
+  sig=left_leg
+  trans=unknown_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+LAT_generic
+ req:
+  sig=left_leg
+  trans=unknown_transducer
+
+RAT_generic
+ req:
+  sig=right_leg
+  trans=unknown_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+RAT_generic
+ req:
+  sig=right_leg
+  trans=unknown_transducer
+
+LAT_RAT_emg
+ req:
+  sig=left_right_leg_emg
+  trans=unknown_transducer
+
+LEG_generic
+ req:
+  sig=leg_1
+  ref=leg_2
+  trans=unknown_transducer
+
+LEG_generic
+ req:
+  sig=leg
+  trans=piezo_transducer
+
+%
+
+% Compile
+
+%
+
+LAT <<- LAT_emg LAT_piezo LAT_generic
+
+RAT <<- RAT_emg RAT_piezo RAT_generic

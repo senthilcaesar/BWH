@@ -1,0 +1,19 @@
+% -------------------------------------------------------------------------
+%
+% Airflow for PATS: nasal pressure transducer
+%
+% -------------------------------------------------------------------------
+
+% nasal pressure transducer
+%the channel name NPAF is used in CHAT and PATS, since the channel name is confusing, I mapping %it seperately
+
+let nasal_pres=NPAF
+
+% rules
+
+nasal_pres
+ group: 
+  PATS
+ req:
+  sig = nasal_pres
+  

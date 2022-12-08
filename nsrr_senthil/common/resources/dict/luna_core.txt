@@ -1,0 +1,40 @@
+
+% HEADERS / CH  : channel-specific information 
+
+CH	factor	Channel label
+DMAX	num	Digital maximum (from EDF header)
+DMIN	num	Digital minimim (from EDF header)
+PMAX	num	Physical maximum (from EDF header)
+PMIN	num	Physical minimim (from EDF header)
+SENS	num	Sensitivity
+
+% HEADERS base 
+
+NR	int	Number of records in the EDF
+NS	int	Number of signals in the EDF
+
+START_DATE	date	Start date (from EDF header)
+START_TIME	time	Start time (from EDF header)
+TOT_DUR_SEC	num	Total EDF duration (seconds)
+TOT_DUR_HMS	time	Total EDF duration (hh:mm:ss)
+REC_DUR	int	EDF Record duration
+
+% EEG polarity flip NAP data / by CH & METHOD
+
+METHOD	factor	Method used to determine EEG polarity
+POL	text	EEG polarity (+ve/-ve)
+
+% EEG polarity / CH
+
+FLIP	yesno	EEG polarity was flipped
+
+% CANONICAL 
+
+CS	factor	Canonical signal label
+DEFINED	yesno	Canonical signal was defined
+NOTES	text	Notes on the canonical signal rule used
+REF	text	Reference channel (if any)
+SIG	text	Signal channel (if any)
+SR	int	Sample rate of canonical signal (Hz)
+UNITS	text	Physical units of canonical signal
+

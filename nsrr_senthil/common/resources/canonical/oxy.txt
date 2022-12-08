@@ -1,0 +1,24 @@
+% -------------------------------------------------------------------------
+%
+% Oxygen saturation (SpO2)
+%
+% -------------------------------------------------------------------------
+
+let SpO2=SpO2,SAO2,SAT,SpO2_EG,SA02,SO02,PaO2,SPO2__2_,Sa02masimo,SA02nonin,SAO2External,Nonin_sat
+let SpO2=SAO2masimo,SAO2Nellcor,SAO2ninon,SAO2noin,A_SpO2,SAO2nonin,SA02nonin,SpO2Sta,SpO2x,SpO2xx
+
+SpO2
+ req:
+  sig = SpO2
+  unit = percent,.,&
+
+let Pleth=pleth,plethmasimo,plethmasino,plethnellcor,plethwv,pletmasimo,PPG
+
+Pleth
+ req:
+  sig = Pleth
+  unit=V
+  unit=uV
+  unit=mV
+  unit=none,.
+

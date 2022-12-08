@@ -1,0 +1,17 @@
+%WSC
+
+WSC	csEEG	C4_M1,C4_AVG	.	100	uV
+WSC	csEEG	C3_M2,C3_AVG	.	100	uV
+WSC	csEMG	cchin_l	.	100	mV
+WSC	csEMG	cchin_r	.	100	mV
+WSC	csLOC	E1	.	100	uV
+WSC	csROC	E2	.	100	uV
+WSC	csECG	ECG	.	100	mV
+WSC	csECG	ECG1_2	.	100	mV
+WSC	csECG	ECG1_3	.	100	mV
+WSC	csCAN	nas_pres	.	100	.
+WSC	csTRM	therm	.	100	.
+WSC	csTHX	thorax	.	100	.
+WSC	csABD	abdomen	.	100	.
+WSC	csOXY	spo2	.	4	.
+WSC	csPOS	position	.	1	.

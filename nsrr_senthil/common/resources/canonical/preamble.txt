@@ -1,0 +1,196 @@
+
+% -------------------------------------------------------------------------
+% NSRR canonical signal definitions : file format notes
+% version v2.0, 7-Apr-2022
+% -------------------------------------------------------------------------
+
+% usage:
+%  luna s.lst -o out.db -s CANONICAL file=cs1.txt,cs2.txt 
+%
+% options:
+%   'file' : (required) one or more canonical signal definition files (i.e. like this)
+%            these will be processed in the order specified; within each file, rules
+%            are processed in order too
+%
+%   'group' : (optional) specifies one or more groups (related to group-specific rules)
+%
+%   'verbose' : (optional) verbose output in the console log
+%
+%   'drop-originals' : (optional) original channels are dropped from the EDF
+%
+%   'check' : (optional) do a 'dry run', i.e. do not make any new channels
+
+
+% --------------------------------------------------------------------------------
+%
+% File overview
+%
+% --------------------------------------------------------------------------------
+
+% for full harmonized PSGs, include (w/ units.txt first)
+%
+% CANONICAL file=units.txt,eeg.txt,eog.txt,emg.txt,ecg.txt,...  
+%
+% (or concatenate into a single file before use - as NAP does)
+%  cat units.txt eeg.txt eog.txt emg.txt ecg.txt {etc...}  > harm.txt
+
+%  units.txt    some basic definitions and aliases of units
+%  eeg.txt      central, frontal, parietal, temporal and occipital EEGs, with contra-lateral and linked references
+%  eog.txt      LOC and ROC
+%  emg.txt      chin EMG
+%  leg.txt      LAT and RAT
+%  ecg.txt      basic PSG-style ECG
+%  pulse.txt    blood flow (pleth, pulse, derived HR)
+%  flow.txt     airflow (nasal pressure cannula and thermistor)
+%  oxt.txt      oxygen desaturation channels
+%  resp.txt     respiratory effort belts
+%  cpap.txt     CPAP channels
+%  snore.txt    snore channel/mic
+%  misc.txt     miscellaneous (e.g. position)
+
+%  base.txt     conversion (w/ resampling) from harmonized -> base EDF
+
+% --------------------------------------------------------------------------------
+%
+% Format notes
+%
+% --------------------------------------------------------------------------------
+
+% Canonical signal files have two elements (other than comment lines started with % or #):
+%  - variable assignments and rules
+
+% 1) Variable Assignments - i.e. simple shortcuts to make the rules simpler
+%    these always start with the 'let' statement: e.g.
+%
+% let left_mastoid=M1,A1,M1-Ref,A1-Ref
+%
+% This means that 'left_mastoid' is used in any rule, it will be expanded into 'M1,A1,M1-Ref,A2-Ref'
+% If we repeat the 'let' assignment with the same variable name, the new values are appended
+% i.e. they do not overwrite the values
+%
+%
+% let left_mastoid=M1,M1-Ref
+% let left_mastoid=A1,A1-Ref
+%
+% this implies 'left_mastoid' equals 'M1,M1-Ref,A1,A1-Ref' 
+%
+
+% Rules
+
+% these define the canonical channels, and can include requirements as
+% well as setting EDF header values (e.g. units, transducer
+% type). Rules use space-indentation to structure each rule; the name
+% of the canonical channel (i.e. the 'target' or channel we are trying
+% to make) is always the first element of a rule, and should be on a
+% line by itself, with no space identation (note: here, placing space
+% after % comment char just for clarity).  Note, the example below is
+% given just to show snytax
+
+% canonical_label
+% 
+%  unless:
+%   label2
+%
+%  group: 
+%   group1
+%   group2
+%  
+%  req:
+%   sig = sig1,sig2
+%   ref = ref1,ref2
+%   trans = thermistor,therm
+%   sr-min = 10
+%   sr-max = 100
+%   unit = uV,micro-volts
+%   unit = mV,milli-volts
+%   scale = AC  
+%
+%  set:
+%   unit = uV
+%   sr = 100
+
+% There are four sections (not all needed) to a rule:
+% each should start with a single space character, and
+% appear after a canonical label (i.e. so they relate to that
+% variable)
+%
+%  group:    if this is a group-specific rule, list the groups here
+%  unless:   a list of other canonical signals - this rule with be ignored if this channel exists already
+%  req:      any 'requirements' for the signal (see below)
+%  set:      options to set the sample rate and/or units of the new canonical signal
+%
+
+% All arguments to these four sections must start on lines below the
+% section head, and are required to be idented with 2 spaces:
+
+% i.e. all requirements must be met for a rule to be enacted; the following requirements
+% are valid terms:
+%
+%  sig:    one or more 'primary signals' (required)
+%  ref:    optionally, any reference signals 
+%  trans:  optionally, a transducer field 
+%  unit:   optionally, required units
+%  scale:  optionally, range of the signal (EDF header min/max)
+%  sr-min: optionally, a min. required sample rate (of the primary signal)
+%  sr-max: optionally, a max. allowed sample rate (of the primary signal)
+%
+% sig, ref, trans and unit can accept comma-delimited lists
+% and can appear on multiple lines (i.e. will append new values)
+%
+% special behavior:
+%  ref - if a value is in quotes, it implies an average reference of those signals
+%        "A1,A2" is to make a linked-mastoid reference (i.e. if A1 and A2 both exist)
+%
+
+%  unit, trans - the first element on each line will be the
+%    'preferred' label: e.g.
+
+%    unit: V,volt
+%    unit: uV,micro-volt
+
+% The above will set the unit to 'V' if it is 'V' or 'volt' in the
+% original and will set it to 'uV' if either 'uV' or 'micro-volt' If
+% the unit doesn't match either of these requirements, the rule will
+% not be enacted
+
+% unit, trans - also note that '.' means an empty field; this cannot
+%   be set as the first value, but it gives a way of matching on empty
+%   fields - e.g. to supply a default label for an empty field by:
+%   trans: unknown,.
+
+% unit, trams - also note that '*' means a wildcard to match anything
+%   (unless it is matched by another explicitly stated metric.  This
+%   can be used to effectively set the transducer field (nb. this is
+%   an exception to using the 'set:' part of the rule trans:
+%   thermistor,therm trans: unknown,.  trans: invalid,*
+
+%   i.e. this group of requirements would set anything that isn't
+%        'thermistor', 'therm' or an empty field to 'invalid'.  Note
+%        that by including a * wild card, this effectively stops the
+%        trans field from being a requirement per se (i.e. it will
+%        always match).  However, it is done this way (rather than
+%        having a simple 'set:' trans field, to allow more flexibility
+%        (i.e. some pre-existing terms can be handled separately
+%        within a single rule, as in the above example)
+
+% Note that all arguments use case-insensitive matching (i.e. 'volt', 'Volt' and 'VOLT' are all identical)
+
+% Note: typically, we can assume that all spaces are converted to
+%    underscore (_) as per Luna default rule for reading channel
+%    labels
+
+% If a group has been specified on the Luna command line, if we
+% encouter a rule with that group specified, subsequent generic rules
+% (i.e. those w/out a group section) will not be enacted (i.e. even
+% if the prior group-specific rules were not enacted either)
+
+% When running NAP, one sets this configuration flag: 
+%   NAP_GROUP=SHHS,EEGv1
+%
+% If the grou-specific terms are located in a different file:
+%   NAP_OPT_SIGS=/path/to/that/file.txt
+%
+% -------------------------------------------------------------------------
+
+
+

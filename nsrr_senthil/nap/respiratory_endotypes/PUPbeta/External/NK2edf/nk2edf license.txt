@@ -1,0 +1,4 @@
+get license info at:
+https://www.teuniz.net/edf/index.html
+converter 1.3
+same converter appears in EDFBrowser

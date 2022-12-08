@@ -1,0 +1,18 @@
+
+CH	factor	Channel label
+F	factor	Frequency (Hz)
+SS	factor	Sleep stage
+
+DENS	num	Spindle density (count per minute)
+AMP	num	Spindle duration (seconds)
+DUR	num	Spindle amplitude (uV)
+FRQ	num	Spindle frequency (Hz)
+
+SO_RATE	num	Slow oscillations (count per minute)
+SO_DUR	num	SO duration (seconds)
+SO_AMP	num	SO negative peak amplitude (uV)
+SO_P2P	num	SO peak-to-peak amplitude (uV)
+
+COUPL_OVERLAP_Z	num	Spindle/SO gross overlap (Z score)
+COUPL_MAG_Z	num	Spindle/SO phase coupling magnitude (Z score) 
+COUPL_ANGLE	num	Spindle/SO phase coupling angle (Z score)

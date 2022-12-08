@@ -1,0 +1,13 @@
+
+missing	-nan
+missing	nan
+
+CH	factor	Channel Label
+
+FS_FLOW	num	Sampling frequency of flow (Hz)
+PROB_UPRIGHT	num	Probability of inspiration being upright (1=inspiration upright, 0=inspiration pointing downward)
+FRACTION_NOISE	num	Fraction of noise present in the signal (%)
+SNR_WINDOW	num	Mean signal to noise ratio in 7min windows (dB)
+FILTER_LP_PREDICT	num	Flow is low pass filtered if value is <8
+FILTER_HP_PREDICT	num	Flow is high pass filtered if value is >0.011
+FRACTION_CLIPPING	num	Fraction of amplitude clipping present in flow (%)

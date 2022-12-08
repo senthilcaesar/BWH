@@ -1,0 +1,19 @@
+
+missing	-nan
+missing	nan
+
+CH	factor	Channel Label
+
+LG1	num	Ventilatory control sensitivity
+LGn	num	Ventilatory instability
+DELAY	num	Chemoreflex delay (s)
+VRA	num	Ventilatory response to arousal (%)
+ARTHRES	num	Arousal threshold (%)
+VPASSIVE	num	Collapsibility under passive conditions (%)
+VACTIVE	num	Collapsibility under active conditions (%)
+VCOMP	num	Pharnygeal muscle compensation (%)
+VMIN	num	Collapsibility under hypotonic conditions (%)
+VPASSIVET	num	Transformed Vpassive (Constraint: x>100 is set to 100; Square-root transformation per 1-(1-x)^0.5)
+ARTHREST	num	Transformed ArThres (Constraint: x<1 is set to 1, Transformation used = 1+(x-1)^0.5)
+VPASSIVETA	num	Alternate transformation of Vpassive (Constraint: x>99.5 is set to 99.5, Transformation: α[1+(x-1)^0.33], rescaling factor α=1.2046)
+VACTIVETA	num	Alternate transformation of Vactive (Constraint: x>99.5 is set to 99.5; Transformation: α[1+(x-1)^0.33], rescaling factor α=1.2046)

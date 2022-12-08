@@ -1,0 +1,36 @@
+% -------------------------------------------------------------------------
+%
+% (Derived) Heart rate (BPM) 
+%
+% -------------------------------------------------------------------------
+
+let HR=HR,BPM,HEARTRATE,Heart_Rate,Heart_Rate_CU,HRate,H.R.,DHR
+
+HR
+ req:
+  sig = HR
+
+% -------------------------------------------------------------------------
+%
+% Plethysmography (volume of blood, from oximetry signal)
+%
+% -------------------------------------------------------------------------
+let pleth=pleth,Plethysmogram,Plesmo,PlethWV,RD-Pleth,RD-Pleth_EG,Plethmasimo,PlethMasino
+let pleth=PlethNellcor,PletMasimo
+
+pleth
+ req:
+  sig = pleth
+
+
+% -------------------------------------------------------------------------
+%
+% Pulse
+%
+% -------------------------------------------------------------------------
+
+let pulse=pulse,PR,Puls,Pulse_Rate,PulseRate,Pulse_EG,Pluse
+
+pulse
+ req:
+  sig = pulse

@@ -1,0 +1,15 @@
+alias	abdomen|Abdome|Abdomen
+alias	activity|Activity|Activty
+alias	ECG|EKG
+alias	flow|Flo|Flow|Flow_EG
+alias	nas_pres|Nasa|Nasal
+alias	position|Position
+alias	pulse|Pulse
+alias	pleth|Rd-Pleth|RD-Pleth
+alias	snore|Snore
+alias	spo2|SpO2|SPO2
+alias	sum|Sum|Sum_|SUm
+alias	therm|Thermistor
+alias	thorax|Thorax
+alias	xsum|XSum
+

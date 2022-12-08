@@ -1,0 +1,69 @@
+
+% Nb - mappings may go across tables
+% NREMC_MINS is present in base and 'C' tables
+% Importantly, if the same label is used, within domain it should have the same definition
+
+
+%
+% HYPNO base-level metrics
+%
+
+MINS_N1	num	N1 duration (mins)
+MINS_N2	num	N2 duration (mins)
+MINS_N3	num	N3 duration (mins)
+%MINS_N4	num	N4 duration (mins)
+MINS_REM	num	REM duration (mins)
+NREMC	int	Number of NREM cycles
+NREMC_MINS	num	Average NREM cycle duration (mins)
+PCT_N1	num	N1 duration (proportion)
+PCT_N2	num	N2 duration (proportion)
+PCT_N3	num	N3 duration (proportion)
+%PCT_N4	num	N4 duration (proportion)
+PCT_REM	num	REM duration (proportion)
+PER_SLP_LAT	num	Persistent sleep latency (mins)
+REM_LAT	num	REM latency (mins past sleep onset)
+SLP_EFF	num	Sleep efficiency
+SLP_EFF2	num	Sleep efficiency (excl. leading/trailing wake)
+SLP_LAT	num	Sleep latency (mins)
+SLP_MAIN_EFF	num	Sleep maintenance efficiency
+T1_LIGHTS_OFF	num	Lights Off (elapsed seconds)
+T2_SLEEP_ONSET	num	Sleep onset (elapsed seconds)
+T3_SLEEP_MIDPOINT	num	Sleep midpoint (elapsed seconds)
+T4_FINAL_WAKE	num	Final wake (elapsed seconds)
+T5_LIGHTS_ON	num	Lights on (elapsed seconds)
+TIB	num	Time In Bed (mins)
+TPST	num	Total Persistent Sleep Time (mins)
+TST	num	Total Sleep Time (mins)
+TWT	num	Total Wake Time (mins)
+WASO	num	Wake After Sleep Onset (mins)
+
+
+%
+% HYPNO metics / NREM cycle (C)
+%
+
+C	factor	NREM cycle number
+
+NREMC_NREM_MINS	num	Cycle duration of NREM (mins)
+NREMC_OTHER_MINS	num	Cycle duration of wake/missing (mins)
+NREMC_REM_MINS	num	Cycle duration of REM (mins)
+NREMC_START	num	Cycle start time (elapsed seconds)
+
+
+%
+% HYPNO stage transition metrics / PRE and POST
+%
+
+%PRE	factor	Epoch e
+%POST	factor	Epoch e+1
+%N	int	Number of stage transitions
+%P_POST_COND_PRE	num	Pr( stage e+1 | stage e )
+%P_PRE_COND_POST	num	Pr( stage e | stage e+1 )
+
+
+%
+% HYPNO epoch-level metrics: skip those in the individual-level collation
+%
+
+% <--- skipped --->
+

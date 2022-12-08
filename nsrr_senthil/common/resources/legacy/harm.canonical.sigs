@@ -1,0 +1,613 @@
+
+% -------------------------------------------------------------------------
+% NSRR harmonized EDF canonical signal definitions
+% version v0.5, 23-Feb-2022
+% -------------------------------------------------------------------------
+
+% format: up to 7-whitespace delimited columns; missing/generic is period (.) 
+%  group  canonical-label  primary  reference  sample-rate  physical-unit  notes 
+%
+% ** the first three fields are mandatory ** 
+%
+% aliases can be defined as:
+%  var=var1,var2
+%  var=var3
+% meaning that if 'var' is specified in any of the subsequent rules, then if
+% there is no channel present called 'var', it will search for the aliases (in order)
+% i.e. here 'var1', 'var2' then 'var3'.   Note that consecutive assignments append
+% rather than over-write alias lists.
+%
+% notes:
+% 1) label matching is case-insensitive
+% 2) assumes all spaces are converted to underscore (_) as per Luna
+%    default rule for reading channel labels
+% 3) canonical signals are processed in the order in which they are encountered
+% 4) if a reference label is in quotes, then it is interpreted as implying an average
+%    over those channels, i.e.  "M1,M2" is linked mastoid reference.  See examples below
+% 5) if target label is in form 'canonical|text_value' then transducer type EDF header
+%    is set to 'text_value'  (no spaces allowed)
+
+
+
+% -------------------------------------------------------------------------
+%
+% Study-specific exceptions 
+%
+% e.g. CANONICAL group=SHHS
+%   CHAT CCSHS CFS SHHS MrOS SOF MESA WSC NCHSDB 
+%
+% In general, we only study-specific codes if there will otherwise be conflicts
+% in the naming across studies (e.g. 'EEG' means a different thing in different
+% studies)
+%
+% When running NAP, one sets this configuration flag: 
+%   NAP_GROUP=SHHS
+%
+% If the cohort-specific terms are located in a different file:
+%   NAP_OPT_SIGS=/path/to/that/file.txt
+%
+% -------------------------------------------------------------------------
+
+MESA	C4_M1	EEG3
+MESA	nas_pres	Flow
+
+% -------------------------------------------------------------------------
+%
+% Electroencephalography (EEG)
+%
+% -------------------------------------------------------------------------
+
+%%
+%% mastoids: M1 M2 LM
+%%
+
+% against recording reference: M1 M2
+M1=M1_ref,M1-ref
+M1=A1,A1_ref,A1-ref
+M2=M2_ref,M2-ref
+M2=A2,A2_ref,A2-ref
+
+% pre-calculated linked mastoids: LM
+LM=M1M2,A1A2,(M1+M2)/2,(A1+A2)/2,M1+M2,A1+A2
+
+
+%%
+%% centrals: C3 C4
+%%
+
+% against recording reference: C3 C4
+C3=C3-ref,C3_ref,EEG_C3,EEG_C3_ref,EEG_C3-ref
+C4=C4-ref,C4_ref,EEG_C4,EEG_C4_ref,EEG_C4-ref
+
+% pre-computed contralateral mastoid references: C3_M2 C4_M1
+C3_M2=C3-M2,C3/M2,EEG_C3-M2,EEG_C3_M2,EEG_C3/M2
+C3_M2=C3-A2,C3/A2,EEG_C3-A2,EEG_C3_A2,EEG_C3/A2,C3_A2
+C4_M1=C4-M1,C4/M1,EEG_C4-M1,EEG_C4_M1,EEG_C4/M1
+C4_M1=C4-A1,C4/A1,EEG_C4-A1,EEG_C4_A1,EEG_C4/A1,C4_A1
+
+% SHHS/ basic NSRR PSG style pre-computed contralateral mastoid references: C3_M2 C4_M1
+.	C4_M1	EEG
+.	C3_M2	EEG2,EEG(sec),EEG_2,EEG2,EEG_sec,EEG_sec_
+
+% pre-computed linked mastoid references: C3_LM C4_LM
+C3_LM=C3-LM,C3/LM,EEG_C3-LM,EEG_C3_LM,EEG_C3/LM
+C4_LM=C4-LM,C4/LM,EEG_C4-LM,EEG_C4_LM,EEG_C4/LM
+
+
+%%
+%% frontals: F3 F4
+%%
+
+% against recording reference: F3 F4
+F3=F3-ref,F3_ref,EEG_F3,EEG_F3_ref,EEG_F3-ref
+F4=F4-ref,F4_ref,EEG_F4,EEG_F4_ref,EEG_F4-ref
+
+% pre-computed contra-lateral mastoid references: F3_M2 F4_M1
+F3_M2=F3-M2,F3/M2,EEG_F3-M2,EEG_F3_M2,EEG_F3/M2
+F3_M2=F3-A2,F3/A2,EEG_F3-A2,EEG_F3_A2,EEG_F3/A2,F3_A2
+F4_M1=F4-M1,F4/M1,EEG_F4-M1,EEG_F4_M1,EEG_F4/M1
+F4_M1=F4-A1,F4/A1,EEG_F4-A1,EEG_F4_A1,EEG_F4/A1,F4_A1
+
+% pre-computed linked mastoid references: F3_LM F4_LM
+F3_LM=F3-LM,F3/LM,EEG_F3-LM,EEG_F3_LM,EEG_F3/LM
+F4_LM=F4-LM,F4/LM,EEG_F4-LM,EEG_F4_LM,EEG_F4/LM
+
+
+%%
+%% occipitals: O1 O2
+%%
+
+% against recording reference: O1 O2
+O1=O1-ref,O1_ref,EEG_O1,EEG_O1_ref,EEG_O1-ref
+O2=O2-ref,O2_ref,EEG_O2,EEG_O2_ref,EEG_O2-ref
+
+% pre-computed contra-lateral mastoid references: O1_M2 O2_M1
+O1_M2=O1-M2,O1/M2,EEG_O1-M2,EEG_O1_M2,EEG_O1/M2
+O1_M2=O1-A2,O1/A2,EEG_O1-A2,EEG_O1_A2,EEG_O1/A2,O1_A2
+O2_M1=O2-M1,O2/M1,EEG_O2-M1,EEG_O2_M1,EEG_O2/M1
+O2_M1=O2-A1,O2/A1,EEG_O2-A1,EEG_O2_A1,EEG_O2/A1,O2_A1
+
+% pre-computed linked mastoid references: O1_LM O2_LM
+O1_LM=O1-LM,O1/LM,EEG_O1-LM,EEG_O1_LM,EEG_O1/LM
+O2_LM=O2-LM,O2/LM,EEG_O2-LM,EEG_O2_LM,EEG_O2/LM
+
+
+%%
+%% temporals: T3 T4
+%%
+
+% against recording reference: T3 T4
+T3=T3-ref,T3_ref,EEG_T3,EEG_T3_ref,EEG_T3-ref
+T4=T4-ref,T4_ref,EEG_T4,EEG_T4_ref,EEG_T4-ref
+
+% pre-computed contra-lateral mastoid references: T3_M2 T4_M1
+T3_M2=T3-M2,T3/M2,EEG_T3-M2,EEG_T3_M2,EEG_T3/M2
+T3_M2=T3-A2,T3/A2,EEG_T3-A2,EEG_T3_A2,EEG_T3/A2,T3_A2
+T4_M1=T4-M1,T4/M1,EEG_T4-M1,EEG_T4_M1,EEG_T4/M1
+T4_M1=T4-A1,T4/A1,EEG_T4-A1,EEG_T4_A1,EEG_T4/A1,T4_A1
+
+% pre-computed linked mastoid references: T3_LM T4_LM
+T3_LM=T3-LM,T3/LM,EEG_T3-LM,EEG_T3_LM,EEG_T3/LM
+T4_LM=T4-LM,T4/LM,EEG_T4-LM,EEG_T4_LM,EEG_T4/LM
+
+%%
+%% parietals: P3 P4
+%%
+
+% against recording reference: P3 P4
+P3=P3-ref,P3_ref,EEG_P3,EEG_P3_ref,EEG_P3-ref
+P4=P4-ref,P4_ref,EEG_P4,EEG_P4_ref,EEG_P4-ref
+
+% pre-computed contra-lateral mastoid references: P3_M2 P4_M1
+P3_M2=P3-M2,P3/M2,EEG_P3-M2,EEG_P3_M2,EEG_P3/M2
+P3_M2=P3-A2,P3/A2,EEG_P3-A2,EEG_P3_A2,EEG_P3/A2,P3_A2
+P4_M1=P4-M1,P4/M1,EEG_P4-M1,EEG_P4_M1,EEG_P4/M1
+P4_M1=P4-A1,P4/A1,EEG_P4-A1,EEG_P4_A1,EEG_P4/A1,P4_A1
+
+% pre-computed linked mastoid references: P3_LM P4_LM
+P3_LM=P3-LM,P3/LM,EEG_P3-LM,EEG_P3_LM,EEG_P3/LM
+P4_LM=P4-LM,P4/LM,EEG_P4-LM,EEG_P4_LM,EEG_P4/LM
+
+
+%%
+%% EEG rules:
+%%  leads: C3 C4 F3 F4 O1 O2 T3 T4 P3 P4
+%%  mastoids: M1 M2 LM
+%%  contralateral derivations: C3_M2 C4_M1 ...
+%%  linked mastoid derivartions: C3_LM C4_LM ...
+%%
+
+% contra-lateral mastoids 
+
+. C3_M2 C3_M2
+. C3_M2 C3 M2
+
+. C4_M1 C4_M1
+. C4_M1 C4 M1
+
+. F3_M2 F3_M2
+. F3_M2 F3 M2
+
+. F4_M1 F4_M1
+. F4_M1 F4 M1
+
+. O1_M2 O1_M2
+. O1_M2 O1 M2
+
+. O2_M1 O2_M1
+. O2_M1 O2 M1
+
+. T3_M2 T3_M2
+. T3_M2 T3 M2
+
+. T4_M1 T4_M1
+. T4_M1 T4 M1
+
+. P3_M2 P3_M2
+. P3_M2 P3 M2
+
+. P4_M1 P4_M1
+. P4_M1 P4 M1
+
+% linked mastoids
+
+. C3_LM C3_LM
+. C3_LM C3 LM
+. C3_LM C3 "M1,M2"
+
+. C4_LM C4_LM
+. C4_LM C4 LM
+. C4_LM C4 "M1,M2"
+
+. F3_LM F3_LM
+. F3_LM F3 LM
+. F3_LM F3 "M1,M2"
+
+. F4_LM F4_LM
+. F4_LM F4 LM
+. F4_LM F4 "M1,M2"
+
+. O1_LM O1_LM
+. O1_LM O1 LM
+. O1_LM O1 "M1,M2"
+
+. O2_LM O2_LM
+. O2_LM O2 LM
+. O2_LM O2 "M1,M2"
+
+. T3_LM T3_LM
+. T3_LM T3 LM
+. T3_LM T3 "M1,M2"
+
+. T4_LM T4_LM
+. T4_LM T4 LM
+. T4_LM T4 "M1,M2"
+
+. P3_LM P3_LM
+. P3_LM P3 LM
+. P3_LM P3 "M1,M2"
+
+. P4_LM P4_LM
+. P4_LM P4 LM
+. P4_LM P4 "M1,M2"
+
+
+% linked mastoids for midline channels
+
+. Cz_LM Cz_LM
+. Cz_LM Cz LM
+. Cz_LM Cz "M1,M2"
+
+. Pz_LM Pz_LM
+. Pz_LM Pz LM
+. Pz_LM Pz "M1,M2"
+
+. Fz_LM Fz_LM
+. Fz_LM Fz LM
+. Fz_LM Fz "M1,M2"
+
+. Oz_LM Oz_LM
+. Oz_LM Oz LM
+. Oz_LM Oz "M1,M2"
+
+
+% -------------------------------------------------------------------------
+%
+% EOG channels; preferred both referenced against M2
+%
+% -------------------------------------------------------------------------
+
+%% aliases
+
+% EOG against recording reference
+E1=LOC,EOG-L,L-EOG,EOG_Left,EOG_L,LEOG,EOG(L)
+E1=EEG_E1,EOG_E1
+E1=EOG_L_Ref
+
+E2=ROC,EOG-R,R-EOG,EOG_Right,EOG_R,REOG,EOG(R)
+E2=EEG_E2,EOG_E2
+E2=EOG_R_Ref
+
+% EOG against *right* mastoid reference
+E1_M2=E1-M2,E1_M2,E1_A2,E1-A2
+E1_M2=EOG_LOC-M2,EOG_LOC_M2,LOC/M2,LOC-M2,LOC_M2,EOGL-M2
+E1_M2=EOG_LOC-A2,EOG_LOC_A2,LOC/A2,LOC-A2,LOC_A2,EOGL-A2
+
+E2_M2=E2-M2,E2_M2,E2_A2,E2-A2
+E2_M2=EOG_ROC-M2,EOG_ROC_M2,ROC/M2,ROC-M2,ROC_M2,EOGR-M2
+E2_M2=EOG_ROC-A2,EOG_ROC_A2,ROC/A2,ROC-A2,ROC_A2,EOGR-A2
+
+E2_M1=E2-M1,E2_M1,E2_A1,E2-A1
+E2_M1=EOG_ROC-M1,EOG_ROC_M1,ROC/M1,ROC-M1,ROC_M1,EOGR-M1
+E2_M1=EOG_ROC-A1,EOG_ROC_A1,ROC/A1,ROC-A1,ROC_A1,EOGR-A1
+
+%% rules
+% AASM standard has LOC and ROC both referenced against M2
+% but include E2_M1 as a replacement for E2-M2 as needed
+% i.e. if pre-computed
+
+. LOC E1_M2
+. LOC E1 M2
+
+. ROC E2_M2
+. ROC E2 M2
+
+. ROC E2_M1
+. ROC E2 M1
+
+
+% -------------------------------------------------------------------------
+%
+% Surface electromyography (EMG) 
+%
+% assumes 1,2,3 = C,L,R
+% assumes L-R and R-L are equivalent, etc
+% -------------------------------------------------------------------------
+
+cchin=EMG1,Chin1,Chin1_EMG,Chin-C,EMG/C,C_Chin,CCHin,Chin-Ctr
+lchin=EMG2,Chin2,Chin2_EMG,Chin-L,EMG/L,L_Chin,LChin
+rchin=EMG3,Chin3,Chin3_EMG,Chin-R,EMG/R,R_Chin,RChin
+
+chinI=Chin1-Chin2,Chin_1-Chin_2,EMG1-EMG2,EMG_Chin1-Chin2,CChin-LChin,C_Chin-L_Chin,EMG_Chin1_Chin2
+chinI=Chin2-Chin1,Chin_2-Chin_1,EMG2-EMG1,EMG_Chin2-Chin1,LChin-CChin,L_Chin-C_Chin,EMG_Chin2_Chin1
+
+chinII=Chin1-Chin3,Chin_1-Chin_3,EMG1-EMG3,EMG_Chin1-Chin3,CChin-RChin,C_Chin-R_Chin,EMG_Chin1_Chin3
+chinII=Chin3-Chin1,Chin_3-Chin_1,EMG3-EMG1,EMG_Chin3-Chin1,RChin-CChin,R_Chin-C_Chin,EMG_Chin3_Chin1
+
+chinIII=Chin2-Chin3,Chin_2-Chin_3,EMG2-EMG3,EMG_Chin2-Chin3,LChin-RChin,L_Chin-R_Chin,EMG_Chin2_Chin3
+chinIII=Chin3-Chin2,Chin_3-Chin_2,EMG3-EMG2,EMG_Chin3-Chin2,RChin-LChin,R_Chin-L_Chin,EMG_Chin3_Chin2
+
+% rules
+
+.	chinI	chinI
+.	chinI	cchin	lchin
+
+.	chinII	chinII
+.	chinII	cchin	rchin
+
+.	chinIII	chinIII
+.	chinIII	lchin	rchin
+
+.	EMG	chinI,chinII,chinIII
+
+.	EMG	EMG,EMG_chin,Chin_EMG,Chin,Chin_EMG_Gnd
+
+
+
+
+% -------------------------------------------------------------------------
+%
+% Surface EMG monitoring of limb muscles
+%
+% -------------------------------------------------------------------------
+
+% aliases: LAT1 LAT2 RAT1 RAT2
+LAT1=lleg1,LEFT_LEG1,LAT-L
+LAT2=lleg2,LEFT_LEG2,LAT-U
+RAT1=rleg1,RIGHT_LEG1,RAT-L
+RAT2=rleg2,RIGHT_LEG2,RAT-U
+
+% pre-computed bilateral LATs and RATs
+LAT=lleg1_2,LLEG1-LLEG2,LLEG1_LLEG2
+LAT=LLeg,LegL
+LAT=L_Leg,Leg_L
+LAT=L-Leg,Leg-L
+LAT=Leg/L
+LAT=EMG_LLEG+-LLEG-
+LAT=EMG_LAT1-LAT2
+LAT=Leg_L-LEG
+LAT=EMG_TIB_L
+LAT=Tib-L
+
+RAT=rleg1_2,RLEG1-RLEG2,RLEG1_RLEG2
+RAT=RLeg,LegR
+RAT=R_Leg,Leg_R
+RAT=R-Leg,Leg-R
+RAT=Leg/R
+RAT=EMG_RLEG+-RLEG-
+RAT=EMG_RAT1-RAT2
+RAT=Leg_R-LEG
+RAT=EMG_TIB_R
+RAT=Tib-R
+
+% rules
+. LAT LAT
+. LAT LAT1 LAT2
+
+. RAT RAT
+. RAT RAT1 RAT2
+
+% ??to be determined
+LEG=L/RAT,Leg,EMG_LLeg-RLeg,LEG_EMG,LEGS
+LEG=EMG_LLeg_RLeg
+
+
+% -------------------------------------------------------------------------
+%
+% Electrocardiography (2 or 3-channel PSG ECG)
+%
+% -------------------------------------------------------------------------
+
+% electrodes
+
+RA=ECG1,EKG1,ECG_R,ECGR,EKGR,ECG1-REF,ECG1_REF
+LA=ECG2,EKG2,ECG_L,ECGL,EKGL,ECG1-REF,ECG2_REF
+LL=ECG3,EKG3,ECG_LL,ECG1-REF,ECG2_REF
+RL=RL
+
+% leads; if a single ECG channel present, assume is lead I bipolar  
+% othewise, create explicitly from the existing channels
+
+.	ECGI	ECG_LA-RA
+.	ECGI	ECG1-ECG2
+.	ECGI	ECG,EKG
+
+.	ECGI	LA	RA
+.	ECGII	LL	RA
+.	ECGIII	LL	LA
+
+% other labels observed:
+% ECG_EKG2_EKG
+% ECG1-ECG2,EKG1-EKG2,ECG_L-ECG_R
+% ECG1,ECG_I,ECGL,ECG_L,ECGI,EKG1,EKG_I,EKGL,EKG_L,EKGI
+% ECG2,ECG_II,ECGR,ECG_R,ECGII,EKG2,EKG_II,EKGR,EKG_R,EKGII
+% ECG,EKG
+% ECG1,ECG_L,ECGL,ECGI,ECG_I,EKGL,EKG_L,EKGI,EKG_I
+% ECG2,ECG_R,ECGR,ECGII,ECG_II,EKGR,EKG_R,EKGII,EKG_II
+% ECG3,ECG_V
+
+
+% -------------------------------------------------------------------------
+%
+% (Derived) Heart rate (BPM) 
+%
+% -------------------------------------------------------------------------
+
+HR=HR,BPM,HEARTRATE,Heart_Rate,Heart_Rate_CU,HRate,H.R.,DHR
+
+. HR HR
+
+
+
+ 
+% -------------------------------------------------------------------------
+%
+% Oxygen saturation (SpO2)
+%
+% -------------------------------------------------------------------------
+
+SpO2=SAO2,SAT,SpO2_EG,SA02,SO02,PaO2
+
+. SpO2 SpO2
+
+% Q: SpO2-BB
+
+% # remove
+% .	oxstat	oxstat,Ox_Status,OX_stat,OxStatus,STAT,SpO2-Quality,SpO2-Quality_EG
+
+
+% -------------------------------------------------------------------------
+%
+% Plethysmography (volume of blood, from oximetry signal)
+%
+% -------------------------------------------------------------------------
+
+pleth=Plethysmogram,Plesmo,PlethWV,RD-Pleth,RD-Pleth_EG
+
+. pleth pleth
+
+
+% -------------------------------------------------------------------------
+%
+% Pulse
+%
+% -------------------------------------------------------------------------
+
+pulse=PR,Puls,Pulse_Rate,PulseRate,Pulse_EG,Pluse
+
+. pulse	pulse
+
+
+% -------------------------------------------------------------------------
+%
+% CPAP channels (most relevant to ABC, HomePAP)
+%
+% -------------------------------------------------------------------------
+
+% study-specific rules: ABC, HomePAP
+
+cpap_flow=pap_flow,CPAPFLOW,CPAP,CPAP.1,CPAP.2,CPAP.3,PAP.1,
+cpap_flow=CFlow,C-flow,PAPFlow,maskflow,Mask_Flow,PAP_Patient_Flow,EPAP,PAP_FLOW
+
+cpap_pres=pap_pres,Pmask,Pap,C-Pres,CPress,CPAP_Pressure,CPAPPressure,CPAP_Press
+cpap_pres=CPRES,C-Pressure,PAPPress,PAP_Pressure,PAP_Press
+cpap_pres=xPAP_EPAP,xPAP_IPAP,xPAP,xPAP_CPAP,Pressure
+cpap_pres=Mask,CPAPMask
+
+
+% -------------------------------------------------------------------------
+%
+% Sound recording / snore channels
+%
+% -------------------------------------------------------------------------
+
+sound=Mic,SOUND
+
+snore=Snore_CU,Snore_EG,Snorealias
+
+. snore snore
+
+. sound sound
+
+
+% -------------------------------------------------------------------------
+%
+% Airflow: thermister
+%
+% -------------------------------------------------------------------------
+
+therm=TERM,Thermistor,Oral_Thermistor,Nasal/Oral,Aux_AC,EEG_Therm,Thermistor_EG
+
+. therm therm
+
+
+% -------------------------------------------------------------------------
+%
+% Airflow: nasal pressure transducer
+%
+% -------------------------------------------------------------------------
+
+nas_pres=CannulaFlow,CanulaFlow,Cannula,Cannula_Flow,CannulaFow,CannnulaFlow,CannlulaFlow,CannualFlow
+% nas_pres=Airflow
+nas_pres=CannulaNasal,Nasal_Cannula,NASAL_PRES,Nasal_Pressure
+nas_pres=Nasal,Nasal.1,NasalP,NASAL_PRESS,PNasal,NASAL_FLOW,Nasal_EG,nFlow
+nas_pres=NPAF,NP,NPV,NPV_flow,PN,NAF,PNEUMFLOW,PTAF,Ptrans,Prongs,Pressure,Pres
+
+. nas_pres nas_pres	
+
+
+% -------------------------------------------------------------------------
+%
+% Unspecified airflow channels
+%
+% -------------------------------------------------------------------------
+
+airflow=flow,Airflow,Flow_A10,Flow_CU,Flow_Patient
+airflow=air,Airflow1,AIR_FLOW,Flow_EG,Flo
+airflow=Resp_Airflow,Resp_Flow,Resp_FLOW-Ref,Resp_Airflow+-Re
+
+% -------------------------------------------------------------------------
+%
+% Respiratory effort (thoracic and abdominal)
+%
+% -------------------------------------------------------------------------
+
+% aliases
+
+abdomen=ABD,Abdmn,Abdo,ABDOM,Abdomen,Abdomen.1,Abd.1,Abd2,Abdominal,
+abdomen=Effort_ABD,ABDO_EFFORT,A-Effort,Abdomen_EG,Resp_Abdominal,Abdo_Res,Resp_Abdomen,EEG_Abd
+
+thorax=Thorax.1,Thoracic,THOR_RES,Thor,Thorax_EG,THO,THOR_EFFORT,Effort_THO,Resp_Thoracic
+thorax=Chest,Chest1,Resp_Chest,EEG_Chest,RIB_CAGE
+
+sum=Subm,THOR+ABDO,Sum_
+
+% rules
+
+. abdomen abdomen
+. thorax thorax
+. sum sum
+
+
+% -------------------------------------------------------------------------
+%
+% Capnogram (capnography wave form)
+%
+% -------------------------------------------------------------------------
+
+. CAP cap,capno
+
+% -------------------------------------------------------------------------
+%
+% End tidal CO2 (derived value from capnography)
+%
+% -------------------------------------------------------------------------
+
+. EtCO2	EtCO2,CO2_EndTidal,EtC02
+
+%alias	etco2w|"NK EtCO2 Wave" ?
+
+
+
+% -------------------------------------------------------------------------
+%
+% Body position
+%
+% -------------------------------------------------------------------------
+
+pos=position,Body,POS,Pos_Sensor,Position_CU,PositionSen,PosSensor,Pt_Position
+pos=BPOSdc1,BPOSdc2,Compumedics_Body,POSdc,POSdc1,Compumedics_Posi
+pos=Positon,Postion,Postition
+pos=Pro_Tech_Positio,ProTech_Positio,ProTechPositione
+
+. pos pos

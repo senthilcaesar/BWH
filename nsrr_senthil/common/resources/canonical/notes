@@ -1,0 +1,14 @@
+# This file contains notes generated during Signal Harmonization efforts
+
+Flow Notes-
+
+removed N_Pres and N.Press they were in the Stages cohort and were not legitimate signals, they were originally filed under flow/under unspecified airflow.  I looked at 3 EDFs and the signals were flat or artifactual the entire recording.
+
+removed NPV, NPV_flow, PN, NAP, PNEUMFlow, PTAF from Nasal pressure
+
+these channels were small in numbers, the channel names are very specific and generally not what you would think of for nasal pressure
+
+looked into NasalSn,NasOr,NasOr2 these are from the Stages cohort.  Very little documentation was received, keeping these in the unspecified airflow category
+
+for the MaskFlow signal in Homepap there are studies that have a V unit and they are legitimate signals, and there are MaskFlow signals that also have a l/min legitimate signal
+

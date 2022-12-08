@@ -1,0 +1,41 @@
+./run_pup.sh: line 10: matlab: command not found
+run_pup.sh: line 10: matlab: command not found
+2022-10-24 09:24:03.651 MATLAB[3136:25784] CoreText note: Client requested name ".SFNS-Regular", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+2022-10-24 09:24:03.651 MATLAB[3136:25784] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+2022-10-24 09:24:03.655 MATLAB[3136:25784] CoreText note: Client requested name ".SFNS-Bold", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+2022-10-24 09:24:03.668 MATLAB[3136:25784] CoreText note: Client requested name ".SFNS-Regular", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+2022-10-24 09:24:03.669 MATLAB[3136:25784] CoreText note: Client requested name ".SFNS-Bold", it will get Times-Roman rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[NSFont systemFontOfSize:].
+{Operation terminated by user during EventsAndHypnogram
+
+
+In Convert>GeneralImport (line 1598)
+        [Evts,StartTimeNew] = EventsAndHypnogram(system,Filenames(n,:),StartTime,EndTime,[],settings); %% Epochs and events
+
+In Convert (line 30)
+[SigT,ChannelsFs,Evts,Info] = GeneralImport(n);
+
+In ConvertN (line 102)
+            Convert(n1);
+
+In StartHere (line 187)
+    ConvertN();
+} 
+{Operation terminated by user during EventsAndHypnogram
+
+
+In Convert>GeneralImport (line 1598)
+        [Evts,StartTimeNew] = EventsAndHypnogram(system,Filenames(n,:),StartTime,EndTime,[],settings); %% Epochs and events
+
+In Convert (line 30)
+[SigT,ChannelsFs,Evts,Info] = GeneralImport(n);
+
+In ConvertN (line 102)
+            Convert(n1);
+
+In StartHere (line 187)
+    ConvertN();
+} 
+{Operation terminated by the user.
+} 
+{Operation terminated by the user.
+} 

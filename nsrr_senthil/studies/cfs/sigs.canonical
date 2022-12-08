@@ -1,0 +1,13 @@
+%CFS
+
+CFS	csEEG	C4	M1	100	uV
+CFS	csEMG	EMG1	EMG2	100	uV
+CFS	csLOC	E1,LOC	M2	100	mV
+CFS	csROC	E2,ROC	M2	100	mV
+CFS	csECG	ECG1	ECG2	100	mV
+CFS	csCAN	nas_pres	.	100	.
+CFS	csTRM	flow	.	100	.
+CFS	csTHX	thorax	.	100	.
+CFS	csABD	abdomen	.	100	.
+CFS	csOXY	spo2	.	4	.
+CFS	csPOS	position	.	1	.

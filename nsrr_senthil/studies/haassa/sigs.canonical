@@ -1,0 +1,12 @@
+%HAASSA
+
+HAASSA	csEEG	C4_M1	.	100	uV
+HAASSA	csEMG	EMG	.	100	mV
+HAASSA	csLOC	E1	.	100	uV
+HAASSA	csROC	E2	.	100	uV
+HAASSA	csECG	ECG	.	100	mV
+HAASSA	csTRM	flow	.	100	.
+HAASSA	csTHX	thorax	.	100	.
+HAASSA	csABD	abdomen	.	100	.
+HAASSA	csOXY	spo2	.	4	.
+HAASSA	csPOS	position	.	1	.

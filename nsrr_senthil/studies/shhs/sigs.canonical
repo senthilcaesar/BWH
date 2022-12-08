@@ -1,0 +1,13 @@
+%SHHS
+
+SHHS	csEEG	EEG	.	100	uV
+SHHS	csEMG	EMG	.	100	mV
+SHHS	csLOC	E1	M2	100	uV
+SHHS	csROC	E2	M2	100	uV
+SHHS	csECG	ECG	.	100	mV
+SHHS	csTRM	flow	.	100	.
+SHHS	csTRM	therm	.	100	.
+SHHS	csTHX	thorax	.	100	.
+SHHS	csABD	abdomen	.	100	.
+SHHS	csOXY	spo2	.	4	.
+SHHS	csPOS	position	.	1	.

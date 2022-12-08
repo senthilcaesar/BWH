@@ -1,0 +1,8 @@
+NCH	csC3	EEG_C3-M2	.	256	uV
+NCH	csC4	EEG_C4-M1	.	256	uV
+NCH	csF3	EEG_F3-M2	.	256	uV
+NCH	csF4	EEG_F4-M1	.	256	uV
+NCH	csO1	EEG_O1-M2	.	256	uV
+NCH	csO2	EEG_O2-M1	.	256	uV
+NCH	csFlow	flow	.	256	uV
+NCH	csPTAF	ptaf	.	256	uV

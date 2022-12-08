@@ -1,0 +1,13 @@
+%CHAT
+
+CHAT	csEEG	C4	M1	100	uV
+CHAT	csEMG	rchin	lchin	100	mV
+CHAT	csLOC	E1	M2	100	uV
+CHAT	csROC	E2	M2	100	uV
+CHAT	csECG	ECG1	ECG2	100	mV
+CHAT	csCAN	nas_pres	.	100	.
+CHAT	csTRM	flow	.	100	.
+CHAT	csTHX	thorax	.	100	.
+CHAT	csABD	abdomen	.	100	.
+CHAT	csOXY	spo2	.	4	.
+CHAT	csPOS	position	.	1	.

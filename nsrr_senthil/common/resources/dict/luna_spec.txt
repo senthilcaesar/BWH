@@ -1,0 +1,9 @@
+
+CH	factor	Channel label
+%F	factor	Frequency
+B	factor	Band
+SS	factor	Sleep stage
+
+%MTM	num	Power (multitaper)
+PSD	num	Power (Welch)
+RELPSD	num	Relative power (Welch)

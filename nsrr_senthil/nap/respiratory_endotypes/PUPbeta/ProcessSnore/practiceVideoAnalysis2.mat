@@ -1,0 +1,232 @@
+%% September 2, 2019
+
+% Import Melania's video and play between 90-93 seconds
+cd('C:\Users\dw46\Documents\MATLAB\Snore Analysis Aug 2019');
+clear; clc; close all;
+
+
+
+
+% the start and end of the breath you're interested in
+tstart = 246;
+tstop = 252;
+
+
+
+
+% first, create a video object
+dir = 'G:\DPW1817MechanismsBScopeBluePro';
+filename = 'NoOAnoCPAPsup02-1';
+vidObj = VideoReader([dir '\' filename '.avi']);
+
+
+
+
+
+% Open Spike, visualized flow, pmask, and snore. Export as .mat file. name
+% it the same as the corresponding video
+cd(dir);
+load([filename '.mat']);
+cd('C:\Users\dw46\Documents\MATLAB\Snore Analysis Aug 2019');
+
+snoreSig = snore.values;
+flow = Flow.values;
+N = length(snoreSig);
+fs = 1/snore.interval;
+time = snore.start:snore.interval:18000;  %18,000 seconds is 5 hours
+time = time(1:N);
+
+
+
+
+
+
+% Next, process the video
+vidObj.CurrentTime = tstart;
+
+vidHeight = vidObj.Height;
+vidWidth = vidObj.Width;
+
+% Here, you are creating the movie
+% create a "movie structure variable" that will store the video
+s = struct('cdata',zeros(vidHeight,vidWidth,3,'uint8'),'colormap',[]);
+% store the video in the movie structure
+k = 1;
+currTime = [];
+while vidObj.CurrentTime <= tstop
+    currTime = [currTime vidObj.CurrentTime];
+    s(k).cdata = readFrame(vidObj);
+    k = k + 1;
+end
+
+%imshow(s(1).cdata)   %visualize the first frame of the video
+
+
+
+
+
+
+
+% Process the snore signal (scale and remove dc offset so you can play the sound w/o clipping)
+istart = find(time >= tstart,1,'first');
+istop = find(time <= tstop,1,'last');
+
+y = snoreSig(istart:istop);  %grab the breath you're interested in
+y = y - mean(y);    %substract the mean
+ymax = max(y);
+ymin = abs(min(y)); 
+if ymax >= ymin   %scale it so it's between -1 and 1 so no clipping
+    snoreB = (snoreSig-mean(snoreSig(istart:istop)))/ymax;  
+else
+    snoreB = (snoreSig-mean(snoreSig(istart:istop)))/ymin;
+end
+tsnoreWin = 10*fs;  %for plotting 10 sec before and after the flow so you have some surrounding context of the flow
+ysnore = snoreB(istart-tsnoreWin:istop+tsnoreWin);  %for plotting the snore signal
+ttSnore = time(istart-tsnoreWin:istop+tsnoreWin);  %time vector for plotting the snore signal
+
+
+
+%Process the flow signal
+tflow = Flow.start:Flow.interval:18000;
+tflow = tflow(1:Flow.length);
+
+iflowStart = find(tflow >= tstart,1,'first');
+iflowStop = find(tflow <= tstop,1,'last');
+
+fsFlow = 1/Flow.interval;
+tWin = 10*fsFlow;  %for plotting 10 sec before and after the flow so you have some surrounding context of the flow
+yflow = flow(iflowStart-tWin:iflowStop+tWin);
+tt = tflow(iflowStart-tWin:iflowStop+tWin);
+
+% key to the variables:
+% s is the video file just between the start and end times for the breath you're interested in analyzing at the moment
+% fs and time are for the highly sampled snore signal
+% fsflow and tflow are for the slower sampled flow signal
+% snoreB is the WHOLE snoring signal that has been scaled based ONLY on the single breath you want to analyze at the moment
+% istart and istop (and tstart and tstop) are for the snore signal
+% iflowStart and iflowStop are for the flow signal (for the single breath you're analyzing)
+% tWin is the window for plotting the flow signal so you have surrounding context
+% yflow (and its time vector) is the single flow signal with 10 seconds before and after (for plotting)
+
+
+
+
+
+
+
+%% Now, create a movie using getframe
+close all;
+clear F;
+
+figh = figure('Position',[500 100 900 1000]);
+
+F(length(s)) = struct('cdata',[],'colormap',[]);  % declare a structure variable that contains the movie Frames
+
+for n = 1:length(s)
+
+ax1 = subplot(6,1,1:4);
+hold(ax1,'on');
+imshow(s(n).cdata);
+title([dir '\' filename]);
+
+
+ax2 = subplot(6,1,5);
+hold(ax2,'on');
+xlim([ttSnore(1) ttSnore(end)]);
+ylim([-1 1]);
+plot(ttSnore,ysnore);  %these are strange names for variables but it's just for plotting purposes
+ii = find(time >= currTime(n),1,'first');
+plot([time(ii) time(ii)],[-1 1]);
+ylabel('Sound (arbitrary units)');
+
+
+ax3 = subplot(6,1,6);
+xlim([tt(1) tt(end)]);
+ylim([-1 1]);
+hold(ax3,'on');
+plot(tt,yflow);
+ii = find(tflow >= currTime(n),1,'first');
+plot([tflow(ii) tflow(ii)],[-3 3]);
+ylabel('Flow (L/s)');
+xlabel('Time (s)');
+
+
+F(n) = getframe(figh);  % F is the movie frames
+
+
+cla(ax1)
+cla(ax2)  %Later try to just clear the graphics object for the vertical line
+cla(ax3)
+
+end
+close all;
+
+FrameRate = vidObj.FrameRate;
+
+%% To make a video, record your screen while running this cell
+soundsc(snoreB(istart:istop),fs);
+figure('Position',[500 100 900 1000])
+movie(gcf,F,1,FrameRate);
+
+
+
+%% Finally, make an avi video using the computer vision toolbox
+
+subjNum = dir(7:10);
+newVidName = [subjNum filename '.avi'];
+
+% You will need the following functions:
+% vision.VideoFileReader
+% vision.VideoFileWriter  %an object that writes video frames and audio samples to a video file
+% vision.VideoPlayer
+
+
+
+
+% Instantiate (or "declare") a "writer object". This writer object will now
+% do things, like a function, and you send it arguments.
+% videoFWriter = vision.VideoFileWriter(Filename);  %returns a video file writer object videoFWriter that writes video to a file, Filename
+videoFWriter = vision.VideoFileWriter('myfile.avi','FrameRate',vidObj.FrameRate,'AudioInputPort',true); 
+% Set AudioInputPort value to true to write audio data. To write audio and video to a file, you must use the .avi format .
+
+
+% Using this new object you created, you will step through the video one
+% frame at a time and associate each frame with a batch of audio samples.
+% If you have 30 frames/sec, and the audio is 5000 Hz, then you will load
+% 167 audio samples with each video frame
+
+% Filename = videoFWriter(videoFrame,audio) writes one frame of the input video, videoFrame, and one frame of audio samples, audio, to the output file. This applies when you set the AudioInputPort property to true.
+
+myfile.avi = videoFWriter(videoFrame,audio);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

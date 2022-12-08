@@ -1,0 +1,83 @@
+% -------------------------------------------------------------------------
+%
+% Electrocardiography (2 or 3-channel PSG ECG)
+%
+% -------------------------------------------------------------------------
+
+% electrodes
+
+let RA_electrode=RA,ECG1,EKG1,ECG_R,ECGR,EKGR,ECG1-REF,ECG1_REF
+let LA_electrode=LA,ECG2,EKG2,ECG_L,ECGL,EKGL,ECG1-REF,ECG2_REF
+let LL_electrode=LL,ECG3,EKG3,ECG_LL,ECG1-REF,ECG2_REF
+
+% leads; if a single ECG channel present, assume is lead I bipolar  
+% othewise, create explicitly from the existing channels
+
+let ecg_lead1=ECG_LA-RA,ECG1-ECG2
+
+ECG
+ req:
+  sig = ecg_lead1
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+ECG
+ req:
+  sig = ECG,EKG
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+ECG
+ req:
+  sig = LA_electrode
+  ref = RA_electrode
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+ECG
+ req:
+  sig = LL_electrode
+  ref = RA_electrode
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+ECG
+ req:
+  sig = LL_electrode
+  ref = LA_electrode
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+
+
+% nb. other labels observed:
+% ECG_EKG2_EKG
+% ECG1-ECG2,EKG1-EKG2,ECG_L-ECG_R
+% ECG1,ECG_I,ECGL,ECG_L,ECGI,EKG1,EKG_I,EKGL,EKG_L,EKGI
+% ECG2,ECG_II,ECGR,ECG_R,ECGII,EKG2,EKG_II,EKGR,EKG_R,EKGII
+% ECG,EKG
+% ECG1,ECG_L,ECGL,ECGI,ECG_I,EKGL,EKG_L,EKGI,EKG_I
+% ECG2,ECG_R,ECGR,ECGII,ECG_II,EKGR,EKG_R,EKGII,EKG_II
+% ECG3,ECG_V
+
+

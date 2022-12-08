@@ -1,0 +1,17 @@
+% -------------------------------------------------------------------------
+%
+% Airflow for MESA: thermistor
+%made a seperate rule because there are 11 studies that use channel name aux_ac, this is not a %common channel name for thermistor so removed it from the general category to avoid confusion
+% -------------------------------------------------------------------------
+
+% thermistor
+
+let thermistor=therm,Aux_AC
+
+% rules
+
+thermistor
+ group: 
+  MESA
+ req:
+  sig = thermistor

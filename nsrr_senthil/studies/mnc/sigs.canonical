@@ -1,0 +1,20 @@
+%MNC
+
+MNC	csEEG	C4	M1	100	uV
+MNC	csEEG	C4	.	100	uV
+MNC	csEMG	rchin	lchin	100	mV
+MNC	csEMG	chin	.	100	mV
+MNC	csEMG	cchin_l	.	100	mV
+MNC	csLOC	E1	M2	100	uV
+MNC	csLOC	E1	.	100	uV
+MNC	csROC	E2	M2	100	uV
+MNC	csROC	E2	.	100	uV
+MNC	csECG	ECG1	ECG2,ECG3	100	mV
+MNC	csECG	ECG,ECG2	.	100	mV
+MNC	csECG	ECG1_2	.	100	mV
+MNC	csCAN	nas_pres	.	100	.
+MNC	csTRM	therm	.	100	.
+MNC	csTHX	thorax	.	100	.
+MNC	csABD	abdomen	.	100	.
+MNC	csOXY	spo2	.	4	.
+MNC	csPOS	position	.	1	.

@@ -1,0 +1,18 @@
+This is the version of AnalyzeData used for this analysis.
+
+The 'Flow index' (col A) is used mostly throughout processing to refer to individual pts.
+The FlowIndx goes up to 54, but only 41 pts were ever included in analysis, as shown in 'Flow&Edi' (col M).
+
+We ended up removing Pt 1264 from this analysis because of pcrit interference on flow signal.
+Pt1264 is FlowIndx 11, and the ninth in Flow&Edi.
+
+
+
+
+Candidates for stable breathing signals (data files in M:\temp\...)
+Good, pt1863 @ 18203sec+60sec, 18630sec+60sec
+Bad, pt1836 @ 14234sec+60sec, 16648sec+60sec, 16717sec+60sec
+
+Candidates for arousal breathing signals (data files in M:\temp\...)
+Good, ...
+Bad, ...

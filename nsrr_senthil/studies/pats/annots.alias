@@ -1,0 +1,50 @@
+nsrr-remap	F
+
+%arousals
+remap	arousal_standard|"Arousal ()"|"Arousal|Arousal ()"|"Arousal|Arousal (Arousal)"|"Arousal|Arousal (Standard)"|"Arousal|Arousal (STANDARD)"|"ASDA arousal|Arousal (ADSA)"|"ASDA arousal|Arousal (asda)"|"ASDA arousal|Arousal (ASDA)"|"Arousal (Asda)"|"Arousal (ASDA)"
+remap	arousal_spontaneous|"Arousal (ARO SPONT)"|"Spontaneous arousal|Arousal (apon aro)"|"Spontaneous arousal|Arousal (ARO SPONT)"|"Spontaneous arousal|Arousal (spon aro)"|"Spontaneous arousal|Arousal (SPON ARO)"
+remap	arousal_external|"External arousal|Arousal (External Arousal)"
+remap	arousal_respiratory|"Arousal resulting from respiratory effort|Arousal (ARO RES)"|"Arousal resulting from respiratory effort|Arousal (RESP ARO)"|"RERA"|"Arousal (ARO RES)"|"Respiratory effort related arousal|RERA"
+remap	arousal_cheshire|"Arousal resulting from Chin EMG|Arousal (Cheshire)"|"Arousal resulting from Chin EMG|Arousal (CHESHIRE)"
+
+%respiratory events
+remap	apnea_obstructive|"Obstructive Apnea"|"Obstructive apnea|Obstructive Apnea"
+remap	apnea_central|"Central Apnea"|"Central apnea|Central Apnea"
+remap	apnea_mixed|"Mixed Apnea"|"Mixed apnea|Mixed Apnea"|"Unsure"|"Unsure|Unsure"
+remap	hypopnea|"Hypopnea"
+remap	periodic_breathing|"Periodic Breathing"|"Periodic breathing|Periodic Breathing"
+remap	respiratory_paradox|"Respiratory Paradox"
+remap	desat|"SpO2 desaturation"|"SpO2 desaturation|SpO2 desaturation"
+
+%sleep staging	
+remap	NREM1|"Stage 1 sleep|1"
+remap	NREM2|"Stage 2 sleep|2"
+remap	NREM3|"Stage 3 sleep|3"
+remap	NREM4|"Stage 4 sleep|4"
+remap	REM|"REM sleep|5"
+remap	wake|"Wake"|"Wake|0"
+remap	unscored|"Unscored"|"Unscored|9"
+remap	movement|"Movement|6"
+
+%plms
+remap	plm_left|"Periodic leg movement - left|PLM (Left)"|"PLM (Left)"
+remap	plm_right|"Periodic leg movement - right|PLM (Right)"|"PLM (Right)"
+
+%limb movement
+remap	lm_left|"Limb Movement (Left)"|"Limb movement - left|Limb Movement (Left)"
+remap	lm_right|"Limb Movement (Right)"|"Limb movement - right|Limb Movement (Right)"
+
+%artifacts
+remap	artifact_respiratory|"Respiratory artifact|Respiratory artifact"|"Respiratory artifact"
+remap	artifact_proximal_ph|"Proximal pH artifact"
+remap	artifact_distal_ph|"Distal pH artifact"
+remap	artifact_blood_pressure|"Blood pressure artifact"
+remap	artifact_tcco2|"TcCO2 artifact"
+remap	artifact_spo2|"SpO2 artifact"|"SpO2 artifact|SpO2 artifact"
+remap	artifact_etco2|"EtCO2 artifact"|"EtCO2 artifact|EtCO2 artifact"
+
+%misc
+remap	bradycardia|"Bradycardia"
+remap	tachycardia|"Tachycardia"
+remap	tachycardia_narrowcomplex|"Narrow Complex Tachycardia"|"Narrow complex tachycardia|Narrow Complex Tachycardia"
+remap	notes|"Technician Notes"
