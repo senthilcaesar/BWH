@@ -2,11 +2,11 @@
 close all; clear, clc
 
 %PCA on simulated data
+loop_thr = linspace(0.1,1,10);
 
-loop_thr = linspace(0,1,11);
-for i=1:length(loop_thr)
+for idx=1:length(loop_thr)
     % data
-    x = [ 1*randn(1000,1) loop_thr(i)*randn(1000,1) ];
+    x = [ 1*randn(1000,1) loop_thr(idx)*randn(1000,1) ];
     
     % rotation matrix
     th = pi/4;
@@ -26,9 +26,9 @@ for i=1:length(loop_thr)
     xlabel('C3'), ylabel('C4')
     axis square
     
-    %% PCA via eigendecomposition
+    %-------------- PCA via eigendecomposition -------------------------
     
-    % mean-center
+    % mean-center ( Data must have zero mean before computing covariance )
     y = y - mean(y,1);
     
     % covariance matrix
@@ -60,7 +60,11 @@ for i=1:length(loop_thr)
     xCord = repmat(1:4,4,1);  % generate x-coordinates
     yCord = xCord';           % generate y-coordinates
     subplot(243);
-    compTS = y * evecs;       % Component time series
+
+    % Projection
+    compTS = y * evecs;       % Dot product (If the degree angle between two vector is less than 90, the resulting
+                              % dot product will be positive.The dot product is a single 
+                              % number that provides information about the relationship between two vectors)   
     PC1 = compTS(:,1);
     PC2 = compTS(:,2);
     newY = y;
@@ -118,19 +122,26 @@ for i=1:length(loop_thr)
     title('Eigen Spectrum')
     text([1,2],evals(:),compose('%f',evals(:)),'HorizontalAlignment','center','VerticalAlignment','bottom')
     ylim([min(ylim),min(ylim)+range(ylim)*1.05])
-    fname = ['/Users/sq566/Desktop/' num2str(i) '.png'];
+    fname = ['/Users/sq566/Desktop/' num2str(idx) '.png'];
     print(figure(1),fname,'-r300','-dpng');
 end
 
+% --------------- Important notes --------------------
+% 1) var(y*evecs) is the same as evecs'*covmat*evecs;
+% 2) covmat*evecs is the same as evecs*evals
+%    Intuition behind multiplying covmat with evecs
+%    The eigen vectors in evecs points to the biggest direction of variance
+%    in covmat (covariance matrix)
 
-%% Plot 3d
-%figure(2)
-%a1 = y(:,1);
-%b1 = y(:,2);
-%c1 = PC2;
-%cmp = linspace(min(a1),max(b1),numel(c1));
-%scatter3(a1,b1,c1, [], cmp,'filled'); 
-%colorbar;
-%view(-80,15)
-%xlabel('C3'); ylabel('C4'); zlabel('Comp2')
-%grid on;grid minor 
+% ------------------- Plot 3d ------------------------
+% figure(2)
+% a1 = y(:,1);
+% b1 = y(:,2);
+% c1 = PC1;
+% cmp = linspace(min(a1),max(b1),numel(c1));
+% scatter3(a1,b1,c1, [], cmp,'filled'); 
+% colorbar;
+% view(-80,15)
+% xlabel('C3'); ylabel('C4'); zlabel('PC1')
+% grid on;grid minor 
+
