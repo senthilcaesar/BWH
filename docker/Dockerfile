@@ -47,8 +47,12 @@ RUN cd $HOME/Programme \
 
 RUN echo 'options(defaultPackages=c(getOption("defaultPackages"),"luna" ) )' > ~/.Rprofile
 
-# copy the app directory into the image
-COPY * /srv/shiny-server/
+# expose port
+EXPOSE 3838
 
-# run app
-CMD ["/usr/bin/shiny-server"]
+# copy the app directory into the image
+RUN mkdir /srv/shiny-server/moonlight
+COPY * /srv/shiny-server/moonlight
+
+# run app on container start
+CMD ["R", "-e", "shiny::runApp('/srv/shiny-server/moonlight', host = '0.0.0.0', port = 3838)"]
