@@ -28,7 +28,7 @@ if [ ${install_lunaR} -eq 1 ]
 then
     cd $HOME
     git clone https://github.com/remnrem/luna.git
-    FFTW=${fftw_dir} R CMD INSTALL -l ${lib_install_loc} luna
+    FFTW=${fftw_dir} LGBM=1 LGBM_PATH=${lgbm_dir} R CMD INSTALL -l ${lib_install_loc} luna
 else
     echo "Skipping luna-R installation"
 fi
