@@ -13,11 +13,7 @@ then
     git clone https://github.com/remnrem/luna-base.git
     cd luna-base
     make -j4 FFTW=${fftw_dir} LGBM=1 LGBM_PATH=${lgbm_dir}
-    echo alias luna=$HOME/luna-base/luna >> $HOME/.bash_profile
-    echo alias destrat=$HOME/luna-base/destrat >> $HOME/.bash_profile
-    echo alias behead=$HOME/luna-base/behead >> $HOME/.bash_profile
-    echo alias fixrows=$HOME/luna-base/fixrows >> $HOME/.bash_profile
-    source ~/.bash_profile
+    cp luna destrat behead fixrows /usr/local/bin
 else
     echo "Skipping luna-base installation"
 fi
