@@ -1,0 +1,21 @@
+proxy:
+    title: Euler's number
+    landing-page: /
+    heartbeat-rate: 15000
+    heartbeat-timeout: 900000
+    container-wait-time: 800000
+    container-log-path: ./container-logs
+    support:
+      mail-to-address: smpurcell@bwh.harvard.edu
+  
+    authentication: none
+
+    docker:
+      internal-networking: false
+
+    specs:
+    - id: euler
+      display-name: Euler’s number
+      container-cmd: ["R", "-e", "shiny::runApp('/root/euler')"]
+      container-image: openanalytics/shinyproxy-template
+      max-instances: 3
