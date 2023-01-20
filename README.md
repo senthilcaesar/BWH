@@ -1,1 +1,1 @@
-![](shinyproxy.png)
+![](shinyproxy.png =250x250)
