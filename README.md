@@ -17,7 +17,7 @@ a container spins up and serves the application.
 
 ## 1. Java 8
 
-Download and Install [OpenJDK like Zulu](https://www.azul.com/downloads/?package=jdk)
+### Download and Install [OpenJDK like Zulu](https://www.azul.com/downloads/?package=jdk)
 * Select Java version 8 LTS
 ```
 sudo apt install ./zulu8.68.0.19-ca-jdk8.0.362-linux_amd64.deb
@@ -25,7 +25,7 @@ sudo apt install ./zulu8.68.0.19-ca-jdk8.0.362-linux_amd64.deb
 
 ## 2. Docker
 
-Download and Install [Docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+### Download and Install [Docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
 ShinyProxy needs to connect to the docker daemon to spin up the containers for the Shiny apps.<br /> 
 By default ShinyProxy will do so on port 2375 of the docker host.<br /> In order to allow for connections on port 2375, 
@@ -39,7 +39,7 @@ sudo systemctl restart docker
 ```
 
 ## 3. ShinyProxy
-Download and Install [ShinyProxy](https://www.shinyproxy.io/downloads/)
+### Download and Install [ShinyProxy](https://www.shinyproxy.io/downloads/)
 . Open the link and download the follwing two files to your machine
 ```ruby
  shinyproxy_2.6.1_amd64.deb
