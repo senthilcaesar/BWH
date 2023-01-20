@@ -55,8 +55,8 @@ Once docker is installed on your system, you can pull (i.e. download) the docker
 sudo docker pull openanalytics/shinyproxy-demo
 ```
 ## 5. ShinyProxy configuration
-The server configuration is mainly done in a file named `application.yml`. This file should be in the same folder 
-where you will launch the `shinyproxy-2.6.1.jar` file in next step. The format of the file is YAML
+The server configuration is mainly done in a file named `application.yml`. Specify properties in the YAML format.
+This file should be in the same folder where you will launch the `shinyproxy-2.6.1.jar` file in next step. 
 ```
 proxy:
     title:
