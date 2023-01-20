@@ -80,3 +80,10 @@ proxy:
       container-cmd: ["R", "-e", "shiny::runApp('/root/euler')"]
       container-image: openanalytics/shinyproxy-template
  ```
+ ## 6. Running ShinyProxy 
+ShinyProxy can be run using the following command
+```
+java -jar shinyproxy-2.6.1.jar --server.port=9191
+```
+less than 10 seconds later, you can point your browser to http://localhost:9191 and use your Shiny apps!
+
