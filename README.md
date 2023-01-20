@@ -38,7 +38,7 @@ sudo systemctl restart docker
 
 ## 3. ShinyProxy
 Download and Install [ShinyProxy](https://www.shinyproxy.io/downloads/)
-You need to download the below two files
+.Please download the follwing two files to your machine
 ```ruby
  shinyproxy_2.6.1_amd64.deb
  shinyproxy-2.6.1.jar
