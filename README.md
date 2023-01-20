@@ -47,3 +47,10 @@ Download and Install [ShinyProxy](https://www.shinyproxy.io/downloads/)
  ```
  sudo apt install ./shinyproxy_2.6.1_amd64.deb
  ```
+## 4. Pulling the demo image 
+In order to run ShinyProxy, you need… Shiny apps. In ShinyProxy such Shiny apps are typically shipped in docker containers and the `openanalytics/shinyproxy-demo` is a demo image that has been made available to start playing with Shiny Proxy.
+
+Once docker is installed on your system, you can pull (i.e. download) the docker image with the demo applications using
+```
+sudo docker pull openanalytics/shinyproxy-demo
+```
