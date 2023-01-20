@@ -23,4 +23,4 @@ Download [OpenJDK like Zulu](https://www.azul.com/downloads/?package=jdk)
 
 ## 2. Docker
 
-Download [Docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+Download and Install [Docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
