@@ -30,4 +30,6 @@ By default ShinyProxy will do so on port 2375 of the docker host. In order to al
 the startup options need to be edited.
 on an Ubuntu 16.04 LTS, 18.04 LTS and 20.04 LTS or a CentOS 7, RHEL 7, CentOS 8 and RHEL 8 system 
 (or a similar system that uses systemd) with Docker installed from the Docker repositories, one can change the configuration using:
-    sudo systemctl edit docker
+```
+sudo systemctl edit docker
+```
