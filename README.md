@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/Platform-linux--64%20-blue.svg)
 ![](https://img.shields.io/badge/ShinyProxy-2.6.1%20-blue.svg)
 ![](https://img.shields.io/badge/Docker-20.10.22%20-blue.svg)
-![](https://img.shields.io/badge/OpenJDK Zulu-8%20-blue.svg)
+![](https://img.shields.io/badge/OpenJDKZulu-8%20-blue.svg)
 
 
 # ShinyProxy
