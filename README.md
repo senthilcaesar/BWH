@@ -1,6 +1,6 @@
 ![](shinyproxy.png)
 
-![](https://img.shields.io/badge/Platform-linux--64%20-blue.svg)
+![](https://img.shields.io/badge/Platform-Ubuntu--64%20-blue.svg)
 ![](https://img.shields.io/badge/ShinyProxy-2.6.1%20-blue.svg)
 ![](https://img.shields.io/badge/Docker-20.10.22%20-blue.svg)
 ![](https://img.shields.io/badge/OpenJDK_Zulu-8%20-blue.svg)
