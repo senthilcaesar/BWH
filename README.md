@@ -1,7 +1,7 @@
 ![](shinyproxy.png)
 
 ![Platform](https://img.shields.io/badge/Platform-linux--64%20-blue.svg)
-![ShinyProxy](https://img.shields.io/badge/ShinyProxy-shinyproxy-2.6.1--64%20-blue.svg)
+![ShinyProxy](https://img.shields.io/badge/ShinyProxy-2.6.1%20-blue.svg)
 
 
 # ShinyProxy
