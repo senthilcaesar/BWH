@@ -15,7 +15,7 @@ a container spins up and serves the application.
 
 # Installation
 
-## 1. Java 8
+## 1) Java 8
 
 #### Download and Install [OpenJDK like Zulu](https://www.azul.com/downloads/?package=jdk)
 * Select Java version 8 LTS
@@ -23,7 +23,7 @@ a container spins up and serves the application.
 sudo apt install ./zulu8.68.0.19-ca-jdk8.0.362-linux_amd64.deb
 ```
 
-## 2. Docker
+## 2) Docker
 
 #### Download and Install [Docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
@@ -38,7 +38,7 @@ Next, save the file, close the editor and restart Docker using:
 sudo systemctl restart docker
 ```
 
-## 3. ShinyProxy
+## 3) ShinyProxy
 #### Download and Install [ShinyProxy](https://www.shinyproxy.io/downloads/)
 . Open the link and download the follwing two files to your machine
 ```ruby
@@ -49,14 +49,14 @@ sudo systemctl restart docker
  ```
  sudo apt install ./shinyproxy_2.6.1_amd64.deb
  ```
-## 4. Pulling the demo image 
+## 4) Pulling the demo image 
 In order to run ShinyProxy, you need Shiny apps. In ShinyProxy such Shiny apps are typically shipped in docker containers and the `openanalytics/shinyproxy-demo` is a demo image that has been made available to start playing with Shiny Proxy.
 
 Once docker is installed on your system, you can pull (i.e. download) the docker image with the demo applications using
 ```
 sudo docker pull openanalytics/shinyproxy-demo
 ```
-## 5. ShinyProxy configuration
+## 5) ShinyProxy configuration
 The server configuration is mainly done in a file named `application.yml`. Specify properties in the YAML format.<br />
 This file should be in the same folder where you will launch the `shinyproxy-2.6.1.jar` file in the next step.<br />
 Copy the below contents and save it to `application.yml'
@@ -82,7 +82,7 @@ proxy:
       container-cmd: ["R", "-e", "shiny::runApp('/root/euler')"]
       container-image: openanalytics/shinyproxy-template
  ```
- ## 6. Running ShinyProxy 
+ ## 6) Running ShinyProxy 
 ShinyProxy can be run using the following command
 ```
 java -jar shinyproxy-2.6.1.jar --server.port=9191
