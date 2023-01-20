@@ -85,6 +85,6 @@ ShinyProxy can be run using the following command
 ```
 java -jar shinyproxy-2.6.1.jar --server.port=9191
 ```
-Less than 10 seconds later, you can point your browser to http://localhost:9191 and use your Shiny apps!
+Less than 10 seconds later, you can point your browser to http://localhost:9191 and use your Shiny apps!<br />
 More advanced information on the usage and configuration of ShinyProxy is available on the [Configuration](https://www.shinyproxy.io/documentation/configuration/) page.
 
