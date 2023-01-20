@@ -43,4 +43,7 @@ Download and Install [ShinyProxy](https://www.shinyproxy.io/downloads/)
  shinyproxy_2.6.1_amd64.deb
  shinyproxy-2.6.1.jar
  ```
-
+ To install shinyproxy run
+ ```
+ sudo apt install ./shinyproxy_2.6.1_amd64.deb
+ ```
