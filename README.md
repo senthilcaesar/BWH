@@ -18,7 +18,7 @@ a container spins up and serves the application.
 ## 1. Java 8
 
 Download and Install [OpenJDK like Zulu](https://www.azul.com/downloads/?package=jdk)
-* Java version 8 LTS
+* Select Java version 8 LTS
 ```
 sudo apt install ./zulu8.68.0.19-ca-jdk8.0.362-linux_amd64.deb
 ```
