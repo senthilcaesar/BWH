@@ -7,9 +7,9 @@
 
 
 # ShinyProxy
-ShinyProxy is your favourite way to deploy Shiny apps in an enterprise context.
+ShinyProxy is your favourite way to deploy Shiny apps in an enterprise context.<br />
 When deploying a Shiny application with ShinyProxy, the application is simply bundled 
-as an R package and installed into a Docker image. Every time a user runs an application, 
+as an R package and installed into a Docker image.<br /> Every time a user runs an application, 
 a container spins up and serves the application.
 
 
@@ -25,9 +25,9 @@ Download and Install [OpenJDK like Zulu](https://www.azul.com/downloads/?package
 
 Download and Install [Docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
-ShinyProxy needs to connect to the docker daemon to spin up the containers for the Shiny apps. 
-By default ShinyProxy will do so on port 2375 of the docker host. In order to allow for connections on port 2375, 
-the startup options need to be edited. Edit `/lib/systemd/system/docker.service` and replace the relevant line with
+ShinyProxy needs to connect to the docker daemon to spin up the containers for the Shiny apps.<br /> 
+By default ShinyProxy will do so on port 2375 of the docker host.<br /> In order to allow for connections on port 2375, 
+the startup options need to be edited.<br /> Edit `/lib/systemd/system/docker.service` and replace the relevant line with
 ```
 ExecStart=/usr/bin/dockerd -H unix:// -D -H tcp://127.0.0.1:2375
 ```
@@ -48,15 +48,15 @@ Download and Install [ShinyProxy](https://www.shinyproxy.io/downloads/)
  sudo apt install ./shinyproxy_2.6.1_amd64.deb
  ```
 ## 4. Pulling the demo image 
-In order to run ShinyProxy, you need… Shiny apps. In ShinyProxy such Shiny apps are typically shipped in docker containers and the `openanalytics/shinyproxy-demo` is a demo image that has been made available to start playing with Shiny Proxy.
+In order to run ShinyProxy, you need Shiny apps. In ShinyProxy such Shiny apps are typically shipped in docker containers and the `openanalytics/shinyproxy-demo` is a demo image that has been made available to start playing with Shiny Proxy.
 
 Once docker is installed on your system, you can pull (i.e. download) the docker image with the demo applications using
 ```
 sudo docker pull openanalytics/shinyproxy-demo
 ```
 ## 5. ShinyProxy configuration
-The server configuration is mainly done in a file named `application.yml`. Specify properties in the YAML format.
-This file should be in the same folder where you will launch the `shinyproxy-2.6.1.jar` file in next step.
+The server configuration is mainly done in a file named `application.yml`. Specify properties in the YAML format.<br />
+This file should be in the same folder where you will launch the `shinyproxy-2.6.1.jar` file in next step.<br />
 Copy the below contents and save it to `application.yml'
 ```
 proxy:
