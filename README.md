@@ -73,7 +73,6 @@ proxy:
     authentication: none
 
     docker:
-      internal-networking: false
       url: http://localhost:2375
       port-range-start: 20000
 
@@ -86,11 +85,11 @@ proxy:
  ## 6) Running ShinyProxy 
 ShinyProxy can be started using the following command
 ```
-systemctl start shinyproxy
+sudo systemctl start shinyproxy
 ```
 To see whether the service is up and running, one can use:
 ```
-systemctl status shinyproxy
+sudo systemctl status shinyproxy
 ```
 Less than 10 seconds later, you can point your browser to http://localhost:9191 and use your Shiny apps!<br />
 More advanced information on the usage and configuration of ShinyProxy is available on the [Configuration](https://www.shinyproxy.io/documentation/configuration/) page.
