@@ -83,9 +83,9 @@ proxy:
       container-image: openanalytics/shinyproxy-template
  ```
  ## 6) Running ShinyProxy 
-ShinyProxy can be started using the following command
+Restart ShinyProxy daemon
 ```
-sudo systemctl start shinyproxy
+sudo systemctl restart shinyproxy
 ```
 To see whether the service is up and running, one can use:
 ```
