@@ -26,7 +26,10 @@ sudo apt install ./zulu8.68.0.19-ca-jdk8.0.362-linux_amd64.deb
 ## 2) Docker
 
 #### Download and Install [Docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-
+To check whether the docker daemon is up and running, use
+```
+sudo systemctl status docker
+```
 ShinyProxy needs to connect to the docker daemon to spin up the containers for the Shiny apps.<br /> 
 By default ShinyProxy will do so on port 2375 of the docker host.<br /> In order to allow for connections on port 2375, 
 the startup options need to be edited.<br /> Edit `/lib/systemd/system/docker.service` and replace the relevant line with
