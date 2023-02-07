@@ -1,11 +1,44 @@
 # Monitoring
-When you bring multiple Shiny apps to your end users, it may be interesting to track usage of the different applications over time. It may a.o. help to understand your user base and to prioritize maintenance work for the different applications
+When you bring multiple Shiny apps to your end users, it may be interesting to track usage of the different applications over time.<br /> 
+It may a.o. help to understand your user base and to prioritize maintenance work for the different applications
 
 ## 1) Prometheus
 Download [Prometheus monitoring system](https://prometheus.io/download/)
 ```
 tar -xvzf prometheus-2.42.0.linux-amd64.tar.gz
-cp prometheus.yml prometheus-2.41.0.linux-amd64
+cd prometheus-2.42.0.linux-amd64
+```
+Copy and paste the below contents to `prometheus.yml`
+```
+# my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  - job_name: 'shinyproxy'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      # note: this is the port of ShinyProxy Actuator services, not the port of Prometheus which is by default also 9090
+      - targets: ['localhost:9090']
+  - job_name: node
+    static_configs:
+      - targets: ['localhost:9100']
 ```
 To start the ShinyProxy monitoring run
 ```
