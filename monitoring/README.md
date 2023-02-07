@@ -66,3 +66,7 @@ wget https://dl.grafana.com/enterprise/release/grafana-enterprise_9.3.6_amd64.de
 sudo dpkg -i grafana-enterprise_9.3.6_amd64.deb
 ```
 Next, access Grafana on http://localhost:3000 and login using admin:admin. Next add Prometheus as datasource, remember that Prometheus is running at http://localhost:7070
+
+## 4) Server Monitoring, Prometheus and Grafana Tutorial
+[YouTube tutorial](https://youtu.be/9TJx7QTrTyo)
+
