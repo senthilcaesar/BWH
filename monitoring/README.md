@@ -52,7 +52,7 @@ Download [node_exporter](https://prometheus.io/download/#:~:text=94f1fa4cd28f057
 ```
 tar -xvzf node_exporter-1.5.0.linux-amd64.tar.gz
 ```
-To start exporting metrics run
+To start exporting system metrics run
 ```
 cd node_exporter-1.5.0.linux-amd64
 ./node_exporter
