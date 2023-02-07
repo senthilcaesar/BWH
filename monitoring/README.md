@@ -3,7 +3,7 @@ When you bring multiple Shiny apps to your end users, it may be interesting to t
 It may a.o. help to understand your user base and to prioritize maintenance work for the different applications
 
 ## 1) Prometheus
-Download [Prometheus monitoring system](https://prometheus.io/download/)
+Download [Prometheus monitoring system](https://prometheus.io/download/#:~:text=amd64-,prometheus,-The%20Prometheus%20monitoring)
 ```
 tar -xvzf prometheus-2.42.0.linux-amd64.tar.gz
 cd prometheus-2.42.0.linux-amd64
