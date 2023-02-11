@@ -22,4 +22,6 @@ The docker `buildx build` subcommand has a number of flags which determine where
 We can check the image with the imagetools subcommand which confirms the architecture versions that are included in the image:
 ```python
 docker buildx imagetools inspect "remnrem/moonlight"
+docker pull remnrem/moonlight
+docker inspect --format "{{.Architecture}}" "remnrem/moonlight"
 ```
