@@ -14,6 +14,6 @@ docker buildx inspect --bootstrap
 Now, you’ll jumpstart your multi-architecture build with the single docker buildx command shown below:
 ```python
 docker buildx build --push \
---platform linux/amd64,linux/arm64 \
+--platform=linux/amd64,linux/arm64 \
 --tag your_docker_username/multi_arch_sample:buildx-latest .
 ```
