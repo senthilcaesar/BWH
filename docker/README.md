@@ -4,6 +4,6 @@ Enter the following command to create a new builder, which we’ll call mybuilde
 docker buildx create --name mybuilder --use --bootstrap
 ```
 You can inspect a new builder by entering
-```java
+```go
 docker buildx inspect mybuilder
 ```
