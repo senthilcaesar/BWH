@@ -4,7 +4,7 @@
 ```python
 docker buildx create --name mybuilder --use --bootstrap
 ```
-#### 2) You can inspect a new builder by entering
+#### 2) You can inspect the builder by entering
 ```python
 docker buildx inspect mybuilder
 ```
