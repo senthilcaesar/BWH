@@ -18,3 +18,8 @@ docker buildx build --push \
 --tag your_docker_username/multi_arch_sample:buildx-latest .
 ```
 The docker `buildx build` subcommand has a number of flags which determine where the final image will be stored. By default, i.e. if none of the flags are specified, the resulting image will remain captive in docker’s internal build cache. This is unlike the regular `docker build` command which stores the resulting image in the local `docker images` list.
+
+We can check the image with the imagetools subcommand which confirms the architecture versions that are included in the image:
+```
+docker buildx imagetools inspect "remnrem/moonlight"
+```
