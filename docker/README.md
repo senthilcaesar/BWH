@@ -1,19 +1,19 @@
 ## Docker Multi-Platform build notes
 #### 1) Enter the following command to create a new builder, which we’ll call mybuilder
 
-```python
+```R
 docker buildx create --name mybuilder --use --bootstrap
 ```
 #### 2) You can inspect the builder by entering
-```python
+```R
 docker buildx inspect mybuilder
 ```
 #### 3) You can also see what runtime platforms your current builder instance supports by running
-```python
+```R
 docker buildx inspect --bootstrap
 ```
 #### 4) Now, you’ll jumpstart your multi-architecture build with the single docker buildx command shown below
-```python
+```R
  docker buildx build --platform=linux/arm64,linux/amd64 --push --tag remnrem/moonlight -f Dockerfile .
 
 ```
