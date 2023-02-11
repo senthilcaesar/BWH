@@ -20,7 +20,7 @@ docker buildx inspect --bootstrap
 The docker `buildx build` subcommand has a number of flags which determine where the final image will be stored. By default, i.e. if none of the flags are specified, the resulting image will remain captive in docker’s internal build cache. This is unlike the regular `docker build` command which stores the resulting image in the local `docker images` list.
 
 #### 5) We can check the image with the imagetools subcommand which confirms the architecture versions that are included in the image
-```julia
+```perl
 docker buildx imagetools inspect "remnrem/moonlight"
 docker pull remnrem/moonlight
 docker inspect --format "{{.Architecture}}" "remnrem/moonlight"
