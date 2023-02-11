@@ -13,7 +13,7 @@ docker buildx inspect mybuilder
 docker buildx inspect --bootstrap
 ```
 #### 4) Now, you’ll jumpstart your multi-architecture build with the single docker buildx command shown below
-```python
+```R
  docker buildx build --platform=linux/arm64,linux/amd64 --push --tag remnrem/moonlight -f Dockerfile .
 
 ```
