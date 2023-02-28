@@ -59,9 +59,9 @@ id_53	  20	  F	  White
 id_55	  23	  F	  White
 id_75	  33	  F	  White
 id_94	  30	  F	  White
-id_125	28	  F	  White
-id_127	29	  M	  White
-id_129	39	  M	  White
+id_125	  28	  F	  White
+id_127	  29	  M	  White
+id_129	  39	  M	  White
 id_1	  25	  M	  African American
 ```
 Notes: Infant sex information is missing for `id_60`
