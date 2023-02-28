@@ -94,8 +94,9 @@ ls ../msp-edfs/*_Import.xml | wc -l
 
 Other pertinent points include:
 
-  - there are 3 Maternal race/ethnicity (self-reported) within MSP (labels `White` `African American` `Asian/Indian`
-    that correspond to IDs with the digit 1, 2, 3 respectively).
+  - The raw data is scored and annotated by a Registered PSG Technologist (RPSGT). Exported annotations by RemLogic into XML files
+  - There are 3 Maternal race/ethnicity (self-reported) within MSP (labels `White` `African American` `Asian/Indian`
+    that correspond to IDs with the digit 1, 2, 3 respectively)
   - Equipment and device used to capture the raw polysomnography data `Natus RemLogic N7000`
   - | Sleep Stage |  |
     |-----|-----|
