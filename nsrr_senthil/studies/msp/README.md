@@ -35,7 +35,8 @@ ls ../msp-edfs/*.edf | wc -l
 Key demographic data (including site) are in
 `files/msp-dataset-0.1.0.pre-racecat.csv`. Here we'll
 make a version with temporary IDs used to process files here, with
-`id_` prefixes, and save a reformatted tab-delimited file:
+`id_` prefixes, and save a reformatted tab-delimited file.
+Note that id_ numbers are not sequential due to excluded participants.
 ```R
 d <- read.csv("files/msp-dataset-0.1.0.pre-racecat.csv")
 d$ID <- gsub( "^", "id_",  d$id ) 
