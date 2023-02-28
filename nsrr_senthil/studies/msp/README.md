@@ -31,12 +31,12 @@ There are 1,105 individuals, each with one EDF:
 ```
 ls ../msp-edfs/*.edf | wc -l
 106
-```R
+```
 Key demographic data (including site) are in
 `files/msp-dataset-0.1.0.pre-racecat.csv`. Here we'll
 make a version with temporary IDs used to process files here, with
 `id_` prefixes, and save a reformatted tab-delimited file:
-```
+```R
 d <- read.csv("files/msp-dataset-0.1.0.pre-racecat.csv")
 d <- d[order(d$id),]
 d$ID <- gsub( "^", "id_",  d$id ) 
