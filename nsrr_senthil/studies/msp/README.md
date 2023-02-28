@@ -72,3 +72,9 @@ ls ../msp-edfs/*_event.csv | wc -l
 ls ../msp-edfs/*_Import.xml | wc -l
 106
 ```
+
+Other pertinent points include:
+
+  - there are 3 Maternal race/ethnicity (self-reported) within MSP (labels `White` `African American` `Asian/Indian`
+    that correspond to IDs with the digit 1, 2, 3 respectively).
+    
