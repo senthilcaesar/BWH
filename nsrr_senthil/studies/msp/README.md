@@ -54,15 +54,15 @@ write.table( d , file="files/demo.txt" , sep="\t" , row.names=F, quote=F, col.na
 head files/demo.txt
 
 ID	maternalage	infantsex	maternalrace
-id_50	  32	      F	      White
-id_53	  20	      F	      White
-id_55	  23	      F	      White
-id_75	  33	      F	      White
-id_94	  30	      F	      White
-id_125	  28	      F	      White
-id_127	  29	      M	      White
-id_129	  39	      M	      White
-id_1	  25	      M	      African American
+id_50	  32	        F	          White
+id_53	  20	        F	          White
+id_55	  23	        F	          White
+id_75	  33	        F	          White
+id_94	  30	        F	          White
+id_125	  28	        F	          White
+id_127	  29	        M	          White
+id_129	  39	        M	          White
+id_1	  25	        M	          African American
 ```
 Notes: Infant sex information is missing for `id_60`
 
