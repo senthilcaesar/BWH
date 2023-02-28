@@ -26,7 +26,7 @@ mkdir files sl tmp derived res nap dist cmd
 ## 1) Key design factors
 
 
-There are 1,105 individuals, each with one EDF:
+There are 106 individuals, each with one EDF:
 
 ```
 ls ../msp-edfs/*.edf | wc -l
