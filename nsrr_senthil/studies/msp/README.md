@@ -36,7 +36,6 @@ Key demographic data (including site) are in
 `files/msp-dataset-0.1.0.pre-racecat.csv`. Here we'll
 make a version with temporary IDs used to process files here, with
 `id_` prefixes, and save a reformatted tab-delimited file.
-Note that `ID` numbers are not sequential due to excluded participants.
 ```R
 d <- read.csv("files/msp-dataset-0.1.0.pre-racecat.csv")
 d$ID <- gsub( "^", "id_",  d$id ) 
@@ -50,6 +49,7 @@ names(d) <- c("ID","maternalage","infantsex","maternalrace")
 d$infantsex <- ifelse( d$infantsex == 1 , "M" , "F" )
 write.table( d , file="files/demo.txt" , sep="\t" , row.names=F, quote=F, col.names=T )
 ```
+Note that `ID` numbers are not sequential due to excluded participants
 ```
 head files/demo.txt
 
