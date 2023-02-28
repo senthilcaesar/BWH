@@ -77,4 +77,14 @@ Other pertinent points include:
 
   - there are 3 Maternal race/ethnicity (self-reported) within MSP (labels `White` `African American` `Asian/Indian`
     that correspond to IDs with the digit 1, 2, 3 respectively).
+  - Equipment and device used to capture the raw polysomnography data `Natus RemLogic N7000`
+  - | Sleep Stage | NSRR harmonized mapping |
+    |-----|-----|
+    | `Wake` | `0` |
+    | `N1` |	`1`	|
+    | `N2` |	`2`	|
+    | `N3` |	`3`	|
+    | `N4` |	`4`	|
+    | `REM` |	`5`	|
+
     
