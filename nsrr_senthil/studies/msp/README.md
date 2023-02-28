@@ -38,7 +38,6 @@ make a version with temporary IDs used to process files here, with
 `id_` prefixes, and save a reformatted tab-delimited file:
 ```R
 d <- read.csv("files/msp-dataset-0.1.0.pre-racecat.csv")
-d <- d[order(d$id),]
 d$ID <- gsub( "^", "id_",  d$id ) 
 d <- d[ , c( "ID" , "mat_age" , "inf_sex" , "mat_race"  ) ]
 
@@ -46,10 +45,12 @@ d <- d[ , c( "ID" , "mat_age" , "inf_sex" , "mat_race"  ) ]
 table( complete.cases( d ) )
 
 # reformat
-names(d) <- c("ID","age","sex","race") 
-d$sex <- ifelse( d$sex == 1 , "M" , "F" )
+names(d) <- c("ID","maternalage","infantsex","maternalrace") 
+d$infantsex <- ifelse( d$infantsex == 1 , "M" , "F" )
 write.table( d , file="files/demo.txt" , sep="\t" , row.names=F, quote=F, col.names=T )
 ```
+Notes: Infant sex information is missing for `id_60`
+
 Each individual has one csv and one xml file, e.g.:
 ```
 ls ../msp-edfs/ | head
