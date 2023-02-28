@@ -66,7 +66,7 @@ id_1	  25	        M	          African American
 ```
 Note: Infant sex information is missing for `id_60`
 ```
-id_60	  27	    NA	    African American
+id_60	  27	        NA	          African American
 ```
 
 Each individual has one csv and one xml file, e.g.:
