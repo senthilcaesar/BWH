@@ -50,3 +50,24 @@ names(d) <- c("ID","age","sex","race")
 d$sex <- ifelse( d$sex == 1 , "M" , "F" )
 write.table( d , file="files/demo.txt" , sep="\t" , row.names=F, quote=F, col.names=T )
 ```
+Each individual has one csv and one xml file, e.g.:
+```
+ls ../msp-edfs/ | head
+```
+```
+S001.edf
+S001_event.csv
+S001_Import.xml
+S002.edf
+S002_event.csv
+S002_Import.xml
+S003.edf
+S003_event.csv
+S003_Import.xml
+```
+```
+ls ../msp-edfs/*_event.csv | wc -l
+106
+ls ../msp-edfs/*_Import.xml | wc -l
+106
+```
