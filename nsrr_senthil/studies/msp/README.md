@@ -138,7 +138,7 @@ destrat tmp/headers.db +HEADERS -v EDF_TYPE  | cut -f2 | sort | uniq -c
 ```
 The longest studies are around 11 hours:
 ```
-destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -nr | head
+destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -nr | head -5
 ```
 ```
 id_S022	42000
@@ -153,8 +153,8 @@ destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -n | awk ' { print
 ```
 
 <pre>
-ID  TOT_DUR_SEC
-<b>id_S099  19200</b>
+ID      TOT_DUR_SEC
+<b>id_S099    19200</b>
 id_S032   25200
 id_S127   26400
 id_S044   28800
