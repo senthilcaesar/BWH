@@ -122,3 +122,39 @@ Checking the validity of all EDFs:
 ```
 luna sl/s0.lst -s DESC
 ```
+(the above completes with no issues detected - e.g. no corrupt/truncated EDF files)
+Running `HEADERS` to summarize EDF headers:
+
+```
+luna sl/s0.lst -o tmp/headers.db -s HEADERS signals
+```
+All files are standard EDFs (i.e. continuous and without EDF Annotations)
+
+```
+destrat tmp/headers.db +HEADERS -v EDF_TYPE  | cut -f2 | sort | uniq -c
+```
+```
+1105 EDF
+```
+The longest studies are around 11 hours:
+```
+destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -nr | head
+```
+```
+id_S022	42000
+id_S004	39600
+id_S043	38400
+id_S024	38400
+id_S005	38400
+```
+There is one short recordings (5 hours)
+```
+destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -n | awk ' { print $1,$2  } ' | head -20
+```
+```
+`id_S099 19200`
+id_S032 25200
+id_S127 26400
+id_S044 28800
+id_S051 28800
+```
