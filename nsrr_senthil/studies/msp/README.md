@@ -168,7 +168,10 @@ touch files/issues
 ```
 destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | awk ' $2 <= 19201 { print $1,"short_recording"  } ' OFS="\t" >> files/issues
 ```
-EDF record size for all the EDFs is `1200`
+EDF record size for all the EDFs is `1200`. The data record size is unexpectedly large.
+Checked with the MSP team and it sounds like this is how RemLogic exported the data.
+NAP pipeline will save EDF record size of 1 sec, so the final datasets will be okay.
+
 ```
 destrat tmp/headers.db +HEADERS -v REC_DUR | cut -f2 | sort | uniq -c
 ```
