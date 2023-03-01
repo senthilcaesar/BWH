@@ -152,11 +152,11 @@ There is one short recordings (5 hours)
 destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -n | awk ' { print $1,$2  } ' | head -20
 ```
 
-<pre>
-<bi>id_S099 19200</bi>
+
+<b>id_S099 19200</b>
 id_S032 25200
 id_S127 26400
 id_S044 28800
 id_S051 28800
-</pre>
+
 
