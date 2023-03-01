@@ -183,10 +183,10 @@ Checking sample rates, most are standard (i.e. no very high sample rates, e.g. f
 destrat tmp/headers.db +HEADERS -r CH -v SR | cut -f3 | sort | uniq -c 
 ```
 ```
-208 1
-212 10
-  8 100
-106 200
-245 50
-1696 500
+208   1
+212   10
+8     100
+106   200
+245   50
+1696  500
 ```
