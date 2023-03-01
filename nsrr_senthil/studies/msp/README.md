@@ -161,4 +161,18 @@ id_S044   28800
 id_S051   28800
 </pre>
 
+We will flag it in `files/issues`
+```
+touch files/issues
+```
+```
+destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | awk ' $2 <= 19201 { print $1,"short_recording"  } ' OFS="\t" >> files/issues
+```
+EDF record size for all the EDFs is `1200`
+```
+destrat tmp/headers.db +HEADERS -v REC_DUR | cut -f2 | sort | uniq -c
+```
+```
+106 1200
+```
 
