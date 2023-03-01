@@ -107,4 +107,18 @@ Other pertinent points include:
     | `N4` |	4	|
     | `REM` |	5	|
 
-    
+## 2) EDF checks
+
+We first build an EDF-only sample list (`sl/s0.lst`)
+
+```
+luna --build ../msp-edfs/ > sl/s0.lst
+```
+```
+wrote 106 EDFs to the sample list
+  106 of which had 0 linked annotation files
+```
+Checking the validity of all EDFs:
+```
+luna sl/s0.lst -s DESC
+```
