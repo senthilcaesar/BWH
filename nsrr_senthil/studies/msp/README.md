@@ -153,7 +153,7 @@ destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -n | awk ' { print
 ```
 
 <pre>
-<b>id_S099 19200</b>
+<span style="background-color: #FFFF00">id_S099 19200</span>
 id_S032 25200
 id_S127 26400
 id_S044 28800
