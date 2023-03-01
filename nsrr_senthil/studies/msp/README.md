@@ -134,7 +134,7 @@ All files are standard EDFs (i.e. continuous and without EDF Annotations)
 destrat tmp/headers.db +HEADERS -v EDF_TYPE  | cut -f2 | sort | uniq -c
 ```
 ```
-1105 EDF
+106 EDF
 ```
 The longest studies are around 11 hours:
 ```
@@ -152,7 +152,7 @@ There is one short recordings (5 hours)
 destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -n | awk ' { print $1,$2  } ' | head -20
 ```
 ```
-`id_S099 19200`
+<mark>id_S099 19200</mark>
 id_S032 25200
 id_S127 26400
 id_S044 28800
