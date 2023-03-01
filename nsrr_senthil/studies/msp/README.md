@@ -1,3 +1,7 @@
+# Maternal Sleep in Pregnancy 
+
+_version 0.1 | 01-Mar-2023_
+
 ### ERIS Folder structure
 
 | Folder | Description |
@@ -141,11 +145,11 @@ The longest studies are around 11 hours:
 destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -nr | head -5
 ```
 ```
-id_S022	42000
-id_S004	39600
-id_S043	38400
-id_S024	38400
-id_S005	38400
+S022	42000
+S004	39600
+S043	38400
+S024	38400
+S005	38400
 ```
 There is one short recordings (5 hours)
 ```
@@ -154,11 +158,11 @@ destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -n | awk ' { print
 
 <pre>
 ID      TOT_DUR_SEC
-<b>id_S099   19200</b>
-id_S032   25200
-id_S127   26400
-id_S044   28800
-id_S051   28800
+<b>S099   19200</b>
+S032   25200
+S127   26400
+S044   28800
+S051   28800
 </pre>
 
 We will flag it in `files/issues`
