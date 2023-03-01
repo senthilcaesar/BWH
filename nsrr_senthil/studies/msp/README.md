@@ -178,4 +178,15 @@ destrat tmp/headers.db +HEADERS -v REC_DUR | cut -f2 | sort | uniq -c
 ```
 106 1200
 ```
-
+Checking sample rates, most are standard (i.e. no very high sample rates, e.g. from raw audio):
+```
+destrat tmp/headers.db +HEADERS -r CH -v SR | cut -f3 | sort | uniq -c 
+```
+```
+208 1
+212 10
+  8 100
+106 200
+245 50
+1696 500
+```
