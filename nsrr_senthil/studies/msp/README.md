@@ -190,3 +190,18 @@ destrat tmp/headers.db +HEADERS -r CH -v SR | cut -f3 | sort | uniq -c
 245   50
 1696  500
 ```
+## 3) Identifiers
+
+The EDF file names are used as the primary signal IDs:
+
+```
+ls ../msp-edfs/*edf | sed 's/\.edf//g' | cut -d"/" -f3 > tmp/ids
+```
+```
+head tmp/ids 
+S001
+S002
+S003
+S004
+S005
+```
