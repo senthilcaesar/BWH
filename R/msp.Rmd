@@ -1,0 +1,1430 @@
+# Maternal Sleep in Pregnancy 
+
+_version 0.1 | 01-Mar-2023_
+
+## Table of Contents
+
+ 0) [Preliminaries](#0-preliminaries)
+ 1) [Key design factors](#1-key-design-factors)
+ 2) [EDF checks](#2-edf-checks)
+ 3) [Identifiers](#3-identifiers)
+ 4) [Signal review](#4-signal-review)
+ 5) [Annotation review](#5-annotation-review)
+ 6) [Manual staging](#6-manual-staging)
+ 7) [NAP signal mappings](#7-nap-signal-mappings)
+ 8) [NAP annotation mappings](#8-nap-annotation-mappings)
+ 9) [Encodings](#9-encodings)
+ 10) [Interim report](#10-interim-report)
+ 11) [Running NAP](#11-running-nap)
+ 12) [Compiling the distribution dataset](#12-compiling-the-distribution-dataset)
+ 13) [Depositing an _as is_ dataset](#13-depositing-an-as-is-dataset)
+ 
+### ERIS Folder structure
+
+| Folder | Description |
+|----|----|
+| `/data/nsrr/working/msp-edfs/` | Original deposited data |
+| `/data/nsrr/working/msp/` | Working directory for processing |
+
+We also create the following key folders in the working directory:
+
+| Folder name | Contents |
+|----|----|
+| `files/` | Other relevant, original non-data files (e.g. descriptive PDFs, meta-data as XLS/PPTs, etc) |
+| `sl/` | All derived sample lists and other ID lists (e.g. ID exclusions) | 
+| `tmp/` | Scratch folder, e.g. including all raw outputs from Luna runs (`.db` files prior to extraction to `res/` etc) |
+| `derived/` | Record duration resized EDFs |  
+| `derived2/` | Truncated EDFs |  
+| `cmd/` | Any Luna scripts |
+| `res/` | Final compiled/merged/derived _higher-level_ outputs, e.g. typically compiled from `tmp/` |  
+| `nap/` | NAP automatically generates this folder with NAP output and harmonized EDFs/annotations
+| `dist/` | Final distribution folder, i.e. copied EDFs/annotations from `nap/` that will be imported into NSRR |
+
+```
+cd /data/nsrr/working/msp
+mkdir files sl tmp derived res nap dist cmd
+```
+
+## 1) Key design factors
+
+
+There are 106 individuals, each with one EDF:
+
+```
+ls ../msp-edfs/*.edf | wc -l
+106
+```
+Key demographic data are in
+`files/msp-dataset-0.1.0.pre-racecat.csv`. Here we'll
+make a version with distribution IDs, with
+`msp-` prefixes, and save a reformatted tab-delimited file.
+```
+d <- read.csv("files/msp-dataset-0.1.0.pre-racecat.csv")
+d$ID <- paste("msp", formatC(d$id, width=3, flag="0"), sep = "-S")
+d <- d[ , c( "ID" , "mat_age" , "inf_sex" , "mat_race"  ) ]
+
+# check for missing data
+table( complete.cases( d ) )
+
+# reformat
+names(d) <- c("ID","maternalage","infantsex","maternalrace") 
+d$infantsex <- ifelse( d$infantsex == 1 , "M" , "F" )
+write.table( d , file="files/demo.txt" , sep="\t" , row.names=F, quote=F, col.names=T )
+```
+Note that `ID` numbers are not sequential due to excluded participants
+```
+head files/demo.txt
+
+ID	 maternalage	infantsex	maternalrace
+msp-S050	32	    F	    White
+msp-S053	20	    F	    White
+msp-S055	23	    F	    White
+msp-S075	33	    F	    White
+msp-S094	30	    F	    White
+msp-S125	28	    F	    White
+msp-S127	29	    M	    White
+msp-S129	39	    M	    White
+msp-S001	25	    M	    African American
+```
+Infant sex information is missing for `msp-S060`
+```
+msp-S060	  27	        NA	          African American
+```
+
+Each individual has one csv and one xml file, e.g.:
+```
+ls ../msp-edfs/ | head
+```
+```
+S001.edf
+S001_event.csv
+S001_Import.xml
+S002.edf
+S002_event.csv
+S002_Import.xml
+S003.edf
+S003_event.csv
+S003_Import.xml
+```
+```
+ls ../msp-edfs/*_event.csv | wc -l
+106
+
+ls ../msp-edfs/*_Import.xml | wc -l
+106
+```
+
+Other pertinent points include:
+
+  - The raw data is scored and annotated by a Registered PSG Technologist (RPSGT); Exported annotations by RemLogic into XML files
+  - There are 3 race/ethnicity within MSP (labels `White` `African American` `Asian/Indian`
+    that correspond to IDs with the digit 1, 2, 3 respectively)
+  - Equipment and device used to capture the raw polysomnography data `Natus RemLogic N7000`
+  - | Sleep Stage |  |
+    |-----|-----|
+    | `Wake` | 0 |
+    | `N1` |	1	|
+    | `N2` |	2	|
+    | `N3` |	3	|
+    | `N4` |	4	|
+    | `REM` |	5	|
+
+## 2) EDF checks
+
+We first build an EDF-only sample list (`sl/s0.lst`)
+
+```
+luna --build ../msp-edfs/ > sl/s0.lst
+```
+```
+wrote 106 EDFs to the sample list
+  106 of which had 0 linked annotation files
+```
+Checking the validity of all EDFs:
+```
+luna sl/s0.lst -s DESC
+```
+(the above completes with no issues detected - e.g. no corrupt/truncated EDF files)
+Running `HEADERS` to summarize EDF headers:
+
+```
+luna sl/s0.lst -o tmp/headers.db -s HEADERS signals
+```
+All files are standard EDFs (i.e. continuous and without EDF Annotations)
+
+```
+destrat tmp/headers.db +HEADERS -v EDF_TYPE  | cut -f2 | sort | uniq -c
+```
+```
+106 EDF
+```
+The longest studies are around 11 hours:
+```
+destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -nr | head -5
+```
+```
+S022	42000
+S004	39600
+S043	38400
+S024	38400
+S005	38400
+```
+There is one short recording (5 hours)
+```
+destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | sort --key=2 -n | awk ' { print $1,$2  } ' | head -6
+```
+
+<pre>
+ID      TOT_DUR_SEC
+<b>S099   19200</b>
+S032   25200
+S127   26400
+S044   28800
+S051   28800
+</pre>
+
+We will flag it in `files/issues`
+```
+touch files/issues
+```
+```
+destrat tmp/headers.db +HEADERS -v TOT_DUR_SEC | awk ' $2 <= 19201 { print $1,"short_recording"  } ' OFS="\t" >> files/issues
+```
+EDF record size for all the EDFs is `1200`. The data record size is unexpectedly large.</br>
+Checked with the MSP team and it sounds like this is how RemLogic exported the data.</br>
+NAP pipeline will save EDF record size of 1 sec, so the final datasets will be okay.
+
+```
+destrat tmp/headers.db +HEADERS -v REC_DUR | cut -f2 | sort | uniq -c
+```
+```
+106 1200
+```
+Checking sample rates, most are standard (i.e. no very high sample rates, e.g. from raw audio):
+```
+destrat tmp/headers.db +HEADERS -r CH -v SR | cut -f3 | sort | uniq -c 
+```
+```
+208   1
+212   10
+8     100
+106   200
+245   50
+1696  500
+```
+#### Alter the record size of EDF
+We change the EDF record size for all the EDFs from `1200` to `1` and 
+We'll place the new edfs in a folder called `derived/`. 
+Here we run the jobs in parallel: the `cmd/resize.txt` contains 
+the command `RECORD-SIZE dur=1 edf-dir=derived`
+```
+/data/nsrr/bin/dev-runner2.sh 10 sl/s0.lst . cmd/resize.txt o tmp/resize
+```
+
+## 3) Identifiers
+
+The EDF file names are used as the primary signal IDs:
+
+```
+ls ../msp-edfs/*edf | sed 's/\.edf//g' | cut -d"/" -f3 > tmp/ids
+```
+```
+head tmp/ids 
+S001
+S002
+S003
+S004
+S005
+```
+For the final distribution set, we will rename the EDFs to the
+form `msp-<ID>.edf` and regenerate the sample list (i.e.  so
+`S001` will be `msp-S001` in the final distribution set)
+
+### PHI scanning
+
+We checked based on EDF headers:
+
+```
+destrat tmp/headers.db +HEADERS -v START_DATE EDF_ID
+```
+Reviewing these outputs, we see all EDFs have the same `START_DATE` 01.01.01
+
+## 4) Signal review
+
+The goal of this step is provide a general sense of the scope, variety
+and consistency of channels across EDFs in the cohort, as a precursor
+to running NAP.
+
+We first enumerate all channel labels across the dataset:
+
+```
+destrat tmp/headers.db +HEADERS -r CH | awk ' NR != 1 { print $2 } ' | sort | uniq -c | sort -nr > tmp/channels
+```
+```
+106 X3
+106 X2
+106 X1
+106 Thorax
+106 SpO2
+106 Right_Leg
+106 Pulse
+106 O2
+106 O1
+106 Nasal_Pressure
+106 M2
+106 M1
+106 Left_Leg
+106 F4
+106 F3
+106 EKG
+106 E2
+106 E1
+106 C4
+106 C3
+106 Abdomen
+104 MHR2
+104 FHR2
+33 Thermistor
+8 Thermistor_Pro
+```
+The harmonized dataset uses the following mappings
+
+| Original | NSRR harmonized mapping |
+|----|----|
+| `C3` | `C3_M2` |
+| `C4` | `C4_M1` |
+| `F3` | `F3_M2` |
+| `F4` | `F4_M1` |
+| `O1` | `O1_M2` |
+| `O2` | `O2_M1` |
+| `E1` | `LOC` |
+| `E2` | `ROC` |
+| `EKG` | `ECG` |
+| `SpO2` | `SpO2` |
+| `Thorax` | `thorax` |
+| `Pulse` | `pulse` |
+| `Abdomen` | `abdomen` |
+| `FHR2` | `Fetal_Heart_Rate` |
+| `MHR2` | `Maternal_Heart_Rate` |
+| `X1` | `EMG1` |
+| `X2` | `EMG2` |
+| `Left_Leg` | `LAT_emg` |
+| `Right_Leg` | `RAT_emg` |
+| `Nasal_Pressure` | `nasal_pres` |
+| `Thermistor` | `thermistor` |
+| `Thermistor_Pro` | `thermistor` |
+
+### Channel transducer/unit fields
+```
+destrat tmp/headers.db +HEADERS -r CH -v TRANS PDIM   | cut -f2- | sort | uniq -c | sort -nr
+```
+```
+106   X3	            uV	  EMG.Chin-Upper
+106   X2	            uV	  EMG.Chin-Lower.Right
+106   X1	            uV	  EMG.Chin-Lower.Left
+106   SpO2	            %	  SpO2.Averaged-Probe
+106   Right_Leg	            uV	  EMG.Tibialis-Leg.Right
+106   Pulse	            bpm	  Pulse.Averaged-Probe
+106   O2	            uV	  EEG-O2
+106   O1	            uV	  EEG-O1
+106   M2	            uV	  EEG-M2
+106   M1	            uV	  EEG-M1
+106   Left_Leg	            uV	  EMG.Tibialis-Leg.Left
+106   F4	            uV	  EEG-F4
+106   F3	            uV	  EEG-F3
+106   EKG	            uV	  EKG
+106   E2	            uV	  EOG-E2
+106   E1	            uV	  EOG-E1
+106   C4	            uV	  EEG-C4
+106   C3	            uV	  EEG-C3
+106   Abdomen	            uV	  Resp.Movement-Inductive.Abdomen
+104   Thorax	            uV	  Resp.Movement-Inductive.Thorax
+104   MHR2	            bpm	  HeartRate-MHR2
+104   FHR2	            bpm	  HeartRate-FHR2
+89  Nasal_Pressure	    bar	  Resp.Pressure-Cannula.Nasal
+33  Thermistor	            mV	  Resp.FlowTemp-Thermistor.NasalOral
+17  Nasal_Pressure	    mbar  Resp.Pressure-Cannula.Nasal
+8   Thermistor_Pro	    uV	  Resp.FlowTemp-Thermistor.NasalOral
+2   Thorax	            V	  Resp.Movement-Inductive.Thorax
+```
+## 5) Annotation review
+We first check whether the starttime and stoptime are exactly the same in both the given XML and CSV files for all the subjects.\
+The CSV files were created from the XML, So the times are exactly the same, although in few instances\
+the conversion from xml to csv resulted in floating point times.\
+`05:42:08.000000` convered to `05:42:07.999`
+
+Let's extract the start time from the XML and CSV file for id `S014` and do a comparison
+
+Extract the events StartTime from XML file:
+```bash
+grep -i StartTime ../msp-edfs/S014_Import.xml | awk -F 'T' '{print $3}' | sed 's/[<].*$//' > tmp/S014.StartTime.xml
+```
+
+Extract the events StartTime from CSV file:
+```bash
+awk -F ',' '{ print $3 }' ../msp-edfs/S014_event.csv | awk '{print $2}' | awk ' NR!=1 ' | sed 's/[<].*$//' > tmp/S014.StartTime.csv
+```
+Aligning files and checking they have identical start times:
+```
+paste tmp/S014.StartTime.xml tmp/S014.StartTime.csv
+```
+<pre>
+05:41:57.696000	05:41:57.696
+05:42:01.000000	05:42:01.000
+<b>05:42:08.000000	05:42:07.999</b>
+05:42:18.637000	05:42:18.637
+05:42:31.000000	05:42:31.000
+</pre>
+
+##### Summarizing annotation events
+Next we will check all the unique event annotations
+```
+cut -d "," -f1 ../msp-edfs/S*_event.csv | sort | uniq -c | sort -nr > tmp/events.counts
+```
+Here are some of the most common events (in `tmp/events.counts`):
+```
+43969 SLEEP-S2
+28109 SLEEP-S0
+12184 SLEEP-S3
+11145 SLEEP-REM
+5037  DESAT
+4875  SLEEP-S1
+4590  AROUSAL
+4246  HYPOPNEA
+2932  AROUSAL-RESP
+2461  PLM-LM
+```
+Overall, there are 68 events:
+```
+wc -l tmp/events.counts
+68 tmp/events.counts
+```
+For the harmonized dataset, we select only a small subset of core,
+common annotations and assign standard NSRR labels.
+
+##### Creating .annot file
+For accuracy we will pull the starttime and stoptimes from XML files and stage labels from CSV file.
+Next we convert the intermediate text files to `.annot` format, using standard stage
+labels (e.g. W, R, N1, N2 and N3).  We'll place these new files in a folder called
+`annots/`(see [here](https://zzz.bwh.harvard.edu/luna/ref/annotations/#annot-files)
+for details on allowable .annot formats).
+
+We set the Lights off/on annotations to `0` duration time stamps.
+The CSV file contains two lights off/on time intervals. Example
+```
+grep -i lights ../msp-edfs/S001_event.csv
+```
+<pre>
+LIGHTS-OFF,  01/01/01 <b>20:50:43</b>,    01/01/01 20:50:44
+LIGHTS-ON,   01/01/01 06:17:12,    01/01/01 <b>06:17:14</b>
+</pre>
+Here we select `20:50:43` to mark the exact time when the lights were turned off
+and `06:17:14` to mark the exact time when the lights were turned on.
+
+The script we used to create `.annot` files
+```bash
+#!/bin/bash
+
+orig_dir='/data/nsrr/working/msp-edfs'
+processing_dir='/data/nsrr/working/msp'
+
+for id in `cat $processing_dir/tmp/ids`
+do
+    echo "$id"
+
+    # Get stage labels from CSV file, first column
+    cut -d "," -f1 $orig_dir/${id}_event.csv | sed -n '1!p' > ${id}.Stage
+
+    # Parse XML file and extract StartTime
+    cat $orig_dir/${id}_Import.xml | grep -i StartTime | awk -F 'T' '{print $3}' | sed 's/[.].*$//' > ${id}.StartTime
+
+    # Parse XML file and extract StopTime
+    cat $orig_dir/${id}_Import.xml | grep -i StopTime | awk -F 'T' '{print $3}' | sed 's/[.].*$//' > ${id}.StopTime
+    
+    # Join each file specified, separated by tab as delimiter
+    paste ${id}.Stage ${id}.StartTime ${id}.StopTime > ${id}.annotTmp
+    
+    # Convert the intermediate text file created in the last step to .annot format, using standard stage labels (e.g. W, R, N1, N2 and N3)
+    cat < ${id}.annotTmp | \
+        awk '             { s = "ignore" }
+        $1 == "SLEEP-S0"  { s = "W" }
+        $1 == "SLEEP-REM" { s = "R" }
+        $1 == "SLEEP-S1"  { s = "N1" }
+        $1 == "SLEEP-S2"  { s = "N2" }
+        $1 == "SLEEP-S3"  { s = "N3" }
+        $1 == "LIGHTS-ON"  { s = "lights_on" }
+        $1 == "LIGHTS-OFF"  { s = "lights_off" }
+        $1 == "APNEA-CENTRAL"  { s = "apnea:central" }
+        $1 == "AROUSAL"  { s = "arousal" }
+        $1 == "AROUSAL-LM"  { s = "arousal:lm" }
+        $1 == "AROUSAL-RESP"  { s = "arousal:respiratory" }
+        $1 == "DESAT"  { s = "desat" }
+        $1 == "APNEA-OBSTRUCTIVE"  { s = "apnea:obstructive" }
+        $1 == "APNEA-MIXED"  { s = "apnea:mixed" }
+        $1 == "HYPOPNEA"  { s = "hypopnea" }
+        $1 == "HYPOPNEA-CENTRAL"  { s = "hypopnea:central" }
+        $1 == "POSITION-LEFT"  { s = "pos2_nonsupine" }
+        $1 == "POSITION-PRONE"  { s = "pos2_nonsupine" }
+        $1 == "POSITION-RIGHT"  { s = "pos2_nonsupine" }
+        $1 == "POSITION-SUPINE"  { s = "pos2_supine" }
+        $1 == "POSITION-UNKNOWN"  { s = "pos2_unknown" }
+        $1 == "POSITION-UPRIGHT"  { s = "pos2_nonsupine" }
+        $1 == "SNORE"  { s = "snoring" }
+        $1 == "PLM"  { s = "PLM" }
+        $1 == "BIOCAL-EYES-BLINK"  { s = "biocal:eyes_blink" }        
+        $1 == "BIOCAL-EYES-CLOSED"  { s = "biocal:eyes_closed" }        
+        $1 == "BIOCAL-EYES-OPEN"  { s = "biocal:eyes_open" }        
+        $1 == "BIOCAL-FLOW-DEEP"  { s = "biocal:flow_deep" }        
+        $1 == "BIOCAL-FLOW-HOLD"  { s = "biocal:flow_hold" }        
+        $1 == "BIOCAL-FLOW-NASAL"  { s = "biocal:flow_nasal" }        
+        $1 == "BIOCAL-FLOW-ORAL"  { s = "biocal:flow_oral" }        
+        $1 == "BIOCAL-LOOK-DOWN"  { s = "biocal:look_down" }        
+        $1 == "BIOCAL-LOOK-LEFT"  { s = "biocal:look_left" }        
+        $1 == "BIOCAL-LOOK-RIGHT"  { s = "biocal:look_right" }        
+        $1 == "BIOCAL-LOOK-UP"  { s = "biocal:look_up" }        
+        $1 == "BIOCAL-TEETH-GRIND"  { s = "biocal:teeth_grind" }        
+        $1 == "BIOCAL-TOES-LEFT-DOWN"  { s = "biocal:toes_left_down" }        
+        $1 == "BIOCAL-TOES-RIGHT-DOWN"  { s = "biocal:toes_right_down" }   
+
+        { print s , "." , "." , $2 , $3 , "." } ' OFS="\t" > $processing_dir/annots/${id}.annot
+    
+    # Remove unnecessary labels
+    sed -i '/^ignore/d' $processing_dir/annots/${id}.annot
+
+    # Set the Lights off/on annotations to 0 duration time stamps
+    # The full .annot specification involves six fields, given as tab delimited columns.
+    # class, instance, channel, start, stop, meta
+    awk -v OFS='\t' '{                                        
+        if ($1 == "lights_off")
+            {print $1 , $2 , $3 , $4 , $4 , $6}
+        else if ($1 == "lights_on")
+            {print $1 , $2 , $3 , $5 , $5 , $6}
+        else
+            {print;}                      
+    }' $processing_dir/annots/${id}.annot > ${id}_tmp && mv ${id}_tmp $processing_dir/annots/${id}.annot
+
+    # Clean up
+    rm ${id}.StartTime ${id}.StopTime ${id}.Stage ${id}.annotTmp
+done
+```
+We can now build a new sample list that links the original EDFs with `.annot` files we created in the previous step.
+```
+luna --build ../msp-edfs annots > sl/s1.lst
+```
+```
+head sl/s1.lst
+```
+```
+S001	../msp-edfs/S001.edf	annots/S001.annot
+S002	../msp-edfs/S002.edf	annots/S002.annot
+S003	../msp-edfs/S003.edf	annots/S003.annot
+```
+
+#### Checking for stage/EDF misalignment
+To check and potentially resolve this issue, we'll compile all
+start/stop times based on both the EDFs and the annotation in `/annots` folder for comparison.
+```
+destrat tmp/headers.db +HEADERS -v START_TIME | awk ' NR!=1 ' > tmp/edf.starts 
+```
+```
+head tmp/edf.starts 
+```
+```
+S001	20.38.15
+S002	19.39.31
+S003	21.15.26
+S004	19.43.26
+S005	20.04.57
+```
+Doing the same with EDF stop times:
+```
+destrat tmp/headers.db +HEADERS -v STOP_TIME | awk ' NR!=1 '  > tmp/edf.stops
+```
+And, likewise, extracting implied start/stop times from the annotation located in `annots/` folder
+```bash
+#!/bin/bash
+
+orig_dir='/data/nsrr/working/msp-edfs'
+processing_dir='/data/nsrr/working/msp'
+
+[ -e $processing_dir/tmp/annot.starts ] && rm $processing_dir/tmp/annot.starts
+[ -e $processing_dir/tmp/annot.stops ] && rm $processing_dir/tmp/annot.stops
+
+for id in `cat $processing_dir/tmp/ids`
+do
+
+        # Start Time
+        st=`awk '{print $4}' $processing_dir/annots/${id}.annot | head -n 1`
+        echo -e $id '\t' $st >> $processing_dir/tmp/annot.starts
+        
+        # Stop Time
+        et=`awk '{print $5}' $processing_dir/annots/${id}.annot | tail -n 1`
+        echo -e $id '\t' $et >> $processing_dir/tmp/annot.stops
+
+done
+```
+```
+head tmp/annot.starts
+```
+```
+S001 	 20:39:15
+S002 	 19:48:29
+S003 	 21:32:37
+S004 	 20:42:20
+S005 	 20:13:34
+```
+#### Resolving stage/EDF annotation misalignment
+First link the resized EDFs with the annotations in `annots/` folder
+```
+luna --build derived/ annots/ > sl/s2.lst
+```
+Returning to checking the alignment of EDF and annotation times, we see all individuals with times
+that do not match
+```
+paste tmp/edf.starts tmp/annot.starts 
+```
+<pre>
+S001	<b>20.38.15</b>	S001 	 20:39:15
+S002	19.39.31	S002 	 19:48:29
+S003	21.15.26	S003 	 21:32:37
+S004	19.43.26	S004 	 20:42:20
+S005	20.04.57	S005 	 20:13:34
+</pre>
+We need to align the annotations on a strict 30-second epoch count.
+```
+grep -- 'W\|R\|N1\|N2\|N3' annots/S001.annot | head -n 5
+```
+<pre>
+W	.	.	<b>20:50:44</b>	20:51:14	.
+W	.	.	20:51:14	20:51:44	.
+W	.	.	20:51:44	20:52:14	.
+W	.	.	20:52:14	20:52:44	.
+W	.	.	20:52:44	20:53:14	.
+</pre>
+
+For id `S001` we see the EDF start time at `20.38.15` and stage annotation starts at `20:50:44`.
+We'll truncate EDF starttime to the first time point after `20.38.15`, that is aligned with the first epoch stage annotation `20:50:44`.
+This way the annotations are aligned on a strict 30-second epoch count.
+Original EDF starttime `20.38.15` to new start time `20.38.44`.
+We performed the conversions manually for each subject and placed the new starttime in a file called `tmp/newStartTime`
+```
+head tmp/newStartTime
+```
+```
+ID	  T1	      T2
+S001	20.38.15	20:38:44
+S002	19.39.31	19:40:01
+S003	21.15.26	21:16:55
+S004	19.43.26	19:43:54
+S005	20.04.57	20:05:25
+```
+Next we will change the EDF start time, so that it is aligned on a `30sec` epoch count with annotations.
+Where `T1` denotes original edf starttime and `T2` denotes new starttime. 
+
+```
+luna sl/s2.lst vars=tmp/newStartTime -s 'EPOCH dur=1 & MASK hms=${T1}-${T2} & MASK flip & RE & WRITE edf-dir=derived2'
+```
+Truncated EDFs are placed in a folder called `derived2/`\
+Let's check the truncated EDFs Clock time for `S001` 
+```
+luna derived2/S001.edf -s DESC
+```
+<pre>
+EDF filename      : derived2/S001.edf
+ID                : derived2/S001
+Clock time        : <b>20.38.44</b> - 06.38.14
+Duration          : 09:59:31  35971 sec
+</pre>
+
+We see the Clock time is changed from `20.38.15` to `20.38.44`
+
+#### STAGE
+Luna's `STAGE` command reports sleep stage information (e.g. as encoded stages in an annotation file. Internally, it creates a single annotation class called SleepStage, with instances that correspond to W, N1, N2, N3, R, ? and L (Lights On)
+
+First, we need to connect the annotations with the truncated EDFs, by generating a new sample list:
+```
+luna --build derived2 annots > sl/s3.lst
+```
+```
+head sl/s3.lst
+```
+```
+S001	derived2/S001.edf	annots/S001.annot
+S002	derived2/S002.edf	annots/S002.annot
+S003	derived2/S003.edf	annots/S003.annot
+```
+Here we run the jobs in parallel: the `cmd/stage.txt` simply contains the command `STAGE` and nothing else.
+```
+/data/nsrr/bin/dev-runner2.sh 10 sl/s3.lst . cmd/stage.txt o tmp/stage
+```
+These new 30-second epoch-level files will be placed in a new folder
+`stages/`. \
+When these jobs are complete, we can extract all stage information into a single file:
+```
+mkdir stages
+destrat tmp/stage.batch00*.db +STAGE -r E > res/stage.info
+```
+```
+head res/stage.info
+```
+```
+ID	E	CLOCK_TIME	MINS	OSTAGE	STAGE	STAGE_N	START
+S001	1	20:38:44	0	?	L	3	0
+S001	2	20:39:14	0.5	?	L	3	30.0
+S001	3	20:39:44	1	?	L	3	60.0
+S001	4	20:40:14	1.5	?	L	3	90
+S001	5	20:40:44	2	?	L	3	120.0
+S001	6	20:41:14	2.5	?	L	3	150
+S001	7	20:41:44	3	?	L	3	180
+S001	8	20:42:14	3.5	?	L	3	210
+S001	9	20:42:44	4	?	L	3	240.0
+```
+There are no conflicts in the assigned staging, we do not see a `CONFLICT` column present.
+
+Finally, we can now compile the 30-second annotation files, based on the epoch-level stages emitted
+by `STAGE`: \
+first extract all epoch stage labels into a single file in the `stages/` folder:
+```
+mkdir stages
+destrat tmp/stage.batch000*db +STAGE -r E > stages/all.txt
+```
+```
+head stages/all.txt
+```
+We then use that file to generate individual annotation files per person (noting that col 6 is the stage label):
+```
+for id in `cat tmp/ids`
+do
+echo $id
+fgrep $id stages/all.txt | awk ' { print $6 , "." , "." , $3 , "+30" , "." } ' OFS="\t" > stages/${id}.annot
+done
+```
+We have now completed the checking and reformatting of stage
+annotations, and have 106 `.annot` files in `stages/` that can be
+linked with the truncated EDFs.
+```
+ls stages/ | head
+```
+```
+S001.annot
+S002.annot
+S003.annot
+S004.annot
+S005.annot
+S006.annot
+S007.annot
+S008.annot
+S009.annot
+```
+Building new sample list 
+```
+luna --build derived2/ stages/ > sl/s4.lst
+```
+### Lights on/off times
+Where available, we extracted Lights Off and Lights On times
+from the original CSV annotation files.  This information is in `files/lights.txt`
+for all individual (in a format compatible with Luna `vars` option):
+```
+head files/lights.txt
+```
+```
+ID	LIGHTS_OFF	LIGHTS_ON
+S001	20:50:43	06:17:14
+S002	20:45:02	04:45:08
+S003	21:40:00	05:40:50
+S004	22:30:01	06:30:17
+S005	20:16:10	06:30:42
+```
+## 6) Manual staging
+As noted above, MSP has staging available, and we created
+the stage annotation files above with the labels W, R, N1, N2 and N3. \
+We first check that EDFs have staging annotations that span almost all
+of the recording, with the `SPANNING` command:
+```
+luna sl/s4.lst -o tmp/spanning.db -s SPANNING annot=W,R,N1,N2,N3
+```
+None of the epochs in `S072` is spanned by one of the stage annotations.
+```
+destrat tmp/spanning.db +SPANNING -v SPANNED_PCT  | awk ' $2 < 0.99 '
+```
+```
+S072	0
+```
+We'll also check that all studies have at least some sleep stages set (i.e. versus wake), with
+the `HYPNO` command:
+```
+luna sl/s4.lst -o tmp/hypno.db -s HYPNO
+```
+We see one individual (`S099`) with less than one hour of recorded sleep:
+```
+destrat tmp/hypno.db +HYPNO -v TST | awk ' $2 < 60 '
+```
+```
+S099	58
+```
+We'll flag this to `tmp/short.ids`
+```
+destrat tmp/hypno.db +HYPNO -v TST | awk ' $2 < 60 { print $1 } ' > tmp/short.ids
+```
+Examining whether `S099`  (w/ short EDFs) also have short annotation data:
+```
+paste tmp/annot.starts tmp/annot.stops | grep -w -f tmp/short.ids
+```
+```
+S099 	 20:35:09	S099 	 01:42:55
+```
+Here are the EDF start/stop times (from the files calculated in the previous section):
+```
+paste tmp/edf.starts tmp/edf.stops | grep -w -f tmp/short.ids
+```
+```
+S099	20.32.27	S099	01.52.26
+```
+We can check the extent of sleep stages in `S099` (i.e. versus
+these are all scored as wake or corrupt missing data): looking at the original
+`annot/` files
+```
+for id in `cat tmp/short.ids`
+do
+echo "${id}"
+cut -f1 annots/${id}.annot | sort | uniq -c
+echo
+done
+```
+```
+S099
+
+25 N1
+55 N2
+21 N3
+15 R
+329 W
+```
+we see a trivial extent of scored sleep, less than 1 hour (3600 seconds)
+(numbers are the stage durations in seconds)
+
+Finally, we'll check that all individuals have multiple sleep stages assigned (i.e. versus
+only wake/sleep staging).  From the output of the previous `HYPNO` command:
+```
+destrat tmp/hypno.db +HYPNO -r SS/N1,N2,N3,R -v MINS | head
+```
+```
+ID	SS	MINS
+S001	N1	45
+S001	N2	254
+S001	N3	44.5
+S001	R	84
+S002	N1	74
+S002	N2	201.5
+S002	N3	78
+S002	R	47
+S003	N1	14.5
+```
+We'll run the above, but excluding `S072` and `S099`.
+Summarizing the number of distinct non-zero stages per person.
+```
+destrat tmp/hypno.db +HYPNO -r SS/N1,N2,N3,R -v MINS | grep -v -f tmp/exclude.ids \
+ | awk ' $3 > 0 { print $1 } ' | sort | uniq -c | awk ' { print $1 } ' | sort | uniq -c
+```
+```
+1 1
+1 2
+4 3
+99 4
+```
+That is, most people are assigned some extent of 4 different sleep stage labels (from N1, N2, N3 and R).  For the
+people with fewer, we first get their IDs:
+```
+destrat tmp/hypno.db +HYPNO -r SS/N1,N2,N3,R -v MINS | grep -v -f tmp/exclude.ids \
+ | awk ' $3 > 0 { print $1 } ' | sort | uniq -c | awk ' $1 == 1 || $1 == 2 { print $2 } ' > tmp/reduced.ids
+```
+and then look at their counts (stages in minutes):
+```
+destrat tmp/hypno.db +HYPNO -r SS/N1,N2,N3,R,W -v MINS | grep -f tmp/reduced.ids
+```
+```
+ID	SS	MINS
+S122	N1	31.5
+S122	N2	266
+S122	N3	0
+S122	R	0
+S122	W	183.5
+```
+## 7) NAP signal mappings
+We constructed a CANONICAL mapping file [`msp.sigs`](../../common/resources/canonical/msp/msp.sigs), which
+will be the primary mapping (i.e. NAP_SIGS ) for NAP rather than added in to augment the
+existing NSRR mappings.
+This is stored in `studies/msp`
+
+## 8) NAP annotation mappings
+
+Aside from stage annotations, the MSP harmonized dataset uses a number of annotations.
+
+These all exist within the list of NAP/NSRR mapped annotation terms, which is in this repo's
+`common/resources/canonical/annot.txt` file:
+
+| MSP term | Mapped term |
+|------|-----|
+| `AROUSAL` | `arousal` |
+| `AROUSAL-LM` | `arousal:lm` |
+| `AROUSAL-RESP` | `arousal:respiratory` |
+| `APNEA-OBSTRUCTIVE` | `apnea:obstructive` |
+| `APNEA-MIXED` | `apnea:mixed` |
+| `APNEA-CENTRAL` | `apnea:central` |
+| `HYPOPNEA` | `hypopnea` |
+| `HYPOPNEA-CENTRAL` | `hypopnea:central` |
+| `DESAT` | `desat` |
+| `BIOCAL-EYES-BLINK` | `biocal:eyes_blink` |
+| `BIOCAL-EYES-CLOSED` | `biocal:eyes_closed` |
+| `BIOCAL-EYES-OPEN` | `biocal:eyes_open` |
+| `BIOCAL-FLOW-DEEP` | `biocal:flow_deep` |
+| `BIOCAL-FLOW-HOLD` | `biocal:flow_hold` |
+| `BIOCAL-FLOW-NASAL` | `biocal:flow_nasal` |
+| `BIOCAL-FLOW-ORAL` | `biocal:flow_oral` |
+| `BIOCAL-LOOK-DOWN` | `biocal:look_down` |
+| `BIOCAL-LOOK-LEFT` | `biocal:look_left` |
+| `BIOCAL-LOOK-RIGHT` | `biocal:look_right` |
+| `BIOCAL-LOOK-UP` | `biocal:look_up` |
+| `BIOCAL-TEETH-GRIND` | `biocal:teeth_grind` |
+| `BIOCAL-TOES-LEFT-DOWN` | `biocal:toes_left_down` |
+| `BIOCAL-TOES-RIGHT-DOWN` | `biocal:toes_right_down` |
+
+Note the form `class:annot` means that biocal annotations are all assigned the same _class_ (i.e. `biocal`)
+and the _instance_ ID is used to designate the type (e.g. `eyes_open`).   
+Thus, the simple view of annotations shows only `biocal`:
+<pre>
+annotations:
+N1 (x90) | N2 (x508) | N3 (x89) | R (x168)
+W (x279) | apnea (x47) | arousal (x133) | <b>biocal (x28)</b>
+desat (x148) | hypopnea (x101) | lights_off (x1) | lights_on (x1)
+pos2_nonsupine (x15) | pos2_supine (x9)
+</pre>
+These can be specified separately or jointly, e.g. in MASKs or other summaries, e.g. output
+from the `ANNOTS` command, looking just by class:
+<pre>
+luna sl/s3.lst -o tmp/out.db -s ANNOTS
+</pre>
+```
+destrat tmp/out.db +ANNOTS -r ANNOT
+```
+```
+ID	ANNOT	COUNT	DUR
+S001	N1	90	2700
+S001	N2	508	15240
+S001	N3	89	2670
+S001	R	168	5040
+S001	W	279	8370
+S001	apnea	47	547
+S001	arousal	133	386
+S001	biocal	28	14
+S001	desat	148	2531
+S001	hypopnea	101	1563
+S001	lights_off	1	0
+S001	lights_on	1	0
+S001	pos2_nonsupine	15	172
+S001	pos2_supine	9	196
+```
+## 9) Encodings
+
+Prior to running NAP, here we check some of the basic ranges of
+signals, for both continuous and discrete signals.
+
+### Signal distributions
+Here we get basic signal statistics on all channels:  to avoid periods
+of high artifact, e.g. at the start/end of recordings, here we will restrict
+to epochs scored as sleep only:
+In `cmd/stats.txt`:
+```
+MASK all
+MASK unmask-ifnot=N1,N2,N3,R
+STATS
+```
+Using `runner2.sh` to submit this job to the ERISone cluster (w/ 10-fold parallelism)
+```
+rm tmp/stats.batch*
+/data/nsrr/bin/runner2.sh 10 sl/s4.lst . cmd/stats.txt o tmp/stats
+```
+Compiling outputs:
+```
+destrat tmp/stats.batch*db +STATS -r CH > res/ch.stats
+```
+The file `res/ch.stats` can be reviewed briefly; however, in this
+report we will not describe this step here. Rather, we describe the
+evaluation of the distribution (i.e. post-NAP) dataset more fully,
+below.
+
+### Duplicate/empty channels
+The `DUPES` commands scans for duplicate (or flat channels - multiple flat/empty channels
+will of course also be flagged as duplicates):
+The file `cmd/dupes.txt` just contains the command `DUPES`
+```
+/data/nsrr/bin/runner2.sh 10 sl/s2.lst . cmd/dupes.txt o tmp/dupes
+```
+Checking that everything ran w/out error:
+```
+grep error tmp/dupes.batch000*err
+```
+we can then enumerate the recordings w/ duplicates and/or flat channels:
+```
+destrat tmp/dupes.batch*db +DUPES | cut -f2- | sort | uniq -c
+```
+```
+      DUPES	FLAT	INVALID
+104   0	        0	    NA
+  2   0	        1	    0
+```
+The `INVALID` flag is set to 1 (not the case here) if either digital
+or physical min/max values are identical in the EDF header, i.e. which
+also implies a flat/undefined signal). `FLAT` implies that all
+observed value are constant; `DUPES` indicate the number of channels
+that are duplicated in the EDF (including if multiple flat channels).
+
+Two individuals appears to have flat channels:
+```
+destrat tmp/dupes.batch*db +DUPES | awk ' $2 == 0 && $3 == 1 '
+```
+```
+S112	0	1	0
+S121	0	1	0
+```
+Let's find the flat channel
+```
+destrat tmp/dupes.batch00009.db +DUPES -r CH
+```
+```
+ID	CH	DUPE	FLAT
+S112	Thorax	0	1
+S121	Thorax	0	1
+```
+
+## 10) Interim report
+
+In the pre-processing steps above, we have validated and summarized
+the contents of all EDFs, and reformatted all annotation data (excluding
+rare technician notes). We identified a small number of issues:
+
+ - detected and fixed misaligned staging data
+
+ - `S072` has no sleep annotations marked in the original CSV file `../msp-edfs/S072_event.csv`
+
+ - `S099` has less than one hour of recorded sleep
+
+Overall:
+
+| Statistic | Value |
+|------|------|
+| Number of original recordings | 106 |
+| Number of valid recordings | 104 |
+| Number of recordings w/ an issue flagged | 2 |
+
+## 11) Running NAP
+
+We can now build a new sample list that links the truncated EDFs with the two `.annot` files for each individual,
+which are in `stages/` and `annots/` respectively:
+```
+luna --build derived2/ stages/ annots/ > sl/s5.lst
+```
+We now can run NAP to produce harmonized EDFs and annotation files.
+NAP can perform some of the checks/reports done previously, but it is always
+useful to have clearer sense of the nuances of the data by looking
+at these things first (versus running NAP as a black box).
+
+We first run on one test subject, then run on the cluster across all
+subjects.  When running NAP, it will expect the input to be `s.lst`
+and it will generate an output folder called `nap/`.  We'll copy the
+final sample list from `sl/` to the root directory and name it
+`s.lst`.
+
+```
+cp sl/s5.lst s.lst
+```
+
+To test NAP on an individual EDF (e.g. here, the first), e.g. run on
+an interactive node:
+
+First load the R package
+```
+module load R/3.6.3
+```
+Then run NAP pipeline on the first subject `S001`
+```
+NAP_EXE_DIR=/data/nsrr/bin/ \
+NAP_SIGS=~/nsrr/common/resources/canonical/msp/msp.sigs \
+NAP_RESOURCE_DIR=~/nsrr/common/resources/ \
+NAP_R=/apps/source/R/3.6.3/lib64/R/bin/Rscript \
+NAP_R_LIB=~/R/x86_64-pc-linux-gnu-library/3.6 \
+ sh ~/nsrr/nap/nap.sh run1 . 1,1
+```
+The key option is `NAP_RESOURCE_DIR` which should always be set
+explicitly (pointing to the NSRR repo).  Use other options as needed
+(see `nsrr/nap/default.conf` and NAP documentation for details).
+
+Running on all individuals with `NAP_JOBN` level of parallelism on the
+ERISone cluster (here turning off unnecessary options, other than
+making the harmonized EDFs and annotations).  Note: depending on the
+exact compute environment (e.g. which cluster and queue, whether using
+a private set of nodes, etc) one may need to alter parameters such as
+`NAP_LSF_NODES`.
+
+```
+NAP_EXE_DIR=/data/nsrr/bin \
+ NAP_SIGS=~/nsrr/common/resources/canonical/msp/msp.sigs \
+ NAP_RESOURCE_DIR=~/nsrr/common/resources/ \
+ NAP_R=/apps/source/R/3.6.3/lib64/R/bin/Rscript \
+ NAP_R_LIB=~/R/x86_64-pc-linux-gnu-library/3.6 \
+ NAP_ONLY_HARM=1 \
+ NAP_DO_MTM=0 \
+ NAP_DO_PSD=0 \
+ NAP_DO_POPS=0 \
+ NAP_DO_SOAP=0 \
+ NAP_DO_CODA1=0 \
+ NAP_JOBN=15 \
+ NAP_LSF_NODES="" \
+ sh ~/nsrr/nap/nap.sh run1 .
+``` 
+To check NAP status for each individual, look at `nap.status`, `nap.log` and `nap.err` in `nap/*/`, e.g.:
+```
+cat nap/*/nap.status
+```
+NAP pipeline run was succesfull for all the subjects.
+
+## 12) Compiling the distribution dataset
+
+Here we create the final distribution folder `dist/` containing
+one harmonized EDF and one `.annot` file per individual.
+For the final distribution set, we'll rename the files to be in the form `msp-<id>`: 
+
+```
+mkdir dist
+for id in `cat tmp/ids`
+do
+ cp nap/$id/data/$id.edf dist/msp-${id}.edf
+ cp nap/$id/annots/$id.annot dist/msp-${id}.annot
+done
+```
+to give a final of 106 EDFs/annotation pairs. We'll perform a few
+sanity checks on the distribution dataset, first making a new sample
+list `d.lst`:
+
+```
+luna --build dist > sl/d.lst
+```
+```
+wrote 106 EDFs to the sample list
+  106 of which had 1 linked annotation files
+```
+First, we will check all the headers:
+```
+luna sl/d.lst -o tmp/headers2.db -s HEADERS signals
+```
+```
+destrat tmp/headers2.db +HEADERS -v SIGNALS | cut -f2 | sort | uniq -c | sort -nr
+```
+<pre>
+64 pulse,abdomen,thorax,SpO2,LOC,ROC,C3_M2,C4_M1,F3_M2,F4_M1,O1_M2,O2_M1,nasal_pres,EMG1,EMG2,LAT_emg,RAT_emg,Maternal_Heart_R,Fetal_Heart_Rate,ECG
+33 pulse,thermistor,abdomen,thorax,SpO2,LOC,ROC,C3_M2,C4_M1,F3_M2,F4_M1,O1_M2,O2_M1,nasal_pres,EMG1,EMG2,LAT_emg,RAT_emg,Maternal_Heart_R,Fetal_Heart_Rate,ECG
+7 pulse,abdomen,thorax,SpO2,LOC,ROC,C3_M2,C4_M1,F3_M2,F4_M1,O1_M2,O2_M1,thermistor,nasal_pres,EMG1,EMG2,LAT_emg,RAT_emg,Maternal_Heart_R,Fetal_Heart_Rate,ECG
+1 pulse,abdomen,thorax,SpO2,LOC,ROC,C3_M2,C4_M1,F3_M2,F4_M1,O1_M2,O2_M1,thermistor,nasal_pres,EMG1,EMG2,LAT_emg,RAT_emg,ECG
+1 pulse,abdomen,thorax,SpO2,LOC,ROC,C3_M2,C4_M1,F3_M2,F4_M1,O1_M2,O2_M1,nasal_pres,EMG1,EMG2,LAT_emg,RAT_emg,ECG
+</pre>
+
+### Compiling a summary statistic dataset
+Next, we will generate a limited summary statistics: stage durations,
+Hjorth statistics and/or means for all channels (for sleep data only),
+and PSD for N2 sleep for the two central EEG channels. 
+We will exclude the handful of people with `a)` no EEGs:
+```
+destrat tmp/headers2.db +HEADERS -v SIGNALS | grep -v C3_M2 | awk ' NR != 1{ print $1 } ' > tmp/exclude.ids
+```
+and also `b)` those who were flagged as problematic in the above pre-NAP analyses: 
+```
+cat files/issues | cut -f1 | sed 's/id_/msp-/g' >> tmp/exclude.ids
+```
+which leaves 2 unqiue individuals to exclude:
+```
+sort tmp/exclude.ids | uniq > tmp/exclude.uniq.ids
+wc -l tmp/exclude.ids
+```
+```
+2
+```
+Running the script `cmd/summstats.txt`, which is as follows:
+<pre>
+HYPNO 
+
+RESAMPLE sig=C3_M2,C4_M1 sr=128	
+
+TAG SCH/C3
+SOAP sig=C3_M2 force-reload
+
+TAG SCH/C4
+SOAP sig=C4_M1 force-reload
+
+TAG .
+
+MASK all
+MASK unmask-if=N1,N2,N3,R
+RE
+
+STATS sig=pulse,snore,SpO2,C3_M2,C4_M1,O1_M2,O2_M1,EMG,LOC,ROC,ECG,thermistor,nasal_pres,abdomen,thorax,LEG,snore,EMG1,EMG2,Maternal_Heart_R,Fetal_Heart_Rate
+SIGSTATS sig=C3_M2,C4_M1,O1_M2,O2_M1,EMG,LOC,ROC,ECG,thermistor,nasal_pres,abdomen,thorax,LEG,snore,Maternal_Heart_R,Fetal_Heart_Rate,EMG1,EMG2
+
+% N2 EEG power spectra only
+MASK mask-ifnot=N2
+RE
+
+PSD sig=C3_M2,C4_M1 dB spectrum max=65
+</pre>
+
+Running it first on a single subject.
+```
+luna sl/d.lst 1 exclude=tmp/exclude.uniq.ids -o tmp/summstats.db < cmd/summstats.txt
+```
+Running all subjects on the cluster:
+```
+/data/nsrr/bin/dev-runner2.sh 15 sl/d.lst . cmd/summstats.txt o tmp/summstats "exclude=tmp/exclude.uniq.ids"
+```
+After checking all jobs have successfully completed, we can compile the output:
+```
+destrat tmp/summstats.batch*db +HYPNO             > res/summ.hypno1
+destrat tmp/summstats.batch*db +HYPNO -r SS       > res/summ.hypno2
+destrat tmp/summstats.batch*db +STATS -r CH       > res/summ.stats
+destrat tmp/summstats.batch*db +SOAP  -r SCH      > res/summ.soap
+destrat tmp/summstats.batch*db +PSD   -r CH F     > res/summ.psd
+destrat tmp/summstats.batch*db +SIGSTATS  -r CH   > res/summ.hjorth
+```
+Read data in R:
+```R
+h1 <- read.table("res/summ.hypno1",header=T,stringsAsFactors=F)
+h2 <- read.table("res/summ.hypno2",header=T,stringsAsFactors=F)
+sp <- read.table("res/summ.soap",header=T,stringsAsFactors=F)
+st <- read.table("res/summ.stats",header=T,stringsAsFactors=F)
+hj <- read.table("res/summ.hjorth",header=T,stringsAsFactors=F)
+pw <- read.table("res/summ.psd",header=T,stringsAsFactors=F) 
+
+library(data.table)
+h2 <- setDF( dcast( setDT( h2 ) , ID ~ SS , value.var = names(h2)[-(1:2)] ) )
+sp <- setDF( dcast( setDT( sp ) , ID ~ SCH , value.var = names(sp)[-(1:2)] ) )
+st <- setDF( dcast( setDT( st ) , ID ~ CH , value.var = names(st)[-(1:2)] ) )
+hj <- setDF( dcast( setDT( hj ) , ID ~ CH , value.var = names(hj)[-(1:2)] ) )
+pw <- setDF( dcast( setDT( pw ) , ID ~ CH + F  , value.var = names(pw)[-(1:3)] ) )
+```
+Merge with demographics data:
+```
+d <- read.table("files/demo.txt",header=T,stringsAsFactors=F, sep='\t')
+
+# merge
+h1 <- merge(h1, d , by="ID" )
+h2 <- merge(h2, d , by="ID" )
+sp <- merge(sp, d , by="ID" )
+hj <- merge(hj, d , by="ID" )
+st <- merge(st, d , by="ID" )
+pw <- merge(pw, d , by="ID" )
+```
+```
+dim(h1);dim(h2);dim(sp);dim(st);dim(hj);dim(pw)
+```
+```
+[1] 104  56
+[1] 104  84
+[1] 104  34
+[1] 104 378
+[1] 104  49
+[1] 104 514
+```
+### Brief descriptive analysis
+
+Note - this does __not__ constitute a full, careful analysis of these
+data - rather, this is only a cursory review intend to flag some of
+the more obvious major discrepancies or catastrophic manglings of the
+data that may have occurred (prior to and/or after deposition into
+NSRR) - e.g. at the level of "all studies lack any REM epochs" or "one
+site has flat (or wildly differently calibrated) pulse channels", etc.
+
+
+#### Macro-architecture
+
+Here we plot the sleep duration (`TST`) and total recording time (`TRT`) for each individual:
+
+```
+png(file="msp-summ-macro1.png", height=400, width=800, res=100 )
+par(mfcol=c(1,2)) 
+plot( h1$TST , bg = as.factor( h1$maternalrace ) , pch=21 , ylab="TST (in Minutes)" )
+plot( h1$TRT , bg = as.factor( h1$maternalrace ) , pch=21 , ylab="TRT (in Minutes)" )
+dev.off()
+```
+![img](img/msp-summ-macro1.png)
+
+We next look at relative stage durations.
+
+```
+png(file="msp-summ-macro2.png", height=400, width=800, res=100 )
+par(mfcol=c(1,4))
+plot( h2$PCT_N1 , bg = as.factor( h2$maternalrace ) , pch=21 , ylab="% N1" )
+plot( h2$PCT_N2 , bg = as.factor( h2$maternalrace ) , pch=21 , ylab="% N2" )
+plot( h2$PCT_N3 , bg = as.factor( h2$maternalrace ) , pch=21 , ylab="% N3" )
+plot( h2$PCT_R , bg = as.factor( h2$maternalrace ) , pch=21 , ylab="% R" )
+dev.off()
+```
+![img](img/msp-summ-macro2.png)
+
+#### Signal means
+
+Considering the mean value of each signal per individual. 
+(all from epochs scored as sleep to exclude periods of extreme artifact pre-/post-sleep):
+
+```
+# Get a list of channel labels (n=17)
+chs <- gsub( "MEAN_","", names(st)[grep( "MEAN_" , names(st) ) ] ) 
+png(file="msp-summ-means.png", height=600, width=1000, res=100 )
+par(mfcol=c(4,5) , mar=c(1,4,1,1) )
+for (ch  in chs )
+  plot( st[,paste("MEAN",ch,sep="_")] , col=as.factor(st$maternalrace), pch=20, cex=0.6 , ylab=ch) 
+dev.off()
+```
+![img](img/msp-summ-means.png)
+
+Repeating, but removing outliers and adding 95% bounds, and now dropping the color-coding by study site by instead
+showing mean, lower and upper bounds as black, blue and red repsectively:
+```R
+png(file="msp-summ-means2.png", height=600, width=1000, res=100 )
+par(mfcol=c(4,5) , mar=c(1,4,1,1) )
+for (ch  in chs ) {
+  mn <- outliers(st[,paste("MEAN",ch,sep="_")])
+  p5 <- st[,paste("P05",ch,sep="_")]
+  p95 <- st[,paste("P95",ch,sep="_")]
+  p5 <- p5[ ! is.na( mn ) ]
+  p95 <- p95[ ! is.na( mn ) ]
+  mn <- mn[ ! is.na( mn ) ]
+  ylim <- range( c(p5,p95) , na.rm=T )  
+  plot( mn , ylim = ylim ,col="black" , pch=20, cex=0.6 , ylab=ch)
+  points( p5, pch=20, cex=0.6 , col="blue" )
+  points( p95, pch=20, cex=0.6 , col="red" ) 
+} 
+dev.off()
+```
+![img](img/msp-summ-means2.png)
+
+Finally, here we focus on one of the above channels, here we plot the mean (sleep)
+`SpO2` by study site
+```
+png(file="msp-summ-SpO2.png", height=400, width=1050, res=100 )
+par(mfcol=c(1,2))
+plot( st$P50_SpO2 ,col=as.factor(st$maternalrace) , pch=20, cex=0.6 , ylab="Median SpO2 (sleep)", xlab="Individual" )
+boxplot( st$P50_SpO2 ~ st$maternalrace, col=as.factor(unique(st$maternalrace)) , ylab="Median SpO2 (sleep)", xlab="Site")
+dev.off()
+```
+![img](img/msp-summ-SpO2.png)
+
+#### SOAP
+
+We can use Luna's `SOAP` command to check the consistency of staging
+and/or the quality of particular (EEG) signals that we expect to track
+strongly with sleep stage.   Here are the kappa values for each individual:
+
+```
+png(file="msp-summ-soap.png", height=400, width=800, res=100 )
+par(mfcol=c(1,2))
+plot( sp$K3_C3 ,col=as.factor(st$maternalrace) , pch=20, cex=0.6 , ylab="SOAP kappa (C3-M2)" , xlab="Individual" )
+plot( sp$K3_C4 ,col=as.factor(st$maternalrace) , pch=20, cex=0.6 , ylab="SOAP kappa (C4-M1)" , xlab="Individual" )
+dev.off()
+```
+![img](img/msp-summ-soap.png)
+
+Although couple of subjects have relatively low values (e.g. under 0.5),
+there are no subjects with values approaching zero (as we might expect
+if the staging bore no resemblance to the signal data - i.e. as might
+happen if files were mislabelled and matched with the wrong study, for
+example).  Thus, the function of this analysis is to confirm that,
+broadly speaking, all signal and stage annotations appear to be
+correctly matched and aligned.
+
+#### N2 spectral power
+
+Next, we calculate the power spectra for the two central EEG channels
+during N2 sleep.  We expect to see: a) that all studies have
+approximately (order-of-magnitude) scaled spectra, b) that these
+spectra follow a typical 1/f pattern c) whether any filtering has been
+applied and if so, whether it is consistent across studies, and d)
+potentially the presence of a peak in the sigma band reflecting
+oscillatory spindle activity (although this can depend on the population).
+
+Extracting the EEG power values for these channels:
+```R
+freq <- rep( seq( 0.5 , 64 , 0.25 ) ,2 )
+vars.c3 <- names(pw)[2:256]
+vars.c4 <- names(pw)[257:511]
+ylim <- range( pw[,c(vars.c3,vars.c4)] ) 
+fidx <- unique( freq )
+ids <- unique( pw$ID )
+sites <- unique( pw$maternalrace )
+
+png(file="msp-summ-psd1.png", height=800, width=1600, res=150 )
+par(mfrow=c(2,3))
+for (site in sites) {
+  plot( fidx , fidx , type="n" , ylim = ylim , xlab="Frequency (Hz)", ylab="Power (C3-M2)" , main=site )
+  for (id in unique( pw$ID[ pw$maternalrace ==site ]) )
+    lines( fidx, as.numeric( pw[pw$ID == id,vars.c3] ) , col = which( site == sites ) , lwd=0.5 )
+}
+for (site in sites) {
+  plot( fidx , fidx , type="n" , ylim = ylim , xlab="Frequency (Hz)", ylab="Power (C4-M1)" , main=site )
+  for (id in unique( pw$ID[ pw$maternalrace ==site ]) )
+    lines( fidx, as.numeric( pw[pw$ID == id,vars.c4] ) , col = which(site == sites) , lwd=0.5 )
+}
+dev.off()
+```
+![img](img/msp-summ-psd1.png)
+
+We confirm that all studies have broadly similar power values across
+individuals, and that we see a characteristic spectral slope (which
+will be clearer in the plot below).  We see evidence for filtering
+(i.e. flat values above ~50 Hz). Knowing about the
+presence of filters in the data is important if one considers certain analyses,
+e.g. looking at the spectral slope of the EEG above 30 Hz. 
+
+We further see a handful of individuals with spikes at 20 Hz, 40 Hz or other frequencies.  Overall, these N2
+EEG spectra look clean and as expected.  Focussing on the frequencies below 25 Hz:
+```R
+vars.c3 <- names(pw)[2:100]
+vars.c4 <- names(pw)[257:355]
+ylim <- range( pw[,c(vars.c3,vars.c4)] )
+fidx <- fidx[ fidx <= 25 ] 
+ids <- unique( pw$ID )
+
+png(file="msp-summ-psd2.png", height=600, width=1200, res=150 )
+par(mfcol=c(1,2))
+plot( fidx , fidx , type="n" , ylim = ylim , xlab="Frequency (Hz)", ylab="Power" , main="C3_M2" )
+for (id in ids ) lines( fidx, as.numeric( pw[pw$ID == id,vars.c3] ) , col = rgb(0,100,100,25,max=255), lwd=1 )
+
+plot( fidx , fidx , type="n" , ylim = ylim , xlab="Frequency (Hz)", ylab="Power" , main="C4_M1" )
+for (id in ids ) lines( fidx, as.numeric( pw[pw$ID == id,vars.c4] ) , col = rgb(0,100,100,25,max=255), lwd=1 )
+dev.off()
+```
+![img](img/msp-summ-psd2.png)
+Here we more clearly see the 20 Hz artifact, as well as the
+characteristic 1/f slope (i.e. near linear on a log-linear scale as here).  That is,
+taken together, these N2 EEG analyses do not suggest any catastrophic, ubiquitous
+issues with the EEG data.
+
+## 13) Depositing an as is dataset
+The harmonized distribution dataset (`dist/`) reflects a subset of the
+full, original dataset (in terms of the number of channels, etc).  We
+also post the full, original dataset _as is_, with the following
+exceptions only:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
