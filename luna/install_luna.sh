@@ -1,37 +1,29 @@
 #!/bin/bash
-install_lunaBase=1
-install_lunaR=1
-fftw_dir=/opt/homebrew/Cellar/fftw/3.3.10_1
-lgbm_dir=/Users/sq566/Downloads/tmp/LightGBM
+# Please run this script as a root user
+# Below scripts creates the static libraries ( libfftw3.a and lig_lightgbm.a )
+# lib_lightgbm.a and libfftw3.a are baked into executable luna
 
-# Install base luna
-if [ ${install_lunaBase} -eq 1 ]
-then
-    cd $HOME/Programme
-    git clone https://github.com/remnrem/luna-base.git
-    cd luna-base
-    make -j4 ARCH=MAC FFTW=${fftw_dir} LGBM=1 LGBM_PATH=${lgbm_dir}
-    cp $HOME/Programme/luna-base/luna /usr/local/bin/luna
-    cp $HOME/Programme/luna-base/destrat /usr/local/bin/detstrat
-    cp $HOME/Programme/luna-base/behead /usr/local/bin/behead
-    cp $HOME/Programme/luna-base/fixrows /usr/local/bin/fixrows
+home='/Users/sq566'
 
-    echo "Luna-base installation successfull"
-else
-    echo "Skipping luna-base installation"
-fi
+wget https://www.fftw.org/fftw-3.3.10.tar.gz
+tar -xvzf fftw-3.3.10.tar.gz
+cd fftw-3.3.10
+./configure
+make
+make install
 
-echo "------------------------------------------------------------------------------"
-echo "------------------------------------------------------------------------------"
+git clone --recursive https://github.com/microsoft/LightGBM
+cd LightGBM
+mkdir build
+cd build
+cmake -DUSE_OPENMP=OFF -DBUILD_STATIC_LIB=ON ..
+make -j4
 
-# Install luna R
-if [ ${install_lunaR} -eq 1 ]
-then
-    cd $HOME/Programme
-    git clone https://github.com/remnrem/luna.git
-    #FFTW=${fftw_dir} R CMD INSTALL luna
-    FFTW=${fftw_dir} LGBM=1 LGBM_PATH=${lgbm_dir} R CMD INSTALL luna
-    echo "Luna R installation successfull"
-else
-    echo "Skipping luna-R installation"
-fi
+git clone https://github.com/remnrem/luna-base.git
+cd luna-base
+make -j6 ARCH=MAC LGBM=1 LGBM_PATH=$home/Programme/LightGBM FFTW=/usr/local
+cp $home/Programme/luna-base/luna /usr/local/bin/luna
+cp $home/Programme/luna-base/destrat /usr/local/bin/destrat
+cp $home/Programme/luna-base/behead /usr/local/bin/behead
+cp $home/Programme/luna-base/fixrows /usr/local/bin/fixrows
+
