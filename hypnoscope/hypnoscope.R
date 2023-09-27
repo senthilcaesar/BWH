@@ -1,0 +1,90 @@
+library(luna)
+library(lubridate)
+
+d <- read.table("/Users/sq566/Desktop/hypnoscope/sof.hypnos",header=T,stringsAsFactors=F)
+names(d)[4] <- "SS"
+
+ni <- length( unique( d$ID ) )
+nf <- length( d$ID[ d$E == 1 ] )
+if ( ni != nf ) {
+  cat( "not all indivs have first epoch (E==1)...\n" )
+  d <- d[ d$ID %in% d$ID[ d$E == 1 ] , ]
+}
+
+# Get first epoch for each individual
+d1 <- d[ d$E == 1 , ]
+
+# Convert HMS to seconds
+secs <- lubridate::period_to_seconds( lubridate::hms( d1$CLOCK_TIME ) )
+
+# Align to 30 sec epoch
+secs <- 30 * floor( secs / 30 )
+
+# Need clarification ( secs less than 12 hrs )
+secs[ secs < 43200 ] <- secs[ secs < 43200 ] + 86400
+
+# Get earliest time point
+td <- seconds_to_period( min( secs ) )
+first.epoch <- sprintf( '%02d:%02d:%02d', td@hour, minute(td), second(td) )
+
+# Get epoch-wise starts for all people
+d1$E1 <- ( secs - min( secs ) ) / 30
+
+# Adjust epoch counts : EA = aligned epochs (by clock)
+d <- merge( d , d1[ , c("ID","E1") ] , by="ID" )
+d$EA <- d$E + d$E1
+
+
+# Get key anchors for each individual: sleep onset / offset, lights, sleep midpoint
+d$SLEEP <- as.integer( d$SS %in% c( "N1","N2","N3","R") )
+d1 <- as.data.frame( tapply( d$EA[ d$SLEEP == 1 ]  , d$ID[ d$SLEEP == 1 ] , min )   )
+names(d1) <- "T2" # Sleep On set
+d1$ID <- rownames( d1 ) # Timed epoch when subject starts to sleep
+
+# nb. do not assume all individuals will have sleep... thus all.x = T
+
+d <- merge( d , d1[ , c("ID","T2") ] , by="ID" , all.x = T )
+#d <- d[order(d$T2),]
+
+# Align to T2 == 0
+d$E2 <- d$EA - d$T2
+gh <- order(d1$T2)
+
+# Plot for clock-alignment
+dmin <- tapply( d$EA , d$ID , min )
+dmax <- tapply( d$EA , d$ID , max )
+ids <- unique( d$ID )
+ne <- max( d$EA ) - min( d$EA ) + 1
+m <- matrix( NA , nrow = ne , ncol = ni )
+for (i in 1:ni) m[ (dmin[i]):(dmax[i]) , i ] <- 4 + lstgn( d$SS[ d$ID == ids[i] ]  )
+
+stgpal <- c(lstgcols("N3"), lstgcols("N2"), lstgcols("N1"),
+            lstgcols("R"), lstgcols("W"), lstgcols("?"))
+
+m <- m[, gh] # Column sorted by time of sleep onset
+image(m, useRaster=T , col = stgpal, xaxt = "n", yaxt = "n", axes = F, breaks = 0.5 + (0:6) )
+
+#gh <- order(d1$T2)
+
+# nb. this assumes ID sorted original??
+#dmin <- tapply( d$E2 , d$ID , min )
+#dmax <- tapply( d$E2 , d$ID , max )
+#ids <- unique( d$ID )
+
+# make indicates 1-based
+#mindmin <- min( dmin )
+#dmin <- dmin - mindmin + 1
+#dmax <- dmax - mindmin + 1
+#ne <- max( d$E2 ) - min( d$E2 ) + 1
+#m <- matrix( NA , nrow = ne , ncol = ni )
+#for (i in 1:ni) m[ (dmin[i]):(dmax[i]) , i ] <- 4 + lstgn( d$SS[ d$ID == ids[i] ]  )
+
+#stgpal <- c(lstgcols("N3"), lstgcols("N2"), lstgcols("N1"),
+#            lstgcols("R"), lstgcols("W"), lstgcols("?"))
+
+
+
+
+# make plot
+#m <- m[, gh] # Column sorted by time of sleep onset
+#image(m, useRaster=T , col = stgpal, xaxt = "n", yaxt = "n", axes = F, breaks = 0.5 + (0:6) )
