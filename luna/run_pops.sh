@@ -3,7 +3,7 @@ luna stages_pops.lst 1 -o pops.db -s ' FILTER sig=C3 bandpass=0.3,35 tw=0.5 ripp
 COPY sig=C3 tag=NORM 
 ROBUST-NORM sig=C3_NORM epoch winsor=0.005 second-norm=T 
 POPS alias=CEN,ZEN|C3,C3_NORM path=/PHShome/sq566/nsrr/common/resources/pops lib=s2 
-& WRITE-ANNOTS annot=N1, N2, N3, R, W file=/data/purcell/projects/saps/annots/stages/POPS/^-pops.annot hms '
+& WRITE-ANNOTS annot=N1,N2,N3,R,W file=/data/purcell/projects/saps/annots/stages/POPS/^-pops.annot hms '
  
  
 # Running POPS in cluster for many subjects
@@ -14,7 +14,7 @@ FILTER sig=C3 bandpass=0.3,35 tw=0.5 ripple=0.02
 COPY sig=C3 tag=NORM 
 ROBUST-NORM sig=C3_NORM epoch winsor=0.005 second-norm=T 
 POPS alias=CEN,ZEN|C3,C3_NORM path=/PHShome/sq566/nsrr/common/resources/pops lib=s2 
-WRITE-ANNOTS annot=N1, N2, N3, R, W file=/data/purcell/projects/saps/annots/stages/POPS/^-pops.annot hms
+WRITE-ANNOTS annot=N1,N2,N3,R,W file=/data/purcell/projects/saps/annots/stages/POPS/^-pops.annot hms
 
 
 # For two channel C3 and C4, Please use the below
@@ -22,4 +22,4 @@ FILTER sig=C3,C4 bandpass=0.3,35 tw=0.5 ripple=0.02
 COPY sig=C3,C4 tag=NORM
 ROBUST-NORM sig=C3_NORM,C4_NORM epoch winsor=0.005 second-norm=T
 POPS alias=CEN,ZEN|C3,C3_NORM equiv=CEN,ZEN|C4,C4_NORM path=/PHShome/sq566/nsrr/common/resources/pops lib=s2
-WRITE-ANNOTS annot=N1, N2, N3, R, W file=/data/purcell/projects/saps/annots/stages/POPS/^-pops.annot hms
+WRITE-ANNOTS annot=N1,N2,N3,R,W file=/data/purcell/projects/saps/annots/stages/POPS/^-pops.annot hms
