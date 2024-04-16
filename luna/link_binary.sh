@@ -39,5 +39,8 @@ echo
 # To view what libraries an executable in loading
 DYLD_PRINT_LIBRARIES=1 ./luna
 
+# One way to confirm that the LGBM binaries are baked into the luna executable
+nm ./luna | grep LGBM
+
 echo
 echo "Please check the newly created directory named ../mac-arm-luna"
