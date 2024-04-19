@@ -25,3 +25,6 @@ COPY sig=C3,C4 tag=_NORM
 ROBUST-NORM sig=C3_NORM,C4_NORM epoch winsor=0.005 second-norm=T
 POPS alias=CEN,ZEN|C3,C3_NORM equiv=CEN,ZEN|C4,C4_NORM path=/PHShome/sq566/nsrr/common/resources/pops lib=s2
 WRITE-ANNOTS annot=N1,N2,N3,R,W file=/data/purcell/projects/saps/annots/stages/POPS/^-pops.annot hms
+
+# View Obsererbed and Precicted stages in mins
+destrat pops.db +POPS -r SS -v OBS PRF
