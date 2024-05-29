@@ -32,7 +32,7 @@ def reconstruct_image(Xred, eigenvecs):
     X_reconstructed = Xred.dot(eigenvecs[:,:Xred.shape[1]].T)
     return X_reconstructed
 
-directory_path = '/Users/senthilp/Desktop/CatDog'
+directory_path = '/Users/sq566/BWH/assignments/CatDog'
 imgs = load_images_from_directory(directory_path)
 
 height, width = imgs[0].shape
@@ -138,15 +138,17 @@ ax[1,1].set_title('reconstructed from 20 components', size=20)
 ax[1,2].imshow(Xrec30[14].reshape(height,width), cmap='gray')
 ax[1,2].set_title('reconstructed from 30 components', size=20)
 
-
-explained_variance = eigenvals/sum(eigenvals)
+fig = plt.figure()
+explained_variance = 100 * eigenvals/sum(eigenvals)
 plt.plot(np.arange(1,56), explained_variance)
+plt.xlabel("Component Number")
+plt.ylabel("\u03BB")
 
-
-explained_cum_variance = np.cumsum(explained_variance)
+fig = plt.figure()
+explained_cum_variance = np.cumsum(explained_variance/100)
 plt.plot(np.arange(1,56), explained_cum_variance)
+plt.xlabel("Component Number")
 plt.axhline(y=0.95, color='r')
-
 
 
 
