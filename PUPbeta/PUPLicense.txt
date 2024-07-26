@@ -1,0 +1,23 @@
+Software License Agreement
+
+Use of PUP software is subject to the following terms:
+
+Definitions
+Users: All individuals using this software.
+Planned Project: Specific finite academic project(s) as discussed in correspondence.
+Original Authors: 
+	Scott Sands
+	Philip Terrill (LGfromPSG)
+	Dwayne Mann (FlowShape and FlowDrive)
+	Ali Azarbarzin (ArousalIntensity, FlowShape, HypoxicBurden)
+	Daniel Vena (FlowShape, EventDepth)
+Credits to Raichel Alex and Dwayne Mann for program flow.
+
+Preliminary agreement: As a part of the proposed research "Collaboration" between the "Users" (see above) and Dr. Scott Sands, PhD, Dr. Sands will share the existing Phenotyping Using PSG (PUP) software program (“Program”), written by himself and his colleagues (Original Authors), with the other members of the Collaboration “Users”. The Users agree to use the Program exclusively for the specific "Planned Project" (see above), and agree not to share the Program with any individual or company outside of the Collaboration. New projects require a new agreement and correspondence with Dr. Sands (or other Original Authors). Dr. Sands (and/or other Original Authors) will be considered a collaborator and will be offered the opportunity to contribute scientifically and intellectually in relation to the scientific questions that the Program will be used as a tool to address, and offered opportunity for co-authorship on any resulting manuscripts if scientifically appropriate. The Program is provided without a fee for this specific academic purpose.  
+
+Program modification: Modifications or edits may be made by the Users to make the Program fit-for-purpose. The Original Authors reserve the right to commercialize a version of the Program in future without providing monetary compensation to Users who made modifications. Thus, copyright for edits by Users, e.g. modifications to code to enable importing data from a particular data acquisition system (“Edits”), will be transferred automatically by the Users to the Original Authors of the Program; use of the Program will be considered fair payment for such edits. The Original Authors hope that Edits by Users will be built into the Program for other Users to utilize in future versions. Unique unrelated intellectual property generated in the process will remain the property of the inventor.
+
+Disclaimer: The Program is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a purpose, title and non-infringement. The Original Authors will not be liable for any damages or other liability arising from, out of, or in connection with the Program. The Program is written for academic purposes and is not approved for any clinical or medical use.
+
+Please note that the PUP folder also contains code written by other authors. 
+

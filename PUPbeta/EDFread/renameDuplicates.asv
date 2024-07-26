@@ -1,0 +1,12 @@
+
+% Function to rename duplicate labels
+function newLabels = renameDuplicates(labels)
+    [uniqueLabels, ~, indices] = unique(labels, 'stable');
+    duplicateCounts = histc(indices, unique(indices));
+    for i = 1:length(labels)
+        if duplicateCounts(indices(i)) > 1
+            labels{i} = [labels{i}, '_', num2str(find(strcmp(labels, labels{i}) == 1, 1) - 1)];
+        end
+    end
+    newLabels = labels;
+end
