@@ -1,0 +1,598 @@
+% Voltage units (first entry of list is the preferred term)
+let volt  = V,volt
+let mvolt = mV,millivolt,milli-volt,mvolt,m-volt
+let uvolt = uV,microvolt,micro-volt,uvolt,u-volt,UV
+
+% Variable definitions 
+let left_mastoid = M1
+let right_mastoid = M2
+let left_central = C3
+let right_central = C4
+let left_frontal = F3
+let right_frontal = F4
+let left_occipital = O1
+let right_occipital = O2
+let left_central_cm_ref = C3_M2
+let right_central_cm_ref = C4_M1
+let left_occipital_cm_ref = O1_M2
+let right_occipital_cm_ref = O2_M1
+let left_frontal_cm_ref = F3_M2
+let right_frontal_cm_ref = F4_M1
+let emg_transducer = EMG,EEG
+
+%
+% Frontals
+% We have two rules for the same channel. It would first try to make the top one, which assumes a suitable referenced channel already exists.
+% If the EDF did not contain already referenced channel, but did contain two channels matching one of the sig and ref lists,
+% then it would try to make the F3_M2
+%
+
+F3_M2
+ req:
+  sig = left_frontal_cm_ref
+  unit = volt
+  unit = mvolt 
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F3_M2
+ req:
+  sig = left_frontal
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt   
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F4_M1
+ req:
+  sig = right_frontal_cm_ref
+  unit = volt
+  unit = mvolt 
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+F4_M1
+ req:
+  sig = right_frontal
+  ref = left_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+%
+% Central
+%
+
+C3_M2
+ req:
+  sig = left_central_cm_ref
+  unit = volt
+  unit = mvolt 
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C3_M2
+ req:
+  sig = left_central
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt   
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C4_M1
+ req:
+  sig = right_central_cm_ref
+  unit = volt
+  unit = mvolt 
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+C4_M1
+ req:
+  sig = right_central
+  ref = left_mastoid
+  unit = volt
+  unit = mvolt   
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+%
+% Occipitals
+%
+
+O1_M2
+ req:
+  sig = left_occipital_cm_ref
+  unit = volt
+  unit = mvolt 
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O1_M2
+ req:
+  sig = left_occipital
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O2_M1
+ req:
+  sig = right_occipital_cm_ref
+  unit = volt
+  unit = mvolt   
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+O2_M1
+ req:
+  sig = right_occipital
+  ref = left_mastoid
+  unit = volt
+  unit = mvolt	
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+% -------------------------------------------------------------------------
+%
+% Electrocardiography
+%
+% -------------------------------------------------------------------------
+let ECG = ECG,ECG1
+let RA_electrode = ECG1
+let LA_electrode = ECG2
+let LL_electrode = ECG3
+
+ECG
+ req:
+  sig = LA_electrode
+  ref = RA_electrode
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+ECG
+ req:
+  sig = LL_electrode
+  ref = RA_electrode
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+ECG
+ req:
+  sig = LL_electrode
+  ref = LA_electrode
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+ECG
+ req:
+  sig = ECG
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+
+% -------------------------------------------------------------------------
+%
+% Surface electromyography (EMG) 
+%   - assumes 1,2,3 = C,L,R
+%   
+% -------------------------------------------------------------------------
+
+let chin = CHIN
+let central_chin = EMG1,CChin,C_Chin,Cchin,CCHIN
+let left_chin = EMG2,LChin,LCHIN,Lchin,L_Chin
+let right_chin = EMG3,RChin,RCHIN,Rchin
+let chin_left_right = Chin2_Chin3,LChin_RChin
+let chin_left_central = Chin1_Chin2,LChin_CChin
+let chin_right_central = RChin_CChin
+
+EMG
+ req:
+  sig = chin_left_central,chin_right_central
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+EMG
+ req:
+  sig = left_chin,right_chin
+  ref = central_chin
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+EMG
+ req:
+  sig = left_chin
+  ref = right_chin
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+EMG
+ req:
+  sig = chin
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+
+% -------------------------------------------------------------------------
+%
+% EOG channels; preferred both referenced against M2
+%
+% AASM standard has LOC and ROC both referenced against M2
+% -------------------------------------------------------------------------
+
+let left_eog = E1
+let right_eog = E2
+let left_eog_right_mastoid_ref = E1_M2
+let right_eog_right_mastoid_ref = E2_M2
+let right_eog_left_mastoid_ref = E2_M1
+
+LOC
+ req:
+  sig = left_eog_right_mastoid_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+LOC
+ req:
+  sig = left_eog
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+LOC
+ req:
+  sig = left_eog
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog_right_mastoid_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog
+  ref = right_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog_left_mastoid_ref
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog
+  ref = left_mastoid
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+% -------------------------------------------------------------------------
+%
+% Respiratory effort (thoracic and abdominal)
+%
+% -------------------------------------------------------------------------
+let abdomen = ABD,Abd
+let thorax = Chest,CHEST,Chest1
+
+thorax
+ req:
+  sig = thorax
+  unit=mV,uV,V,Volts,.,none
+ set:
+  unit=mV
+
+abdomen
+ req:
+  sig = abdomen
+  unit=mV,uV,V,Volts,.,none
+ set:
+  unit=mV
+
+% -------------------------------------------------------------------------
+%
+% Airflow: thermistor & nasal pressure cannula
+% -------------------------------------------------------------------------
+let thermistor = AirFlow,Airflow
+let nasal_pres = CannulaFlow,CanulaFlow,CannulaFLow
+
+thermistor
+ req:
+  sig = thermistor
+  unit=mvolt
+  unit=uvolt
+  unit=V
+  unit=unknown,.
+
+nasal_pres
+ req:
+  sig = nasal_pres
+  unit=mvolt
+  unit=uvolt
+  unit=mbar
+  unit=ubar
+  unit=unknown,.
+
+% -------------------------------------------------------------------------
+%
+% Oxygen saturation (SpO2)
+%
+% -------------------------------------------------------------------------
+let SpO2 = SpO2,SPO2
+let pleth = Pleth,PLETH,Pleth.1
+
+pleth
+ req:
+  sig = pleth
+  unit=V
+  unit=uV
+  unit=mV
+  unit=0
+  unit=none,.
+
+SpO2
+ req:
+  sig = SpO2
+  unit = percent,.,*
+
+% -------------------------------------------------------------------------
+%
+% (Derived) Heart rate (BPM) 
+%
+% -------------------------------------------------------------------------
+let HR = DHR,Derived_HR
+
+HR
+ req:
+  sig = HR
+
+
+% -------------------------------------------------------------------------
+%
+% Define generic left/right leg fields
+%
+% -------------------------------------------------------------------------
+let left_leg = LLeg,LLEG
+let right_leg = RLeg,RLEG
+let left_leg1_emg = LLEG1,LLeg1
+let left_leg2_emg = LLEG2,LLeg2
+let right_leg1_emg = RLEG1,RLeg1
+let right_leg2_emg = RLeg2,Rleg2,RLEG2
+let left_leg_emg = LLeg1_LLeg2,LLEG1_LLEG2
+let right_leg_emg = RLEG1_RLEG2,RLeg1_RLeg2
+
+% EMG Channels (4-lead)
+LAT
+ req:
+  sig=left_leg1_emg
+  ref=left_leg2_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV 
+
+LAT
+ req:
+  sig=left_leg1_emg
+  ref=left_leg2_emg
+
+LAT
+ req:
+  sig=left_leg   
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+RAT
+ req:
+  sig=right_leg1_emg
+  ref=right_leg2_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+RAT
+ req: 
+  sig=right_leg1_emg
+  ref=right_leg2_emg
+
+RAT
+ req:
+  sig=right_leg
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+
+% EMG channels (2-lead)
+LAT
+ req:
+  sig=left_leg_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+LAT
+ req: 
+  sig=left_leg_emg
+
+RAT
+ req:
+  sig=right_leg_emg
+  trans=emg_transducer
+  unit=uV
+  unit=mV
+ set:
+  unit=uV
+
+RAT
+ req:
+  sig=right_leg_emg
+
+% -------------------------------------------------------------------------
+%
+% Misc. channels
+%
+% -------------------------------------------------------------------------
+
+% Capnogram
+let cap = Cap,CAP
+
+cap
+ req:
+  sig = cap
+
+% End tidal CO2 
+let EtCO2 = EtCO2,EtCO2_2
+
+EtCO2
+ req:
+   sig = EtCO2
+
+% Transcutaneous CO2
+let TcCO2 = TCO2,TCCO2,TCPCO2,TcCO2
+
+TcCO2
+ req:
+  sig = TcCO2
+
+% -------------------------------------------------------------------------
+%
+% Snore channels
+%
+% -------------------------------------------------------------------------
+
+snore <- Snore,SNORE
