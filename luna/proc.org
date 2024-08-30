@@ -1,0 +1,20 @@
+luna --build /data/nsrr/datasets/mesa/polysomnography/edfs > sl/s0.lst
+luna sl/s0.lst -o tmp/header.db -s HEADERS signals
+destrat tmp/header.db +HEADERS -r CH | awk ' NR != 1 { print $2 } ' | sort | uniq -c | sort -nr
+
+# Create ANNOT from XML
+luna --build /data/nsrr/datasets/mesa/polysomnography/edfs /data/nsrr/datasets/mesa/polysomnography/annotations-events-nsrr -ext="-nsrr.xml" > sl/s1.lst
+luna sl/s1.lst -s 'WRITE-ANNOTS file=annots/^.annot hms'
+
+# ANNOTS
+luna --build /data/nsrr/datasets/mesa/polysomnography/edfs annots > sl/s2.lst
+luna sl/s2.lst -o tmp/annots.db -s ANNOTS
+destrat tmp/annots.db +ANNOTS -r ANNOT INST | awk '{print $2}' | sort | uniq -c | sort -nr
+cat annots/*.annot | cut -f1 | sort | uniq -c | sort -nr
+
+# CANONICAL
+luna /data/nsrr/working/mesa-5/sl/s2.lst 1 path=/data/nsrr/working/mesa-5/ -o out.db -s CANONICAL file=mesa.sigs
+
+# Get PDIM
+destrat tmp/header.db +HEADERS -r CH -v PDIM | grep -i Pres | awk '{print $2 "\t" $3}' | sort | uniq -c
+destrat tmp/header.db +HEADERS -r CH -v PDIM | grep -i Flow | awk '{print $2 "\t" $3}' | sort | uniq -c
