@@ -18,3 +18,6 @@ luna /data/nsrr/working/mesa-5/sl/s2.lst 1 path=/data/nsrr/working/mesa-5/ -o ou
 # Get PDIM
 destrat tmp/header.db +HEADERS -r CH -v PDIM | grep -i Pres | awk '{print $2 "\t" $3}' | sort | uniq -c
 destrat tmp/header.db +HEADERS -r CH -v PDIM | grep -i Flow | awk '{print $2 "\t" $3}' | sort | uniq -c
+
+# Write Harmonized channel
+luna /data/nsrr/working/mesa-5/sl/s2.lst path=/data/nsrr/working/mesa-5/ -o out.db -s CANONICAL file=mesa.sigs drop-originals & WRITE edf-dir=harmonized-edfs/
