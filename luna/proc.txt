@@ -23,3 +23,11 @@ destrat tmp/header.db +HEADERS -r CH -v PDIM | grep -i Flow | awk '{print $2 "\t
 luna /data/nsrr/working/mesa-5/sl/s2.lst -o out.db -s 'uV sig=EEG1,EEG2,EEG3 & CANONICAL file=mesa.sigs drop-originals & WRITE edf-dir=harmonized-edfs/'
 destrat out.db +CANONICAL | awk '$2 == 1' | cut -f1 > tmp/cs_not
 destrat out.db +CANONICAL -r CS | grep -f tmp/cs_not | awk '$3==0'
+
+# Harmonized channels
+luna --build harmonized-edfs/ > sl/s3.lst
+destrat tmp/harmonized_header.db +HEADERS -r CH | cut -f2 | sort | uniq -c
+
+# Harmonize annotations
+luna sl/s2.lst -s 'REMAP file=annot_harm.txt remap-col=T & WRITE-ANNOTS file=harmonized-annots/^.annot'
+cat harmonized-annots/*.annot | cut -f1 | sort | uniq -c | sort -nr
