@@ -26,8 +26,17 @@ destrat out.db +CANONICAL -r CS | grep -f tmp/cs_not | awk '$3==0'
 
 # Harmonized channels
 luna --build harmonized-edfs/ > sl/s3.lst
+luna sl/s3.lst -o tmp/harmonized_header.db -s HEADERS signals
 destrat tmp/harmonized_header.db +HEADERS -r CH | cut -f2 | sort | uniq -c
 
 # Harmonize annotations
 luna sl/s2.lst -s 'REMAP file=annot_harm.txt remap-col=T & WRITE-ANNOTS file=harmonized-annots/^.annot hms'
 cat harmonized-annots/*.annot | cut -f1 | sort | uniq -c | sort -nr
+
+# link harmonized-edf and harmonized-annots
+luna --build harmonized-edfs/ harmonized-annots/ > sl/s4.lst
+luna sl/s4.lst -o tmp/harmonized_annots.db -s ANNOTS
+destrat tmp/harmonized_annots.db +ANNOTS -r ANNOT INST | awk '{print $2 "\t" $3}' | sort | uniq -c | sort -nr > tmp/harmonized_channel
+
+# Summary Statistics
+/data/nsrr/bin/dev-runner2.sh 15 sl/s4.lst . cmd/summstats.txt o tmp/summstats
