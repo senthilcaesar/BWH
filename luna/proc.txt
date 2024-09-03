@@ -40,3 +40,10 @@ destrat tmp/harmonized_annots.db +ANNOTS -r ANNOT INST | awk '{print $2 "\t" $3}
 
 # Summary Statistics
 /data/nsrr/bin/dev-runner2.sh 15 sl/s4.lst . cmd/summstats.txt o tmp/summstats
+
+destrat tmp/summstats.batch*db +HYPNO             > res/summ.hypno1
+destrat tmp/summstats.batch*db +HYPNO -r SS       > res/summ.hypno2
+destrat tmp/summstats.batch*db +STATS -r CH       > res/summ.stats
+destrat tmp/summstats.batch*db +SOAP  -r CH SCH      > res/summ.soap
+destrat tmp/summstats.batch*db +PSD   -r CH F     > res/summ.psd
+destrat tmp/summstats.batch*db +SIGSTATS  -r CH   > res/summ.hjorth
