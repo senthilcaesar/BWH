@@ -29,5 +29,5 @@ luna --build harmonized-edfs/ > sl/s3.lst
 destrat tmp/harmonized_header.db +HEADERS -r CH | cut -f2 | sort | uniq -c
 
 # Harmonize annotations
-luna sl/s2.lst -s 'REMAP file=annot_harm.txt remap-col=T & WRITE-ANNOTS file=harmonized-annots/^.annot'
+luna sl/s2.lst -s 'REMAP file=annot_harm.txt remap-col=T & WRITE-ANNOTS file=harmonized-annots/^.annot hms'
 cat harmonized-annots/*.annot | cut -f1 | sort | uniq -c | sort -nr
