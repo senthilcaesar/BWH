@@ -2,6 +2,9 @@ luna --build /data/nsrr/datasets/mesa/polysomnography/edfs > sl/s0.lst
 luna sl/s0.lst -o tmp/header.db -s HEADERS signals
 destrat tmp/header.db +HEADERS -r CH | awk ' NR != 1 { print $2 } ' | sort | uniq -c | sort -nr
 
+# Check sample rate
+destrat tmp/header.db +HEADERS -r CH -v SR | awk '{print $2 "\t" $3}' | sort | uniq -c | sort -nr
+
 # Create ANNOT from XML
 luna --build /data/nsrr/datasets/mesa/polysomnography/edfs /data/nsrr/datasets/mesa/polysomnography/annotations-events-nsrr -ext="-nsrr.xml" > sl/s1.lst
 luna sl/s1.lst -s 'WRITE-ANNOTS file=annots/^.annot hms'
@@ -27,7 +30,7 @@ destrat out.db +CANONICAL -r CS | grep -f tmp/cs_not | awk '$3==0'
 # Harmonized channels
 luna --build harmonized-edfs/ > sl/s3.lst
 luna sl/s3.lst -o tmp/harmonized_header.db -s HEADERS signals
-destrat tmp/harmonized_header.db +HEADERS -r CH | cut -f2 | sort | uniq -c
+destrat tmp/harmonized_header.db +HEADERS -r CH | cut -f2 | sort | uniq -c > tmp/harmonized_channel
 
 # Harmonize annotations
 luna sl/s2.lst -s 'REMAP file=annot_harm.txt remap-col=T & WRITE-ANNOTS file=harmonized-annots/^.annot hms'
@@ -36,7 +39,7 @@ cat harmonized-annots/*.annot | cut -f1 | sort | uniq -c | sort -nr
 # link harmonized-edf and harmonized-annots
 luna --build harmonized-edfs/ harmonized-annots/ > sl/s4.lst
 luna sl/s4.lst -o tmp/harmonized_annots.db -s ANNOTS
-destrat tmp/harmonized_annots.db +ANNOTS -r ANNOT INST | awk '{print $2 "\t" $3}' | sort | uniq -c | sort -nr > tmp/harmonized_channel
+destrat tmp/harmonized_annots.db +ANNOTS -r ANNOT INST | awk '{print $2 "\t" $3}' | sort | uniq -c | sort -nr > tmp/harmonized_annots
 
 # Summary Statistics
 /data/nsrr/bin/dev-runner2.sh 15 sl/s4.lst . cmd/summstats.txt o tmp/summstats
@@ -44,6 +47,6 @@ destrat tmp/harmonized_annots.db +ANNOTS -r ANNOT INST | awk '{print $2 "\t" $3}
 destrat tmp/summstats.batch*db +HYPNO             > res/summ.hypno1
 destrat tmp/summstats.batch*db +HYPNO -r SS       > res/summ.hypno2
 destrat tmp/summstats.batch*db +STATS -r CH       > res/summ.stats
-destrat tmp/summstats.batch*db +SOAP  -r CH SCH      > res/summ.soap
+destrat tmp/summstats.batch*db +SOAP  -r CH SCH   > res/summ.soap
 destrat tmp/summstats.batch*db +PSD   -r CH F     > res/summ.psd
 destrat tmp/summstats.batch*db +SIGSTATS  -r CH   > res/summ.hjorth
