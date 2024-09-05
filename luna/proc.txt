@@ -50,3 +50,12 @@ destrat tmp/summstats.batch*db +STATS -r CH       > res/summ.stats
 destrat tmp/summstats.batch*db +SOAP  -r CH SCH   > res/summ.soap
 destrat tmp/summstats.batch*db +PSD   -r CH F     > res/summ.psd
 destrat tmp/summstats.batch*db +SIGSTATS  -r CH   > res/summ.hjorth
+
+# Body Position
+luna sl/s4.lst 1 -s TABULATE sig=Pos
+luna sl/s4.lst -o tmp/slppos.db sig=Pos -s 'MASK all & MASK unmask-if=N1,N2,N3,R & RE & TABULATE '
+destrat tmp/slppos.db +TABULATE -r CH VALUE > res/slppos.csv
+luna sl/s4.lst skip-annots=T < cmd/encode-pos.txt
+
+# Link harmonized edfs with position
+luna --build harmonized-edfs/ positions/ -ext="-position.annot" > sl/s5.lst
