@@ -1,0 +1,13 @@
+annot-remap	T
+
+remap	desat|"SpO2_desaturation|SpO2_desaturation"
+remap	hypopnea|"Hypopnea|Hypopnea"
+remap	artifact:SpO2|"SpO2_artifact|SpO2_artifact"
+remap	arousal|"Arousal|Arousal"
+remap	apnea:obstructive|"Obstructive_apnea|Obstructive_Apnea"
+remap	LM|"Limb_movement_left|Limb_Movement_Left"
+remap	PLM|"Periodic_leg_movement_left|PLM_Left"
+remap	apnea:central|"Central_apnea|Central_Apnea"
+remap	?|"U"
+remap	apnea:mixed|"Mixed_apnea|Mixed_Apnea"
+remap	artifact:respiratory|"Respiratory_artifact|Respiratory_artifact"

@@ -1,0 +1,2238 @@
+ID	age	sex	race	site
+mesa-sleep-0001	70	F	white	7
+mesa-sleep-0002	83	F	white	5
+mesa-sleep-0006	57	F	hispanic	8
+mesa-sleep-0010	57	M	white	5
+mesa-sleep-0012	80	M	white	7
+mesa-sleep-0014	60	F	black or african american	3
+mesa-sleep-0016	57	F	hispanic	4
+mesa-sleep-0021	78	F	hispanic	8
+mesa-sleep-0027	72	F	white	5
+mesa-sleep-0028	60	F	white	6
+mesa-sleep-0029	77	M	white	8
+mesa-sleep-0033	77	M	asian	8
+mesa-sleep-0035	67	M	hispanic	8
+mesa-sleep-0036	75	M	hispanic	8
+mesa-sleep-0038	63	M	white	8
+mesa-sleep-0046	79	F	white	4
+mesa-sleep-0048	82	F	white	4
+mesa-sleep-0050	68	M	black or african american	3
+mesa-sleep-0052	56	M	black or african american	7
+mesa-sleep-0054	61	F	black or african american	3
+mesa-sleep-0056	63	F	black or african american	7
+mesa-sleep-0064	58	M	hispanic	8
+mesa-sleep-0070	59	F	white	5
+mesa-sleep-0074	75	M	black or african american	7
+mesa-sleep-0077	61	M	hispanic	4
+mesa-sleep-0079	74	F	white	4
+mesa-sleep-0081	80	F	black or african american	4
+mesa-sleep-0084	58	F	hispanic	4
+mesa-sleep-0085	60	F	black or african american	7
+mesa-sleep-0087	75	F	black or african american	5
+mesa-sleep-0093	79	M	asian	8
+mesa-sleep-0099	71	M	white	6
+mesa-sleep-0101	63	F	hispanic	4
+mesa-sleep-0105	68	F	black or african american	5
+mesa-sleep-0107	82	M	white	7
+mesa-sleep-0109	66	M	hispanic	4
+mesa-sleep-0110	60	M	white	6
+mesa-sleep-0111	77	F	white	3
+mesa-sleep-0113	61	F	asian	7
+mesa-sleep-0117	65	F	black or african american	8
+mesa-sleep-0118	56	F	hispanic	4
+mesa-sleep-0120	60	F	hispanic	4
+mesa-sleep-0121	58	M	white	5
+mesa-sleep-0125	82	M	white	7
+mesa-sleep-0128	62	M	hispanic	6
+mesa-sleep-0132	62	M	hispanic	6
+mesa-sleep-0133	84	M	white	8
+mesa-sleep-0134	89	F	white	4
+mesa-sleep-0138	63	M	hispanic	6
+mesa-sleep-0139	65	F	white	4
+mesa-sleep-0140	67	M	black or african american	3
+mesa-sleep-0144	67	F	hispanic	6
+mesa-sleep-0149	81	F	white	6
+mesa-sleep-0152	80	M	black or african american	5
+mesa-sleep-0155	76	M	hispanic	8
+mesa-sleep-0159	58	F	hispanic	6
+mesa-sleep-0167	59	F	asian	8
+mesa-sleep-0168	63	F	white	3
+mesa-sleep-0169	71	M	white	3
+mesa-sleep-0171	59	F	white	5
+mesa-sleep-0179	75	F	hispanic	8
+mesa-sleep-0182	72	M	black or african american	8
+mesa-sleep-0183	65	M	black or african american	5
+mesa-sleep-0187	62	F	hispanic	6
+mesa-sleep-0188	71	M	asian	7
+mesa-sleep-0193	89	M	white	5
+mesa-sleep-0194	57	F	hispanic	4
+mesa-sleep-0195	84	F	hispanic	8
+mesa-sleep-0196	75	M	white	6
+mesa-sleep-0197	67	F	black or african american	8
+mesa-sleep-0199	90	M	white	7
+mesa-sleep-0204	75	M	asian	8
+mesa-sleep-0209	82	M	white	3
+mesa-sleep-0211	61	F	black or african american	3
+mesa-sleep-0214	88	F	hispanic	4
+mesa-sleep-0219	68	F	asian	7
+mesa-sleep-0220	81	F	black or african american	7
+mesa-sleep-0225	63	F	white	6
+mesa-sleep-0236	75	M	hispanic	6
+mesa-sleep-0241	79	F	white	7
+mesa-sleep-0248	69	F	black or african american	5
+mesa-sleep-0251	73	F	black or african american	8
+mesa-sleep-0255	61	F	hispanic	8
+mesa-sleep-0258	64	F	white	5
+mesa-sleep-0269	80	M	white	6
+mesa-sleep-0271	56	M	hispanic	4
+mesa-sleep-0275	59	M	white	4
+mesa-sleep-0282	68	F	black or african american	4
+mesa-sleep-0284	60	F	asian	7
+mesa-sleep-0285	70	M	white	5
+mesa-sleep-0286	68	F	hispanic	8
+mesa-sleep-0288	64	M	hispanic	4
+mesa-sleep-0292	57	M	black or african american	4
+mesa-sleep-0295	62	F	black or african american	3
+mesa-sleep-0299	74	M	white	5
+mesa-sleep-0301	63	M	white	3
+mesa-sleep-0303	64	F	white	7
+mesa-sleep-0306	77	M	white	5
+mesa-sleep-0310	57	F	black or african american	4
+mesa-sleep-0312	75	M	hispanic	4
+mesa-sleep-0314	77	M	white	8
+mesa-sleep-0318	75	M	hispanic	4
+mesa-sleep-0319	75	F	white	8
+mesa-sleep-0320	61	M	asian	8
+mesa-sleep-0323	79	M	white	4
+mesa-sleep-0328	73	M	black or african american	3
+mesa-sleep-0329	61	M	white	7
+mesa-sleep-0332	74	M	hispanic	6
+mesa-sleep-0337	78	M	white	6
+mesa-sleep-0338	56	M	white	6
+mesa-sleep-0339	86	F	black or african american	8
+mesa-sleep-0344	69	M	black or african american	5
+mesa-sleep-0345	58	M	white	6
+mesa-sleep-0346	65	M	hispanic	6
+mesa-sleep-0347	84	M	hispanic	4
+mesa-sleep-0350	71	F	hispanic	6
+mesa-sleep-0359	56	M	hispanic	6
+mesa-sleep-0363	64	F	black or african american	4
+mesa-sleep-0368	82	M	white	6
+mesa-sleep-0372	57	F	black or african american	5
+mesa-sleep-0374	76	M	black or african american	5
+mesa-sleep-0380	58	M	white	6
+mesa-sleep-0381	77	M	black or african american	5
+mesa-sleep-0382	61	F	black or african american	3
+mesa-sleep-0384	73	M	black or african american	7
+mesa-sleep-0385	63	M	hispanic	4
+mesa-sleep-0386	87	M	black or african american	5
+mesa-sleep-0388	82	F	black or african american	3
+mesa-sleep-0392	84	F	black or african american	3
+mesa-sleep-0393	82	F	white	6
+mesa-sleep-0399	62	F	black or african american	5
+mesa-sleep-0402	78	M	white	7
+mesa-sleep-0403	77	F	white	3
+mesa-sleep-0405	78	M	hispanic	4
+mesa-sleep-0407	77	F	black or african american	4
+mesa-sleep-0408	62	M	asian	8
+mesa-sleep-0414	65	F	white	6
+mesa-sleep-0415	75	F	black or african american	7
+mesa-sleep-0416	58	M	white	7
+mesa-sleep-0419	69	F	white	3
+mesa-sleep-0423	61	M	white	3
+mesa-sleep-0427	56	F	white	5
+mesa-sleep-0435	69	M	white	3
+mesa-sleep-0439	61	F	black or african american	3
+mesa-sleep-0440	73	F	black or african american	4
+mesa-sleep-0443	64	M	white	6
+mesa-sleep-0445	56	F	black or african american	4
+mesa-sleep-0446	73	F	white	6
+mesa-sleep-0452	73	F	hispanic	4
+mesa-sleep-0457	58	F	black or african american	5
+mesa-sleep-0458	57	F	white	3
+mesa-sleep-0459	63	M	hispanic	6
+mesa-sleep-0460	77	F	asian	8
+mesa-sleep-0464	57	F	white	6
+mesa-sleep-0465	60	M	white	3
+mesa-sleep-0468	87	M	hispanic	4
+mesa-sleep-0469	63	M	white	3
+mesa-sleep-0470	62	F	white	6
+mesa-sleep-0474	78	M	hispanic	8
+mesa-sleep-0476	74	M	hispanic	8
+mesa-sleep-0483	78	M	hispanic	8
+mesa-sleep-0485	61	F	black or african american	3
+mesa-sleep-0488	59	F	white	3
+mesa-sleep-0490	74	M	hispanic	8
+mesa-sleep-0491	76	M	white	7
+mesa-sleep-0495	76	M	asian	8
+mesa-sleep-0499	64	F	hispanic	8
+mesa-sleep-0501	62	M	asian	8
+mesa-sleep-0505	71	M	white	3
+mesa-sleep-0509	64	F	hispanic	4
+mesa-sleep-0512	58	F	hispanic	4
+mesa-sleep-0518	70	F	white	5
+mesa-sleep-0519	66	F	white	5
+mesa-sleep-0522	63	M	white	3
+mesa-sleep-0523	68	M	white	5
+mesa-sleep-0526	62	F	hispanic	6
+mesa-sleep-0527	61	M	asian	7
+mesa-sleep-0528	66	M	black or african american	5
+mesa-sleep-0529	61	M	asian	7
+mesa-sleep-0533	69	M	white	8
+mesa-sleep-0534	77	M	black or african american	3
+mesa-sleep-0536	71	M	white	5
+mesa-sleep-0537	60	M	black or african american	8
+mesa-sleep-0545	82	M	black or african american	5
+mesa-sleep-0548	70	M	hispanic	8
+mesa-sleep-0550	75	M	white	3
+mesa-sleep-0553	68	M	black or african american	7
+mesa-sleep-0554	78	F	hispanic	6
+mesa-sleep-0555	86	F	hispanic	8
+mesa-sleep-0556	74	F	white	7
+mesa-sleep-0558	74	F	white	3
+mesa-sleep-0560	81	F	hispanic	8
+mesa-sleep-0561	85	F	black or african american	3
+mesa-sleep-0563	75	F	white	3
+mesa-sleep-0565	69	M	white	5
+mesa-sleep-0571	81	M	white	3
+mesa-sleep-0572	65	F	white	7
+mesa-sleep-0581	57	M	white	6
+mesa-sleep-0583	82	M	white	7
+mesa-sleep-0586	58	F	hispanic	6
+mesa-sleep-0587	65	M	hispanic	4
+mesa-sleep-0589	64	M	asian	8
+mesa-sleep-0590	59	M	hispanic	6
+mesa-sleep-0594	72	F	hispanic	6
+mesa-sleep-0595	81	M	white	3
+mesa-sleep-0596	59	F	white	6
+mesa-sleep-0599	77	F	black or african american	3
+mesa-sleep-0601	58	F	asian	7
+mesa-sleep-0602	66	M	hispanic	4
+mesa-sleep-0604	76	F	asian	8
+mesa-sleep-0609	73	M	asian	8
+mesa-sleep-0612	76	M	white	5
+mesa-sleep-0614	62	M	white	7
+mesa-sleep-0620	68	F	asian	7
+mesa-sleep-0621	61	M	asian	7
+mesa-sleep-0626	77	F	white	6
+mesa-sleep-0628	72	M	white	3
+mesa-sleep-0629	59	F	white	3
+mesa-sleep-0632	65	M	white	3
+mesa-sleep-0636	75	F	hispanic	6
+mesa-sleep-0639	68	F	hispanic	8
+mesa-sleep-0640	72	F	white	7
+mesa-sleep-0643	60	M	hispanic	6
+mesa-sleep-0648	66	M	hispanic	6
+mesa-sleep-0651	74	M	white	5
+mesa-sleep-0652	68	M	white	6
+mesa-sleep-0655	71	F	black or african american	3
+mesa-sleep-0657	60	F	hispanic	4
+mesa-sleep-0658	68	F	black or african american	3
+mesa-sleep-0664	62	M	black or african american	3
+mesa-sleep-0672	82	F	hispanic	8
+mesa-sleep-0675	81	F	hispanic	4
+mesa-sleep-0677	62	M	hispanic	4
+mesa-sleep-0679	61	F	white	8
+mesa-sleep-0680	82	F	hispanic	8
+mesa-sleep-0683	59	M	black or african american	3
+mesa-sleep-0684	70	M	black or african american	5
+mesa-sleep-0686	58	F	hispanic	6
+mesa-sleep-0688	69	F	asian	8
+mesa-sleep-0690	75	F	hispanic	4
+mesa-sleep-0692	89	F	asian	7
+mesa-sleep-0694	76	M	black or african american	3
+mesa-sleep-0702	72	F	asian	8
+mesa-sleep-0705	60	F	white	3
+mesa-sleep-0711	64	F	white	7
+mesa-sleep-0712	78	F	hispanic	6
+mesa-sleep-0713	58	M	asian	8
+mesa-sleep-0715	60	F	white	7
+mesa-sleep-0716	65	F	black or african american	7
+mesa-sleep-0718	63	M	black or african american	3
+mesa-sleep-0719	79	M	asian	8
+mesa-sleep-0725	57	F	hispanic	6
+mesa-sleep-0726	71	M	white	5
+mesa-sleep-0727	88	M	black or african american	5
+mesa-sleep-0728	82	F	white	5
+mesa-sleep-0743	77	F	hispanic	8
+mesa-sleep-0744	58	M	black or african american	7
+mesa-sleep-0747	74	M	hispanic	8
+mesa-sleep-0755	77	M	white	6
+mesa-sleep-0762	74	F	white	7
+mesa-sleep-0763	57	F	white	6
+mesa-sleep-0764	77	M	hispanic	6
+mesa-sleep-0768	61	F	white	4
+mesa-sleep-0771	59	F	asian	8
+mesa-sleep-0776	72	M	hispanic	4
+mesa-sleep-0782	57	F	white	7
+mesa-sleep-0784	74	F	hispanic	4
+mesa-sleep-0789	80	F	asian	8
+mesa-sleep-0791	59	F	black or african american	4
+mesa-sleep-0792	73	M	white	5
+mesa-sleep-0796	77	F	white	7
+mesa-sleep-0797	62	M	white	5
+mesa-sleep-0800	61	F	hispanic	6
+mesa-sleep-0801	59	M	black or african american	3
+mesa-sleep-0804	63	F	black or african american	5
+mesa-sleep-0806	76	F	hispanic	8
+mesa-sleep-0807	61	M	white	3
+mesa-sleep-0811	74	M	black or african american	5
+mesa-sleep-0812	62	M	white	4
+mesa-sleep-0813	72	F	black or african american	3
+mesa-sleep-0821	58	F	white	6
+mesa-sleep-0823	69	F	hispanic	8
+mesa-sleep-0828	76	F	white	7
+mesa-sleep-0837	60	M	hispanic	4
+mesa-sleep-0838	74	F	white	6
+mesa-sleep-0852	73	F	white	3
+mesa-sleep-0854	74	M	black or african american	3
+mesa-sleep-0856	63	M	white	3
+mesa-sleep-0860	73	F	white	5
+mesa-sleep-0862	79	M	hispanic	6
+mesa-sleep-0863	71	F	black or african american	8
+mesa-sleep-0864	78	F	hispanic	4
+mesa-sleep-0867	84	M	white	5
+mesa-sleep-0873	69	M	asian	7
+mesa-sleep-0884	76	F	asian	7
+mesa-sleep-0886	71	M	white	5
+mesa-sleep-0889	60	F	black or african american	8
+mesa-sleep-0892	62	M	white	7
+mesa-sleep-0893	55	F	white	6
+mesa-sleep-0899	63	F	white	6
+mesa-sleep-0902	68	M	white	6
+mesa-sleep-0904	62	F	hispanic	4
+mesa-sleep-0908	76	M	black or african american	3
+mesa-sleep-0910	81	F	white	7
+mesa-sleep-0912	60	F	white	6
+mesa-sleep-0914	61	M	black or african american	3
+mesa-sleep-0916	67	F	black or african american	5
+mesa-sleep-0917	86	M	hispanic	4
+mesa-sleep-0920	89	F	white	6
+mesa-sleep-0921	73	M	black or african american	7
+mesa-sleep-0923	67	M	hispanic	4
+mesa-sleep-0926	87	F	hispanic	8
+mesa-sleep-0928	70	M	black or african american	3
+mesa-sleep-0931	64	F	hispanic	8
+mesa-sleep-0933	87	F	white	3
+mesa-sleep-0934	67	M	black or african american	5
+mesa-sleep-0935	57	M	hispanic	6
+mesa-sleep-0937	64	M	white	6
+mesa-sleep-0939	71	F	white	6
+mesa-sleep-0943	57	M	asian	7
+mesa-sleep-0946	58	M	black or african american	4
+mesa-sleep-0947	77	M	black or african american	3
+mesa-sleep-0949	55	F	black or african american	4
+mesa-sleep-0951	55	F	white	5
+mesa-sleep-0957	79	M	black or african american	5
+mesa-sleep-0960	60	F	black or african american	7
+mesa-sleep-0962	61	M	white	6
+mesa-sleep-0967	79	M	black or african american	7
+mesa-sleep-0968	84	F	black or african american	3
+mesa-sleep-0971	78	F	white	6
+mesa-sleep-0976	55	F	black or african american	4
+mesa-sleep-0977	56	M	asian	7
+mesa-sleep-0979	76	F	asian	8
+mesa-sleep-0980	75	F	black or african american	4
+mesa-sleep-0989	83	M	hispanic	6
+mesa-sleep-0994	70	F	white	6
+mesa-sleep-1000	73	F	white	3
+mesa-sleep-1010	82	F	black or african american	3
+mesa-sleep-1013	69	M	white	8
+mesa-sleep-1016	64	M	asian	7
+mesa-sleep-1017	68	F	white	7
+mesa-sleep-1018	57	F	white	6
+mesa-sleep-1019	66	M	white	5
+mesa-sleep-1020	80	M	white	4
+mesa-sleep-1021	80	F	white	3
+mesa-sleep-1022	62	M	black or african american	5
+mesa-sleep-1026	73	F	white	4
+mesa-sleep-1030	84	F	white	4
+mesa-sleep-1033	70	M	hispanic	4
+mesa-sleep-1035	76	F	white	8
+mesa-sleep-1039	83	M	white	6
+mesa-sleep-1041	58	M	hispanic	8
+mesa-sleep-1043	74	M	black or african american	4
+mesa-sleep-1044	57	F	hispanic	6
+mesa-sleep-1048	56	F	asian	8
+mesa-sleep-1055	62	F	black or african american	5
+mesa-sleep-1058	72	F	hispanic	8
+mesa-sleep-1068	84	M	white	5
+mesa-sleep-1074	72	F	black or african american	5
+mesa-sleep-1077	69	F	black or african american	3
+mesa-sleep-1080	67	M	hispanic	6
+mesa-sleep-1085	60	M	white	7
+mesa-sleep-1087	65	M	black or african american	7
+mesa-sleep-1089	61	M	hispanic	4
+mesa-sleep-1090	66	M	white	3
+mesa-sleep-1091	77	F	white	5
+mesa-sleep-1092	65	M	asian	7
+mesa-sleep-1094	85	F	hispanic	8
+mesa-sleep-1098	78	F	black or african american	5
+mesa-sleep-1102	65	F	white	7
+mesa-sleep-1105	61	M	black or african american	7
+mesa-sleep-1109	81	M	black or african american	5
+mesa-sleep-1113	78	F	asian	8
+mesa-sleep-1118	59	M	black or african american	4
+mesa-sleep-1121	78	F	black or african american	5
+mesa-sleep-1122	62	M	white	4
+mesa-sleep-1127	55	F	white	6
+mesa-sleep-1128	72	F	hispanic	6
+mesa-sleep-1133	75	M	hispanic	6
+mesa-sleep-1139	87	M	black or african american	7
+mesa-sleep-1140	67	F	black or african american	4
+mesa-sleep-1146	71	F	black or african american	5
+mesa-sleep-1148	64	M	black or african american	5
+mesa-sleep-1150	56	M	white	6
+mesa-sleep-1152	82	F	white	3
+mesa-sleep-1161	80	M	hispanic	8
+mesa-sleep-1162	64	M	white	7
+mesa-sleep-1164	69	M	black or african american	3
+mesa-sleep-1169	81	M	white	6
+mesa-sleep-1173	68	F	white	7
+mesa-sleep-1177	70	F	black or african american	3
+mesa-sleep-1187	77	M	white	7
+mesa-sleep-1188	64	F	hispanic	6
+mesa-sleep-1194	75	M	hispanic	6
+mesa-sleep-1204	69	M	hispanic	8
+mesa-sleep-1206	75	M	asian	7
+mesa-sleep-1209	61	F	white	3
+mesa-sleep-1212	62	M	white	7
+mesa-sleep-1213	59	M	white	6
+mesa-sleep-1215	75	F	white	5
+mesa-sleep-1216	69	F	black or african american	4
+mesa-sleep-1219	80	F	asian	8
+mesa-sleep-1222	80	M	black or african american	5
+mesa-sleep-1224	69	M	hispanic	4
+mesa-sleep-1227	60	F	asian	8
+mesa-sleep-1236	89	M	black or african american	3
+mesa-sleep-1256	63	F	white	3
+mesa-sleep-1260	57	M	white	5
+mesa-sleep-1263	69	M	black or african american	3
+mesa-sleep-1265	67	M	hispanic	8
+mesa-sleep-1266	63	M	white	3
+mesa-sleep-1268	55	M	asian	7
+mesa-sleep-1271	79	M	hispanic	8
+mesa-sleep-1278	81	M	asian	7
+mesa-sleep-1280	68	F	white	3
+mesa-sleep-1281	67	M	hispanic	6
+mesa-sleep-1284	66	F	hispanic	6
+mesa-sleep-1290	90	M	hispanic	8
+mesa-sleep-1291	57	F	hispanic	6
+mesa-sleep-1294	71	F	hispanic	4
+mesa-sleep-1297	80	F	hispanic	4
+mesa-sleep-1298	76	F	white	7
+mesa-sleep-1300	60	F	hispanic	4
+mesa-sleep-1301	63	F	white	7
+mesa-sleep-1305	70	F	black or african american	5
+mesa-sleep-1308	66	M	hispanic	4
+mesa-sleep-1309	69	F	hispanic	4
+mesa-sleep-1311	62	M	black or african american	5
+mesa-sleep-1320	71	M	hispanic	8
+mesa-sleep-1321	59	F	hispanic	8
+mesa-sleep-1324	66	F	white	5
+mesa-sleep-1328	80	M	asian	7
+mesa-sleep-1332	76	F	hispanic	8
+mesa-sleep-1334	66	F	white	7
+mesa-sleep-1341	79	M	white	6
+mesa-sleep-1342	56	M	white	6
+mesa-sleep-1349	81	F	asian	7
+mesa-sleep-1354	62	F	black or african american	7
+mesa-sleep-1356	60	F	asian	8
+mesa-sleep-1357	90	F	white	6
+mesa-sleep-1374	78	M	black or african american	8
+mesa-sleep-1376	61	M	black or african american	3
+mesa-sleep-1378	78	F	hispanic	8
+mesa-sleep-1381	83	F	asian	8
+mesa-sleep-1385	60	M	white	6
+mesa-sleep-1387	55	F	white	7
+mesa-sleep-1388	63	M	black or african american	4
+mesa-sleep-1389	78	F	white	5
+mesa-sleep-1390	64	M	white	3
+mesa-sleep-1391	88	F	white	3
+mesa-sleep-1395	56	F	hispanic	6
+mesa-sleep-1403	78	F	hispanic	4
+mesa-sleep-1404	76	F	black or african american	3
+mesa-sleep-1405	55	M	white	5
+mesa-sleep-1408	68	F	black or african american	5
+mesa-sleep-1410	84	F	black or african american	3
+mesa-sleep-1413	80	F	white	6
+mesa-sleep-1418	86	M	white	3
+mesa-sleep-1420	59	M	white	6
+mesa-sleep-1427	83	M	hispanic	8
+mesa-sleep-1430	88	M	black or african american	3
+mesa-sleep-1431	74	F	white	4
+mesa-sleep-1435	61	M	black or african american	3
+mesa-sleep-1443	60	M	hispanic	4
+mesa-sleep-1446	79	M	black or african american	5
+mesa-sleep-1448	57	M	asian	8
+mesa-sleep-1453	60	M	white	7
+mesa-sleep-1458	62	F	white	3
+mesa-sleep-1459	89	F	white	5
+mesa-sleep-1463	70	M	asian	7
+mesa-sleep-1464	55	M	black or african american	7
+mesa-sleep-1470	63	F	hispanic	4
+mesa-sleep-1472	74	M	white	7
+mesa-sleep-1474	70	F	black or african american	3
+mesa-sleep-1476	68	F	white	3
+mesa-sleep-1478	80	M	black or african american	5
+mesa-sleep-1480	80	F	white	5
+mesa-sleep-1483	66	M	black or african american	7
+mesa-sleep-1488	59	F	white	3
+mesa-sleep-1492	70	M	white	3
+mesa-sleep-1493	60	F	asian	8
+mesa-sleep-1497	65	M	black or african american	3
+mesa-sleep-1498	71	M	hispanic	4
+mesa-sleep-1501	76	M	white	5
+mesa-sleep-1502	81	M	asian	7
+mesa-sleep-1510	75	M	white	5
+mesa-sleep-1515	62	F	white	7
+mesa-sleep-1516	60	M	black or african american	5
+mesa-sleep-1520	74	M	hispanic	6
+mesa-sleep-1523	57	F	black or african american	7
+mesa-sleep-1527	69	F	asian	8
+mesa-sleep-1528	60	M	black or african american	7
+mesa-sleep-1529	71	M	asian	8
+mesa-sleep-1531	71	F	hispanic	6
+mesa-sleep-1535	83	F	white	6
+mesa-sleep-1539	75	M	hispanic	4
+mesa-sleep-1541	67	M	asian	8
+mesa-sleep-1542	63	M	black or african american	3
+mesa-sleep-1546	69	F	hispanic	4
+mesa-sleep-1548	77	M	asian	8
+mesa-sleep-1552	73	F	white	7
+mesa-sleep-1562	57	M	hispanic	8
+mesa-sleep-1563	65	F	hispanic	6
+mesa-sleep-1564	62	M	white	7
+mesa-sleep-1569	59	M	white	6
+mesa-sleep-1570	55	F	white	7
+mesa-sleep-1571	80	F	hispanic	8
+mesa-sleep-1572	62	F	white	7
+mesa-sleep-1573	69	F	black or african american	3
+mesa-sleep-1577	76	F	black or african american	3
+mesa-sleep-1584	68	M	white	8
+mesa-sleep-1588	57	M	black or african american	3
+mesa-sleep-1589	71	F	hispanic	4
+mesa-sleep-1590	67	M	black or african american	3
+mesa-sleep-1591	62	F	white	5
+mesa-sleep-1595	80	M	white	6
+mesa-sleep-1604	86	M	hispanic	6
+mesa-sleep-1607	83	M	white	6
+mesa-sleep-1608	58	F	black or african american	7
+mesa-sleep-1612	79	M	white	4
+mesa-sleep-1613	66	F	white	6
+mesa-sleep-1615	81	F	asian	8
+mesa-sleep-1616	57	M	hispanic	4
+mesa-sleep-1619	86	F	white	5
+mesa-sleep-1620	55	F	asian	7
+mesa-sleep-1621	86	F	white	3
+mesa-sleep-1623	81	F	white	3
+mesa-sleep-1626	63	F	black or african american	7
+mesa-sleep-1629	78	M	white	3
+mesa-sleep-1634	57	M	hispanic	4
+mesa-sleep-1637	64	F	hispanic	4
+mesa-sleep-1640	68	M	white	7
+mesa-sleep-1641	62	F	hispanic	4
+mesa-sleep-1644	75	F	black or african american	8
+mesa-sleep-1647	67	M	asian	7
+mesa-sleep-1650	72	M	hispanic	4
+mesa-sleep-1655	69	M	white	7
+mesa-sleep-1656	71	M	hispanic	4
+mesa-sleep-1659	56	M	black or african american	4
+mesa-sleep-1661	55	M	hispanic	4
+mesa-sleep-1662	72	F	black or african american	3
+mesa-sleep-1670	57	F	hispanic	8
+mesa-sleep-1672	79	F	white	4
+mesa-sleep-1673	69	F	white	6
+mesa-sleep-1677	61	F	asian	7
+mesa-sleep-1680	87	M	white	7
+mesa-sleep-1682	59	M	asian	8
+mesa-sleep-1684	84	F	black or african american	3
+mesa-sleep-1686	78	M	white	7
+mesa-sleep-1688	83	M	white	3
+mesa-sleep-1691	57	F	hispanic	4
+mesa-sleep-1693	78	M	black or african american	3
+mesa-sleep-1694	66	F	asian	8
+mesa-sleep-1698	68	M	asian	8
+mesa-sleep-1700	76	M	hispanic	6
+mesa-sleep-1703	90	M	asian	8
+mesa-sleep-1704	60	M	black or african american	7
+mesa-sleep-1705	68	F	black or african american	7
+mesa-sleep-1707	61	M	black or african american	7
+mesa-sleep-1708	76	F	black or african american	4
+mesa-sleep-1713	67	F	asian	8
+mesa-sleep-1716	57	M	hispanic	4
+mesa-sleep-1717	60	F	white	6
+mesa-sleep-1731	63	F	hispanic	4
+mesa-sleep-1732	59	F	hispanic	4
+mesa-sleep-1733	57	F	black or african american	8
+mesa-sleep-1735	57	M	asian	8
+mesa-sleep-1738	80	F	hispanic	8
+mesa-sleep-1742	88	M	black or african american	5
+mesa-sleep-1743	62	F	white	3
+mesa-sleep-1744	54	F	white	7
+mesa-sleep-1752	89	F	black or african american	8
+mesa-sleep-1756	66	F	white	6
+mesa-sleep-1757	56	F	white	7
+mesa-sleep-1758	67	F	hispanic	8
+mesa-sleep-1759	74	M	hispanic	6
+mesa-sleep-1760	81	F	asian	7
+mesa-sleep-1764	61	M	asian	8
+mesa-sleep-1766	75	F	black or african american	7
+mesa-sleep-1768	75	M	white	5
+mesa-sleep-1769	56	F	hispanic	6
+mesa-sleep-1772	66	F	white	6
+mesa-sleep-1778	73	M	black or african american	4
+mesa-sleep-1781	73	M	hispanic	4
+mesa-sleep-1783	78	M	black or african american	8
+mesa-sleep-1789	55	F	hispanic	6
+mesa-sleep-1790	55	M	black or african american	3
+mesa-sleep-1795	60	F	black or african american	5
+mesa-sleep-1797	68	F	black or african american	3
+mesa-sleep-1801	83	M	white	6
+mesa-sleep-1803	75	F	black or african american	8
+mesa-sleep-1805	73	M	white	7
+mesa-sleep-1807	61	F	black or african american	5
+mesa-sleep-1809	85	M	white	8
+mesa-sleep-1811	80	M	black or african american	3
+mesa-sleep-1821	82	M	black or african american	5
+mesa-sleep-1833	70	F	asian	7
+mesa-sleep-1838	72	M	black or african american	4
+mesa-sleep-1842	58	M	black or african american	3
+mesa-sleep-1844	80	F	hispanic	4
+mesa-sleep-1847	78	F	white	6
+mesa-sleep-1850	71	M	black or african american	5
+mesa-sleep-1853	57	F	black or african american	4
+mesa-sleep-1856	63	F	white	6
+mesa-sleep-1859	76	F	black or african american	7
+mesa-sleep-1862	69	M	black or african american	3
+mesa-sleep-1863	72	M	asian	7
+mesa-sleep-1866	57	M	black or african american	7
+mesa-sleep-1874	84	M	hispanic	6
+mesa-sleep-1876	76	F	hispanic	8
+mesa-sleep-1878	88	F	black or african american	3
+mesa-sleep-1879	63	F	hispanic	4
+mesa-sleep-1882	86	M	hispanic	4
+mesa-sleep-1884	71	F	black or african american	7
+mesa-sleep-1887	71	F	asian	8
+mesa-sleep-1890	81	F	white	3
+mesa-sleep-1891	74	M	hispanic	8
+mesa-sleep-1892	65	M	white	7
+mesa-sleep-1900	66	M	asian	8
+mesa-sleep-1901	77	M	white	7
+mesa-sleep-1906	57	M	asian	8
+mesa-sleep-1907	63	F	white	6
+mesa-sleep-1912	80	M	asian	8
+mesa-sleep-1913	57	F	hispanic	8
+mesa-sleep-1914	57	M	white	3
+mesa-sleep-1917	69	F	white	7
+mesa-sleep-1921	73	M	asian	8
+mesa-sleep-1922	90	M	hispanic	6
+mesa-sleep-1924	86	M	white	5
+mesa-sleep-1927	73	F	asian	8
+mesa-sleep-1940	68	M	hispanic	4
+mesa-sleep-1950	87	M	white	6
+mesa-sleep-1951	80	F	hispanic	4
+mesa-sleep-1957	64	F	white	7
+mesa-sleep-1959	71	F	black or african american	3
+mesa-sleep-1964	68	M	black or african american	3
+mesa-sleep-1973	70	F	black or african american	5
+mesa-sleep-1980	87	M	white	6
+mesa-sleep-1981	84	F	black or african american	5
+mesa-sleep-1982	77	M	black or african american	4
+mesa-sleep-1983	67	F	white	3
+mesa-sleep-1986	68	M	asian	8
+mesa-sleep-1989	81	M	white	7
+mesa-sleep-1995	75	F	black or african american	3
+mesa-sleep-1997	71	M	asian	8
+mesa-sleep-1998	67	M	white	5
+mesa-sleep-1999	75	M	black or african american	5
+mesa-sleep-2003	56	M	black or african american	5
+mesa-sleep-2019	56	F	hispanic	6
+mesa-sleep-2021	73	M	asian	7
+mesa-sleep-2024	87	M	hispanic	4
+mesa-sleep-2030	85	M	black or african american	7
+mesa-sleep-2035	82	M	white	5
+mesa-sleep-2037	68	F	white	5
+mesa-sleep-2039	75	M	hispanic	8
+mesa-sleep-2040	81	M	white	6
+mesa-sleep-2042	79	M	black or african american	8
+mesa-sleep-2043	63	M	white	6
+mesa-sleep-2048	77	M	hispanic	4
+mesa-sleep-2049	59	M	asian	8
+mesa-sleep-2050	77	M	white	3
+mesa-sleep-2055	78	F	white	5
+mesa-sleep-2066	80	M	black or african american	4
+mesa-sleep-2067	82	F	white	4
+mesa-sleep-2071	75	M	white	6
+mesa-sleep-2074	69	M	white	3
+mesa-sleep-2083	75	M	white	7
+mesa-sleep-2084	79	F	white	5
+mesa-sleep-2087	76	M	black or african american	5
+mesa-sleep-2094	70	F	black or african american	5
+mesa-sleep-2096	59	M	white	6
+mesa-sleep-2100	76	F	black or african american	5
+mesa-sleep-2104	80	F	hispanic	6
+mesa-sleep-2105	76	F	black or african american	3
+mesa-sleep-2106	67	F	black or african american	3
+mesa-sleep-2109	58	M	asian	8
+mesa-sleep-2113	82	M	white	3
+mesa-sleep-2114	76	M	black or african american	7
+mesa-sleep-2118	56	F	black or african american	3
+mesa-sleep-2119	82	F	asian	7
+mesa-sleep-2123	57	F	white	6
+mesa-sleep-2126	59	M	white	6
+mesa-sleep-2127	70	F	white	4
+mesa-sleep-2129	78	F	black or african american	3
+mesa-sleep-2133	58	M	black or african american	8
+mesa-sleep-2139	61	M	white	6
+mesa-sleep-2143	77	M	hispanic	8
+mesa-sleep-2144	78	F	black or african american	5
+mesa-sleep-2145	58	F	hispanic	4
+mesa-sleep-2147	62	M	asian	7
+mesa-sleep-2149	81	M	white	4
+mesa-sleep-2150	70	F	hispanic	4
+mesa-sleep-2163	79	F	white	6
+mesa-sleep-2165	79	F	black or african american	5
+mesa-sleep-2167	72	M	white	6
+mesa-sleep-2169	58	M	white	4
+mesa-sleep-2170	70	F	hispanic	6
+mesa-sleep-2172	81	F	white	4
+mesa-sleep-2173	58	F	black or african american	4
+mesa-sleep-2175	68	F	asian	7
+mesa-sleep-2177	81	F	hispanic	8
+mesa-sleep-2183	68	F	black or african american	3
+mesa-sleep-2188	57	F	white	6
+mesa-sleep-2191	85	F	hispanic	4
+mesa-sleep-2192	68	F	white	6
+mesa-sleep-2193	76	M	white	5
+mesa-sleep-2204	87	F	black or african american	5
+mesa-sleep-2206	80	M	black or african american	4
+mesa-sleep-2208	62	M	black or african american	5
+mesa-sleep-2212	59	M	white	3
+mesa-sleep-2214	75	M	white	4
+mesa-sleep-2215	78	M	hispanic	6
+mesa-sleep-2216	65	M	black or african american	5
+mesa-sleep-2217	76	M	hispanic	4
+mesa-sleep-2218	73	F	white	6
+mesa-sleep-2221	90	M	black or african american	3
+mesa-sleep-2227	75	F	white	3
+mesa-sleep-2233	79	F	hispanic	4
+mesa-sleep-2239	88	M	asian	8
+mesa-sleep-2240	60	F	black or african american	5
+mesa-sleep-2243	55	M	hispanic	4
+mesa-sleep-2246	67	M	hispanic	4
+mesa-sleep-2251	72	M	white	3
+mesa-sleep-2260	63	M	hispanic	4
+mesa-sleep-2263	65	F	hispanic	8
+mesa-sleep-2264	58	M	black or african american	8
+mesa-sleep-2265	68	F	asian	7
+mesa-sleep-2266	67	M	black or african american	5
+mesa-sleep-2267	56	M	hispanic	4
+mesa-sleep-2268	85	F	black or african american	4
+mesa-sleep-2269	70	M	hispanic	6
+mesa-sleep-2274	63	F	black or african american	7
+mesa-sleep-2276	87	M	black or african american	3
+mesa-sleep-2278	77	M	black or african american	3
+mesa-sleep-2279	63	F	asian	8
+mesa-sleep-2280	63	M	hispanic	4
+mesa-sleep-2282	77	F	white	3
+mesa-sleep-2289	79	F	hispanic	8
+mesa-sleep-2291	58	M	hispanic	8
+mesa-sleep-2292	67	F	asian	8
+mesa-sleep-2297	78	F	black or african american	5
+mesa-sleep-2299	74	M	hispanic	6
+mesa-sleep-2300	57	F	black or african american	3
+mesa-sleep-2303	86	M	white	6
+mesa-sleep-2305	60	M	white	6
+mesa-sleep-2308	73	M	white	7
+mesa-sleep-2309	62	M	asian	8
+mesa-sleep-2311	78	F	white	7
+mesa-sleep-2314	57	F	white	6
+mesa-sleep-2317	82	F	hispanic	4
+mesa-sleep-2325	63	F	black or african american	3
+mesa-sleep-2328	56	F	black or african american	5
+mesa-sleep-2331	71	M	black or african american	5
+mesa-sleep-2333	81	M	white	7
+mesa-sleep-2337	61	F	black or african american	5
+mesa-sleep-2339	64	F	hispanic	4
+mesa-sleep-2344	63	M	white	3
+mesa-sleep-2345	79	M	black or african american	4
+mesa-sleep-2349	74	M	black or african american	7
+mesa-sleep-2362	75	F	hispanic	4
+mesa-sleep-2363	67	F	hispanic	8
+mesa-sleep-2368	57	M	asian	7
+mesa-sleep-2370	59	F	white	4
+mesa-sleep-2371	79	F	black or african american	5
+mesa-sleep-2372	56	M	white	6
+mesa-sleep-2374	59	F	hispanic	6
+mesa-sleep-2375	75	F	asian	7
+mesa-sleep-2376	60	M	black or african american	4
+mesa-sleep-2377	62	F	asian	8
+mesa-sleep-2386	77	F	black or african american	3
+mesa-sleep-2388	63	F	white	5
+mesa-sleep-2392	61	F	white	4
+mesa-sleep-2394	77	F	white	6
+mesa-sleep-2397	59	F	hispanic	8
+mesa-sleep-2400	69	M	black or african american	4
+mesa-sleep-2408	62	M	black or african american	7
+mesa-sleep-2410	63	M	white	8
+mesa-sleep-2413	57	F	black or african american	5
+mesa-sleep-2414	70	F	white	7
+mesa-sleep-2416	71	M	asian	7
+mesa-sleep-2421	75	M	white	4
+mesa-sleep-2429	76	F	hispanic	6
+mesa-sleep-2433	82	F	white	4
+mesa-sleep-2434	83	F	white	6
+mesa-sleep-2441	79	F	hispanic	6
+mesa-sleep-2443	74	F	asian	7
+mesa-sleep-2447	61	M	hispanic	8
+mesa-sleep-2451	67	F	hispanic	4
+mesa-sleep-2452	85	M	white	6
+mesa-sleep-2455	68	M	hispanic	6
+mesa-sleep-2459	57	F	hispanic	4
+mesa-sleep-2463	55	F	white	7
+mesa-sleep-2464	76	M	black or african american	8
+mesa-sleep-2467	75	M	black or african american	8
+mesa-sleep-2468	70	M	white	5
+mesa-sleep-2470	59	F	hispanic	4
+mesa-sleep-2472	73	M	hispanic	8
+mesa-sleep-2473	64	F	hispanic	8
+mesa-sleep-2474	72	M	white	3
+mesa-sleep-2484	63	F	hispanic	8
+mesa-sleep-2487	57	M	white	8
+mesa-sleep-2488	70	F	black or african american	4
+mesa-sleep-2494	79	M	black or african american	7
+mesa-sleep-2496	59	M	white	3
+mesa-sleep-2499	65	M	white	6
+mesa-sleep-2504	78	M	hispanic	8
+mesa-sleep-2507	68	M	white	5
+mesa-sleep-2509	86	M	white	6
+mesa-sleep-2510	67	F	white	7
+mesa-sleep-2513	62	F	asian	8
+mesa-sleep-2519	75	F	black or african american	5
+mesa-sleep-2523	84	M	white	3
+mesa-sleep-2527	76	F	black or african american	5
+mesa-sleep-2531	64	M	asian	8
+mesa-sleep-2533	78	M	white	5
+mesa-sleep-2537	82	M	black or african american	3
+mesa-sleep-2538	85	F	white	7
+mesa-sleep-2539	70	F	hispanic	6
+mesa-sleep-2544	63	F	black or african american	3
+mesa-sleep-2548	58	F	black or african american	5
+mesa-sleep-2549	60	F	hispanic	4
+mesa-sleep-2551	62	F	asian	7
+mesa-sleep-2556	67	M	black or african american	4
+mesa-sleep-2565	75	M	white	4
+mesa-sleep-2567	78	F	black or african american	5
+mesa-sleep-2572	61	F	hispanic	6
+mesa-sleep-2573	65	F	asian	7
+mesa-sleep-2574	79	M	white	3
+mesa-sleep-2581	63	F	white	3
+mesa-sleep-2582	78	M	white	6
+mesa-sleep-2590	60	M	black or african american	3
+mesa-sleep-2593	66	F	white	8
+mesa-sleep-2598	76	F	asian	7
+mesa-sleep-2602	71	F	hispanic	8
+mesa-sleep-2603	59	F	white	5
+mesa-sleep-2604	67	F	hispanic	6
+mesa-sleep-2608	79	F	hispanic	6
+mesa-sleep-2613	75	M	hispanic	8
+mesa-sleep-2614	68	F	asian	7
+mesa-sleep-2615	72	F	black or african american	8
+mesa-sleep-2616	78	F	black or african american	5
+mesa-sleep-2626	77	M	black or african american	5
+mesa-sleep-2628	65	F	black or african american	3
+mesa-sleep-2632	90	F	black or african american	7
+mesa-sleep-2634	67	F	white	6
+mesa-sleep-2636	68	M	black or african american	5
+mesa-sleep-2638	65	M	white	7
+mesa-sleep-2639	72	F	black or african american	3
+mesa-sleep-2648	64	F	white	7
+mesa-sleep-2650	67	F	hispanic	6
+mesa-sleep-2651	71	M	white	7
+mesa-sleep-2655	56	F	black or african american	3
+mesa-sleep-2659	66	F	hispanic	8
+mesa-sleep-2660	59	M	white	7
+mesa-sleep-2665	90	M	white	5
+mesa-sleep-2668	68	M	hispanic	6
+mesa-sleep-2670	71	M	black or african american	7
+mesa-sleep-2676	57	M	white	6
+mesa-sleep-2677	70	M	hispanic	4
+mesa-sleep-2680	61	F	white	6
+mesa-sleep-2681	57	F	hispanic	6
+mesa-sleep-2685	68	F	black or african american	3
+mesa-sleep-2687	63	F	white	7
+mesa-sleep-2688	58	M	asian	8
+mesa-sleep-2690	75	F	black or african american	3
+mesa-sleep-2694	80	F	hispanic	8
+mesa-sleep-2696	75	F	black or african american	5
+mesa-sleep-2700	70	M	hispanic	6
+mesa-sleep-2701	59	F	white	7
+mesa-sleep-2705	80	M	hispanic	8
+mesa-sleep-2707	84	M	hispanic	8
+mesa-sleep-2709	81	F	black or african american	3
+mesa-sleep-2711	64	F	white	3
+mesa-sleep-2714	77	M	hispanic	4
+mesa-sleep-2715	87	M	hispanic	8
+mesa-sleep-2722	74	M	white	3
+mesa-sleep-2723	64	M	black or african american	3
+mesa-sleep-2725	59	M	black or african american	7
+mesa-sleep-2727	74	F	black or african american	3
+mesa-sleep-2728	76	M	white	7
+mesa-sleep-2729	77	F	black or african american	7
+mesa-sleep-2734	75	F	hispanic	6
+mesa-sleep-2735	71	M	black or african american	5
+mesa-sleep-2736	90	F	white	6
+mesa-sleep-2738	68	F	white	3
+mesa-sleep-2739	63	F	black or african american	3
+mesa-sleep-2747	57	M	asian	7
+mesa-sleep-2750	58	F	white	6
+mesa-sleep-2752	69	M	hispanic	8
+mesa-sleep-2756	72	F	white	3
+mesa-sleep-2757	66	M	white	4
+mesa-sleep-2759	85	M	white	7
+mesa-sleep-2762	62	F	white	6
+mesa-sleep-2764	76	F	black or african american	7
+mesa-sleep-2771	57	F	hispanic	4
+mesa-sleep-2772	61	F	black or african american	4
+mesa-sleep-2778	86	F	hispanic	6
+mesa-sleep-2780	64	F	white	3
+mesa-sleep-2781	70	M	hispanic	8
+mesa-sleep-2787	64	F	white	3
+mesa-sleep-2792	76	F	hispanic	4
+mesa-sleep-2796	81	F	black or african american	3
+mesa-sleep-2798	76	F	black or african american	5
+mesa-sleep-2800	76	M	asian	7
+mesa-sleep-2802	61	M	white	7
+mesa-sleep-2803	76	M	hispanic	8
+mesa-sleep-2807	60	M	white	7
+mesa-sleep-2808	63	F	hispanic	6
+mesa-sleep-2811	61	M	black or african american	3
+mesa-sleep-2814	85	F	black or african american	7
+mesa-sleep-2819	61	M	hispanic	6
+mesa-sleep-2820	56	F	asian	8
+mesa-sleep-2821	63	F	white	7
+mesa-sleep-2826	62	M	hispanic	6
+mesa-sleep-2828	75	F	hispanic	8
+mesa-sleep-2830	77	M	hispanic	6
+mesa-sleep-2834	78	M	asian	7
+mesa-sleep-2836	82	F	asian	8
+mesa-sleep-2838	72	F	hispanic	8
+mesa-sleep-2843	57	M	white	5
+mesa-sleep-2846	90	F	black or african american	4
+mesa-sleep-2848	65	F	black or african american	7
+mesa-sleep-2851	61	F	black or african american	5
+mesa-sleep-2852	74	M	hispanic	4
+mesa-sleep-2854	65	F	white	4
+mesa-sleep-2862	55	F	black or african american	5
+mesa-sleep-2863	85	F	asian	7
+mesa-sleep-2868	79	F	hispanic	4
+mesa-sleep-2876	76	M	white	6
+mesa-sleep-2877	56	F	hispanic	6
+mesa-sleep-2879	81	M	asian	7
+mesa-sleep-2880	57	F	white	5
+mesa-sleep-2881	77	M	hispanic	8
+mesa-sleep-2887	76	M	black or african american	3
+mesa-sleep-2892	78	F	hispanic	4
+mesa-sleep-2894	62	M	white	3
+mesa-sleep-2896	70	M	asian	7
+mesa-sleep-2897	55	F	black or african american	7
+mesa-sleep-2898	60	M	black or african american	7
+mesa-sleep-2903	80	F	white	5
+mesa-sleep-2904	73	M	hispanic	8
+mesa-sleep-2906	73	M	hispanic	8
+mesa-sleep-2911	60	F	hispanic	4
+mesa-sleep-2913	64	F	white	6
+mesa-sleep-2915	63	F	white	3
+mesa-sleep-2926	70	F	black or african american	4
+mesa-sleep-2930	63	M	white	6
+mesa-sleep-2932	60	F	hispanic	6
+mesa-sleep-2933	76	F	hispanic	6
+mesa-sleep-2934	81	M	asian	8
+mesa-sleep-2938	61	F	hispanic	6
+mesa-sleep-2941	60	M	black or african american	5
+mesa-sleep-2946	58	F	asian	8
+mesa-sleep-2952	65	M	black or african american	3
+mesa-sleep-2954	68	M	white	6
+mesa-sleep-2957	63	F	black or african american	4
+mesa-sleep-2958	78	F	hispanic	4
+mesa-sleep-2961	75	M	white	7
+mesa-sleep-2966	58	F	white	3
+mesa-sleep-2969	76	M	black or african american	5
+mesa-sleep-2970	63	F	black or african american	3
+mesa-sleep-2975	57	F	hispanic	6
+mesa-sleep-2977	57	F	hispanic	8
+mesa-sleep-2982	55	F	white	6
+mesa-sleep-2987	71	M	black or african american	4
+mesa-sleep-2988	75	M	black or african american	3
+mesa-sleep-2993	64	F	white	4
+mesa-sleep-2995	77	M	white	3
+mesa-sleep-2996	74	M	black or african american	5
+mesa-sleep-2999	71	F	hispanic	4
+mesa-sleep-3003	74	F	black or african american	4
+mesa-sleep-3006	64	F	asian	7
+mesa-sleep-3011	56	F	black or african american	4
+mesa-sleep-3012	84	M	hispanic	4
+mesa-sleep-3013	64	F	white	3
+mesa-sleep-3015	66	F	hispanic	8
+mesa-sleep-3016	64	M	hispanic	4
+mesa-sleep-3018	87	M	hispanic	4
+mesa-sleep-3019	84	F	white	3
+mesa-sleep-3021	75	F	white	7
+mesa-sleep-3024	63	F	black or african american	3
+mesa-sleep-3025	80	M	black or african american	5
+mesa-sleep-3028	63	F	white	3
+mesa-sleep-3029	60	M	hispanic	8
+mesa-sleep-3032	64	F	black or african american	5
+mesa-sleep-3036	64	F	hispanic	8
+mesa-sleep-3037	78	F	white	7
+mesa-sleep-3040	71	M	white	8
+mesa-sleep-3042	59	M	white	5
+mesa-sleep-3043	83	M	white	5
+mesa-sleep-3044	75	F	white	8
+mesa-sleep-3048	71	F	hispanic	6
+mesa-sleep-3052	71	M	black or african american	3
+mesa-sleep-3053	57	M	hispanic	8
+mesa-sleep-3061	73	F	black or african american	4
+mesa-sleep-3066	66	F	white	7
+mesa-sleep-3068	68	M	white	5
+mesa-sleep-3072	75	F	white	4
+mesa-sleep-3073	69	F	black or african american	4
+mesa-sleep-3086	75	F	black or african american	5
+mesa-sleep-3089	67	F	white	3
+mesa-sleep-3094	85	M	white	7
+mesa-sleep-3101	64	F	white	6
+mesa-sleep-3102	82	F	white	7
+mesa-sleep-3104	63	F	white	6
+mesa-sleep-3106	79	F	white	6
+mesa-sleep-3111	66	M	white	6
+mesa-sleep-3112	57	M	asian	7
+mesa-sleep-3113	61	F	white	6
+mesa-sleep-3121	65	F	white	3
+mesa-sleep-3126	72	F	black or african american	5
+mesa-sleep-3132	57	M	black or african american	4
+mesa-sleep-3133	77	F	white	4
+mesa-sleep-3135	58	F	asian	7
+mesa-sleep-3136	73	M	asian	8
+mesa-sleep-3140	69	F	hispanic	6
+mesa-sleep-3147	62	F	asian	8
+mesa-sleep-3149	65	M	black or african american	3
+mesa-sleep-3150	71	F	asian	8
+mesa-sleep-3153	76	F	white	6
+mesa-sleep-3155	69	F	hispanic	6
+mesa-sleep-3156	60	F	white	6
+mesa-sleep-3158	68	M	black or african american	3
+mesa-sleep-3168	59	M	hispanic	8
+mesa-sleep-3173	86	F	asian	8
+mesa-sleep-3180	75	F	hispanic	4
+mesa-sleep-3184	60	F	black or african american	5
+mesa-sleep-3186	62	F	black or african american	3
+mesa-sleep-3190	56	M	hispanic	4
+mesa-sleep-3193	67	F	hispanic	6
+mesa-sleep-3203	62	F	white	7
+mesa-sleep-3204	76	F	white	4
+mesa-sleep-3206	70	M	hispanic	8
+mesa-sleep-3208	69	F	white	6
+mesa-sleep-3211	75	F	black or african american	3
+mesa-sleep-3212	76	F	white	6
+mesa-sleep-3216	59	F	asian	7
+mesa-sleep-3218	62	M	white	7
+mesa-sleep-3223	70	M	hispanic	8
+mesa-sleep-3224	76	M	white	6
+mesa-sleep-3233	61	F	white	6
+mesa-sleep-3236	80	F	hispanic	8
+mesa-sleep-3237	67	F	hispanic	6
+mesa-sleep-3239	68	F	white	3
+mesa-sleep-3250	63	F	black or african american	5
+mesa-sleep-3251	79	F	asian	7
+mesa-sleep-3257	70	F	black or african american	4
+mesa-sleep-3259	75	F	black or african american	3
+mesa-sleep-3262	56	F	black or african american	3
+mesa-sleep-3264	66	F	hispanic	8
+mesa-sleep-3267	75	F	white	7
+mesa-sleep-3275	85	M	hispanic	4
+mesa-sleep-3280	66	M	white	8
+mesa-sleep-3281	75	F	hispanic	4
+mesa-sleep-3285	75	F	white	6
+mesa-sleep-3290	72	F	black or african american	4
+mesa-sleep-3293	81	M	white	5
+mesa-sleep-3294	62	M	white	7
+mesa-sleep-3297	62	F	hispanic	6
+mesa-sleep-3298	62	F	white	7
+mesa-sleep-3299	83	F	white	4
+mesa-sleep-3302	56	F	white	5
+mesa-sleep-3303	62	M	asian	7
+mesa-sleep-3308	72	M	hispanic	6
+mesa-sleep-3310	75	M	white	4
+mesa-sleep-3311	88	F	white	7
+mesa-sleep-3313	59	M	hispanic	6
+mesa-sleep-3314	56	M	white	7
+mesa-sleep-3317	69	F	black or african american	3
+mesa-sleep-3324	82	F	hispanic	4
+mesa-sleep-3332	84	M	white	7
+mesa-sleep-3335	60	F	hispanic	6
+mesa-sleep-3336	64	M	black or african american	3
+mesa-sleep-3337	72	F	asian	8
+mesa-sleep-3341	81	F	black or african american	4
+mesa-sleep-3344	58	F	black or african american	4
+mesa-sleep-3347	59	M	white	4
+mesa-sleep-3349	63	F	black or african american	5
+mesa-sleep-3352	64	M	black or african american	5
+mesa-sleep-3354	81	F	hispanic	4
+mesa-sleep-3356	66	F	asian	8
+mesa-sleep-3362	73	M	white	3
+mesa-sleep-3367	73	F	white	5
+mesa-sleep-3369	79	F	white	8
+mesa-sleep-3373	76	M	black or african american	3
+mesa-sleep-3375	65	M	hispanic	4
+mesa-sleep-3377	85	M	white	6
+mesa-sleep-3378	63	F	asian	8
+mesa-sleep-3382	58	F	hispanic	8
+mesa-sleep-3387	60	M	asian	7
+mesa-sleep-3389	58	M	white	3
+mesa-sleep-3390	67	F	white	7
+mesa-sleep-3392	67	F	black or african american	5
+mesa-sleep-3394	66	F	white	6
+mesa-sleep-3396	65	F	white	6
+mesa-sleep-3399	81	F	white	5
+mesa-sleep-3404	73	M	white	5
+mesa-sleep-3405	74	F	asian	8
+mesa-sleep-3407	81	M	asian	7
+mesa-sleep-3408	64	M	black or african american	5
+mesa-sleep-3409	58	M	black or african american	5
+mesa-sleep-3410	72	F	hispanic	6
+mesa-sleep-3413	65	F	hispanic	4
+mesa-sleep-3415	58	F	white	4
+mesa-sleep-3419	59	M	white	8
+mesa-sleep-3422	77	M	black or african american	3
+mesa-sleep-3423	70	F	white	3
+mesa-sleep-3426	74	M	black or african american	8
+mesa-sleep-3431	61	F	black or african american	3
+mesa-sleep-3432	67	M	hispanic	8
+mesa-sleep-3437	82	F	black or african american	8
+mesa-sleep-3439	79	M	black or african american	5
+mesa-sleep-3440	74	F	white	3
+mesa-sleep-3441	56	M	asian	8
+mesa-sleep-3442	80	F	black or african american	3
+mesa-sleep-3449	67	M	white	7
+mesa-sleep-3452	55	M	white	7
+mesa-sleep-3455	59	M	white	6
+mesa-sleep-3457	75	F	hispanic	4
+mesa-sleep-3464	73	M	white	3
+mesa-sleep-3468	75	F	white	4
+mesa-sleep-3469	76	F	asian	7
+mesa-sleep-3472	61	F	white	7
+mesa-sleep-3477	76	M	white	6
+mesa-sleep-3479	59	M	hispanic	6
+mesa-sleep-3481	79	F	white	5
+mesa-sleep-3486	78	F	black or african american	7
+mesa-sleep-3492	66	M	white	3
+mesa-sleep-3495	67	M	hispanic	6
+mesa-sleep-3499	66	F	hispanic	4
+mesa-sleep-3500	56	M	white	7
+mesa-sleep-3506	77	F	asian	8
+mesa-sleep-3508	81	F	white	3
+mesa-sleep-3510	64	M	white	5
+mesa-sleep-3516	90	F	hispanic	4
+mesa-sleep-3519	70	F	asian	8
+mesa-sleep-3520	56	F	black or african american	4
+mesa-sleep-3529	74	M	hispanic	8
+mesa-sleep-3530	67	F	asian	8
+mesa-sleep-3533	76	M	white	3
+mesa-sleep-3537	74	F	hispanic	6
+mesa-sleep-3538	58	F	black or african american	4
+mesa-sleep-3539	74	F	black or african american	5
+mesa-sleep-3541	87	F	hispanic	4
+mesa-sleep-3542	58	F	white	5
+mesa-sleep-3543	55	F	hispanic	4
+mesa-sleep-3547	82	F	black or african american	3
+mesa-sleep-3554	77	M	hispanic	6
+mesa-sleep-3555	72	M	hispanic	4
+mesa-sleep-3556	57	M	hispanic	6
+mesa-sleep-3557	79	F	white	7
+mesa-sleep-3558	70	M	black or african american	5
+mesa-sleep-3560	76	M	black or african american	5
+mesa-sleep-3561	75	F	white	7
+mesa-sleep-3564	69	F	white	7
+mesa-sleep-3566	71	M	white	3
+mesa-sleep-3570	66	M	black or african american	3
+mesa-sleep-3572	69	M	white	6
+mesa-sleep-3575	85	F	black or african american	7
+mesa-sleep-3581	63	F	white	4
+mesa-sleep-3583	89	F	hispanic	4
+mesa-sleep-3585	62	M	black or african american	3
+mesa-sleep-3587	74	F	white	5
+mesa-sleep-3591	80	M	asian	7
+mesa-sleep-3592	66	M	hispanic	8
+mesa-sleep-3594	67	M	white	4
+mesa-sleep-3596	69	M	white	7
+mesa-sleep-3598	78	F	white	4
+mesa-sleep-3601	69	F	black or african american	4
+mesa-sleep-3603	72	M	asian	8
+mesa-sleep-3604	59	M	black or african american	7
+mesa-sleep-3605	78	F	white	3
+mesa-sleep-3612	85	F	black or african american	4
+mesa-sleep-3622	61	F	white	6
+mesa-sleep-3625	61	M	hispanic	6
+mesa-sleep-3629	85	F	white	5
+mesa-sleep-3630	76	M	hispanic	6
+mesa-sleep-3634	61	M	white	7
+mesa-sleep-3635	65	M	white	4
+mesa-sleep-3637	67	F	asian	7
+mesa-sleep-3639	68	M	hispanic	6
+mesa-sleep-3641	65	F	black or african american	4
+mesa-sleep-3647	59	M	white	6
+mesa-sleep-3652	58	M	asian	7
+mesa-sleep-3654	60	M	hispanic	8
+mesa-sleep-3656	61	F	white	7
+mesa-sleep-3660	61	M	black or african american	4
+mesa-sleep-3664	57	F	black or african american	3
+mesa-sleep-3666	78	M	white	7
+mesa-sleep-3671	57	M	white	6
+mesa-sleep-3674	87	M	white	3
+mesa-sleep-3684	76	F	white	5
+mesa-sleep-3685	71	M	hispanic	8
+mesa-sleep-3689	60	F	white	7
+mesa-sleep-3690	60	M	hispanic	8
+mesa-sleep-3692	73	M	white	7
+mesa-sleep-3693	57	F	black or african american	5
+mesa-sleep-3696	60	F	black or african american	5
+mesa-sleep-3698	77	M	black or african american	3
+mesa-sleep-3702	74	F	hispanic	8
+mesa-sleep-3703	71	F	white	3
+mesa-sleep-3707	61	M	black or african american	7
+mesa-sleep-3708	85	F	black or african american	5
+mesa-sleep-3710	76	F	hispanic	6
+mesa-sleep-3711	74	M	black or african american	7
+mesa-sleep-3712	73	F	white	7
+mesa-sleep-3715	84	F	hispanic	8
+mesa-sleep-3717	58	M	hispanic	6
+mesa-sleep-3723	71	M	white	5
+mesa-sleep-3730	84	M	black or african american	7
+mesa-sleep-3734	73	M	black or african american	7
+mesa-sleep-3736	83	F	hispanic	8
+mesa-sleep-3737	68	M	white	4
+mesa-sleep-3738	62	M	hispanic	4
+mesa-sleep-3742	57	F	white	7
+mesa-sleep-3743	61	F	white	7
+mesa-sleep-3745	56	M	white	6
+mesa-sleep-3750	69	M	black or african american	8
+mesa-sleep-3751	59	F	white	6
+mesa-sleep-3753	68	F	white	6
+mesa-sleep-3754	75	F	hispanic	6
+mesa-sleep-3760	63	F	white	7
+mesa-sleep-3761	71	F	white	5
+mesa-sleep-3770	70	M	white	8
+mesa-sleep-3771	64	F	black or african american	4
+mesa-sleep-3777	58	M	hispanic	4
+mesa-sleep-3781	71	F	white	3
+mesa-sleep-3782	64	M	asian	8
+mesa-sleep-3785	60	F	asian	7
+mesa-sleep-3787	67	M	white	4
+mesa-sleep-3793	56	F	white	6
+mesa-sleep-3795	71	F	white	5
+mesa-sleep-3801	79	F	white	7
+mesa-sleep-3803	63	M	white	6
+mesa-sleep-3815	65	F	asian	8
+mesa-sleep-3818	62	F	white	5
+mesa-sleep-3819	77	F	hispanic	8
+mesa-sleep-3822	75	F	hispanic	4
+mesa-sleep-3823	75	M	white	3
+mesa-sleep-3833	64	M	black or african american	7
+mesa-sleep-3834	58	F	hispanic	6
+mesa-sleep-3836	73	F	white	6
+mesa-sleep-3838	85	F	white	5
+mesa-sleep-3839	67	M	hispanic	4
+mesa-sleep-3840	55	M	white	4
+mesa-sleep-3842	83	F	asian	8
+mesa-sleep-3848	67	M	white	3
+mesa-sleep-3850	82	M	black or african american	7
+mesa-sleep-3852	86	M	asian	8
+mesa-sleep-3854	73	F	white	6
+mesa-sleep-3855	69	F	white	6
+mesa-sleep-3856	55	M	hispanic	6
+mesa-sleep-3861	55	F	white	4
+mesa-sleep-3865	76	F	white	5
+mesa-sleep-3867	69	M	black or african american	7
+mesa-sleep-3873	78	F	black or african american	3
+mesa-sleep-3874	69	M	hispanic	6
+mesa-sleep-3876	62	M	asian	7
+mesa-sleep-3881	72	M	white	3
+mesa-sleep-3886	83	F	black or african american	5
+mesa-sleep-3887	62	F	black or african american	4
+mesa-sleep-3889	59	M	black or african american	5
+mesa-sleep-3890	63	F	hispanic	4
+mesa-sleep-3892	64	M	white	6
+mesa-sleep-3894	58	F	hispanic	6
+mesa-sleep-3897	82	F	black or african american	4
+mesa-sleep-3901	60	F	white	3
+mesa-sleep-3902	90	F	white	7
+mesa-sleep-3904	57	F	hispanic	3
+mesa-sleep-3906	82	F	white	6
+mesa-sleep-3913	78	M	asian	7
+mesa-sleep-3914	59	F	white	4
+mesa-sleep-3917	61	F	black or african american	5
+mesa-sleep-3918	64	M	asian	8
+mesa-sleep-3920	80	M	white	4
+mesa-sleep-3921	87	F	black or african american	7
+mesa-sleep-3924	62	M	hispanic	8
+mesa-sleep-3925	59	F	asian	8
+mesa-sleep-3927	80	F	white	6
+mesa-sleep-3931	57	M	black or african american	8
+mesa-sleep-3933	73	F	white	3
+mesa-sleep-3934	75	F	white	3
+mesa-sleep-3936	65	M	hispanic	4
+mesa-sleep-3939	73	M	white	4
+mesa-sleep-3945	69	F	asian	7
+mesa-sleep-3948	68	F	black or african american	3
+mesa-sleep-3950	68	F	hispanic	6
+mesa-sleep-3951	73	M	black or african american	5
+mesa-sleep-3963	85	M	hispanic	4
+mesa-sleep-3967	65	F	black or african american	5
+mesa-sleep-3971	90	F	hispanic	4
+mesa-sleep-3972	72	F	hispanic	4
+mesa-sleep-3974	63	M	hispanic	6
+mesa-sleep-3975	63	F	hispanic	4
+mesa-sleep-3976	60	M	white	3
+mesa-sleep-3980	67	F	white	5
+mesa-sleep-3987	80	M	white	6
+mesa-sleep-3992	74	F	white	3
+mesa-sleep-3993	61	F	asian	8
+mesa-sleep-3996	64	F	white	5
+mesa-sleep-3997	68	M	white	5
+mesa-sleep-4000	69	F	black or african american	3
+mesa-sleep-4003	62	F	black or african american	5
+mesa-sleep-4012	61	F	black or african american	7
+mesa-sleep-4014	90	M	white	3
+mesa-sleep-4015	84	M	asian	7
+mesa-sleep-4016	75	F	white	7
+mesa-sleep-4017	62	F	black or african american	3
+mesa-sleep-4023	63	M	black or african american	7
+mesa-sleep-4025	68	F	asian	7
+mesa-sleep-4026	60	M	white	6
+mesa-sleep-4028	87	M	black or african american	7
+mesa-sleep-4029	61	F	white	7
+mesa-sleep-4032	83	F	hispanic	8
+mesa-sleep-4036	78	F	black or african american	7
+mesa-sleep-4038	65	F	white	8
+mesa-sleep-4044	56	M	hispanic	6
+mesa-sleep-4047	68	M	black or african american	3
+mesa-sleep-4053	68	F	black or african american	7
+mesa-sleep-4055	79	F	asian	7
+mesa-sleep-4057	73	M	hispanic	6
+mesa-sleep-4062	78	F	white	6
+mesa-sleep-4070	57	F	white	6
+mesa-sleep-4077	64	F	black or african american	7
+mesa-sleep-4085	68	M	white	3
+mesa-sleep-4087	57	M	white	6
+mesa-sleep-4088	59	F	white	6
+mesa-sleep-4090	59	F	white	6
+mesa-sleep-4091	56	F	white	6
+mesa-sleep-4097	59	F	hispanic	8
+mesa-sleep-4099	59	M	black or african american	5
+mesa-sleep-4109	63	M	black or african american	5
+mesa-sleep-4110	87	F	black or african american	4
+mesa-sleep-4111	71	M	white	5
+mesa-sleep-4114	78	M	black or african american	4
+mesa-sleep-4116	73	F	hispanic	6
+mesa-sleep-4117	77	F	white	7
+mesa-sleep-4120	74	F	hispanic	8
+mesa-sleep-4123	84	F	asian	8
+mesa-sleep-4128	65	F	hispanic	8
+mesa-sleep-4129	62	F	hispanic	6
+mesa-sleep-4131	55	M	white	3
+mesa-sleep-4137	71	M	white	5
+mesa-sleep-4140	77	F	black or african american	7
+mesa-sleep-4141	64	F	white	7
+mesa-sleep-4152	61	F	white	7
+mesa-sleep-4157	67	F	white	3
+mesa-sleep-4158	63	M	black or african american	3
+mesa-sleep-4163	71	M	black or african american	5
+mesa-sleep-4165	57	F	hispanic	4
+mesa-sleep-4167	77	F	asian	7
+mesa-sleep-4168	90	M	hispanic	4
+mesa-sleep-4169	59	F	white	8
+mesa-sleep-4170	57	M	black or african american	5
+mesa-sleep-4171	67	F	black or african american	4
+mesa-sleep-4173	63	F	black or african american	3
+mesa-sleep-4174	79	M	asian	8
+mesa-sleep-4178	87	F	hispanic	4
+mesa-sleep-4186	55	M	black or african american	3
+mesa-sleep-4189	76	M	black or african american	7
+mesa-sleep-4190	80	F	white	5
+mesa-sleep-4196	72	F	hispanic	4
+mesa-sleep-4199	67	F	white	6
+mesa-sleep-4200	78	M	hispanic	4
+mesa-sleep-4203	57	F	black or african american	4
+mesa-sleep-4205	71	M	asian	7
+mesa-sleep-4211	82	F	white	6
+mesa-sleep-4215	58	M	hispanic	6
+mesa-sleep-4216	66	M	black or african american	8
+mesa-sleep-4219	90	M	white	5
+mesa-sleep-4221	77	F	black or african american	4
+mesa-sleep-4223	59	F	asian	7
+mesa-sleep-4224	74	M	white	7
+mesa-sleep-4227	67	F	hispanic	4
+mesa-sleep-4228	64	F	white	4
+mesa-sleep-4229	55	M	hispanic	6
+mesa-sleep-4230	58	F	asian	7
+mesa-sleep-4232	67	M	black or african american	7
+mesa-sleep-4233	76	M	white	4
+mesa-sleep-4236	76	M	white	5
+mesa-sleep-4240	73	F	white	3
+mesa-sleep-4241	79	M	white	6
+mesa-sleep-4244	79	F	hispanic	4
+mesa-sleep-4245	67	M	black or african american	4
+mesa-sleep-4247	71	M	white	7
+mesa-sleep-4250	65	F	white	3
+mesa-sleep-4252	69	F	white	5
+mesa-sleep-4254	57	M	white	5
+mesa-sleep-4256	63	F	black or african american	4
+mesa-sleep-4257	69	F	asian	8
+mesa-sleep-4258	61	F	white	3
+mesa-sleep-4265	57	M	black or african american	4
+mesa-sleep-4266	62	M	asian	7
+mesa-sleep-4267	77	F	hispanic	6
+mesa-sleep-4268	59	M	black or african american	7
+mesa-sleep-4270	73	M	black or african american	7
+mesa-sleep-4273	59	F	hispanic	4
+mesa-sleep-4275	78	F	hispanic	8
+mesa-sleep-4276	65	F	black or african american	7
+mesa-sleep-4277	61	F	black or african american	4
+mesa-sleep-4284	84	M	asian	7
+mesa-sleep-4285	64	F	white	5
+mesa-sleep-4289	77	F	black or african american	3
+mesa-sleep-4292	62	F	white	8
+mesa-sleep-4294	76	F	hispanic	4
+mesa-sleep-4295	81	M	white	6
+mesa-sleep-4296	81	F	hispanic	8
+mesa-sleep-4298	82	M	black or african american	4
+mesa-sleep-4301	64	F	hispanic	4
+mesa-sleep-4304	57	F	asian	8
+mesa-sleep-4305	69	F	asian	7
+mesa-sleep-4308	57	M	white	5
+mesa-sleep-4309	86	M	asian	8
+mesa-sleep-4311	57	F	black or african american	5
+mesa-sleep-4316	80	F	black or african american	8
+mesa-sleep-4318	70	F	hispanic	6
+mesa-sleep-4319	68	M	black or african american	4
+mesa-sleep-4322	76	M	white	6
+mesa-sleep-4325	79	M	white	3
+mesa-sleep-4330	87	F	white	7
+mesa-sleep-4332	64	M	black or african american	7
+mesa-sleep-4333	83	M	black or african american	3
+mesa-sleep-4334	82	M	hispanic	8
+mesa-sleep-4340	58	F	black or african american	7
+mesa-sleep-4341	73	M	hispanic	6
+mesa-sleep-4345	77	F	black or african american	4
+mesa-sleep-4352	81	F	black or african american	5
+mesa-sleep-4366	71	M	asian	7
+mesa-sleep-4367	77	M	black or african american	4
+mesa-sleep-4375	79	M	asian	8
+mesa-sleep-4379	80	F	asian	7
+mesa-sleep-4383	68	F	black or african american	3
+mesa-sleep-4385	61	F	hispanic	4
+mesa-sleep-4389	67	F	black or african american	4
+mesa-sleep-4393	78	F	white	5
+mesa-sleep-4394	70	M	asian	8
+mesa-sleep-4396	78	M	white	3
+mesa-sleep-4406	85	F	black or african american	4
+mesa-sleep-4408	90	F	hispanic	6
+mesa-sleep-4409	74	F	hispanic	4
+mesa-sleep-4410	61	M	black or african american	3
+mesa-sleep-4411	56	F	white	6
+mesa-sleep-4412	70	F	hispanic	4
+mesa-sleep-4415	77	M	black or african american	5
+mesa-sleep-4417	64	M	white	6
+mesa-sleep-4420	61	F	white	5
+mesa-sleep-4428	70	M	hispanic	8
+mesa-sleep-4432	57	F	white	5
+mesa-sleep-4436	68	M	black or african american	3
+mesa-sleep-4437	62	M	white	6
+mesa-sleep-4443	61	M	white	4
+mesa-sleep-4449	74	F	asian	8
+mesa-sleep-4450	56	F	asian	8
+mesa-sleep-4460	63	F	black or african american	5
+mesa-sleep-4461	62	M	black or african american	5
+mesa-sleep-4462	67	F	black or african american	5
+mesa-sleep-4465	73	F	white	6
+mesa-sleep-4467	57	F	asian	8
+mesa-sleep-4469	75	M	black or african american	5
+mesa-sleep-4474	56	M	white	4
+mesa-sleep-4476	68	M	hispanic	6
+mesa-sleep-4477	84	F	black or african american	3
+mesa-sleep-4478	89	M	hispanic	8
+mesa-sleep-4479	79	M	hispanic	6
+mesa-sleep-4480	76	M	white	8
+mesa-sleep-4484	69	M	white	5
+mesa-sleep-4488	55	F	black or african american	3
+mesa-sleep-4490	67	M	white	3
+mesa-sleep-4492	71	F	hispanic	6
+mesa-sleep-4493	76	F	asian	8
+mesa-sleep-4495	90	F	hispanic	6
+mesa-sleep-4496	58	F	black or african american	5
+mesa-sleep-4497	69	M	white	6
+mesa-sleep-4499	73	F	asian	8
+mesa-sleep-4500	83	F	white	5
+mesa-sleep-4501	62	F	black or african american	3
+mesa-sleep-4506	56	F	hispanic	4
+mesa-sleep-4508	61	F	asian	8
+mesa-sleep-4511	80	F	hispanic	6
+mesa-sleep-4512	85	F	white	6
+mesa-sleep-4514	80	F	black or african american	3
+mesa-sleep-4515	66	M	hispanic	6
+mesa-sleep-4517	57	F	white	6
+mesa-sleep-4520	61	F	hispanic	4
+mesa-sleep-4521	81	F	black or african american	3
+mesa-sleep-4527	74	M	white	7
+mesa-sleep-4529	60	M	asian	8
+mesa-sleep-4535	70	F	white	5
+mesa-sleep-4538	71	F	white	7
+mesa-sleep-4541	71	F	hispanic	6
+mesa-sleep-4544	55	M	white	7
+mesa-sleep-4545	57	M	asian	8
+mesa-sleep-4552	69	M	black or african american	5
+mesa-sleep-4554	74	M	hispanic	8
+mesa-sleep-4555	56	M	white	7
+mesa-sleep-4557	65	F	white	6
+mesa-sleep-4561	74	M	black or african american	8
+mesa-sleep-4563	65	M	hispanic	4
+mesa-sleep-4570	72	M	white	6
+mesa-sleep-4575	63	F	black or african american	3
+mesa-sleep-4576	62	M	black or african american	3
+mesa-sleep-4577	68	F	black or african american	3
+mesa-sleep-4579	74	F	black or african american	4
+mesa-sleep-4580	72	M	white	6
+mesa-sleep-4582	58	F	white	6
+mesa-sleep-4584	69	M	white	7
+mesa-sleep-4586	68	F	black or african american	8
+mesa-sleep-4588	69	F	asian	7
+mesa-sleep-4590	60	F	hispanic	6
+mesa-sleep-4592	73	F	hispanic	6
+mesa-sleep-4594	56	F	black or african american	8
+mesa-sleep-4597	79	F	hispanic	6
+mesa-sleep-4598	59	F	white	8
+mesa-sleep-4600	77	F	black or african american	3
+mesa-sleep-4611	82	M	asian	7
+mesa-sleep-4612	75	F	hispanic	4
+mesa-sleep-4614	76	M	black or african american	5
+mesa-sleep-4615	72	M	black or african american	5
+mesa-sleep-4617	67	F	hispanic	6
+mesa-sleep-4618	87	M	white	5
+mesa-sleep-4622	61	F	white	5
+mesa-sleep-4623	74	M	asian	7
+mesa-sleep-4624	62	M	black or african american	3
+mesa-sleep-4627	61	F	hispanic	4
+mesa-sleep-4635	82	F	hispanic	6
+mesa-sleep-4638	64	F	black or african american	3
+mesa-sleep-4641	68	M	black or african american	4
+mesa-sleep-4642	64	F	white	3
+mesa-sleep-4644	72	F	black or african american	8
+mesa-sleep-4646	62	M	white	7
+mesa-sleep-4648	85	M	hispanic	4
+mesa-sleep-4649	71	M	hispanic	4
+mesa-sleep-4650	62	M	black or african american	5
+mesa-sleep-4658	84	F	asian	8
+mesa-sleep-4659	74	M	hispanic	8
+mesa-sleep-4661	86	F	hispanic	8
+mesa-sleep-4662	77	F	black or african american	3
+mesa-sleep-4663	77	F	asian	8
+mesa-sleep-4667	73	F	black or african american	4
+mesa-sleep-4668	75	F	asian	8
+mesa-sleep-4671	66	M	hispanic	8
+mesa-sleep-4675	86	F	black or african american	3
+mesa-sleep-4677	66	F	black or african american	5
+mesa-sleep-4682	68	F	black or african american	3
+mesa-sleep-4683	57	M	hispanic	6
+mesa-sleep-4701	70	F	white	6
+mesa-sleep-4706	80	M	white	5
+mesa-sleep-4710	80	M	white	7
+mesa-sleep-4715	64	F	white	3
+mesa-sleep-4720	65	M	hispanic	6
+mesa-sleep-4721	78	F	white	7
+mesa-sleep-4723	77	F	asian	7
+mesa-sleep-4728	64	F	white	6
+mesa-sleep-4729	60	F	white	4
+mesa-sleep-4730	75	F	black or african american	4
+mesa-sleep-4731	63	F	white	5
+mesa-sleep-4732	64	M	hispanic	6
+mesa-sleep-4734	66	M	white	6
+mesa-sleep-4750	59	M	black or african american	5
+mesa-sleep-4756	62	M	black or african american	4
+mesa-sleep-4759	71	F	white	7
+mesa-sleep-4760	82	M	white	5
+mesa-sleep-4763	90	F	white	8
+mesa-sleep-4765	58	F	white	3
+mesa-sleep-4766	82	F	black or african american	5
+mesa-sleep-4772	62	F	asian	7
+mesa-sleep-4774	73	M	white	6
+mesa-sleep-4775	70	F	hispanic	8
+mesa-sleep-4777	82	M	hispanic	4
+mesa-sleep-4778	78	F	hispanic	8
+mesa-sleep-4782	65	F	white	3
+mesa-sleep-4783	61	M	black or african american	4
+mesa-sleep-4786	68	F	black or african american	7
+mesa-sleep-4789	69	F	black or african american	7
+mesa-sleep-4794	86	F	hispanic	4
+mesa-sleep-4795	56	F	hispanic	6
+mesa-sleep-4805	61	M	hispanic	6
+mesa-sleep-4806	59	F	asian	8
+mesa-sleep-4808	77	F	black or african american	7
+mesa-sleep-4815	57	M	hispanic	4
+mesa-sleep-4816	67	M	hispanic	8
+mesa-sleep-4820	65	M	white	8
+mesa-sleep-4822	75	F	asian	7
+mesa-sleep-4826	75	M	white	3
+mesa-sleep-4830	56	F	white	6
+mesa-sleep-4831	57	F	black or african american	4
+mesa-sleep-4839	81	F	hispanic	4
+mesa-sleep-4842	64	F	hispanic	4
+mesa-sleep-4846	82	M	black or african american	7
+mesa-sleep-4849	61	M	white	3
+mesa-sleep-4854	62	F	black or african american	5
+mesa-sleep-4860	67	M	white	7
+mesa-sleep-4861	61	F	black or african american	5
+mesa-sleep-4864	63	M	black or african american	3
+mesa-sleep-4865	64	F	white	5
+mesa-sleep-4873	74	M	asian	7
+mesa-sleep-4875	64	F	white	7
+mesa-sleep-4878	74	F	black or african american	3
+mesa-sleep-4880	79	F	white	7
+mesa-sleep-4886	78	M	black or african american	7
+mesa-sleep-4888	71	F	white	3
+mesa-sleep-4892	60	F	black or african american	4
+mesa-sleep-4895	74	F	white	3
+mesa-sleep-4897	72	M	white	5
+mesa-sleep-4912	77	M	hispanic	8
+mesa-sleep-4918	74	F	white	7
+mesa-sleep-4920	73	M	black or african american	3
+mesa-sleep-4928	60	F	white	8
+mesa-sleep-4929	63	M	asian	7
+mesa-sleep-4935	56	F	black or african american	5
+mesa-sleep-4939	63	M	white	5
+mesa-sleep-4940	59	M	asian	8
+mesa-sleep-4947	64	M	asian	8
+mesa-sleep-4948	82	F	white	7
+mesa-sleep-4950	75	M	black or african american	3
+mesa-sleep-4951	59	F	asian	8
+mesa-sleep-4958	65	F	hispanic	4
+mesa-sleep-4961	68	M	hispanic	6
+mesa-sleep-4968	84	M	hispanic	8
+mesa-sleep-4969	80	F	asian	7
+mesa-sleep-4971	71	F	hispanic	8
+mesa-sleep-4974	63	F	asian	8
+mesa-sleep-4980	62	F	white	7
+mesa-sleep-4989	59	F	black or african american	3
+mesa-sleep-4994	80	F	asian	8
+mesa-sleep-4995	86	F	hispanic	8
+mesa-sleep-4998	71	M	white	5
+mesa-sleep-5000	89	F	black or african american	3
+mesa-sleep-5001	64	M	white	7
+mesa-sleep-5002	75	F	white	7
+mesa-sleep-5006	75	F	hispanic	8
+mesa-sleep-5007	58	M	hispanic	8
+mesa-sleep-5009	74	F	asian	7
+mesa-sleep-5011	77	F	black or african american	7
+mesa-sleep-5013	77	M	black or african american	3
+mesa-sleep-5017	88	F	white	3
+mesa-sleep-5029	63	M	asian	7
+mesa-sleep-5031	55	F	black or african american	8
+mesa-sleep-5033	68	M	black or african american	4
+mesa-sleep-5038	62	M	hispanic	8
+mesa-sleep-5040	70	F	black or african american	4
+mesa-sleep-5047	67	M	white	5
+mesa-sleep-5053	75	F	white	7
+mesa-sleep-5056	73	F	white	6
+mesa-sleep-5060	83	F	white	6
+mesa-sleep-5063	84	M	black or african american	8
+mesa-sleep-5067	55	M	white	3
+mesa-sleep-5072	71	F	white	3
+mesa-sleep-5073	90	M	asian	7
+mesa-sleep-5075	57	M	asian	7
+mesa-sleep-5077	61	F	black or african american	3
+mesa-sleep-5079	71	M	white	7
+mesa-sleep-5092	56	M	hispanic	8
+mesa-sleep-5096	68	F	white	6
+mesa-sleep-5097	77	F	asian	7
+mesa-sleep-5101	67	M	black or african american	4
+mesa-sleep-5103	80	F	black or african american	5
+mesa-sleep-5104	75	F	white	7
+mesa-sleep-5105	61	M	white	8
+mesa-sleep-5106	90	F	black or african american	5
+mesa-sleep-5108	59	F	white	3
+mesa-sleep-5113	76	M	white	6
+mesa-sleep-5116	56	F	black or african american	7
+mesa-sleep-5117	80	F	white	7
+mesa-sleep-5118	69	F	white	5
+mesa-sleep-5119	83	F	white	3
+mesa-sleep-5121	59	F	hispanic	6
+mesa-sleep-5127	59	F	white	4
+mesa-sleep-5129	60	M	asian	8
+mesa-sleep-5131	66	F	hispanic	4
+mesa-sleep-5134	87	F	white	4
+mesa-sleep-5135	64	M	asian	7
+mesa-sleep-5137	63	M	hispanic	6
+mesa-sleep-5148	84	M	black or african american	5
+mesa-sleep-5149	73	M	white	3
+mesa-sleep-5151	58	M	black or african american	8
+mesa-sleep-5155	82	M	hispanic	6
+mesa-sleep-5157	75	M	hispanic	4
+mesa-sleep-5162	78	M	black or african american	5
+mesa-sleep-5163	60	M	asian	8
+mesa-sleep-5166	76	F	white	6
+mesa-sleep-5167	67	F	hispanic	4
+mesa-sleep-5169	69	F	white	3
+mesa-sleep-5173	65	F	hispanic	6
+mesa-sleep-5177	68	F	hispanic	6
+mesa-sleep-5179	61	F	hispanic	6
+mesa-sleep-5182	84	M	white	7
+mesa-sleep-5187	58	M	hispanic	8
+mesa-sleep-5195	73	M	black or african american	3
+mesa-sleep-5196	78	F	asian	7
+mesa-sleep-5197	83	F	white	3
+mesa-sleep-5199	88	F	white	4
+mesa-sleep-5201	67	F	white	5
+mesa-sleep-5202	81	M	black or african american	5
+mesa-sleep-5203	84	M	black or african american	4
+mesa-sleep-5208	79	M	white	6
+mesa-sleep-5214	83	F	hispanic	8
+mesa-sleep-5219	66	M	black or african american	5
+mesa-sleep-5221	83	M	asian	8
+mesa-sleep-5224	63	F	white	3
+mesa-sleep-5225	89	F	white	3
+mesa-sleep-5231	67	M	white	5
+mesa-sleep-5232	61	M	white	6
+mesa-sleep-5234	81	M	hispanic	4
+mesa-sleep-5236	82	M	black or african american	8
+mesa-sleep-5237	61	F	black or african american	8
+mesa-sleep-5238	66	F	asian	8
+mesa-sleep-5239	71	M	hispanic	4
+mesa-sleep-5240	61	F	white	5
+mesa-sleep-5241	62	F	black or african american	7
+mesa-sleep-5243	68	F	asian	8
+mesa-sleep-5255	61	M	asian	7
+mesa-sleep-5259	81	M	black or african american	5
+mesa-sleep-5261	65	M	white	4
+mesa-sleep-5267	66	F	white	3
+mesa-sleep-5268	71	F	white	7
+mesa-sleep-5272	65	M	asian	8
+mesa-sleep-5273	69	F	white	5
+mesa-sleep-5274	55	F	hispanic	6
+mesa-sleep-5276	66	M	white	3
+mesa-sleep-5277	74	F	hispanic	4
+mesa-sleep-5281	57	M	asian	8
+mesa-sleep-5283	61	F	white	6
+mesa-sleep-5284	57	F	white	5
+mesa-sleep-5287	76	M	black or african american	7
+mesa-sleep-5292	62	F	asian	7
+mesa-sleep-5295	77	F	white	5
+mesa-sleep-5298	75	M	white	4
+mesa-sleep-5299	57	M	white	6
+mesa-sleep-5300	74	F	hispanic	8
+mesa-sleep-5302	66	M	white	5
+mesa-sleep-5303	67	M	white	8
+mesa-sleep-5304	63	M	black or african american	5
+mesa-sleep-5308	88	M	white	5
+mesa-sleep-5309	74	M	hispanic	8
+mesa-sleep-5311	60	M	black or african american	3
+mesa-sleep-5316	84	M	hispanic	4
+mesa-sleep-5318	56	F	black or african american	3
+mesa-sleep-5326	59	M	hispanic	6
+mesa-sleep-5328	63	M	asian	7
+mesa-sleep-5331	63	M	white	8
+mesa-sleep-5332	61	M	hispanic	4
+mesa-sleep-5339	90	M	black or african american	4
+mesa-sleep-5341	66	M	white	7
+mesa-sleep-5343	66	F	white	5
+mesa-sleep-5348	76	F	white	6
+mesa-sleep-5351	80	F	white	5
+mesa-sleep-5353	64	M	white	5
+mesa-sleep-5354	69	M	asian	8
+mesa-sleep-5357	79	M	white	5
+mesa-sleep-5358	63	M	asian	7
+mesa-sleep-5362	64	F	white	6
+mesa-sleep-5364	62	F	hispanic	6
+mesa-sleep-5365	68	M	black or african american	5
+mesa-sleep-5366	79	F	black or african american	3
+mesa-sleep-5369	80	M	black or african american	3
+mesa-sleep-5372	77	F	black or african american	4
+mesa-sleep-5373	76	M	black or african american	5
+mesa-sleep-5381	84	M	white	7
+mesa-sleep-5387	72	M	white	4
+mesa-sleep-5390	67	F	white	4
+mesa-sleep-5393	56	F	hispanic	6
+mesa-sleep-5395	82	M	black or african american	5
+mesa-sleep-5396	81	F	white	6
+mesa-sleep-5397	61	M	white	7
+mesa-sleep-5402	62	F	black or african american	7
+mesa-sleep-5405	66	M	black or african american	5
+mesa-sleep-5409	64	M	white	8
+mesa-sleep-5414	73	M	white	6
+mesa-sleep-5423	69	M	asian	8
+mesa-sleep-5426	90	M	white	7
+mesa-sleep-5427	75	F	hispanic	8
+mesa-sleep-5429	89	M	hispanic	4
+mesa-sleep-5431	76	M	hispanic	4
+mesa-sleep-5433	61	M	white	5
+mesa-sleep-5438	75	M	white	5
+mesa-sleep-5439	57	M	white	3
+mesa-sleep-5440	69	M	white	3
+mesa-sleep-5443	60	F	white	6
+mesa-sleep-5445	58	M	black or african american	3
+mesa-sleep-5447	89	M	black or african american	4
+mesa-sleep-5450	67	F	black or african american	4
+mesa-sleep-5451	70	M	white	4
+mesa-sleep-5457	82	M	white	5
+mesa-sleep-5463	56	F	hispanic	8
+mesa-sleep-5464	87	M	asian	7
+mesa-sleep-5469	67	F	asian	7
+mesa-sleep-5472	85	M	black or african american	5
+mesa-sleep-5474	86	M	asian	8
+mesa-sleep-5475	76	F	white	7
+mesa-sleep-5476	62	M	black or african american	5
+mesa-sleep-5479	75	F	black or african american	7
+mesa-sleep-5480	75	M	hispanic	4
+mesa-sleep-5482	73	M	white	3
+mesa-sleep-5489	59	F	black or african american	3
+mesa-sleep-5491	58	M	hispanic	8
+mesa-sleep-5494	83	F	asian	8
+mesa-sleep-5496	65	F	white	4
+mesa-sleep-5499	67	M	white	7
+mesa-sleep-5500	56	M	hispanic	6
+mesa-sleep-5501	84	F	black or african american	3
+mesa-sleep-5503	69	F	white	7
+mesa-sleep-5510	55	F	white	6
+mesa-sleep-5513	63	M	white	3
+mesa-sleep-5514	77	M	black or african american	4
+mesa-sleep-5518	69	M	white	6
+mesa-sleep-5522	72	M	white	6
+mesa-sleep-5527	62	M	asian	7
+mesa-sleep-5529	67	F	black or african american	4
+mesa-sleep-5532	67	F	white	7
+mesa-sleep-5537	71	F	hispanic	4
+mesa-sleep-5543	85	M	black or african american	7
+mesa-sleep-5550	63	F	white	7
+mesa-sleep-5551	56	F	asian	8
+mesa-sleep-5552	83	F	hispanic	4
+mesa-sleep-5555	57	F	white	6
+mesa-sleep-5557	71	F	black or african american	5
+mesa-sleep-5559	78	M	hispanic	4
+mesa-sleep-5563	68	F	white	3
+mesa-sleep-5565	60	M	white	5
+mesa-sleep-5568	66	F	asian	7
+mesa-sleep-5570	77	M	white	5
+mesa-sleep-5574	61	M	white	5
+mesa-sleep-5577	67	F	white	6
+mesa-sleep-5580	60	M	hispanic	6
+mesa-sleep-5581	65	F	white	6
+mesa-sleep-5582	77	M	asian	8
+mesa-sleep-5586	87	M	hispanic	8
+mesa-sleep-5587	64	M	hispanic	6
+mesa-sleep-5592	71	M	white	8
+mesa-sleep-5596	65	F	black or african american	7
+mesa-sleep-5599	77	F	hispanic	8
+mesa-sleep-5603	66	M	black or african american	4
+mesa-sleep-5606	75	F	asian	8
+mesa-sleep-5608	68	M	black or african american	5
+mesa-sleep-5617	68	F	black or african american	4
+mesa-sleep-5619	64	F	black or african american	8
+mesa-sleep-5621	72	F	asian	8
+mesa-sleep-5622	61	F	white	7
+mesa-sleep-5623	68	M	black or african american	5
+mesa-sleep-5627	73	F	asian	7
+mesa-sleep-5631	67	M	black or african american	3
+mesa-sleep-5632	75	F	white	6
+mesa-sleep-5635	68	M	white	6
+mesa-sleep-5654	89	F	black or african american	3
+mesa-sleep-5656	71	F	black or african american	4
+mesa-sleep-5658	60	F	black or african american	7
+mesa-sleep-5659	58	M	black or african american	5
+mesa-sleep-5660	65	F	black or african american	8
+mesa-sleep-5662	87	F	white	5
+mesa-sleep-5665	55	F	white	6
+mesa-sleep-5669	65	M	black or african american	7
+mesa-sleep-5673	61	F	black or african american	4
+mesa-sleep-5677	58	F	hispanic	8
+mesa-sleep-5680	83	F	black or african american	3
+mesa-sleep-5686	67	F	white	6
+mesa-sleep-5692	66	M	hispanic	6
+mesa-sleep-5695	72	F	asian	7
+mesa-sleep-5696	57	M	asian	8
+mesa-sleep-5697	76	F	white	3
+mesa-sleep-5703	66	M	white	7
+mesa-sleep-5704	56	F	white	8
+mesa-sleep-5706	73	M	white	8
+mesa-sleep-5708	74	M	asian	8
+mesa-sleep-5714	63	M	white	5
+mesa-sleep-5716	70	F	hispanic	4
+mesa-sleep-5721	80	F	black or african american	3
+mesa-sleep-5722	56	F	hispanic	4
+mesa-sleep-5733	73	F	black or african american	4
+mesa-sleep-5734	75	M	white	5
+mesa-sleep-5737	62	M	white	7
+mesa-sleep-5740	64	F	black or african american	4
+mesa-sleep-5748	70	F	black or african american	5
+mesa-sleep-5749	67	F	white	7
+mesa-sleep-5753	58	F	white	6
+mesa-sleep-5754	58	M	hispanic	4
+mesa-sleep-5759	76	F	white	6
+mesa-sleep-5760	84	M	white	3
+mesa-sleep-5769	74	F	black or african american	5
+mesa-sleep-5775	57	M	asian	7
+mesa-sleep-5777	77	M	white	3
+mesa-sleep-5780	58	F	black or african american	4
+mesa-sleep-5782	61	M	asian	7
+mesa-sleep-5784	74	M	white	3
+mesa-sleep-5786	71	M	black or african american	3
+mesa-sleep-5788	66	F	white	6
+mesa-sleep-5789	65	M	black or african american	5
+mesa-sleep-5792	64	M	white	7
+mesa-sleep-5793	58	M	asian	8
+mesa-sleep-5796	72	M	asian	7
+mesa-sleep-5797	72	F	white	6
+mesa-sleep-5798	82	F	white	7
+mesa-sleep-5801	90	M	black or african american	3
+mesa-sleep-5805	56	M	black or african american	8
+mesa-sleep-5806	69	F	black or african american	4
+mesa-sleep-5810	74	F	hispanic	8
+mesa-sleep-5814	57	F	white	7
+mesa-sleep-5821	55	M	hispanic	6
+mesa-sleep-5827	60	F	white	6
+mesa-sleep-5828	83	M	white	4
+mesa-sleep-5830	73	F	hispanic	4
+mesa-sleep-5831	65	F	white	8
+mesa-sleep-5832	61	F	black or african american	3
+mesa-sleep-5837	57	M	white	7
+mesa-sleep-5838	60	F	asian	7
+mesa-sleep-5841	74	M	hispanic	4
+mesa-sleep-5842	75	F	white	3
+mesa-sleep-5844	74	F	white	6
+mesa-sleep-5845	67	F	black or african american	4
+mesa-sleep-5846	62	F	black or african american	3
+mesa-sleep-5847	62	F	white	6
+mesa-sleep-5851	65	M	white	5
+mesa-sleep-5854	60	F	hispanic	4
+mesa-sleep-5857	66	F	white	3
+mesa-sleep-5858	63	M	hispanic	4
+mesa-sleep-5859	72	F	hispanic	8
+mesa-sleep-5863	69	F	white	5
+mesa-sleep-5864	78	M	white	7
+mesa-sleep-5868	58	M	asian	8
+mesa-sleep-5869	77	F	black or african american	7
+mesa-sleep-5871	75	F	black or african american	7
+mesa-sleep-5875	66	M	hispanic	6
+mesa-sleep-5876	81	F	white	5
+mesa-sleep-5877	87	F	white	8
+mesa-sleep-5881	62	F	asian	7
+mesa-sleep-5882	67	F	white	7
+mesa-sleep-5884	73	F	black or african american	5
+mesa-sleep-5885	88	F	white	6
+mesa-sleep-5886	62	M	white	5
+mesa-sleep-5887	65	M	black or african american	7
+mesa-sleep-5888	64	M	black or african american	3
+mesa-sleep-5890	75	F	black or african american	5
+mesa-sleep-5891	90	F	white	4
+mesa-sleep-5896	57	M	hispanic	6
+mesa-sleep-5897	67	F	white	5
+mesa-sleep-5899	67	F	black or african american	5
+mesa-sleep-5906	58	F	black or african american	3
+mesa-sleep-5907	63	F	white	6
+mesa-sleep-5909	60	M	black or african american	7
+mesa-sleep-5911	69	F	black or african american	3
+mesa-sleep-5921	60	M	white	5
+mesa-sleep-5924	74	M	white	6
+mesa-sleep-5932	71	F	black or african american	5
+mesa-sleep-5939	76	M	hispanic	8
+mesa-sleep-5942	63	F	hispanic	6
+mesa-sleep-5945	83	F	black or african american	8
+mesa-sleep-5947	59	F	asian	7
+mesa-sleep-5954	62	F	black or african american	5
+mesa-sleep-5955	59	M	hispanic	8
+mesa-sleep-5957	86	M	white	7
+mesa-sleep-5958	70	M	asian	8
+mesa-sleep-5969	65	M	hispanic	6
+mesa-sleep-5970	59	M	white	5
+mesa-sleep-5977	64	F	white	7
+mesa-sleep-5980	55	F	black or african american	3
+mesa-sleep-5982	64	F	white	7
+mesa-sleep-5983	75	M	black or african american	5
+mesa-sleep-5986	73	F	white	6
+mesa-sleep-5988	56	M	hispanic	4
+mesa-sleep-5990	61	F	white	7
+mesa-sleep-5993	74	F	asian	7
+mesa-sleep-5995	80	F	white	6
+mesa-sleep-5998	60	M	asian	8
+mesa-sleep-6000	63	F	white	6
+mesa-sleep-6001	65	F	hispanic	4
+mesa-sleep-6002	76	M	hispanic	8
+mesa-sleep-6003	54	F	white	7
+mesa-sleep-6005	62	F	black or african american	3
+mesa-sleep-6009	73	F	black or african american	3
+mesa-sleep-6011	68	M	white	3
+mesa-sleep-6015	79	F	black or african american	5
+mesa-sleep-6019	81	F	white	5
+mesa-sleep-6020	66	M	white	4
+mesa-sleep-6022	84	M	white	5
+mesa-sleep-6024	63	F	black or african american	5
+mesa-sleep-6027	63	F	asian	8
+mesa-sleep-6029	63	M	asian	7
+mesa-sleep-6036	90	F	hispanic	8
+mesa-sleep-6037	76	M	asian	8
+mesa-sleep-6039	83	F	hispanic	8
+mesa-sleep-6043	83	M	black or african american	5
+mesa-sleep-6047	62	M	hispanic	6
+mesa-sleep-6050	71	F	white	6
+mesa-sleep-6052	74	F	black or african american	5
+mesa-sleep-6053	63	M	asian	8
+mesa-sleep-6057	61	M	black or african american	3
+mesa-sleep-6064	86	F	hispanic	4
+mesa-sleep-6065	76	M	black or african american	3
+mesa-sleep-6067	72	M	white	5
+mesa-sleep-6071	64	M	hispanic	4
+mesa-sleep-6072	72	F	black or african american	5
+mesa-sleep-6073	66	M	white	6
+mesa-sleep-6074	78	M	white	4
+mesa-sleep-6075	66	M	white	6
+mesa-sleep-6076	60	F	white	8
+mesa-sleep-6077	90	F	black or african american	8
+mesa-sleep-6081	72	F	white	8
+mesa-sleep-6087	76	F	white	4
+mesa-sleep-6088	87	F	white	6
+mesa-sleep-6091	64	M	black or african american	3
+mesa-sleep-6095	70	F	hispanic	6
+mesa-sleep-6097	56	M	white	5
+mesa-sleep-6099	90	F	black or african american	8
+mesa-sleep-6104	57	F	asian	8
+mesa-sleep-6106	59	M	black or african american	4
+mesa-sleep-6113	90	F	white	7
+mesa-sleep-6115	69	F	hispanic	4
+mesa-sleep-6117	85	M	white	5
+mesa-sleep-6119	68	M	white	5
+mesa-sleep-6123	64	F	white	4
+mesa-sleep-6128	70	F	white	3
+mesa-sleep-6131	89	F	white	4
+mesa-sleep-6132	60	F	asian	7
+mesa-sleep-6136	80	F	hispanic	6
+mesa-sleep-6138	58	M	white	7
+mesa-sleep-6139	73	F	black or african american	5
+mesa-sleep-6140	81	M	black or african american	4
+mesa-sleep-6145	83	M	hispanic	4
+mesa-sleep-6151	66	M	black or african american	3
+mesa-sleep-6155	56	F	hispanic	4
+mesa-sleep-6156	57	M	hispanic	8
+mesa-sleep-6157	78	M	black or african american	5
+mesa-sleep-6160	77	F	hispanic	8
+mesa-sleep-6172	61	M	hispanic	6
+mesa-sleep-6174	69	M	black or african american	5
+mesa-sleep-6176	58	M	hispanic	8
+mesa-sleep-6180	57	M	hispanic	6
+mesa-sleep-6183	69	F	asian	7
+mesa-sleep-6193	67	M	black or african american	5
+mesa-sleep-6195	71	F	black or african american	3
+mesa-sleep-6202	59	M	black or african american	5
+mesa-sleep-6205	70	M	white	3
+mesa-sleep-6209	58	F	black or african american	5
+mesa-sleep-6215	88	F	black or african american	8
+mesa-sleep-6217	75	F	black or african american	5
+mesa-sleep-6221	64	F	hispanic	8
+mesa-sleep-6223	90	M	hispanic	6
+mesa-sleep-6224	71	F	white	7
+mesa-sleep-6226	70	F	black or african american	7
+mesa-sleep-6228	83	F	white	6
+mesa-sleep-6230	73	F	black or african american	8
+mesa-sleep-6236	65	F	asian	7
+mesa-sleep-6238	62	F	black or african american	4
+mesa-sleep-6240	64	M	hispanic	6
+mesa-sleep-6244	89	M	black or african american	3
+mesa-sleep-6245	68	M	hispanic	4
+mesa-sleep-6248	82	M	black or african american	4
+mesa-sleep-6252	56	F	black or african american	5
+mesa-sleep-6261	62	M	white	7
+mesa-sleep-6262	61	F	hispanic	6
+mesa-sleep-6263	61	M	hispanic	6
+mesa-sleep-6266	78	F	hispanic	4
+mesa-sleep-6270	70	M	hispanic	8
+mesa-sleep-6274	63	F	asian	7
+mesa-sleep-6278	82	F	white	4
+mesa-sleep-6279	77	M	white	7
+mesa-sleep-6280	65	M	black or african american	4
+mesa-sleep-6281	64	F	black or african american	3
+mesa-sleep-6286	83	F	asian	7
+mesa-sleep-6288	81	F	hispanic	8
+mesa-sleep-6290	58	M	asian	8
+mesa-sleep-6291	82	F	black or african american	5
+mesa-sleep-6292	55	M	asian	8
+mesa-sleep-6295	77	M	black or african american	4
+mesa-sleep-6296	67	M	white	6
+mesa-sleep-6298	67	M	hispanic	4
+mesa-sleep-6300	89	F	white	6
+mesa-sleep-6306	63	M	white	5
+mesa-sleep-6308	80	M	black or african american	3
+mesa-sleep-6309	62	F	black or african american	7
+mesa-sleep-6311	74	F	black or african american	7
+mesa-sleep-6313	66	F	white	5
+mesa-sleep-6314	61	F	white	4
+mesa-sleep-6316	66	M	black or african american	5
+mesa-sleep-6317	59	F	white	3
+mesa-sleep-6318	66	M	hispanic	8
+mesa-sleep-6320	61	F	hispanic	4
+mesa-sleep-6321	73	F	hispanic	6
+mesa-sleep-6322	61	F	white	6
+mesa-sleep-6323	77	M	black or african american	5
+mesa-sleep-6327	83	F	white	6
+mesa-sleep-6330	80	M	black or african american	8
+mesa-sleep-6331	60	F	white	6
+mesa-sleep-6333	71	M	white	3
+mesa-sleep-6335	67	F	black or african american	3
+mesa-sleep-6336	55	F	white	5
+mesa-sleep-6337	56	M	white	6
+mesa-sleep-6340	63	F	black or african american	3
+mesa-sleep-6350	65	M	hispanic	8
+mesa-sleep-6351	62	F	white	3
+mesa-sleep-6353	65	F	black or african american	3
+mesa-sleep-6354	57	F	white	8
+mesa-sleep-6362	89	M	hispanic	4
+mesa-sleep-6366	62	M	white	6
+mesa-sleep-6367	67	F	black or african american	4
+mesa-sleep-6370	59	F	white	5
+mesa-sleep-6372	67	M	white	7
+mesa-sleep-6374	79	F	black or african american	7
+mesa-sleep-6376	80	F	black or african american	3
+mesa-sleep-6382	57	M	white	6
+mesa-sleep-6383	62	F	hispanic	4
+mesa-sleep-6384	68	F	asian	7
+mesa-sleep-6385	59	M	black or african american	7
+mesa-sleep-6390	88	M	white	6
+mesa-sleep-6396	77	M	white	6
+mesa-sleep-6401	83	F	white	7
+mesa-sleep-6402	72	F	white	6
+mesa-sleep-6408	90	M	black or african american	4
+mesa-sleep-6410	62	F	hispanic	4
+mesa-sleep-6413	65	M	black or african american	8
+mesa-sleep-6414	77	F	asian	8
+mesa-sleep-6415	78	M	white	3
+mesa-sleep-6416	74	M	white	3
+mesa-sleep-6417	81	M	white	3
+mesa-sleep-6419	73	F	black or african american	7
+mesa-sleep-6422	81	F	white	4
+mesa-sleep-6424	69	F	black or african american	4
+mesa-sleep-6430	58	M	black or african american	3
+mesa-sleep-6431	67	M	asian	8
+mesa-sleep-6432	60	F	black or african american	4
+mesa-sleep-6433	76	F	black or african american	7
+mesa-sleep-6435	70	F	white	6
+mesa-sleep-6438	61	F	black or african american	5
+mesa-sleep-6440	85	M	white	3
+mesa-sleep-6442	88	M	white	5
+mesa-sleep-6444	63	M	black or african american	7
+mesa-sleep-6445	60	F	hispanic	4
+mesa-sleep-6447	69	F	black or african american	4
+mesa-sleep-6450	67	F	black or african american	3
+mesa-sleep-6452	75	M	hispanic	8
+mesa-sleep-6454	65	M	white	5
+mesa-sleep-6460	57	F	hispanic	8
+mesa-sleep-6462	58	F	white	6
+mesa-sleep-6467	60	M	hispanic	4
+mesa-sleep-6471	62	F	white	6
+mesa-sleep-6475	63	M	asian	8
+mesa-sleep-6476	83	F	white	4
+mesa-sleep-6477	57	M	hispanic	8
+mesa-sleep-6479	61	M	black or african american	5
+mesa-sleep-6482	72	M	hispanic	6
+mesa-sleep-6485	71	M	hispanic	4
+mesa-sleep-6491	64	M	white	3
+mesa-sleep-6492	88	M	hispanic	6
+mesa-sleep-6493	61	M	hispanic	8
+mesa-sleep-6500	67	M	asian	7
+mesa-sleep-6501	64	M	black or african american	3
+mesa-sleep-6502	74	F	asian	8
+mesa-sleep-6503	60	F	asian	8
+mesa-sleep-6505	63	F	hispanic	6
+mesa-sleep-6506	64	F	asian	7
+mesa-sleep-6509	76	F	white	6
+mesa-sleep-6514	76	F	hispanic	8
+mesa-sleep-6516	80	M	white	3
+mesa-sleep-6521	76	M	white	6
+mesa-sleep-6527	59	F	white	7
+mesa-sleep-6528	60	F	white	5
+mesa-sleep-6538	82	M	white	5
+mesa-sleep-6549	65	M	asian	8
+mesa-sleep-6550	63	M	white	5
+mesa-sleep-6557	58	M	black or african american	8
+mesa-sleep-6566	77	F	black or african american	5
+mesa-sleep-6567	70	M	hispanic	4
+mesa-sleep-6568	58	F	white	6
+mesa-sleep-6569	76	M	asian	8
+mesa-sleep-6575	80	F	white	5
+mesa-sleep-6577	71	F	black or african american	3
+mesa-sleep-6582	78	F	asian	7
+mesa-sleep-6583	78	F	hispanic	6
+mesa-sleep-6593	58	F	hispanic	6
+mesa-sleep-6599	68	M	hispanic	8
+mesa-sleep-6607	70	F	asian	8
+mesa-sleep-6610	74	F	white	3
+mesa-sleep-6614	77	M	hispanic	4
+mesa-sleep-6616	74	M	asian	7
+mesa-sleep-6618	72	M	asian	8
+mesa-sleep-6619	69	F	black or african american	5
+mesa-sleep-6621	58	F	white	7
+mesa-sleep-6622	82	F	white	5
+mesa-sleep-6625	80	M	asian	8
+mesa-sleep-6627	64	F	white	6
+mesa-sleep-6629	78	F	hispanic	4
+mesa-sleep-6630	77	F	hispanic	4
+mesa-sleep-6632	83	F	white	5
+mesa-sleep-6641	87	F	hispanic	8
+mesa-sleep-6646	73	M	asian	8
+mesa-sleep-6648	66	M	hispanic	4
+mesa-sleep-6653	61	M	white	7
+mesa-sleep-6655	74	F	black or african american	5
+mesa-sleep-6656	65	M	asian	7
+mesa-sleep-6657	57	F	black or african american	7
+mesa-sleep-6663	68	M	black or african american	7
+mesa-sleep-6671	58	M	black or african american	3
+mesa-sleep-6672	90	M	white	7
+mesa-sleep-6680	69	F	black or african american	5
+mesa-sleep-6682	70	M	white	6
+mesa-sleep-6685	69	M	white	5
+mesa-sleep-6686	74	F	hispanic	8
+mesa-sleep-6693	62	F	hispanic	6
+mesa-sleep-6695	55	M	white	7
+mesa-sleep-6697	65	M	white	5
+mesa-sleep-6699	76	M	hispanic	8
+mesa-sleep-6704	86	M	white	7
+mesa-sleep-6707	82	F	black or african american	4
+mesa-sleep-6709	85	F	hispanic	4
+mesa-sleep-6722	61	F	hispanic	6
+mesa-sleep-6723	58	M	white	6
+mesa-sleep-6726	63	F	black or african american	3
+mesa-sleep-6727	71	F	white	6
+mesa-sleep-6730	60	F	black or african american	4
+mesa-sleep-6734	61	F	white	8
+mesa-sleep-6737	62	M	white	8
+mesa-sleep-6739	77	F	white	7
+mesa-sleep-6741	81	M	asian	8
+mesa-sleep-6746	71	F	hispanic	4
+mesa-sleep-6751	68	M	white	4
+mesa-sleep-6754	62	M	white	3
+mesa-sleep-6755	63	F	white	7
+mesa-sleep-6756	71	F	white	6
+mesa-sleep-6757	73	F	hispanic	6
+mesa-sleep-6759	63	F	hispanic	4
+mesa-sleep-6773	60	F	hispanic	4
+mesa-sleep-6781	66	M	hispanic	8
+mesa-sleep-6783	85	F	white	6
+mesa-sleep-6784	78	F	black or african american	5
+mesa-sleep-6786	60	F	black or african american	3
+mesa-sleep-6788	59	F	black or african american	5
+mesa-sleep-6789	74	M	black or african american	3
+mesa-sleep-6790	72	M	white	7
+mesa-sleep-6792	62	M	white	6
+mesa-sleep-6795	63	F	white	4
+mesa-sleep-6796	55	F	black or african american	5
+mesa-sleep-6802	65	F	black or african american	3
+mesa-sleep-6804	77	F	black or african american	4
+mesa-sleep-6807	60	M	hispanic	4
+mesa-sleep-6810	77	M	hispanic	6
+mesa-sleep-6811	79	M	hispanic	4
+mesa-sleep-6812	68	F	hispanic	8

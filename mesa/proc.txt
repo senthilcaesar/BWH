@@ -1,0 +1,67 @@
+luna --build /data/nsrr/datasets/mesa/polysomnography/edfs > sl/s0.lst
+luna sl/s0.lst -o tmp/header.db -s HEADERS signals
+destrat tmp/header.db +HEADERS -r CH | awk ' NR != 1 { print $2 } ' | sort | uniq -c | sort -nr
+
+# Check sample rate
+destrat tmp/header.db +HEADERS -r CH -v SR | awk '{print $2 "\t" $3}' | sort | uniq -c | sort -nr
+
+# Create ANNOT from XML
+luna --build /data/nsrr/datasets/mesa/polysomnography/edfs /data/nsrr/datasets/mesa/polysomnography/annotations-events-nsrr -ext="-nsrr.xml" > sl/s1.lst
+luna sl/s1.lst -s 'WRITE-ANNOTS file=annots/^.annot hms'
+
+# ANNOTS
+luna --build /data/nsrr/datasets/mesa/polysomnography/edfs annots > sl/s2.lst
+luna sl/s2.lst -o tmp/annots.db -s ANNOTS
+destrat tmp/annots.db +ANNOTS -r ANNOT INST | awk '{print $2}' | sort | uniq -c | sort -nr
+cat annots/*.annot | cut -f1 | sort | uniq -c | sort -nr
+
+# CANONICAL
+luna /data/nsrr/working/mesa-5/sl/s2.lst 1 path=/data/nsrr/working/mesa-5/ -o out.db -s CANONICAL file=mesa.sigs
+
+# Get PDIM
+destrat tmp/header.db +HEADERS -r CH -v PDIM | grep -i Pres | awk '{print $2 "\t" $3}' | sort | uniq -c
+destrat tmp/header.db +HEADERS -r CH -v PDIM | grep -i Flow | awk '{print $2 "\t" $3}' | sort | uniq -c
+
+# Write Harmonized channel
+luna /data/nsrr/working/mesa-5/sl/s2.lst -o out.db -s 'uV sig=EEG1,EEG2,EEG3 & CANONICAL file=mesa.sigs drop-originals & WRITE edf-dir=harmonized-edfs/'
+destrat out.db +CANONICAL | awk '$2 == 1' | cut -f1 > tmp/cs_not
+destrat out.db +CANONICAL -r CS | grep -f tmp/cs_not | awk '$3==0'
+
+# Harmonized channels
+luna --build harmonized-edfs/ > sl/s3.lst
+luna sl/s3.lst -o tmp/harmonized_header.db -s HEADERS signals
+destrat tmp/harmonized_header.db +HEADERS -r CH | cut -f2 | sort | uniq -c > tmp/harmonized_channel
+
+# Harmonize annotations
+luna sl/s2.lst -s 'REMAP file=annot_harm.txt remap-col=T & WRITE-ANNOTS file=harmonized-annots/^.annot hms'
+cat harmonized-annots/*.annot | cut -f1 | sort | uniq -c | sort -nr
+
+# link harmonized-edf and harmonized-annots
+luna --build harmonized-edfs/ harmonized-annots/ > sl/s4.lst
+luna sl/s4.lst -o tmp/harmonized_annots.db -s ANNOTS
+destrat tmp/harmonized_annots.db +ANNOTS -r ANNOT INST | awk '{print $2 "\t" $3}' | sort | uniq -c | sort -nr > tmp/harmonized_annots
+
+# Summary Statistics
+/data/nsrr/bin/dev-runner2.sh 15 sl/s4.lst . cmd/summstats.txt o tmp/summstats
+
+destrat tmp/summstats.batch*db +HYPNO             > res/summ.hypno1
+destrat tmp/summstats.batch*db +HYPNO -r SS       > res/summ.hypno2
+destrat tmp/summstats.batch*db +STATS -r CH       > res/summ.stats
+destrat tmp/summstats.batch*db +SOAP  -r CH SCH   > res/summ.soap
+destrat tmp/summstats.batch*db +PSD   -r CH F     > res/summ.psd
+destrat tmp/summstats.batch*db +SIGSTATS  -r CH   > res/summ.hjorth
+
+# Body Position
+luna sl/s4.lst 1 -s TABULATE sig=Pos
+luna sl/s4.lst -o tmp/slppos.db sig=Pos -s 'MASK all & MASK unmask-if=N1,N2,N3,R & RE & TABULATE '
+destrat tmp/slppos.db +TABULATE -r CH VALUE > res/slppos.txt
+luna sl/s4.lst skip-annots=T < cmd/encode-pos.txt
+
+# Link harmonized edfs with position
+luna --build harmonized-edfs/ positions/ -ext="-position.annot" > sl/s5.lst
+
+# ECG Check
+luna sl/s4.lst 1 sig=ECG -o tmp/waves.db < ecg.cmd
+destrat tmp/waves.db +TLOCK -r SEC CH sCH
+/data/nsrr/bin/dev-runner2.sh 15 sl/s4.lst  . cmd/ecg.cmd o out/ecg sig=ECG # Run in cluster
+destrat out/ecg.batch000*.db +TLOCK -r CH sCH SEC | gzip > res.sec.gz

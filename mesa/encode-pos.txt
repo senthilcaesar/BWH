@@ -1,0 +1,22 @@
+% extract event-level annots from the Position signal, at three levels of positional encoding: pos2, pos5
+
+S2A sig=Pos encoding=pos2_nonsupine,0,pos2_supine,1,pos2_nonsupine,2,pos2_nonsupine,3,pos2_nonsupine,4
+
+S2A sig=Pos encoding=pos5_right,0,pos5_supine,1,pos5_left,2,pos5_prone,3,pos5_upright,4
+
+% pos2 epoch-level annots
+EVAL annot=epos2_supine    expr="    if(pos2_supine) && ifnot(pos2_nonsupine)"
+EVAL annot=epos2_nonsupine expr="    ifnot(pos2_supine) &&    if(pos2_nonsupine)"
+EVAL annot=epos2_mixed     expr="    if(pos2_supine) + if(pos2_nonsupine) != 1 "
+
+% pos5 epoch-level annots
+EVAL annot=epos5_supine  expr="    if(pos5_supine) && ifnot(pos5_prone) && ifnot(pos5_left) && ifnot(pos5_right) && ifnot(pos5_upright)"
+EVAL annot=epos5_prone   expr=" ifnot(pos5_supine) &&    if(pos5_prone) && ifnot(pos5_left) && ifnot(pos5_right) && ifnot(pos5_upright)"
+EVAL annot=epos5_left    expr=" ifnot(pos5_supine) && ifnot(pos5_prone) &&    if(pos5_left) && ifnot(pos5_right) && ifnot(pos5_upright)"
+EVAL annot=epos5_right   expr=" ifnot(pos5_supine) && ifnot(pos5_prone) && ifnot(pos5_left) &&    if(pos5_right) && ifnot(pos5_upright)"
+EVAL annot=epos5_upright expr=" ifnot(pos5_supine) && ifnot(pos5_prone) && ifnot(pos5_left) && ifnot(pos5_right) &&    if(pos5_upright)"
+EVAL annot=epos5_mixed   expr=" if(pos5_supine) + if(pos5_prone) + if(pos5_left) + if(pos5_right) + if(pos5_upright) != 1 "
+
+
+% write all annots to a single, combined file
+WRITE-ANNOTS file=positions/^-position.annot hms no-specials no-headers

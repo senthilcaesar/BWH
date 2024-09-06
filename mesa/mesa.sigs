@@ -1,0 +1,227 @@
+% Voltage units (first entry of list is the preferred term)
+let volt  = V,volt
+let mvolt = mV,millivolt,milli-volt,mvolt,m-volt
+let uvolt = uV,microvolt,micro-volt,uvolt,u-volt,UV
+
+let right_central_cm_ref = EEG3
+let midline_central = EEG2
+let midline_frontal = EEG1
+
+C4_M1
+ req:
+  sig = right_central_cm_ref
+  unit = volt
+  unit = mvolt 
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+Cz_Oz
+ req:
+  sig = midline_central
+  unit = volt
+  unit = mvolt 
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+Fz_Cz
+ req:
+  sig = midline_frontal
+  unit = volt
+  unit = mvolt 
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+% -------------------------------------------------------------------------
+%
+% EOG channels
+%
+% -------------------------------------------------------------------------
+
+let left_eog = EOG_L
+let right_eog = EOG_R
+
+LOC
+ req:
+  sig = left_eog
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+ROC
+ req:
+  sig = right_eog
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 50
+  scale = AC
+ set:
+  unit = uV
+
+% -------------------------------------------------------------------------
+%
+% (Derived) Heart rate (BPM) 
+%
+% -------------------------------------------------------------------------
+
+let HR = DHR
+
+HR
+ req:
+  sig = HR
+
+% -------------------------------------------------------------------------
+%
+% Electrocardiography
+%
+% -------------------------------------------------------------------------
+
+let ECG = EKG
+
+ECG
+ req:
+  sig = ECG
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+ set:
+  unit = mV
+
+% -------------------------------------------------------------------------
+%
+% Airflow: thermistor & nasal pressure cannula
+% -------------------------------------------------------------------------
+
+let thermistor = Therm,Aux_AC
+let nasal_pres = Pres
+
+thermistor
+ req:
+  sig = thermistor
+  unit=mvolt
+  unit=uvolt
+  unit=volt
+  unit=unknown,.
+
+nasal_pres
+ req:
+  sig = nasal_pres
+  unit=mvolt
+  unit=uvolt
+  unit=volt
+  unit=mbar
+  unit=ubar
+  unit=cmH2O
+  unit=unknown,.
+
+% -------------------------------------------------------------------------
+%
+% Respiratory effort (thoracic and abdominal)
+%
+% -------------------------------------------------------------------------
+
+let abdomen = Abdo
+let thorax = Thor
+
+thorax
+ req:
+  sig = thorax
+  unit=mV,uV,V,Volts,.,none
+ set:
+  unit=mV
+
+abdomen
+ req:
+  sig = abdomen
+  unit=mV,uV,V,Volts,.,none
+ set:
+  unit=mV
+
+
+% -------------------------------------------------------------------------
+%
+% Oxygen saturation (SpO2)
+%
+% -------------------------------------------------------------------------
+
+let SpO2 = SpO2
+let pleth = Pleth
+
+pleth
+ req:
+  sig = pleth
+  unit=volt
+  unit=uV
+  unit=mV
+  unit=0
+  unit=none,.
+
+SpO2
+ req:
+  sig = SpO2
+  unit = percent,.,*
+
+% -------------------------------------------------------------------------
+%
+% Define generic left/right leg fields
+%
+% -------------------------------------------------------------------------
+
+let left_right_leg_emg = Leg
+
+LAT_RAT
+ req:
+  sig=left_right_leg_emg
+  unit=mV
+
+% -------------------------------------------------------------------------
+%
+% EMG Channel
+%
+% -------------------------------------------------------------------------
+
+let chin = EMG
+
+EMG
+ req:
+  sig = chin
+  unit = volt
+  unit = mvolt
+  unit = uvolt
+  sr-min = 100
+  scale = AC
+ set:
+  unit = uV
+
+% -------------------------------------------------------------------------
+%
+% Body Position
+%
+% -------------------------------------------------------------------------
+
+pos
+ req:
+  sig = Pos
+
+
+% -------------------------------------------------------------------------
+%
+% Snore channels
+%
+% -------------------------------------------------------------------------
+
+snore <- Snore
