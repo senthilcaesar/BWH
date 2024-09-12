@@ -65,3 +65,12 @@ luna sl/s4.lst 1 sig=ECG -o tmp/waves.db < ecg.cmd
 destrat tmp/waves.db +TLOCK -r SEC CH sCH
 /data/nsrr/bin/dev-runner2.sh 15 sl/s4.lst  . cmd/ecg.cmd o out/ecg sig=ECG # Run in cluster
 destrat out/ecg.batch000*.db +TLOCK -r CH sCH SEC | gzip > res.sec.gz
+
+# Get channel, PDIM and SR
+destrat tmp/harmonized_header.db +HEADERS -r CH | awk '{print "\t" $2 "\t" $5 "\t" $10}' | sort | uniq -c | sort -nr
+
+# Convert UNIT
+/data/nsrr/bin/dev-runner2.sh 20 sl/s4.lst . cmd/convert.txt o tmp/convert
+
+# ECG Flip
+luna sl/s4.lst vars=files/mesa5-ecg.dat < cmd/flip_ecg.txt

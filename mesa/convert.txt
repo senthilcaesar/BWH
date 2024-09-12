@@ -1,0 +1,7 @@
+RESAMPLE sig=thorax,ROC,pleth,nasal_pres,LOC,LAT_RAT,Fz_Cz,EMG,ECG,Cz_Oz,C4_M1,abdomen,thermistor sr=128
+
+RESAMPLE sig=SpO2 sr=10
+
+RESAMPLE sig=snore sr=256
+
+WRITE edf-dir=/data/nsrr/working/mesa-5/harm2

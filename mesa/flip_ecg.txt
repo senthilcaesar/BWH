@@ -1,0 +1,13 @@
+mV sig=${CH}
+
+RESAMPLE sig=${CH} sr=128
+
+[[FLIP
+
+FLIP sig=${CH}
+ 
+]]FLIP
+
+DESC
+
+WRITE edf-dir=/data/nsrr/working/mesa-5/f3
