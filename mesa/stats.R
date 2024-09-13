@@ -41,8 +41,30 @@ dev.off()
 chs <- gsub( "MEAN_","", names(st)[grep( "MEAN_" , names(st) ) ] )
 png(file="/Users/sq566/Desktop/mesa-5/plots/pats-summ-means.png", height=800, width=1000, res=100 )
 par(mfcol=c(4,4) , mar=c(1,4,1,1) )
-for (ch  in chs )
-  plot( st[,paste("MEAN",ch,sep="_")], pch=20, cex=0.6 , ylab=ch)
+for (ch  in chs ) {
+  # To remove outliers from the data, we can use several methods depending on how we define an outlier. 
+  # A common approach is to use the interquartile range (IQR). Here's how we can do it:
+
+  # Calculate the IQR: This is the difference between the 5th and 95th percentiles. 
+  # Values outside 1.5 times the IQR below the 5th percentile or above the 95th percentile are 
+  # typically considered outliers.
+
+  # Filter the Data: Exclude data points that are outside these bounds.
+
+  column_name <- paste("MEAN", ch, sep="_")
+
+  # Calculate Q1 and Q3 and then IQR
+  Q1 <- quantile(st[, column_name], 0.5, na.rm = TRUE)
+  Q3 <- quantile(st[, column_name], 0.95, na.rm = TRUE)
+  IQR <- Q3 - Q1
+  # Define bounds
+  lower_bound <- Q1 - 1.5 * IQR
+  upper_bound <- Q3 + 1.5 * IQR
+  
+  filtered_data <- st[!is.na(st[[column_name]]) & st[[column_name]] >= lower_bound & st[[column_name]] <= upper_bound, ]
+  
+  plot( filtered_data[, column_name], pch=20, cex=0.6 , ylab=ch)
+}
 dev.off()
 
 library(luna)
@@ -146,8 +168,5 @@ for (site in sites) {
 mtext("Mesa-5 PSD (C4_M1)", outer = TRUE, cex = 1, line = -2)
 # Closing the device to save the file
 dev.off()
-
-
-
 
 
