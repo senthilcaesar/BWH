@@ -74,3 +74,6 @@ destrat tmp/harmonized_header.db +HEADERS -r CH | awk '{print "\t" $2 "\t" $5 "\
 
 # ECG Flip
 luna sl/s4.lst vars=files/mesa5-ecg.dat < cmd/flip_ecg.txt
+
+# Correlation
+luna sl/s4.lst -o out.db -s 'MASK ifnot=N2 & RE & STAGE & CORREL epoch verbose sig=HR,pulse'
