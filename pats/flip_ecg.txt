@@ -1,0 +1,16 @@
+RENAME sig=${CH} new=_ECG
+
+mV sig=_ECG
+RESAMPLE sig=_ECG sr=128
+
+[[FLIP
+
+FLIP sig=_ECG
+ 
+]]FLIP
+
+RENAME sig=_ECG new=ECG
+
+DESC
+
+WRITE edf-dir=/data/nsrr/working/pats/f3

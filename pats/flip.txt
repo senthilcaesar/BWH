@@ -1,0 +1,3 @@
+FLIP sig=C3,C4,C3_M2,C4_M1
+
+WRITE edf-dir=/data/nsrr/working/pats/dist2

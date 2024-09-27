@@ -1,0 +1,17 @@
+RENAME sig=ECG new=ECGNaN
+RENAME sig=ECG3 new=_ECG
+
+mV sig=_ECG
+RESAMPLE sig=_ECG sr=128
+
+[[FLIP
+
+FLIP sig=_ECG
+ 
+]]FLIP
+
+RENAME sig=_ECG new=ECG4
+
+DESC
+
+WRITE edf-dir=/data/nsrr/working/pats/f3

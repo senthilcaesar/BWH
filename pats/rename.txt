@@ -1,0 +1,5 @@
+RENAME sig=LChin_RChin new=EMG1
+RENAME sig=LChin_CChin new=EMG2
+RENAME sig=RChin_CChin new=EMG3
+
+WRITE edf-dir=derived  force-edf

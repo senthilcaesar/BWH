@@ -1,0 +1,27 @@
+HYPNO 
+
+RESAMPLE sig=C3_M2,C4_M1 sr=128 
+
+uV sig=C3_M2,C4_M1
+
+TAG SCH/C3
+SOAP sig=C3_M2 force-reload
+
+TAG SCH/C4
+SOAP sig=C4_M1 force-reload
+
+TAG .
+
+MASK all
+MASK unmask-if=N1,N2,N3,R
+RE
+
+STATS sig=abdomen,C3_M2,C4_M1,cap,ECG,EMG,EtCO2,F3_M2,F4_M1,HR,LAT,LOC,nasal_pres,O1_M2,O2_M1,pleth,RAT,ROC,snore,SpO2,TcCO2,thermistor,thorax
+
+SIGSTATS sig=abdomen,C3_M2,C4_M1,cap,ECG,EMG,EtCO2,F3_M2,F4_M1,HR,LAT,LOC,nasal_pres,O1_M2,O2_M1,pleth,RAT,ROC,snore,SpO2,TcCO2,thermistor,thorax
+
+% N2 EEG power spectra only
+MASK mask-ifnot=N2
+RE
+
+PSD sig=C3_M2,C4_M1 dB spectrum max=65

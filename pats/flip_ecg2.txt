@@ -1,0 +1,12 @@
+mV sig=ECG
+RESAMPLE sig=ECG sr=128
+
+[[FLIP
+
+FLIP sig=ECG
+ 
+]]FLIP
+
+DESC
+
+WRITE edf-dir=/data/nsrr/working/pats/f3

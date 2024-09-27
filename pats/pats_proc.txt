@@ -1,0 +1,60 @@
+luna /data/nsrr/working/pats/s.lst path=/data/nsrr/working/pats/ -o out.db  -s 'CANONICAL file=pats.sigs drop-originals & WRITE edf-dir=harmonized/'
+
+luna sl/harmonized.lst -o tmp/harmonized.db -s HEADERS signals
+
+destrat tmp/harmonized.db +HEADERS -r CH | grep -i -E 'C3_M2|C4_M1|thermistor|EMG' | awk '{print $2 "\t" $5}' | sort | uniq -c
+
+destrat out.db  +CANONICAL -r CS | grep -i EMG | awk '$3==0'
+
+luna sl/harmonized.lst -s 'SET-HEADERS sig=thorax,abdomen,thermistor unit=mV & WRITE edf-dir=harm2'
+
+destrat tmp/harmonized_headers.db +HEADERS -r CH | awk '{print "\t" $2 "\t" $5 "\t" $10}' | sort | uniq -c | sort -nr
+
+
+# Hjorth
+luna sl/harmonized.lst -o tmp/np_stats.db -s 'HEADERS & MASK ifnot=N2 & RE & CHEP-MASK ep-th=3,3 & SIGSTATS epoch sig=nasal_pres'
+luna sl/harmonized.lst -o tmp/pleth_stats.db -s 'HEADERS & MASK ifnot=N2 & RE & CHEP-MASK ep-th=3,3 & SIGSTATS epoch sig=pleth'
+luna sl/harmonized.lst -o tmp/snore_stats.db -s 'HEADERS & MASK ifnot=N2 & RE & CHEP-MASK ep-th=3,3 & SIGSTATS epoch sig=snore'
+luna sl/harmonized.lst -o tmp/latrat_stats.db -s 'HEADERS & MASK ifnot=N2 & RE & CHEP-MASK ep-th=3,3 & SIGSTATS epoch sig=RAT,LAT'
+luna sl/harmonized.lst -o tmp/ecg_stats.db -s 'HEADERS & MASK ifnot=N2 & RE & CHEP-MASK ep-th=3,3 & SIGSTATS epoch sig=ECG'
+luna sl/harmonized.lst -o tmp/emg_stats.db -s 'HEADERS & MASK ifnot=N2 & RE & CHEP-MASK ep-th=3,3 & SIGSTATS epoch sig=EMG'
+luna sl/harmonized.lst -o tmp/locroc_stats.db -s 'HEADERS & MASK ifnot=N2 & RE & CHEP-MASK ep-th=3,3 & SIGSTATS epoch sig=LOC,ROC'
+
+destrat tmp/np_stats.db +SIGSTATS -r E CH > tmp/hjorth_np
+destrat tmp/pleth_stats.db +SIGSTATS -r E CH > tmp/pleth
+destrat tmp/snore_stats.db +SIGSTATS -r E CH > tmp/snore
+destrat tmp/latrat_stats.db +SIGSTATS -r E CH > tmp/latrat
+destrat tmp/ecg_stats.db +SIGSTATS -r E CH > tmp/ecg
+destrat tmp/emg_stats.db +SIGSTATS -r E CH > tmp/emg
+destrat tmp/locroc_stats.db +SIGSTATS -r E CH > tmp/locroc
+
+destrat tmp/harmonized_headers.db +HEADERS -r CH | grep -i nasal_pres | awk '{print $1 "\t" $5}' > tmp/nasal_pres_unit.csv
+destrat tmp/harmonized_headers.db +HEADERS -r CH | grep -i pleth | awk '{print $1 "\t" $5}' > tmp/pleth_unit.csv
+destrat tmp/harmonized_headers.db +HEADERS -r CH | grep -i snore | awk '{print $1 "\t" $5}' > tmp/snore_unit.csv
+destrat tmp/harmonized_headers.db +HEADERS -r CH | grep -i LAT | awk '{print $1 "\t" $5}' > tmp/latrat_unit.csv
+destrat tmp/harmonized_headers.db +HEADERS -r CH | grep -i ecg | awk '{print $1 "\t" $5}' > tmp/ecg_unit.csv
+destrat tmp/harmonized_headers.db +HEADERS -r CH | grep -i emg | awk '{print $1 "\t" $5}' > tmp/emg_unit.csv
+destrat tmp/harmonized_headers.db +HEADERS -r CH | grep -i LOC | awk '{print $1 "\t" $5}' > tmp/locroc_unit.csv
+
+destrat tmp/harmonized_headers.db +HEADERS -r CH | grep -i nasal_pres > tmp/o.1
+awk ' NR == 1 { print "ID" , "trans_unit" } { print $1, $5 == "mV" || $5 == "V" } ' OFS="\t" tmp/o.1 > files/units.txt
+
+
+luna sl/emg_miss.lst -s 'TRANS sig=EMG expr="EMG = EMG / 1000" & SET-HEADERS sig=EMG unit=mV & WRITE edf-dir=harm2'
+
+luna sl/locroc_miss.lst -s 'TRANS sig=LOC expr="LOC = LOC / 1000" & SET-HEADERS sig=LOC unit=mV & WRITE edf-dir=harm2'
+luna sl/locroc_miss.lst -s 'TRANS sig=ROC expr="ROC = ROC / 1000" & SET-HEADERS sig=ROC unit=mV & WRITE edf-dir=harm2'
+
+luna sl/ecg_miss.lst -s 'SET-HEADERS sig=ECG unit=mV & WRITE edf-dir=harm2'
+
+luna sl/latrat_miss.lst -s 'TRANS sig=LAT expr="LAT = LAT / 1000" & SET-HEADERS sig=LAT unit=mV & WRITE edf-dir=harm2'
+luna sl/latrat_miss.lst -s 'TRANS sig=RAT expr="RAT = RAT / 1000" & SET-HEADERS sig=RAT unit=mV & WRITE edf-dir=harm2'
+
+luna sl/snore_miss1.lst -s 'SET-HEADERS sig=snore unit=mV & WRITE edf-dir=harm2'
+luna sl/snore_miss2.lst -s 'TRANS sig=snore expr="snore = snore / 1000" & SET-HEADERS sig=snore unit=mV & WRITE edf-dir=harm2'
+
+luna sl/np_miss1.lst -s 'SET-HEADERS sig=nasal_pres unit=mV & WRITE edf-dir=harm2'
+luna sl/np_miss2.lst -s 'TRANS sig=nasal_pres expr="nasal_pres = nasal_pres / 1000" & SET-HEADERS sig=nasal_pres unit=mV & WRITE edf-dir=harm2'
+
+
+luna /data/nsrr/working/pats/s.lst path=/data/nsrr/working/pats/ -o out.db  -s 'CANONICAL file=pats.sigs drop-originals & WRITE edf-dir=harmonized/'

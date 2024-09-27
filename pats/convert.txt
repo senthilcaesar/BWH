@@ -1,0 +1,15 @@
+SET-HEADERS sig=EtCO2,TcCO2,cap unit=mmHg
+
+uV sig=C4_M1,C3_M2,F3_M2,F4_M1,O1_M2,O2_M1
+
+SET-HEADERS sig=C4_M1,C3_M2,F3_M2,F4_M1,O1_M2,O2_M1 unit=uV
+
+RESAMPLE sig=EtCO2,cap,TcCO2,EMG,ECG,thorax,thermistor,LOC,ROC,RAT,LAT,HR,F4_M1,F3_M2,C4_M1,C3_M2,abdomen,O2_M1,O1_M2,nasal_pres,pleth sr=128
+
+SET-HEADERS sig=thorax,abdomen,thermistor,LAT,RAT unit=mV
+
+RESAMPLE sig=SpO2 sr=10
+
+RESAMPLE sig=snore sr=256
+
+WRITE edf-dir=/data/nsrr/working/pats/harm2

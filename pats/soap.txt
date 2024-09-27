@@ -1,0 +1,7 @@
+RESAMPLE sig=C3_M2,C4_M1 sr=128 
+
+TAG SCH/C3
+SOAP sig=C3_M2 force-reload
+
+TAG SCH/C4
+SOAP sig=C4_M1 force-reload

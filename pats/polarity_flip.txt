@@ -1,0 +1,22 @@
+EPOCH epoch=30 require=10
+
+MASK all
+MASK unmask-if=N2
+MASK unmask-if=N3
+
+RESTRUCTURE 
+
+EPOCH epoch=30 require=10
+
+uV signal=${eeg},${eog}
+
+RESAMPLE sig=${eeg} sr=100
+
+RESTRUCTURE 
+
+EPOCH epoch=30 require=10
+
+FLIP sig=${FLIP}
+
+% set flim to include spindle/SW range
+POL sig=${eeg} flim=15

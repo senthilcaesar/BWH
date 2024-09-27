@@ -1,0 +1,10 @@
+${ch=LChin}
+REFERENCE sig=${ch} ref=RChin new=EMG1
+
+${ch=LChin}
+REFERENCE sig=${ch} ref=CChin new=EMG2
+
+${ch=RChin}
+REFERENCE sig=${ch} ref=CChin new=EMG3
+
+WRITE edf-dir=derived  force-edf

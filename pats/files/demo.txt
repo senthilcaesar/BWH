@@ -1,0 +1,1011 @@
+ID	age	sex	race	ethnicity	site	iid
+pats-800003-baseline	8	M	White	Hispanic or Latino	691	pats-800003
+pats-800022-baseline	6.7	M	White	Hispanic or Latino	240	pats-800022
+pats-800022-followup	7.8	M	White	Hispanic or Latino	240	pats-800022
+pats-800105-baseline	4	F	More than one race	Hispanic or Latino	978	pats-800105
+pats-800135-baseline	4.5	M	Black or African American	Not Hispanic or Latino	691	pats-800135
+pats-800194-baseline	9	F	White	Not Hispanic or Latino	812	pats-800194
+pats-800227-baseline	4	M	White	Not Hispanic or Latino	812	pats-800227
+pats-800295-baseline	3	F	White	Not Hispanic or Latino	978	pats-800295
+pats-800360-baseline	3	F	White	Not Hispanic or Latino	240	pats-800360
+pats-800387-baseline	5.6	F	Black or African American	Not Hispanic or Latino	812	pats-800387
+pats-800394-baseline	9.4	M	White	Hispanic or Latino	691	pats-800394
+pats-800394-followup	10.9	M	White	Hispanic or Latino	691	pats-800394
+pats-800399-baseline	7	M	White	Not Hispanic or Latino	339	pats-800399
+pats-800405-baseline	5.5	F	Black or African American	Not Hispanic or Latino	691	pats-800405
+pats-800435-baseline	6.9	M	Black or African American	Not Hispanic or Latino	240	pats-800435
+pats-800435-followup	8	M	Black or African American	Not Hispanic or Latino	240	pats-800435
+pats-800444-baseline	5.2	M	White	Not Hispanic or Latino	978	pats-800444
+pats-800444-followup	6.3	M	White	Not Hispanic or Latino	978	pats-800444
+pats-800450-baseline	5.3	F	White	Not Hispanic or Latino	978	pats-800450
+pats-800469-baseline	4	M	Black or African American	Not Hispanic or Latino	978	pats-800469
+pats-800478-baseline	5	F	White	Hispanic or Latino	691	pats-800478
+pats-800487-baseline	4.5	M	White	Not Hispanic or Latino	240	pats-800487
+pats-800487-followup	5.6	M	White	Not Hispanic or Latino	240	pats-800487
+pats-800530-baseline	4	M	White	Not Hispanic or Latino	240	pats-800530
+pats-800549-baseline	8.7	M	Black or African American	Not Hispanic or Latino	240	pats-800549
+pats-800549-followup	10	M	Black or African American	Not Hispanic or Latino	240	pats-800549
+pats-800626-baseline	10.2	F	White	Not Hispanic or Latino	812	pats-800626
+pats-800654-baseline	3	F	White	Not Hispanic or Latino	691	pats-800654
+pats-800666-baseline	6.3	M	White	Not Hispanic or Latino	240	pats-800666
+pats-800666-followup	7.5	M	White	Not Hispanic or Latino	240	pats-800666
+pats-800669-baseline	5.4	M	White	Hispanic or Latino	691	pats-800669
+pats-800680-baseline	7	M	White	Not Hispanic or Latino	339	pats-800680
+pats-800682-baseline	6	F	White	Not Hispanic or Latino	812	pats-800682
+pats-800698-baseline	3	F	White	Not Hispanic or Latino	978	pats-800698
+pats-800705-baseline	5	M	Black or African American	Not Hispanic or Latino	812	pats-800705
+pats-800705-followup	6.1	M	Black or African American	Not Hispanic or Latino	812	pats-800705
+pats-800740-baseline	4.1	M	White	Hispanic or Latino	691	pats-800740
+pats-800740-followup	5.2	M	White	Hispanic or Latino	691	pats-800740
+pats-800763-baseline	3	M	Black or African American	Not Hispanic or Latino	978	pats-800763
+pats-800767-baseline	3.7	M	Unknown or not reported	Not Hispanic or Latino	339	pats-800767
+pats-800767-followup	4.8	M	Unknown or not reported	Not Hispanic or Latino	339	pats-800767
+pats-800778-baseline	8.8	F	White	Not Hispanic or Latino	240	pats-800778
+pats-800778-followup	9.8	F	White	Not Hispanic or Latino	240	pats-800778
+pats-800789-baseline	8	M	Asian	Not Hispanic or Latino	339	pats-800789
+pats-800807-baseline	5.4	M	Black or African American	Not Hispanic or Latino	240	pats-800807
+pats-800807-followup	6.5	M	Black or African American	Not Hispanic or Latino	240	pats-800807
+pats-800823-baseline	8	F	White	Not Hispanic or Latino	584	pats-800823
+pats-800828-baseline	6.6	M	White	Not Hispanic or Latino	584	pats-800828
+pats-800909-baseline	10	M	White	Not Hispanic or Latino	339	pats-800909
+pats-800922-baseline	3	F	Black or African American	Not Hispanic or Latino	978	pats-800922
+pats-800931-baseline	7.1	M	Black or African American	Not Hispanic or Latino	584	pats-800931
+pats-800931-followup	8.8	M	Black or African American	Not Hispanic or Latino	584	pats-800931
+pats-800937-baseline	5.9	M	White	Not Hispanic or Latino	339	pats-800937
+pats-800948-baseline	7	F	White	Hispanic or Latino	691	pats-800948
+pats-800993-baseline	6.9	M	White	Not Hispanic or Latino	339	pats-800993
+pats-800998-baseline	4.9	F	Black or African American	Not Hispanic or Latino	978	pats-800998
+pats-800998-followup	6	F	Black or African American	Not Hispanic or Latino	978	pats-800998
+pats-801027-baseline	4.1	F	White	Hispanic or Latino	691	pats-801027
+pats-801032-baseline	9.5	F	White	Not Hispanic or Latino	812	pats-801032
+pats-801032-followup	10.8	F	White	Not Hispanic or Latino	812	pats-801032
+pats-801034-baseline	4.3	F	Black or African American	Not Hispanic or Latino	691	pats-801034
+pats-801050-baseline	10.9	F	Black or African American	Not Hispanic or Latino	240	pats-801050
+pats-801050-followup	11.9	F	Black or African American	Not Hispanic or Latino	240	pats-801050
+pats-801051-baseline	4.6	M	White	Not Hispanic or Latino	240	pats-801051
+pats-801055-baseline	6.2	M	Black or African American	Not Hispanic or Latino	584	pats-801055
+pats-801055-followup	7.5	M	Black or African American	Not Hispanic or Latino	584	pats-801055
+pats-801071-baseline	3.8	F	White	Not Hispanic or Latino	812	pats-801071
+pats-801095-baseline	8.8	F	White	Not Hispanic or Latino	812	pats-801095
+pats-801122-baseline	5.5	F	More than one race	Not Hispanic or Latino	584	pats-801122
+pats-801122-followup	6.8	F	More than one race	Not Hispanic or Latino	584	pats-801122
+pats-801164-baseline	7.4	M	White	Not Hispanic or Latino	339	pats-801164
+pats-801164-followup	8.5	M	White	Not Hispanic or Latino	339	pats-801164
+pats-801172-baseline	5.7	F	White	Hispanic or Latino	691	pats-801172
+pats-801172-followup	6.9	F	White	Hispanic or Latino	691	pats-801172
+pats-801175-baseline	9.9	F	White	Not Hispanic or Latino	339	pats-801175
+pats-801208-baseline	4	F	Black or African American	Not Hispanic or Latino	812	pats-801208
+pats-801214-baseline	3.4	F	White	Not Hispanic or Latino	240	pats-801214
+pats-801214-followup	4.4	F	White	Not Hispanic or Latino	240	pats-801214
+pats-801215-baseline	7.2	M	White	Not Hispanic or Latino	339	pats-801215
+pats-801215-followup	8.3	M	White	Not Hispanic or Latino	339	pats-801215
+pats-801247-baseline	9.4	F	Black or African American	Not Hispanic or Latino	691	pats-801247
+pats-801247-followup	10.4	F	Black or African American	Not Hispanic or Latino	691	pats-801247
+pats-801257-baseline	9	M	Black or African American	Not Hispanic or Latino	691	pats-801257
+pats-801263-baseline	7.9	F	Black or African American	Not Hispanic or Latino	691	pats-801263
+pats-801263-followup	9	F	Black or African American	Not Hispanic or Latino	691	pats-801263
+pats-801265-baseline	7.8	F	White	Hispanic or Latino	691	pats-801265
+pats-801265-followup	9.3	F	White	Hispanic or Latino	691	pats-801265
+pats-801268-baseline	9	M	Black or African American	Hispanic or Latino	978	pats-801268
+pats-801270-baseline	6	M	White	Hispanic or Latino	691	pats-801270
+pats-801272-baseline	3.3	M	White	Not Hispanic or Latino	240	pats-801272
+pats-801272-followup	4.3	M	White	Not Hispanic or Latino	240	pats-801272
+pats-801329-baseline	10	M	White	Not Hispanic or Latino	153	pats-801329
+pats-801365-baseline	6.9	M	More than one race	Not Hispanic or Latino	812	pats-801365
+pats-801365-followup	8.1	M	More than one race	Not Hispanic or Latino	812	pats-801365
+pats-801366-baseline	3	F	Black or African American	Not Hispanic or Latino	978	pats-801366
+pats-801369-baseline	9.1	F	White	Not Hispanic or Latino	339	pats-801369
+pats-801369-followup	10.3	F	White	Not Hispanic or Latino	339	pats-801369
+pats-801415-baseline	8	M	White	Hispanic or Latino	691	pats-801415
+pats-801465-baseline	11.5	M	White	Hispanic or Latino	584	pats-801465
+pats-801465-followup	13	M	White	Hispanic or Latino	584	pats-801465
+pats-801469-baseline	7	F	Black or African American	Not Hispanic or Latino	691	pats-801469
+pats-801507-baseline	6.8	F	Black or African American	Not Hispanic or Latino	812	pats-801507
+pats-801517-baseline	4.4	F	White	Not Hispanic or Latino	691	pats-801517
+pats-801542-baseline	7	F	White	Hispanic or Latino	691	pats-801542
+pats-801552-baseline	7	F	White	Not Hispanic or Latino	584	pats-801552
+pats-801572-baseline	4.6	F	White	Not Hispanic or Latino	240	pats-801572
+pats-801584-baseline	3.2	F	White	Not Hispanic or Latino	691	pats-801584
+pats-801594-baseline	3.5	F	White	Not Hispanic or Latino	812	pats-801594
+pats-801594-followup	4.7	F	White	Not Hispanic or Latino	812	pats-801594
+pats-801626-baseline	10.2	M	White	Not Hispanic or Latino	584	pats-801626
+pats-801635-baseline	5.5	F	White	Hispanic or Latino	691	pats-801635
+pats-801635-followup	6.8	F	White	Hispanic or Latino	691	pats-801635
+pats-801659-baseline	8	M	Black or African American	Not Hispanic or Latino	978	pats-801659
+pats-801662-baseline	5.9	M	Black or African American	Not Hispanic or Latino	978	pats-801662
+pats-801662-followup	7.1	M	Black or African American	Not Hispanic or Latino	978	pats-801662
+pats-801664-baseline	12	M	White	Not Hispanic or Latino	584	pats-801664
+pats-801677-baseline	7.7	F	White	Hispanic or Latino	691	pats-801677
+pats-801677-followup	8.7	F	White	Hispanic or Latino	691	pats-801677
+pats-801680-baseline	6.2	M	More than one race	Not Hispanic or Latino	978	pats-801680
+pats-801680-followup	7.3	M	More than one race	Not Hispanic or Latino	978	pats-801680
+pats-801696-baseline	8	M	Black or African American	Not Hispanic or Latino	240	pats-801696
+pats-801709-baseline	5	M	Unknown or not reported	Hispanic or Latino	240	pats-801709
+pats-801719-baseline	3	F	White	Not Hispanic or Latino	339	pats-801719
+pats-801720-baseline	4.3	M	Black or African American	Not Hispanic or Latino	812	pats-801720
+pats-801720-followup	5.5	M	Black or African American	Not Hispanic or Latino	812	pats-801720
+pats-801736-baseline	9	M	White	Not Hispanic or Latino	339	pats-801736
+pats-801736-followup	10.4	M	White	Not Hispanic or Latino	339	pats-801736
+pats-801743-baseline	8.2	M	White	Hispanic or Latino	691	pats-801743
+pats-801743-followup	9.3	M	White	Hispanic or Latino	691	pats-801743
+pats-801769-baseline	8.9	M	Black or African American	Not Hispanic or Latino	812	pats-801769
+pats-801795-baseline	3	F	Black or African American	Not Hispanic or Latino	691	pats-801795
+pats-801824-baseline	5.8	F	White	Not Hispanic or Latino	812	pats-801824
+pats-801892-baseline	9.7	M	White	Not Hispanic or Latino	339	pats-801892
+pats-801995-baseline	4.7	M	White	Not Hispanic or Latino	240	pats-801995
+pats-801995-followup	5.9	M	White	Not Hispanic or Latino	240	pats-801995
+pats-802027-baseline	6.8	F	White	Hispanic or Latino	978	pats-802027
+pats-802027-followup	8.3	F	White	Hispanic or Latino	978	pats-802027
+pats-802028-baseline	5	F	White	Not Hispanic or Latino	240	pats-802028
+pats-802028-followup	6	F	White	Not Hispanic or Latino	240	pats-802028
+pats-802046-baseline	4.8	F	White	Hispanic or Latino	978	pats-802046
+pats-802062-baseline	10.4	F	Black or African American	Not Hispanic or Latino	978	pats-802062
+pats-802062-followup	11.6	F	Black or African American	Not Hispanic or Latino	978	pats-802062
+pats-802076-baseline	11.6	F	White	Not Hispanic or Latino	812	pats-802076
+pats-802076-followup	12.8	F	White	Not Hispanic or Latino	812	pats-802076
+pats-802136-baseline	4	M	White	Not Hispanic or Latino	240	pats-802136
+pats-802147-baseline	9	M	White	Not Hispanic or Latino	978	pats-802147
+pats-802196-baseline	5.9	F	White	Hispanic or Latino	691	pats-802196
+pats-802196-followup	7.2	F	White	Hispanic or Latino	691	pats-802196
+pats-802202-baseline	6.6	M	White	Not Hispanic or Latino	978	pats-802202
+pats-802202-followup	7.8	M	White	Not Hispanic or Latino	978	pats-802202
+pats-802206-baseline	4	F	White	Hispanic or Latino	691	pats-802206
+pats-802214-baseline	4.3	F	White	Not Hispanic or Latino	978	pats-802214
+pats-802223-baseline	5	F	White	Hispanic or Latino	691	pats-802223
+pats-802241-baseline	5.6	F	White	Not Hispanic or Latino	584	pats-802241
+pats-802241-followup	6.9	F	White	Not Hispanic or Latino	584	pats-802241
+pats-802252-baseline	4	F	Black or African American	Not Hispanic or Latino	240	pats-802252
+pats-802258-baseline	5	F	White	Not Hispanic or Latino	240	pats-802258
+pats-802273-baseline	4.6	M	Black or African American	Not Hispanic or Latino	584	pats-802273
+pats-802273-followup	5.9	M	Black or African American	Not Hispanic or Latino	584	pats-802273
+pats-802279-baseline	6.6	F	White	Not Hispanic or Latino	240	pats-802279
+pats-802279-followup	7.6	F	White	Not Hispanic or Latino	240	pats-802279
+pats-802311-baseline	3.3	M	Black or African American	Not Hispanic or Latino	978	pats-802311
+pats-802311-followup	4.3	M	Black or African American	Not Hispanic or Latino	978	pats-802311
+pats-802323-baseline	3.6	F	White	Not Hispanic or Latino	339	pats-802323
+pats-802341-baseline	5.5	M	White	Not Hispanic or Latino	584	pats-802341
+pats-802341-followup	7.3	M	White	Not Hispanic or Latino	584	pats-802341
+pats-802349-baseline	8.4	F	White	Hispanic or Latino	691	pats-802349
+pats-802349-followup	9.5	F	White	Hispanic or Latino	691	pats-802349
+pats-802364-baseline	3.3	M	White	Not Hispanic or Latino	691	pats-802364
+pats-802372-baseline	3.7	F	White	Not Hispanic or Latino	812	pats-802372
+pats-802372-followup	4.8	F	White	Not Hispanic or Latino	812	pats-802372
+pats-802374-baseline	6.3	M	White	Not Hispanic or Latino	584	pats-802374
+pats-802375-baseline	4	M	Black or African American	Not Hispanic or Latino	978	pats-802375
+pats-802375-followup	5.4	M	Black or African American	Not Hispanic or Latino	978	pats-802375
+pats-802395-baseline	3	M	Black or African American	Not Hispanic or Latino	978	pats-802395
+pats-802412-baseline	5	M	Asian	Not Hispanic or Latino	339	pats-802412
+pats-802413-baseline	6	F	Black or African American	Not Hispanic or Latino	339	pats-802413
+pats-802417-baseline	3	M	Black or African American	Not Hispanic or Latino	978	pats-802417
+pats-802420-baseline	5.9	M	Black or African American	Not Hispanic or Latino	812	pats-802420
+pats-802420-followup	7.5	M	Black or African American	Not Hispanic or Latino	812	pats-802420
+pats-802511-baseline	8.5	F	Black or African American	Not Hispanic or Latino	691	pats-802511
+pats-802511-followup	9.7	F	Black or African American	Not Hispanic or Latino	691	pats-802511
+pats-802517-baseline	6	F	Black or African American	Not Hispanic or Latino	978	pats-802517
+pats-802536-baseline	3	F	White	Not Hispanic or Latino	240	pats-802536
+pats-802548-baseline	3.7	M	White	Not Hispanic or Latino	584	pats-802548
+pats-802548-followup	4.9	M	White	Not Hispanic or Latino	584	pats-802548
+pats-802551-baseline	7.9	F	White	Not Hispanic or Latino	339	pats-802551
+pats-802569-baseline	11	M	Black or African American	Not Hispanic or Latino	240	pats-802569
+pats-802570-baseline	8	M	White	Hispanic or Latino	691	pats-802570
+pats-802600-baseline	4.5	M	Black or African American	Not Hispanic or Latino	978	pats-802600
+pats-802600-followup	5.8	M	Black or African American	Not Hispanic or Latino	978	pats-802600
+pats-802612-baseline	3.6	M	White	Hispanic or Latino	978	pats-802612
+pats-802612-followup	4.9	M	White	Hispanic or Latino	978	pats-802612
+pats-802663-baseline	11.2	F	Black or African American	Not Hispanic or Latino	240	pats-802663
+pats-802663-followup	12.2	F	Black or African American	Not Hispanic or Latino	240	pats-802663
+pats-802691-baseline	4	M	More than one race	Not Hispanic or Latino	339	pats-802691
+pats-802739-baseline	7	F	Black or African American	Not Hispanic or Latino	584	pats-802739
+pats-802767-baseline	4.6	M	White	Not Hispanic or Latino	978	pats-802767
+pats-802767-followup	5.9	M	White	Not Hispanic or Latino	978	pats-802767
+pats-802768-baseline	7.5	M	White	Not Hispanic or Latino	339	pats-802768
+pats-802768-followup	8.6	M	White	Not Hispanic or Latino	339	pats-802768
+pats-802823-baseline	6	M	White	Hispanic or Latino	691	pats-802823
+pats-802834-baseline	6.7	F	White	Not Hispanic or Latino	978	pats-802834
+pats-802834-followup	8	F	White	Not Hispanic or Latino	978	pats-802834
+pats-802848-baseline	6.6	M	American Indian/Alaska Native	Not Hispanic or Latino	240	pats-802848
+pats-802848-followup	7.6	M	American Indian/Alaska Native	Not Hispanic or Latino	240	pats-802848
+pats-802863-baseline	6	F	White	Hispanic or Latino	691	pats-802863
+pats-802902-baseline	4.2	F	White	Not Hispanic or Latino	339	pats-802902
+pats-802902-followup	5.5	F	White	Not Hispanic or Latino	339	pats-802902
+pats-802904-baseline	7.2	F	Asian	Not Hispanic or Latino	339	pats-802904
+pats-802925-baseline	8.9	F	Black or African American	Not Hispanic or Latino	691	pats-802925
+pats-802925-followup	10.3	F	Black or African American	Not Hispanic or Latino	691	pats-802925
+pats-802939-baseline	3	M	White	Not Hispanic or Latino	691	pats-802939
+pats-802946-baseline	4	F	Black or African American	Not Hispanic or Latino	691	pats-802946
+pats-802955-baseline	6.3	M	White	Not Hispanic or Latino	240	pats-802955
+pats-802955-followup	7.4	M	White	Not Hispanic or Latino	240	pats-802955
+pats-802985-baseline	5	F	Black or African American	Not Hispanic or Latino	240	pats-802985
+pats-802988-baseline	8.2	F	Black or African American	Not Hispanic or Latino	584	pats-802988
+pats-802988-followup	9.8	F	Black or African American	Not Hispanic or Latino	584	pats-802988
+pats-802999-baseline	3.6	F	Black or African American	Not Hispanic or Latino	584	pats-802999
+pats-802999-followup	4.8	F	Black or African American	Not Hispanic or Latino	584	pats-802999
+pats-803002-baseline	11.2	M	White	Hispanic or Latino	978	pats-803002
+pats-803002-followup	12.3	M	White	Hispanic or Latino	978	pats-803002
+pats-803050-baseline	4	M	More than one race	Not Hispanic or Latino	240	pats-803050
+pats-803050-followup	5.1	M	More than one race	Not Hispanic or Latino	240	pats-803050
+pats-803065-baseline	6	M	White	Hispanic or Latino	691	pats-803065
+pats-803074-baseline	9.4	M	White	Not Hispanic or Latino	339	pats-803074
+pats-803074-followup	10.5	M	White	Not Hispanic or Latino	339	pats-803074
+pats-803107-baseline	6.3	F	White	Not Hispanic or Latino	978	pats-803107
+pats-803160-baseline	4	F	White	Hispanic or Latino	691	pats-803160
+pats-803176-baseline	6.5	F	White	Not Hispanic or Latino	240	pats-803176
+pats-803176-followup	7.5	F	White	Not Hispanic or Latino	240	pats-803176
+pats-803209-baseline	5.7	F	White	Not Hispanic or Latino	240	pats-803209
+pats-803245-baseline	4.6	F	White	Not Hispanic or Latino	240	pats-803245
+pats-803245-followup	5.6	F	White	Not Hispanic or Latino	240	pats-803245
+pats-803251-baseline	4.3	F	Black or African American	Not Hispanic or Latino	978	pats-803251
+pats-803304-baseline	7	M	Black or African American	Not Hispanic or Latino	584	pats-803304
+pats-803344-baseline	6	F	White	Not Hispanic or Latino	691	pats-803344
+pats-803378-baseline	6.7	F	Black or African American	Not Hispanic or Latino	240	pats-803378
+pats-803382-baseline	6.4	F	White	Not Hispanic or Latino	812	pats-803382
+pats-803417-baseline	3	F	Black or African American	Not Hispanic or Latino	978	pats-803417
+pats-803422-baseline	3	F	White	Not Hispanic or Latino	978	pats-803422
+pats-803424-baseline	4.3	M	White	Not Hispanic or Latino	339	pats-803424
+pats-803441-baseline	4.3	F	More than one race	Not Hispanic or Latino	812	pats-803441
+pats-803441-followup	5.4	F	More than one race	Not Hispanic or Latino	812	pats-803441
+pats-803458-baseline	4	M	White	Not Hispanic or Latino	339	pats-803458
+pats-803462-baseline	7.2	F	White	Not Hispanic or Latino	339	pats-803462
+pats-803462-followup	8.3	F	White	Not Hispanic or Latino	339	pats-803462
+pats-803463-baseline	3	F	Black or African American	Not Hispanic or Latino	691	pats-803463
+pats-803483-baseline	4.2	F	Black or African American	Not Hispanic or Latino	584	pats-803483
+pats-803483-followup	5.6	F	Black or African American	Not Hispanic or Latino	584	pats-803483
+pats-803554-baseline	7.9	F	Black or African American	Not Hispanic or Latino	240	pats-803554
+pats-803554-followup	8.9	F	Black or African American	Not Hispanic or Latino	240	pats-803554
+pats-803591-baseline	8.7	M	White	Hispanic or Latino	691	pats-803591
+pats-803591-followup	9.8	M	White	Hispanic or Latino	691	pats-803591
+pats-803592-baseline	5	F	Black or African American	Not Hispanic or Latino	240	pats-803592
+pats-803602-baseline	11.8	F	Black or African American	Not Hispanic or Latino	240	pats-803602
+pats-803610-baseline	7	F	Black or African American	Not Hispanic or Latino	978	pats-803610
+pats-803724-baseline	5.8	M	Black or African American	Not Hispanic or Latino	812	pats-803724
+pats-803724-followup	7.2	M	Black or African American	Not Hispanic or Latino	812	pats-803724
+pats-803734-baseline	5.5	M	White	Hispanic or Latino	691	pats-803734
+pats-803734-followup	6.7	M	White	Hispanic or Latino	691	pats-803734
+pats-803750-baseline	5	M	White	Not Hispanic or Latino	584	pats-803750
+pats-803751-baseline	10.4	M	White	Not Hispanic or Latino	584	pats-803751
+pats-803751-followup	11.7	M	White	Not Hispanic or Latino	584	pats-803751
+pats-803761-baseline	7.3	F	Black or African American	Not Hispanic or Latino	978	pats-803761
+pats-803761-followup	8.5	F	Black or African American	Not Hispanic or Latino	978	pats-803761
+pats-803767-baseline	6.3	M	Black or African American	Not Hispanic or Latino	812	pats-803767
+pats-803767-followup	7.9	M	Black or African American	Not Hispanic or Latino	812	pats-803767
+pats-803827-baseline	7	M	White	Hispanic or Latino	691	pats-803827
+pats-803844-baseline	6	F	White	Hispanic or Latino	691	pats-803844
+pats-803875-baseline	4.3	M	White	Not Hispanic or Latino	339	pats-803875
+pats-803906-baseline	7.8	F	White	Hispanic or Latino	691	pats-803906
+pats-803918-baseline	3	M	Black or African American	Not Hispanic or Latino	978	pats-803918
+pats-803920-baseline	3	M	Black or African American	Not Hispanic or Latino	978	pats-803920
+pats-803930-baseline	9.3	F	Asian	Not Hispanic or Latino	339	pats-803930
+pats-803934-baseline	3	M	Asian	Not Hispanic or Latino	691	pats-803934
+pats-803972-baseline	4.6	F	White	Hispanic or Latino	978	pats-803972
+pats-803972-followup	5.7	F	White	Hispanic or Latino	978	pats-803972
+pats-804006-baseline	6	F	White	Not Hispanic or Latino	691	pats-804006
+pats-804008-baseline	6	M	White	Not Hispanic or Latino	240	pats-804008
+pats-804011-baseline	4.5	F	White	Not Hispanic or Latino	240	pats-804011
+pats-804011-followup	5.7	F	White	Not Hispanic or Latino	240	pats-804011
+pats-804056-baseline	10	M	Black or African American	Not Hispanic or Latino	812	pats-804056
+pats-804056-followup	11.3	M	Black or African American	Not Hispanic or Latino	812	pats-804056
+pats-804069-baseline	3	M	Black or African American	Not Hispanic or Latino	812	pats-804069
+pats-804135-baseline	10	F	White	Not Hispanic or Latino	240	pats-804135
+pats-804165-baseline	5.7	F	Black or African American	Not Hispanic or Latino	812	pats-804165
+pats-804165-followup	7.2	F	Black or African American	Not Hispanic or Latino	812	pats-804165
+pats-804175-baseline	3	F	White	Not Hispanic or Latino	240	pats-804175
+pats-804192-baseline	3	F	More than one race	Not Hispanic or Latino	812	pats-804192
+pats-804193-baseline	7	M	White	Not Hispanic or Latino	978	pats-804193
+pats-804207-baseline	4	M	White	Not Hispanic or Latino	584	pats-804207
+pats-804212-baseline	3.6	F	White	Hispanic or Latino	584	pats-804212
+pats-804241-baseline	4.5	F	Black or African American	Not Hispanic or Latino	240	pats-804241
+pats-804241-followup	5.6	F	Black or African American	Not Hispanic or Latino	240	pats-804241
+pats-804270-baseline	6	M	White	Not Hispanic or Latino	978	pats-804270
+pats-804279-baseline	5.1	F	More than one race	Hispanic or Latino	339	pats-804279
+pats-804301-baseline	8	M	White	Hispanic or Latino	691	pats-804301
+pats-804301-followup	9.1	M	White	Hispanic or Latino	691	pats-804301
+pats-804309-baseline	4.3	M	White	Not Hispanic or Latino	584	pats-804309
+pats-804309-followup	5.4	M	White	Not Hispanic or Latino	584	pats-804309
+pats-804331-baseline	5	F	Black or African American	Not Hispanic or Latino	978	pats-804331
+pats-804341-baseline	12	M	White	Hispanic or Latino	691	pats-804341
+pats-804355-baseline	6.7	F	White	Not Hispanic or Latino	339	pats-804355
+pats-804355-followup	8	F	White	Not Hispanic or Latino	339	pats-804355
+pats-804359-baseline	7.2	F	White	Hispanic or Latino	584	pats-804359
+pats-804424-baseline	10	M	White	Not Hispanic or Latino	240	pats-804424
+pats-804442-baseline	4.5	F	White	Not Hispanic or Latino	240	pats-804442
+pats-804442-followup	5.5	F	White	Not Hispanic or Latino	240	pats-804442
+pats-804530-baseline	10.1	F	White	Hispanic or Latino	691	pats-804530
+pats-804532-baseline	4.8	M	White	Hispanic or Latino	691	pats-804532
+pats-804532-followup	6.1	M	White	Hispanic or Latino	691	pats-804532
+pats-804534-baseline	5	M	White	Not Hispanic or Latino	978	pats-804534
+pats-804536-baseline	3.3	F	White	Hispanic or Latino	691	pats-804536
+pats-804574-baseline	4.6	M	Black or African American	Not Hispanic or Latino	240	pats-804574
+pats-804574-followup	5.6	M	Black or African American	Not Hispanic or Latino	240	pats-804574
+pats-804604-baseline	5	M	White	Not Hispanic or Latino	812	pats-804604
+pats-804608-baseline	4.2	M	Black or African American	Not Hispanic or Latino	978	pats-804608
+pats-804649-baseline	12.7	F	White	Hispanic or Latino	691	pats-804649
+pats-804690-baseline	6	M	White	Not Hispanic or Latino	691	pats-804690
+pats-804691-baseline	8.2	F	White	Not Hispanic or Latino	240	pats-804691
+pats-804691-followup	9.2	F	White	Not Hispanic or Latino	240	pats-804691
+pats-804702-baseline	7.1	M	White	Not Hispanic or Latino	240	pats-804702
+pats-804705-baseline	4.6	F	White	Not Hispanic or Latino	240	pats-804705
+pats-804733-baseline	7	F	White	Not Hispanic or Latino	812	pats-804733
+pats-804733-followup	8.1	F	White	Not Hispanic or Latino	812	pats-804733
+pats-804837-baseline	3.6	F	White	Not Hispanic or Latino	240	pats-804837
+pats-804837-followup	4.6	F	White	Not Hispanic or Latino	240	pats-804837
+pats-804847-baseline	8.1	M	White	Not Hispanic or Latino	584	pats-804847
+pats-804847-followup	9.8	M	White	Not Hispanic or Latino	584	pats-804847
+pats-804850-baseline	5.8	F	Black or African American	Not Hispanic or Latino	691	pats-804850
+pats-804850-followup	6.8	F	Black or African American	Not Hispanic or Latino	691	pats-804850
+pats-804857-baseline	5.1	F	More than one race	Not Hispanic or Latino	978	pats-804857
+pats-804857-followup	6.3	F	More than one race	Not Hispanic or Latino	978	pats-804857
+pats-804862-baseline	6	M	White	Not Hispanic or Latino	339	pats-804862
+pats-804862-followup	7.2	M	White	Not Hispanic or Latino	339	pats-804862
+pats-804878-baseline	8	F	White	Hispanic or Latino	691	pats-804878
+pats-804893-baseline	8	M	Black or African American	Not Hispanic or Latino	978	pats-804893
+pats-804908-baseline	7.8	F	White	Not Hispanic or Latino	691	pats-804908
+pats-804908-followup	8.9	F	White	Not Hispanic or Latino	691	pats-804908
+pats-804966-baseline	9	F	Black or African American	Not Hispanic or Latino	584	pats-804966
+pats-804999-baseline	8.7	F	White	Not Hispanic or Latino	240	pats-804999
+pats-804999-followup	9.9	F	White	Not Hispanic or Latino	240	pats-804999
+pats-805034-baseline	7	M	White	Hispanic or Latino	691	pats-805034
+pats-805046-baseline	6.8	F	White	Not Hispanic or Latino	978	pats-805046
+pats-805059-baseline	6.9	M	White	Not Hispanic or Latino	584	pats-805059
+pats-805088-baseline	9.4	F	White	Not Hispanic or Latino	584	pats-805088
+pats-805109-baseline	9.8	F	White	Not Hispanic or Latino	584	pats-805109
+pats-805142-baseline	9.3	F	White	Not Hispanic or Latino	339	pats-805142
+pats-805142-followup	10.6	F	White	Not Hispanic or Latino	339	pats-805142
+pats-805149-baseline	6.9	F	White	Not Hispanic or Latino	339	pats-805149
+pats-805149-followup	8.4	F	White	Not Hispanic or Latino	339	pats-805149
+pats-805167-baseline	3	M	Black or African American	Not Hispanic or Latino	978	pats-805167
+pats-805171-baseline	8	F	Black or African American	Not Hispanic or Latino	691	pats-805171
+pats-805177-baseline	3.7	M	White	Not Hispanic or Latino	339	pats-805177
+pats-805177-followup	4.8	M	White	Not Hispanic or Latino	339	pats-805177
+pats-805316-baseline	4.2	F	Black or African American	Not Hispanic or Latino	978	pats-805316
+pats-805316-followup	5.4	F	Black or African American	Not Hispanic or Latino	978	pats-805316
+pats-805355-baseline	4.7	M	White	Not Hispanic or Latino	240	pats-805355
+pats-805355-followup	5.9	M	White	Not Hispanic or Latino	240	pats-805355
+pats-805368-baseline	8.8	F	White	Hispanic or Latino	691	pats-805368
+pats-805368-followup	9.7	F	White	Hispanic or Latino	691	pats-805368
+pats-805382-baseline	7	F	Black or African American	Not Hispanic or Latino	240	pats-805382
+pats-805431-baseline	10	M	White	Hispanic or Latino	812	pats-805431
+pats-805432-baseline	4	M	Asian	Not Hispanic or Latino	691	pats-805432
+pats-805454-baseline	3.4	F	White	Not Hispanic or Latino	978	pats-805454
+pats-805454-followup	4.5	F	White	Not Hispanic or Latino	978	pats-805454
+pats-805482-baseline	5	F	Black or African American	Not Hispanic or Latino	978	pats-805482
+pats-805524-baseline	11.7	M	Black or African American	Not Hispanic or Latino	812	pats-805524
+pats-805603-baseline	8.6	F	White	Hispanic or Latino	691	pats-805603
+pats-805608-baseline	4.1	F	Black or African American	Not Hispanic or Latino	339	pats-805608
+pats-805608-followup	5.3	F	Black or African American	Not Hispanic or Latino	339	pats-805608
+pats-805649-baseline	8	F	More than one race	Not Hispanic or Latino	812	pats-805649
+pats-805655-baseline	7.9	M	More than one race	Not Hispanic or Latino	691	pats-805655
+pats-805674-baseline	4	F	Black or African American	Not Hispanic or Latino	978	pats-805674
+pats-805700-baseline	5	M	White	Not Hispanic or Latino	339	pats-805700
+pats-805722-baseline	4	F	Black or African American	Not Hispanic or Latino	691	pats-805722
+pats-805729-baseline	9	F	Black or African American	Not Hispanic or Latino	691	pats-805729
+pats-805729-followup	10.1	F	Black or African American	Not Hispanic or Latino	691	pats-805729
+pats-805731-baseline	6.4	F	White	Not Hispanic or Latino	584	pats-805731
+pats-805731-followup	7.8	F	White	Not Hispanic or Latino	584	pats-805731
+pats-805749-baseline	4	M	More than one race	Not Hispanic or Latino	691	pats-805749
+pats-805786-baseline	4.2	M	White	Not Hispanic or Latino	240	pats-805786
+pats-805786-followup	5.2	M	White	Not Hispanic or Latino	240	pats-805786
+pats-805868-baseline	8	M	White	Hispanic or Latino	812	pats-805868
+pats-805915-baseline	9.3	M	White	Not Hispanic or Latino	339	pats-805915
+pats-805932-baseline	7.2	M	White	Hispanic or Latino	691	pats-805932
+pats-805932-followup	8.4	M	White	Hispanic or Latino	691	pats-805932
+pats-805941-baseline	8.7	M	Black or African American	Not Hispanic or Latino	240	pats-805941
+pats-805941-followup	10.1	M	Black or African American	Not Hispanic or Latino	240	pats-805941
+pats-805942-baseline	4.8	M	White	Not Hispanic or Latino	812	pats-805942
+pats-805942-followup	5.8	M	White	Not Hispanic or Latino	812	pats-805942
+pats-805946-baseline	7	M	Black or African American	Not Hispanic or Latino	691	pats-805946
+pats-805977-baseline	5.6	F	Black or African American	Not Hispanic or Latino	240	pats-805977
+pats-805977-followup	6.6	F	Black or African American	Not Hispanic or Latino	240	pats-805977
+pats-805980-baseline	3.4	F	Black or African American	Not Hispanic or Latino	978	pats-805980
+pats-805983-baseline	4.8	M	Black or African American	Not Hispanic or Latino	978	pats-805983
+pats-805985-baseline	4	F	Black or African American	Not Hispanic or Latino	978	pats-805985
+pats-805994-baseline	7.9	M	Black or African American	Not Hispanic or Latino	978	pats-805994
+pats-805994-followup	8.9	M	Black or African American	Not Hispanic or Latino	978	pats-805994
+pats-805999-baseline	4.7	M	White	Not Hispanic or Latino	584	pats-805999
+pats-806011-baseline	7.9	F	White	Not Hispanic or Latino	240	pats-806011
+pats-806011-followup	8.9	F	White	Not Hispanic or Latino	240	pats-806011
+pats-806018-baseline	7	F	White	Not Hispanic or Latino	240	pats-806018
+pats-806033-baseline	8.6	M	Black or African American	Not Hispanic or Latino	339	pats-806033
+pats-806033-followup	10.5	M	Black or African American	Not Hispanic or Latino	339	pats-806033
+pats-806037-baseline	4.3	F	White	Not Hispanic or Latino	240	pats-806037
+pats-806037-followup	5.3	F	White	Not Hispanic or Latino	240	pats-806037
+pats-806063-baseline	7	M	Black or African American	Not Hispanic or Latino	978	pats-806063
+pats-806137-baseline	3.5	M	White	Not Hispanic or Latino	240	pats-806137
+pats-806137-followup	4.6	M	White	Not Hispanic or Latino	240	pats-806137
+pats-806157-baseline	3	F	Black or African American	Not Hispanic or Latino	978	pats-806157
+pats-806159-baseline	4.2	F	Black or African American	Not Hispanic or Latino	584	pats-806159
+pats-806159-followup	5.7	F	Black or African American	Not Hispanic or Latino	584	pats-806159
+pats-806238-baseline	6.3	F	White	Hispanic or Latino	691	pats-806238
+pats-806245-baseline	9.2	M	Black or African American	Not Hispanic or Latino	812	pats-806245
+pats-806245-followup	10.4	M	Black or African American	Not Hispanic or Latino	812	pats-806245
+pats-806276-baseline	6.4	F	Black or African American	Not Hispanic or Latino	978	pats-806276
+pats-806276-followup	7.6	F	Black or African American	Not Hispanic or Latino	978	pats-806276
+pats-806282-baseline	4	M	Black or African American	Not Hispanic or Latino	812	pats-806282
+pats-806302-baseline	3	F	Black or African American	Not Hispanic or Latino	978	pats-806302
+pats-806337-baseline	3.2	M	White	Not Hispanic or Latino	812	pats-806337
+pats-806399-baseline	3.4	F	White	Not Hispanic or Latino	584	pats-806399
+pats-806399-followup	4.9	F	White	Not Hispanic or Latino	584	pats-806399
+pats-806403-baseline	10.1	M	White	Hispanic or Latino	691	pats-806403
+pats-806403-followup	11.1	M	White	Hispanic or Latino	691	pats-806403
+pats-806445-baseline	3.3	F	White	Not Hispanic or Latino	691	pats-806445
+pats-806445-followup	4.3	F	White	Not Hispanic or Latino	691	pats-806445
+pats-806483-baseline	10.3	F	White	Not Hispanic or Latino	978	pats-806483
+pats-806483-followup	11.4	F	White	Not Hispanic or Latino	978	pats-806483
+pats-806484-baseline	5.7	F	Asian	Not Hispanic or Latino	691	pats-806484
+pats-806484-followup	6.9	F	Asian	Not Hispanic or Latino	691	pats-806484
+pats-806488-baseline	6	M	White	Not Hispanic or Latino	240	pats-806488
+pats-806491-baseline	6.1	M	Black or African American	Not Hispanic or Latino	812	pats-806491
+pats-806491-followup	7.1	M	Black or African American	Not Hispanic or Latino	812	pats-806491
+pats-806506-baseline	4.3	F	White	Not Hispanic or Latino	584	pats-806506
+pats-806506-followup	5.5	F	White	Not Hispanic or Latino	584	pats-806506
+pats-806519-baseline	6.7	F	Black or African American	Not Hispanic or Latino	978	pats-806519
+pats-806519-followup	7.7	F	Black or African American	Not Hispanic or Latino	978	pats-806519
+pats-806559-baseline	8.3	M	White	Not Hispanic or Latino	812	pats-806559
+pats-806559-followup	9.5	M	White	Not Hispanic or Latino	812	pats-806559
+pats-806564-baseline	7	F	Black or African American	Not Hispanic or Latino	978	pats-806564
+pats-806588-baseline	3	F	More than one race	Not Hispanic or Latino	240	pats-806588
+pats-806590-baseline	5	F	White	Not Hispanic or Latino	812	pats-806590
+pats-806604-baseline	6	M	White	Not Hispanic or Latino	339	pats-806604
+pats-806659-baseline	8	F	Black or African American	Not Hispanic or Latino	691	pats-806659
+pats-806676-baseline	4.7	F	White	Not Hispanic or Latino	584	pats-806676
+pats-806690-baseline	7.8	M	White	Not Hispanic or Latino	812	pats-806690
+pats-806690-followup	8.8	M	White	Not Hispanic or Latino	812	pats-806690
+pats-806693-baseline	5.5	M	White	Not Hispanic or Latino	812	pats-806693
+pats-806706-baseline	6.3	F	White	Not Hispanic or Latino	812	pats-806706
+pats-806706-followup	7.4	F	White	Not Hispanic or Latino	812	pats-806706
+pats-806708-baseline	6	F	More than one race	Not Hispanic or Latino	240	pats-806708
+pats-806718-baseline	10.5	M	White	Hispanic or Latino	339	pats-806718
+pats-806744-baseline	7.4	F	White	Hispanic or Latino	812	pats-806744
+pats-806744-followup	8.6	F	White	Hispanic or Latino	812	pats-806744
+pats-806766-baseline	10	F	Black or African American	Hispanic or Latino	978	pats-806766
+pats-806767-baseline	7.4	M	White	Hispanic or Latino	691	pats-806767
+pats-806767-followup	8.6	M	White	Hispanic or Latino	691	pats-806767
+pats-806803-baseline	6	F	White	Hispanic or Latino	691	pats-806803
+pats-806854-baseline	8.1	F	White	Not Hispanic or Latino	978	pats-806854
+pats-806854-followup	9.5	F	White	Not Hispanic or Latino	978	pats-806854
+pats-806865-baseline	5.7	F	More than one race	Not Hispanic or Latino	240	pats-806865
+pats-806865-followup	6.7	F	More than one race	Not Hispanic or Latino	240	pats-806865
+pats-806869-baseline	4	F	Black or African American	Not Hispanic or Latino	691	pats-806869
+pats-806871-baseline	9.6	M	White	Not Hispanic or Latino	339	pats-806871
+pats-806888-baseline	8.3	M	Black or African American	Not Hispanic or Latino	691	pats-806888
+pats-806888-followup	9.4	M	Black or African American	Not Hispanic or Latino	691	pats-806888
+pats-806890-baseline	3.6	F	Black or African American	Not Hispanic or Latino	978	pats-806890
+pats-806890-followup	4.8	F	Black or African American	Not Hispanic or Latino	978	pats-806890
+pats-806917-baseline	7.9	M	White	Not Hispanic or Latino	339	pats-806917
+pats-806917-followup	9.3	M	White	Not Hispanic or Latino	339	pats-806917
+pats-806922-baseline	7.4	M	White	Not Hispanic or Latino	812	pats-806922
+pats-806922-followup	8.6	M	White	Not Hispanic or Latino	812	pats-806922
+pats-806946-baseline	9.6	M	White	Not Hispanic or Latino	240	pats-806946
+pats-807011-baseline	6.3	F	White	Not Hispanic or Latino	812	pats-807011
+pats-807047-baseline	5	M	White	Not Hispanic or Latino	339	pats-807047
+pats-807056-baseline	3.2	F	White	Not Hispanic or Latino	812	pats-807056
+pats-807056-followup	4.3	F	White	Not Hispanic or Latino	812	pats-807056
+pats-807109-baseline	7	M	White	Not Hispanic or Latino	584	pats-807109
+pats-807114-baseline	5.5	F	More than one race	Not Hispanic or Latino	339	pats-807114
+pats-807114-followup	6.6	F	More than one race	Not Hispanic or Latino	339	pats-807114
+pats-807147-baseline	3	F	Black or African American	Not Hispanic or Latino	240	pats-807147
+pats-807170-baseline	3	M	White	Not Hispanic or Latino	812	pats-807170
+pats-807173-baseline	8.3	F	White	Not Hispanic or Latino	339	pats-807173
+pats-807192-baseline	9.1	M	White	Hispanic or Latino	691	pats-807192
+pats-807192-followup	10.3	M	White	Hispanic or Latino	691	pats-807192
+pats-807202-baseline	5.9	F	White	Hispanic or Latino	691	pats-807202
+pats-807202-followup	7	F	White	Hispanic or Latino	691	pats-807202
+pats-807215-baseline	4.2	F	White	Not Hispanic or Latino	812	pats-807215
+pats-807218-baseline	7.7	F	Black or African American	Not Hispanic or Latino	691	pats-807218
+pats-807218-followup	9.1	F	Black or African American	Not Hispanic or Latino	691	pats-807218
+pats-807239-baseline	5.2	F	Black or African American	Not Hispanic or Latino	691	pats-807239
+pats-807239-followup	6.6	F	Black or African American	Not Hispanic or Latino	691	pats-807239
+pats-807256-baseline	7.6	M	White	Not Hispanic or Latino	584	pats-807256
+pats-807256-followup	8.9	M	White	Not Hispanic or Latino	584	pats-807256
+pats-807285-baseline	4.4	M	White	Not Hispanic or Latino	584	pats-807285
+pats-807285-followup	5.9	M	White	Not Hispanic or Latino	584	pats-807285
+pats-807287-baseline	3.4	F	White	Not Hispanic or Latino	812	pats-807287
+pats-807287-followup	4.7	F	White	Not Hispanic or Latino	812	pats-807287
+pats-807297-baseline	6.6	F	White	Not Hispanic or Latino	584	pats-807297
+pats-807300-baseline	4.2	M	White	Hispanic or Latino	691	pats-807300
+pats-807314-baseline	7.8	F	White	Not Hispanic or Latino	584	pats-807314
+pats-807326-baseline	3	M	White	Not Hispanic or Latino	691	pats-807326
+pats-807336-baseline	5.3	M	White	Not Hispanic or Latino	339	pats-807336
+pats-807361-baseline	5.3	F	Black or African American	Not Hispanic or Latino	978	pats-807361
+pats-807361-followup	6.6	F	Black or African American	Not Hispanic or Latino	978	pats-807361
+pats-807367-baseline	5.5	F	White	Not Hispanic or Latino	584	pats-807367
+pats-807386-baseline	5.2	M	White	Not Hispanic or Latino	691	pats-807386
+pats-807386-followup	6.3	M	White	Not Hispanic or Latino	691	pats-807386
+pats-807396-baseline	7	F	White	Not Hispanic or Latino	978	pats-807396
+pats-807441-baseline	5.8	F	White	Hispanic or Latino	978	pats-807441
+pats-807441-followup	6.9	F	White	Hispanic or Latino	978	pats-807441
+pats-807459-baseline	5.4	M	White	Hispanic or Latino	691	pats-807459
+pats-807471-baseline	8.2	F	White	Not Hispanic or Latino	812	pats-807471
+pats-807475-baseline	8.2	F	Black or African American	Not Hispanic or Latino	240	pats-807475
+pats-807498-baseline	6	M	White	Not Hispanic or Latino	584	pats-807498
+pats-807506-baseline	3.7	M	White	Hispanic or Latino	812	pats-807506
+pats-807519-baseline	7	F	White	Not Hispanic or Latino	240	pats-807519
+pats-807523-baseline	6.5	F	Black or African American	Not Hispanic or Latino	978	pats-807523
+pats-807523-followup	7.5	F	Black or African American	Not Hispanic or Latino	978	pats-807523
+pats-807558-baseline	7.2	F	White	Not Hispanic or Latino	584	pats-807558
+pats-807627-baseline	10	F	White	Not Hispanic or Latino	240	pats-807627
+pats-807627-followup	11	F	White	Not Hispanic or Latino	240	pats-807627
+pats-807640-baseline	5.3	F	White	Not Hispanic or Latino	978	pats-807640
+pats-807645-baseline	6.8	F	White	Not Hispanic or Latino	339	pats-807645
+pats-807657-baseline	10.9	M	Black or African American	Not Hispanic or Latino	584	pats-807657
+pats-807657-followup	12.3	M	Black or African American	Not Hispanic or Latino	584	pats-807657
+pats-807672-baseline	4.7	M	Black or African American	Not Hispanic or Latino	691	pats-807672
+pats-807672-followup	5.7	M	Black or African American	Not Hispanic or Latino	691	pats-807672
+pats-807682-baseline	10	F	Black or African American	Not Hispanic or Latino	978	pats-807682
+pats-807694-baseline	5.1	M	Black or African American	Not Hispanic or Latino	584	pats-807694
+pats-807694-followup	6.5	M	Black or African American	Not Hispanic or Latino	584	pats-807694
+pats-807731-baseline	3	M	Black or African American	Not Hispanic or Latino	691	pats-807731
+pats-807749-baseline	4	F	White	Not Hispanic or Latino	584	pats-807749
+pats-807775-baseline	5	M	White	Not Hispanic or Latino	978	pats-807775
+pats-807787-baseline	9.9	M	White	Not Hispanic or Latino	812	pats-807787
+pats-807787-followup	11	M	White	Not Hispanic or Latino	812	pats-807787
+pats-807825-baseline	12.8	F	Black or African American	Not Hispanic or Latino	978	pats-807825
+pats-807825-followup	14	F	Black or African American	Not Hispanic or Latino	978	pats-807825
+pats-807849-baseline	9.4	M	White	Not Hispanic or Latino	584	pats-807849
+pats-807849-followup	10.8	M	White	Not Hispanic or Latino	584	pats-807849
+pats-807883-baseline	6	F	Black or African American	Not Hispanic or Latino	691	pats-807883
+pats-807906-baseline	4.1	F	White	Not Hispanic or Latino	339	pats-807906
+pats-807906-followup	5.4	F	White	Not Hispanic or Latino	339	pats-807906
+pats-807918-baseline	6.8	M	White	Not Hispanic or Latino	339	pats-807918
+pats-807918-followup	7.9	M	White	Not Hispanic or Latino	339	pats-807918
+pats-807923-baseline	4.4	F	White	Not Hispanic or Latino	240	pats-807923
+pats-807923-followup	5.4	F	White	Not Hispanic or Latino	240	pats-807923
+pats-807935-baseline	8	M	More than one race	Not Hispanic or Latino	691	pats-807935
+pats-807947-baseline	7	M	White	Not Hispanic or Latino	691	pats-807947
+pats-807951-baseline	7.7	M	More than one race	Hispanic or Latino	240	pats-807951
+pats-807955-baseline	5	M	White	Not Hispanic or Latino	240	pats-807955
+pats-807971-baseline	7	M	White	Not Hispanic or Latino	153	pats-807971
+pats-808090-baseline	4	M	Black or African American	Not Hispanic or Latino	691	pats-808090
+pats-808125-baseline	4	F	White	Not Hispanic or Latino	584	pats-808125
+pats-808148-baseline	6.5	M	White	Hispanic or Latino	691	pats-808148
+pats-808177-baseline	5.2	F	Black or African American	Not Hispanic or Latino	812	pats-808177
+pats-808177-followup	6.4	F	Black or African American	Not Hispanic or Latino	812	pats-808177
+pats-808208-baseline	4	F	White	Hispanic or Latino	691	pats-808208
+pats-808214-baseline	4.6	M	White	Not Hispanic or Latino	978	pats-808214
+pats-808214-followup	6	M	White	Not Hispanic or Latino	978	pats-808214
+pats-808218-baseline	4.6	M	More than one race	Not Hispanic or Latino	339	pats-808218
+pats-808218-followup	6.3	M	More than one race	Not Hispanic or Latino	339	pats-808218
+pats-808224-baseline	6.2	M	Black or African American	Not Hispanic or Latino	339	pats-808224
+pats-808229-baseline	7	M	White	Hispanic or Latino	691	pats-808229
+pats-808255-baseline	7	M	White	Not Hispanic or Latino	812	pats-808255
+pats-808255-followup	8	M	White	Not Hispanic or Latino	812	pats-808255
+pats-808258-baseline	12.2	F	Black or African American	Not Hispanic or Latino	584	pats-808258
+pats-808258-followup	13.6	F	Black or African American	Not Hispanic or Latino	584	pats-808258
+pats-808273-baseline	11.7	M	Black or African American	Not Hispanic or Latino	240	pats-808273
+pats-808335-baseline	10.4	M	Black or African American	Not Hispanic or Latino	691	pats-808335
+pats-808335-followup	11.4	M	Black or African American	Not Hispanic or Latino	691	pats-808335
+pats-808340-baseline	3.5	F	White	Not Hispanic or Latino	339	pats-808340
+pats-808340-followup	4.6	F	White	Not Hispanic or Latino	339	pats-808340
+pats-808349-baseline	7.3	M	American Indian/Alaska Native	Not Hispanic or Latino	240	pats-808349
+pats-808349-followup	8.3	M	American Indian/Alaska Native	Not Hispanic or Latino	240	pats-808349
+pats-808354-baseline	6.1	F	White	Hispanic or Latino	339	pats-808354
+pats-808376-baseline	6	M	White	Not Hispanic or Latino	812	pats-808376
+pats-808377-baseline	3.4	M	White	Hispanic or Latino	691	pats-808377
+pats-808391-baseline	10.8	F	White	Hispanic or Latino	691	pats-808391
+pats-808391-followup	11.8	F	White	Hispanic or Latino	691	pats-808391
+pats-808404-baseline	4	F	White	Not Hispanic or Latino	978	pats-808404
+pats-808432-baseline	4.5	F	White	Not Hispanic or Latino	339	pats-808432
+pats-808432-followup	5.7	F	White	Not Hispanic or Latino	339	pats-808432
+pats-808434-baseline	7.2	F	White	Hispanic or Latino	240	pats-808434
+pats-808434-followup	8.4	F	White	Hispanic or Latino	240	pats-808434
+pats-808470-baseline	5.6	M	White	Hispanic or Latino	691	pats-808470
+pats-808470-followup	6.8	M	White	Hispanic or Latino	691	pats-808470
+pats-808507-baseline	4.6	M	White	Not Hispanic or Latino	240	pats-808507
+pats-808522-baseline	9.3	M	White	Not Hispanic or Latino	339	pats-808522
+pats-808522-followup	10.4	M	White	Not Hispanic or Latino	339	pats-808522
+pats-808547-baseline	5.4	M	White	Not Hispanic or Latino	978	pats-808547
+pats-808564-baseline	3	M	Black or African American	Not Hispanic or Latino	240	pats-808564
+pats-808565-baseline	7	M	White	Not Hispanic or Latino	240	pats-808565
+pats-808576-baseline	6.3	F	Black or African American	Not Hispanic or Latino	978	pats-808576
+pats-808576-followup	7.3	F	Black or African American	Not Hispanic or Latino	978	pats-808576
+pats-808579-baseline	12.1	M	White	Not Hispanic or Latino	978	pats-808579
+pats-808579-followup	13.4	M	White	Not Hispanic or Latino	978	pats-808579
+pats-808589-baseline	6	M	White	Not Hispanic or Latino	978	pats-808589
+pats-808657-baseline	10.4	F	White	Not Hispanic or Latino	978	pats-808657
+pats-808670-baseline	5	F	More than one race	Not Hispanic or Latino	339	pats-808670
+pats-808670-followup	6.1	F	More than one race	Not Hispanic or Latino	339	pats-808670
+pats-808685-baseline	7	F	White	Not Hispanic or Latino	339	pats-808685
+pats-808702-baseline	3	M	White	Not Hispanic or Latino	584	pats-808702
+pats-808727-baseline	3	M	Black or African American	Not Hispanic or Latino	240	pats-808727
+pats-808728-baseline	10.5	M	White	Not Hispanic or Latino	691	pats-808728
+pats-808728-followup	11.6	M	White	Not Hispanic or Latino	691	pats-808728
+pats-808735-baseline	9	F	White	Not Hispanic or Latino	339	pats-808735
+pats-808739-baseline	6	F	Black or African American	Not Hispanic or Latino	691	pats-808739
+pats-808751-baseline	4.1	F	White	Not Hispanic or Latino	240	pats-808751
+pats-808751-followup	5.1	F	White	Not Hispanic or Latino	240	pats-808751
+pats-808764-baseline	3	F	Black or African American	Not Hispanic or Latino	978	pats-808764
+pats-808767-baseline	7.3	F	More than one race	Not Hispanic or Latino	240	pats-808767
+pats-808767-followup	8.3	F	More than one race	Not Hispanic or Latino	240	pats-808767
+pats-808861-baseline	6	F	Black or African American	Not Hispanic or Latino	240	pats-808861
+pats-808864-baseline	6.6	F	White	Not Hispanic or Latino	339	pats-808864
+pats-808864-followup	7.7	F	White	Not Hispanic or Latino	339	pats-808864
+pats-808870-baseline	7.9	F	White	Hispanic or Latino	691	pats-808870
+pats-808895-baseline	7.5	M	White	Hispanic or Latino	691	pats-808895
+pats-808895-followup	8.5	M	White	Hispanic or Latino	691	pats-808895
+pats-808911-baseline	4	F	White	Hispanic or Latino	691	pats-808911
+pats-808984-baseline	5.2	F	White	Not Hispanic or Latino	584	pats-808984
+pats-808984-followup	6.4	F	White	Not Hispanic or Latino	584	pats-808984
+pats-809013-baseline	4.9	F	White	Not Hispanic or Latino	339	pats-809013
+pats-809022-baseline	3.9	M	White	Not Hispanic or Latino	339	pats-809022
+pats-809022-followup	5.1	M	White	Not Hispanic or Latino	339	pats-809022
+pats-809045-baseline	9.2	F	Black or African American	Not Hispanic or Latino	978	pats-809045
+pats-809088-baseline	5.7	M	White	Not Hispanic or Latino	691	pats-809088
+pats-809088-followup	6.8	M	White	Not Hispanic or Latino	691	pats-809088
+pats-809110-baseline	8.5	F	Black or African American	Not Hispanic or Latino	240	pats-809110
+pats-809111-baseline	12.3	M	White	Not Hispanic or Latino	240	pats-809111
+pats-809111-followup	13.3	M	White	Not Hispanic or Latino	240	pats-809111
+pats-809118-baseline	4.8	F	White	Not Hispanic or Latino	339	pats-809118
+pats-809137-baseline	11	M	White	Hispanic or Latino	812	pats-809137
+pats-809154-baseline	5	F	White	Not Hispanic or Latino	978	pats-809154
+pats-809159-baseline	5.3	M	More than one race	Not Hispanic or Latino	978	pats-809159
+pats-809159-followup	6.4	M	More than one race	Not Hispanic or Latino	978	pats-809159
+pats-809263-baseline	5.9	M	White	Not Hispanic or Latino	812	pats-809263
+pats-809263-followup	7.1	M	White	Not Hispanic or Latino	812	pats-809263
+pats-809275-baseline	5.8	M	More than one race	Hispanic or Latino	691	pats-809275
+pats-809294-baseline	3	F	More than one race	Not Hispanic or Latino	240	pats-809294
+pats-809315-baseline	5.8	M	White	Not Hispanic or Latino	240	pats-809315
+pats-809315-followup	6.9	M	White	Not Hispanic or Latino	240	pats-809315
+pats-809319-baseline	10.2	M	White	Not Hispanic or Latino	240	pats-809319
+pats-809319-followup	11.2	M	White	Not Hispanic or Latino	240	pats-809319
+pats-809341-baseline	4	M	Black or African American	Not Hispanic or Latino	812	pats-809341
+pats-809376-baseline	3	M	White	Hispanic or Latino	691	pats-809376
+pats-809379-baseline	8	F	Black or African American	Not Hispanic or Latino	978	pats-809379
+pats-809402-baseline	4	F	White	Not Hispanic or Latino	978	pats-809402
+pats-809407-baseline	7.4	M	White	Not Hispanic or Latino	812	pats-809407
+pats-809407-followup	8.5	M	White	Not Hispanic or Latino	812	pats-809407
+pats-809408-baseline	4	M	White	Not Hispanic or Latino	339	pats-809408
+pats-809429-baseline	6	M	Black or African American	Not Hispanic or Latino	691	pats-809429
+pats-809486-baseline	3	M	Black or African American	Not Hispanic or Latino	691	pats-809486
+pats-809544-baseline	7.5	F	White	Not Hispanic or Latino	584	pats-809544
+pats-809544-followup	9	F	White	Not Hispanic or Latino	584	pats-809544
+pats-809557-baseline	8.9	M	White	Not Hispanic or Latino	339	pats-809557
+pats-809580-baseline	4	M	Black or African American	Not Hispanic or Latino	978	pats-809580
+pats-809592-baseline	4	M	Black or African American	Hispanic or Latino	978	pats-809592
+pats-809601-baseline	6.7	M	Black or African American	Not Hispanic or Latino	691	pats-809601
+pats-809603-baseline	4.1	M	White	Not Hispanic or Latino	691	pats-809603
+pats-809603-followup	5.5	M	White	Not Hispanic or Latino	691	pats-809603
+pats-809614-baseline	4.3	M	White	Not Hispanic or Latino	584	pats-809614
+pats-809614-followup	5.4	M	White	Not Hispanic or Latino	584	pats-809614
+pats-809643-baseline	3	F	White	Not Hispanic or Latino	240	pats-809643
+pats-809673-baseline	4	M	Black or African American	Not Hispanic or Latino	240	pats-809673
+pats-809715-baseline	3.6	F	White	Not Hispanic or Latino	240	pats-809715
+pats-809715-followup	4.7	F	White	Not Hispanic or Latino	240	pats-809715
+pats-809717-baseline	3	M	Black or African American	Not Hispanic or Latino	240	pats-809717
+pats-809738-baseline	4	M	White	Not Hispanic or Latino	339	pats-809738
+pats-809746-baseline	3.6	M	White	Not Hispanic or Latino	240	pats-809746
+pats-809746-followup	4.5	M	White	Not Hispanic or Latino	240	pats-809746
+pats-809755-baseline	8.2	F	Black or African American	Not Hispanic or Latino	584	pats-809755
+pats-809777-baseline	4	M	White	Not Hispanic or Latino	978	pats-809777
+pats-809811-baseline	6.8	M	White	Not Hispanic or Latino	339	pats-809811
+pats-809811-followup	7.8	M	White	Not Hispanic or Latino	339	pats-809811
+pats-809829-baseline	9	F	More than one race	Not Hispanic or Latino	691	pats-809829
+pats-809832-baseline	10	M	Black or African American	Not Hispanic or Latino	978	pats-809832
+pats-809832-followup	11	M	Black or African American	Not Hispanic or Latino	978	pats-809832
+pats-809847-baseline	4	M	Black or African American	Not Hispanic or Latino	584	pats-809847
+pats-809850-baseline	7	F	White	Hispanic or Latino	691	pats-809850
+pats-809867-baseline	4.8	M	White	Not Hispanic or Latino	339	pats-809867
+pats-809881-baseline	8	F	Black or African American	Not Hispanic or Latino	691	pats-809881
+pats-809891-baseline	4.2	F	White	Not Hispanic or Latino	339	pats-809891
+pats-809894-baseline	4.9	M	White	Hispanic or Latino	691	pats-809894
+pats-809894-followup	6	M	White	Hispanic or Latino	691	pats-809894
+pats-809896-baseline	9	F	Black or African American	Not Hispanic or Latino	691	pats-809896
+pats-809912-baseline	3	M	White	Not Hispanic or Latino	240	pats-809912
+pats-809935-baseline	9	F	White	Hispanic or Latino	691	pats-809935
+pats-809979-baseline	12.8	F	White	Not Hispanic or Latino	978	pats-809979
+pats-810022-baseline	8.2	F	White	Not Hispanic or Latino	339	pats-810022
+pats-810070-baseline	7.5	M	White	Hispanic or Latino	584	pats-810070
+pats-810070-followup	9.3	M	White	Hispanic or Latino	584	pats-810070
+pats-810087-baseline	7	M	Black or African American	Hispanic or Latino	691	pats-810087
+pats-810119-baseline	4	F	White	Not Hispanic or Latino	240	pats-810119
+pats-810131-baseline	6.7	M	White	Hispanic or Latino	339	pats-810131
+pats-810145-baseline	5.1	F	Black or African American	Not Hispanic or Latino	812	pats-810145
+pats-810145-followup	6.2	F	Black or African American	Not Hispanic or Latino	812	pats-810145
+pats-810182-baseline	6	M	White	Not Hispanic or Latino	339	pats-810182
+pats-810248-baseline	8.5	F	Black or African American	Not Hispanic or Latino	691	pats-810248
+pats-810292-baseline	5.7	F	Black or African American	Not Hispanic or Latino	691	pats-810292
+pats-810303-baseline	8.4	F	White	Hispanic or Latino	691	pats-810303
+pats-810303-followup	9.5	F	White	Hispanic or Latino	691	pats-810303
+pats-810310-baseline	3.7	F	Asian	Not Hispanic or Latino	978	pats-810310
+pats-810310-followup	4.9	F	Asian	Not Hispanic or Latino	978	pats-810310
+pats-810322-baseline	4	M	More than one race	Not Hispanic or Latino	978	pats-810322
+pats-810334-baseline	7	M	White	Not Hispanic or Latino	812	pats-810334
+pats-810334-followup	8.2	M	White	Not Hispanic or Latino	812	pats-810334
+pats-810341-baseline	9.7	F	Black or African American	Not Hispanic or Latino	339	pats-810341
+pats-810341-followup	10.8	F	Black or African American	Not Hispanic or Latino	339	pats-810341
+pats-810349-baseline	6.9	F	White	Not Hispanic or Latino	584	pats-810349
+pats-810349-followup	8	F	White	Not Hispanic or Latino	584	pats-810349
+pats-810361-baseline	9.1	F	Black or African American	Not Hispanic or Latino	978	pats-810361
+pats-810396-baseline	3.4	M	Black or African American	Not Hispanic or Latino	812	pats-810396
+pats-810396-followup	4.9	M	Black or African American	Not Hispanic or Latino	812	pats-810396
+pats-810414-baseline	4.6	F	Black or African American	Not Hispanic or Latino	339	pats-810414
+pats-810414-followup	5.7	F	Black or African American	Not Hispanic or Latino	339	pats-810414
+pats-810423-baseline	3.8	M	Black or African American	Not Hispanic or Latino	978	pats-810423
+pats-810423-followup	5	M	Black or African American	Not Hispanic or Latino	978	pats-810423
+pats-810472-baseline	4	M	Black or African American	Not Hispanic or Latino	978	pats-810472
+pats-810537-baseline	8.5	M	White	Hispanic or Latino	691	pats-810537
+pats-810565-baseline	7.7	M	White	Not Hispanic or Latino	339	pats-810565
+pats-810565-followup	9.5	M	White	Not Hispanic or Latino	339	pats-810565
+pats-810568-baseline	8.7	F	White	Hispanic or Latino	691	pats-810568
+pats-810568-followup	9.6	F	White	Hispanic or Latino	691	pats-810568
+pats-810596-baseline	9	M	White	Not Hispanic or Latino	691	pats-810596
+pats-810608-baseline	3	F	Black or African American	Not Hispanic or Latino	978	pats-810608
+pats-810639-baseline	8	F	Black or African American	Not Hispanic or Latino	691	pats-810639
+pats-810644-baseline	6.6	F	White	Not Hispanic or Latino	584	pats-810644
+pats-810644-followup	8.1	F	White	Not Hispanic or Latino	584	pats-810644
+pats-810651-baseline	3.9	F	White	Not Hispanic or Latino	240	pats-810651
+pats-810651-followup	5.1	F	White	Not Hispanic or Latino	240	pats-810651
+pats-810672-baseline	5.3	F	Black or African American	Not Hispanic or Latino	691	pats-810672
+pats-810672-followup	6.3	F	Black or African American	Not Hispanic or Latino	691	pats-810672
+pats-810677-baseline	4	F	Black or African American	Not Hispanic or Latino	978	pats-810677
+pats-810696-baseline	6.5	M	White	Not Hispanic or Latino	339	pats-810696
+pats-810696-followup	7.5	M	White	Not Hispanic or Latino	339	pats-810696
+pats-810704-baseline	4	F	White	Not Hispanic or Latino	812	pats-810704
+pats-810716-baseline	5.2	F	White	Not Hispanic or Latino	240	pats-810716
+pats-810716-followup	6.2	F	White	Not Hispanic or Latino	240	pats-810716
+pats-810748-baseline	5.9	M	White	Hispanic or Latino	584	pats-810748
+pats-810748-followup	7.2	M	White	Hispanic or Latino	584	pats-810748
+pats-810751-baseline	6.6	F	White	Not Hispanic or Latino	339	pats-810751
+pats-810751-followup	7.8	F	White	Not Hispanic or Latino	339	pats-810751
+pats-810757-baseline	3.5	M	White	Not Hispanic or Latino	584	pats-810757
+pats-810757-followup	5.3	M	White	Not Hispanic or Latino	584	pats-810757
+pats-810817-baseline	3.7	M	White	Not Hispanic or Latino	339	pats-810817
+pats-810817-followup	4.8	M	White	Not Hispanic or Latino	339	pats-810817
+pats-810874-baseline	3.7	M	White	Not Hispanic or Latino	339	pats-810874
+pats-810874-followup	4.9	M	White	Not Hispanic or Latino	339	pats-810874
+pats-810877-baseline	9.5	F	White	Not Hispanic or Latino	339	pats-810877
+pats-810934-baseline	12.3	F	White	Not Hispanic or Latino	584	pats-810934
+pats-810955-baseline	11.6	M	Asian	Not Hispanic or Latino	339	pats-810955
+pats-810955-followup	12.6	M	Asian	Not Hispanic or Latino	339	pats-810955
+pats-810977-baseline	3.4	M	White	Not Hispanic or Latino	339	pats-810977
+pats-810978-baseline	7.6	F	White	Hispanic or Latino	691	pats-810978
+pats-810978-followup	8.8	F	White	Hispanic or Latino	691	pats-810978
+pats-810980-baseline	7.1	M	Black or African American	Not Hispanic or Latino	691	pats-810980
+pats-810980-followup	8.1	M	Black or African American	Not Hispanic or Latino	691	pats-810980
+pats-810988-baseline	5.9	F	Black or African American	Not Hispanic or Latino	584	pats-810988
+pats-810990-baseline	5	M	Black or African American	Not Hispanic or Latino	978	pats-810990
+pats-811015-baseline	7	M	Black or African American	Not Hispanic or Latino	978	pats-811015
+pats-811033-baseline	4.5	F	White	Not Hispanic or Latino	339	pats-811033
+pats-811035-baseline	6	F	Black or African American	Not Hispanic or Latino	978	pats-811035
+pats-811046-baseline	12.2	M	Asian	Not Hispanic or Latino	339	pats-811046
+pats-811101-baseline	4.9	M	White	Hispanic or Latino	339	pats-811101
+pats-811101-followup	6	M	White	Hispanic or Latino	339	pats-811101
+pats-811121-baseline	3.7	M	White	Not Hispanic or Latino	339	pats-811121
+pats-811121-followup	4.8	M	White	Not Hispanic or Latino	339	pats-811121
+pats-811152-baseline	7.5	F	White	Not Hispanic or Latino	812	pats-811152
+pats-811152-followup	8.8	F	White	Not Hispanic or Latino	812	pats-811152
+pats-811167-baseline	5.6	M	White	Not Hispanic or Latino	978	pats-811167
+pats-811167-followup	6.8	M	White	Not Hispanic or Latino	978	pats-811167
+pats-811175-baseline	4.5	M	White	Not Hispanic or Latino	812	pats-811175
+pats-811175-followup	5.6	M	White	Not Hispanic or Latino	812	pats-811175
+pats-811184-baseline	8	F	White	Hispanic or Latino	691	pats-811184
+pats-811234-baseline	8.2	M	White	Not Hispanic or Latino	339	pats-811234
+pats-811252-baseline	5	M	White	Not Hispanic or Latino	978	pats-811252
+pats-811285-baseline	4	F	Black or African American	Not Hispanic or Latino	240	pats-811285
+pats-811321-baseline	8.7	M	White	Not Hispanic or Latino	240	pats-811321
+pats-811342-baseline	6	F	Black or African American	Not Hispanic or Latino	691	pats-811342
+pats-811387-baseline	7.1	F	White	Not Hispanic or Latino	240	pats-811387
+pats-811387-followup	8.2	F	White	Not Hispanic or Latino	240	pats-811387
+pats-811401-baseline	4	M	Black or African American	Not Hispanic or Latino	691	pats-811401
+pats-811413-baseline	7.4	M	White	Not Hispanic or Latino	978	pats-811413
+pats-811413-followup	8.7	M	White	Not Hispanic or Latino	978	pats-811413
+pats-811419-baseline	8	F	Black or African American	Not Hispanic or Latino	978	pats-811419
+pats-811427-baseline	4.4	F	Black or African American	Not Hispanic or Latino	240	pats-811427
+pats-811427-followup	5.4	F	Black or African American	Not Hispanic or Latino	240	pats-811427
+pats-811437-baseline	4.2	M	White	Not Hispanic or Latino	584	pats-811437
+pats-811446-baseline	8	F	White	Not Hispanic or Latino	240	pats-811446
+pats-811454-baseline	5.6	M	Black or African American	Not Hispanic or Latino	978	pats-811454
+pats-811454-followup	6.9	M	Black or African American	Not Hispanic or Latino	978	pats-811454
+pats-811465-baseline	4.5	F	White	Hispanic or Latino	691	pats-811465
+pats-811478-baseline	5.5	M	White	Hispanic or Latino	691	pats-811478
+pats-811478-followup	6.5	M	White	Hispanic or Latino	691	pats-811478
+pats-811499-baseline	7	F	More than one race	Not Hispanic or Latino	691	pats-811499
+pats-811505-baseline	6.2	M	White	Not Hispanic or Latino	584	pats-811505
+pats-811514-baseline	3	M	White	Not Hispanic or Latino	339	pats-811514
+pats-811526-baseline	3	F	White	Not Hispanic or Latino	240	pats-811526
+pats-811559-baseline	9.4	F	White	Not Hispanic or Latino	339	pats-811559
+pats-811559-followup	10.5	F	White	Not Hispanic or Latino	339	pats-811559
+pats-811562-baseline	3.4	F	White	Not Hispanic or Latino	584	pats-811562
+pats-811562-followup	4.9	F	White	Not Hispanic or Latino	584	pats-811562
+pats-811571-baseline	3.8	M	White	Not Hispanic or Latino	691	pats-811571
+pats-811586-baseline	3.8	F	White	Not Hispanic or Latino	240	pats-811586
+pats-811586-followup	4.9	F	White	Not Hispanic or Latino	240	pats-811586
+pats-811591-baseline	7.4	F	Black or African American	Not Hispanic or Latino	240	pats-811591
+pats-811591-followup	8.4	F	Black or African American	Not Hispanic or Latino	240	pats-811591
+pats-811620-baseline	6.6	F	White	Not Hispanic or Latino	339	pats-811620
+pats-811663-baseline	4	M	White	Not Hispanic or Latino	691	pats-811663
+pats-811675-baseline	5	M	White	Not Hispanic or Latino	339	pats-811675
+pats-811687-baseline	8	M	Black or African American	Not Hispanic or Latino	691	pats-811687
+pats-811699-baseline	5.6	F	White	Not Hispanic or Latino	812	pats-811699
+pats-811746-baseline	6	F	White	Hispanic or Latino	691	pats-811746
+pats-811754-baseline	5.9	M	White	Not Hispanic or Latino	339	pats-811754
+pats-811785-baseline	3.7	F	Black or African American	Not Hispanic or Latino	978	pats-811785
+pats-811828-baseline	3	M	White	Not Hispanic or Latino	812	pats-811828
+pats-811846-baseline	3	M	White	Not Hispanic or Latino	339	pats-811846
+pats-811865-baseline	3.3	M	White	Not Hispanic or Latino	584	pats-811865
+pats-811870-baseline	7.7	M	Black or African American	Not Hispanic or Latino	978	pats-811870
+pats-811920-baseline	6.8	F	Black or African American	Not Hispanic or Latino	240	pats-811920
+pats-811920-followup	7.9	F	Black or African American	Not Hispanic or Latino	240	pats-811920
+pats-811958-baseline	10.5	M	Black or African American	Not Hispanic or Latino	691	pats-811958
+pats-811958-followup	11.6	M	Black or African American	Not Hispanic or Latino	691	pats-811958
+pats-811963-baseline	5.3	M	White	Not Hispanic or Latino	240	pats-811963
+pats-811963-followup	6.4	M	White	Not Hispanic or Latino	240	pats-811963
+pats-811970-baseline	5.8	F	White	Not Hispanic or Latino	240	pats-811970
+pats-811970-followup	7	F	White	Not Hispanic or Latino	240	pats-811970
+pats-812004-baseline	9	F	Black or African American	Not Hispanic or Latino	978	pats-812004
+pats-812034-baseline	9.7	M	Black or African American	Not Hispanic or Latino	691	pats-812034
+pats-812034-followup	10.9	M	Black or African American	Not Hispanic or Latino	691	pats-812034
+pats-812053-baseline	3	M	Black or African American	Not Hispanic or Latino	978	pats-812053
+pats-812078-baseline	7	M	White	Hispanic or Latino	691	pats-812078
+pats-812088-baseline	11	F	Black or African American	Not Hispanic or Latino	240	pats-812088
+pats-812101-baseline	6.2	M	White	Not Hispanic or Latino	240	pats-812101
+pats-812101-followup	7.2	M	White	Not Hispanic or Latino	240	pats-812101
+pats-812119-baseline	6	M	Black or African American	Not Hispanic or Latino	978	pats-812119
+pats-812119-followup	7.5	M	Black or African American	Not Hispanic or Latino	978	pats-812119
+pats-812130-baseline	3.7	F	Black or African American	Not Hispanic or Latino	978	pats-812130
+pats-812130-followup	4.7	F	Black or African American	Not Hispanic or Latino	978	pats-812130
+pats-812141-baseline	7.5	M	White	Not Hispanic or Latino	978	pats-812141
+pats-812141-followup	8.7	M	White	Not Hispanic or Latino	978	pats-812141
+pats-812158-baseline	7	F	White	Not Hispanic or Latino	339	pats-812158
+pats-812160-baseline	7.3	M	Black or African American	Not Hispanic or Latino	240	pats-812160
+pats-812160-followup	8.3	M	Black or African American	Not Hispanic or Latino	240	pats-812160
+pats-812259-baseline	4	F	White	Not Hispanic or Latino	240	pats-812259
+pats-812267-baseline	10.5	F	White	Not Hispanic or Latino	240	pats-812267
+pats-812267-followup	11.5	F	White	Not Hispanic or Latino	240	pats-812267
+pats-812428-baseline	3.7	M	White	Not Hispanic or Latino	584	pats-812428
+pats-812445-baseline	3	M	Black or African American	Not Hispanic or Latino	691	pats-812445
+pats-812453-baseline	6.6	F	More than one race	Hispanic or Latino	978	pats-812453
+pats-812453-followup	7.7	F	More than one race	Hispanic or Latino	978	pats-812453
+pats-812460-baseline	5	M	White	Not Hispanic or Latino	978	pats-812460
+pats-812464-baseline	6	M	White	Not Hispanic or Latino	240	pats-812464
+pats-812470-baseline	3.5	M	White	Not Hispanic or Latino	584	pats-812470
+pats-812470-followup	5.3	M	White	Not Hispanic or Latino	584	pats-812470
+pats-812492-baseline	6.8	M	Black or African American	Hispanic or Latino	978	pats-812492
+pats-812492-followup	8.4	M	Black or African American	Hispanic or Latino	978	pats-812492
+pats-812520-baseline	8.5	F	White	Not Hispanic or Latino	240	pats-812520
+pats-812520-followup	9.5	F	White	Not Hispanic or Latino	240	pats-812520
+pats-812521-baseline	3	F	White	Not Hispanic or Latino	339	pats-812521
+pats-812536-baseline	3.2	F	White	Not Hispanic or Latino	691	pats-812536
+pats-812589-baseline	5.9	F	White	Not Hispanic or Latino	339	pats-812589
+pats-812649-baseline	5	M	Unknown or not reported	Not Hispanic or Latino	339	pats-812649
+pats-812656-baseline	4	M	White	Not Hispanic or Latino	240	pats-812656
+pats-812658-baseline	6.1	F	White	Not Hispanic or Latino	584	pats-812658
+pats-812658-followup	8.1	F	White	Not Hispanic or Latino	584	pats-812658
+pats-812669-baseline	3.8	F	White	Not Hispanic or Latino	691	pats-812669
+pats-812669-followup	4.9	F	White	Not Hispanic or Latino	691	pats-812669
+pats-812767-baseline	5.1	M	Black or African American	Hispanic or Latino	812	pats-812767
+pats-812785-baseline	5	M	Black or African American	Not Hispanic or Latino	691	pats-812785
+pats-812794-baseline	10	M	Unknown or not reported	Hispanic or Latino	339	pats-812794
+pats-812800-baseline	9.1	M	White	Not Hispanic or Latino	240	pats-812800
+pats-812800-followup	10.1	M	White	Not Hispanic or Latino	240	pats-812800
+pats-812830-baseline	5	M	White	Not Hispanic or Latino	339	pats-812830
+pats-812830-followup	6	M	White	Not Hispanic or Latino	339	pats-812830
+pats-812836-baseline	11	M	Black or African American	Not Hispanic or Latino	691	pats-812836
+pats-812892-baseline	4.1	F	White	Not Hispanic or Latino	978	pats-812892
+pats-812892-followup	5.8	F	White	Not Hispanic or Latino	978	pats-812892
+pats-812918-baseline	5.6	F	White	Hispanic or Latino	691	pats-812918
+pats-812987-baseline	7.2	M	White	Hispanic or Latino	691	pats-812987
+pats-813013-baseline	4	F	White	Not Hispanic or Latino	691	pats-813013
+pats-813019-baseline	5	M	Black or African American	Not Hispanic or Latino	584	pats-813019
+pats-813048-baseline	8.4	F	Black or African American	Not Hispanic or Latino	978	pats-813048
+pats-813048-followup	9.5	F	Black or African American	Not Hispanic or Latino	978	pats-813048
+pats-813058-baseline	6	M	Black or African American	Not Hispanic or Latino	812	pats-813058
+pats-813071-baseline	3.8	M	Black or African American	Not Hispanic or Latino	978	pats-813071
+pats-813071-followup	4.8	M	Black or African American	Not Hispanic or Latino	978	pats-813071
+pats-813073-baseline	7.9	M	More than one race	Not Hispanic or Latino	339	pats-813073
+pats-813073-followup	9.2	M	More than one race	Not Hispanic or Latino	339	pats-813073
+pats-813099-baseline	9.3	F	White	Not Hispanic or Latino	812	pats-813099
+pats-813099-followup	11	F	White	Not Hispanic or Latino	812	pats-813099
+pats-813154-baseline	3	M	Asian	Not Hispanic or Latino	978	pats-813154
+pats-813205-baseline	7.4	M	White	Not Hispanic or Latino	978	pats-813205
+pats-813205-followup	8.4	M	White	Not Hispanic or Latino	978	pats-813205
+pats-813215-baseline	4	F	White	Not Hispanic or Latino	240	pats-813215
+pats-813245-baseline	12.7	M	White	Not Hispanic or Latino	339	pats-813245
+pats-813245-followup	13.7	M	White	Not Hispanic or Latino	339	pats-813245
+pats-813249-baseline	4.2	M	White	Not Hispanic or Latino	339	pats-813249
+pats-813249-followup	5.7	M	White	Not Hispanic or Latino	339	pats-813249
+pats-813267-baseline	5.6	F	White	Hispanic or Latino	691	pats-813267
+pats-813267-followup	7.3	F	White	Hispanic or Latino	691	pats-813267
+pats-813281-baseline	3	M	White	Not Hispanic or Latino	240	pats-813281
+pats-813290-baseline	6	F	White	Hispanic or Latino	691	pats-813290
+pats-813323-baseline	6.8	M	White	Not Hispanic or Latino	240	pats-813323
+pats-813323-followup	7.9	M	White	Not Hispanic or Latino	240	pats-813323
+pats-813324-baseline	8.4	F	Black or African American	Not Hispanic or Latino	584	pats-813324
+pats-813355-baseline	4	M	White	Not Hispanic or Latino	978	pats-813355
+pats-813372-baseline	4.3	M	White	Not Hispanic or Latino	339	pats-813372
+pats-813372-followup	5.4	M	White	Not Hispanic or Latino	339	pats-813372
+pats-813444-baseline	7	M	White	Not Hispanic or Latino	812	pats-813444
+pats-813449-baseline	4.5	F	White	Not Hispanic or Latino	812	pats-813449
+pats-813449-followup	5.9	F	White	Not Hispanic or Latino	812	pats-813449
+pats-813482-baseline	12.2	M	White	Hispanic or Latino	691	pats-813482
+pats-813482-followup	13.8	M	White	Hispanic or Latino	691	pats-813482
+pats-813522-baseline	3.8	M	White	Not Hispanic or Latino	240	pats-813522
+pats-813529-baseline	12.1	F	White	Not Hispanic or Latino	240	pats-813529
+pats-813529-followup	13.4	F	White	Not Hispanic or Latino	240	pats-813529
+pats-813555-baseline	10	M	Black or African American	Not Hispanic or Latino	240	pats-813555
+pats-813563-baseline	6	F	White	Not Hispanic or Latino	978	pats-813563
+pats-813588-baseline	4.3	F	Black or African American	Not Hispanic or Latino	978	pats-813588
+pats-813588-followup	5.4	F	Black or African American	Not Hispanic or Latino	978	pats-813588
+pats-813624-baseline	4.1	M	White	Not Hispanic or Latino	339	pats-813624
+pats-813624-followup	5.4	M	White	Not Hispanic or Latino	339	pats-813624
+pats-813626-baseline	9.2	M	Asian	Not Hispanic or Latino	812	pats-813626
+pats-813626-followup	10.4	M	Asian	Not Hispanic or Latino	812	pats-813626
+pats-813652-baseline	3	F	Black or African American	Not Hispanic or Latino	978	pats-813652
+pats-813681-baseline	7	M	Black or African American	Not Hispanic or Latino	978	pats-813681
+pats-813682-baseline	3.1	M	Black or African American	Not Hispanic or Latino	812	pats-813682
+pats-813682-followup	4.2	M	Black or African American	Not Hispanic or Latino	812	pats-813682
+pats-813689-baseline	7	M	Black or African American	Not Hispanic or Latino	691	pats-813689
+pats-813711-baseline	5.1	F	White	Hispanic or Latino	691	pats-813711
+pats-813711-followup	6.2	F	White	Hispanic or Latino	691	pats-813711
+pats-813714-baseline	3	M	Black or African American	Not Hispanic or Latino	812	pats-813714
+pats-813758-baseline	6.1	M	White	Not Hispanic or Latino	339	pats-813758
+pats-813764-baseline	5	M	Black or African American	Not Hispanic or Latino	978	pats-813764
+pats-813778-baseline	9	M	White	Not Hispanic or Latino	584	pats-813778
+pats-813782-baseline	3	M	White	Not Hispanic or Latino	978	pats-813782
+pats-813792-baseline	5.2	M	White	Not Hispanic or Latino	339	pats-813792
+pats-813792-followup	6.5	M	White	Not Hispanic or Latino	339	pats-813792
+pats-813811-baseline	3	M	Black or African American	Not Hispanic or Latino	240	pats-813811
+pats-813839-baseline	8	F	Black or African American	Not Hispanic or Latino	240	pats-813839
+pats-813839-followup	9	F	Black or African American	Not Hispanic or Latino	240	pats-813839
+pats-813884-baseline	11.5	M	Black or African American	Not Hispanic or Latino	691	pats-813884
+pats-813884-followup	12.6	M	Black or African American	Not Hispanic or Latino	691	pats-813884
+pats-813892-baseline	5	F	White	Hispanic or Latino	691	pats-813892
+pats-813902-baseline	4.2	M	White	Not Hispanic or Latino	339	pats-813902
+pats-813922-baseline	6.9	M	White	Not Hispanic or Latino	240	pats-813922
+pats-813922-followup	8	M	White	Not Hispanic or Latino	240	pats-813922
+pats-813939-baseline	4.3	M	White	Not Hispanic or Latino	339	pats-813939
+pats-813939-followup	5.4	M	White	Not Hispanic or Latino	339	pats-813939
+pats-813943-baseline	5.2	F	White	Not Hispanic or Latino	812	pats-813943
+pats-813943-followup	6.2	F	White	Not Hispanic or Latino	812	pats-813943
+pats-813952-baseline	6.2	F	White	Not Hispanic or Latino	584	pats-813952
+pats-813952-followup	7.6	F	White	Not Hispanic or Latino	584	pats-813952
+pats-813959-baseline	3	M	White	Not Hispanic or Latino	812	pats-813959
+pats-813993-baseline	6	F	Black or African American	Not Hispanic or Latino	691	pats-813993
+pats-814012-baseline	7.9	M	White	Not Hispanic or Latino	812	pats-814012
+pats-814012-followup	9.1	M	White	Not Hispanic or Latino	812	pats-814012
+pats-814063-baseline	6.1	M	More than one race	Not Hispanic or Latino	812	pats-814063
+pats-814063-followup	7.2	M	More than one race	Not Hispanic or Latino	812	pats-814063
+pats-814131-baseline	7	F	Black or African American	Not Hispanic or Latino	978	pats-814131
+pats-814153-baseline	7	F	Native Hawaiian or Other Pacific Islander	Hispanic or Latino	339	pats-814153
+pats-814183-baseline	7.2	M	Black or African American	Not Hispanic or Latino	584	pats-814183
+pats-814200-baseline	6.5	F	Black or African American	Not Hispanic or Latino	240	pats-814200
+pats-814200-followup	7.6	F	Black or African American	Not Hispanic or Latino	240	pats-814200
+pats-814222-baseline	6	M	White	Not Hispanic or Latino	812	pats-814222
+pats-814226-baseline	3.1	M	American Indian/Alaska Native	Hispanic or Latino	978	pats-814226
+pats-814226-followup	4.2	M	American Indian/Alaska Native	Hispanic or Latino	978	pats-814226
+pats-814249-baseline	5.8	M	White	Not Hispanic or Latino	584	pats-814249
+pats-814258-baseline	7.4	M	Black or African American	Not Hispanic or Latino	691	pats-814258
+pats-814258-followup	8.4	M	Black or African American	Not Hispanic or Latino	691	pats-814258
+pats-814267-baseline	8	F	White	Hispanic or Latino	691	pats-814267
+pats-814283-baseline	7.9	M	Black or African American	Not Hispanic or Latino	691	pats-814283
+pats-814307-baseline	7.4	F	Asian	Not Hispanic or Latino	584	pats-814307
+pats-814307-followup	8.6	F	Asian	Not Hispanic or Latino	584	pats-814307
+pats-814329-baseline	4.5	M	White	Hispanic or Latino	691	pats-814329
+pats-814367-baseline	7	F	Black or African American	Not Hispanic or Latino	691	pats-814367
+pats-814367-followup	8.1	F	Black or African American	Not Hispanic or Latino	691	pats-814367
+pats-814420-baseline	9.7	F	White	Not Hispanic or Latino	240	pats-814420
+pats-814423-baseline	4	M	White	Not Hispanic or Latino	691	pats-814423
+pats-814441-baseline	7.1	M	White	Not Hispanic or Latino	240	pats-814441
+pats-814441-followup	8.1	M	White	Not Hispanic or Latino	240	pats-814441
+pats-814443-baseline	10	M	Black or African American	Not Hispanic or Latino	978	pats-814443
+pats-814468-baseline	4.4	M	Black or African American	Not Hispanic or Latino	691	pats-814468
+pats-814468-followup	5.6	M	Black or African American	Not Hispanic or Latino	691	pats-814468
+pats-814479-baseline	4	F	White	Not Hispanic or Latino	978	pats-814479
+pats-814482-baseline	3.1	M	White	Not Hispanic or Latino	240	pats-814482
+pats-814482-followup	4.2	M	White	Not Hispanic or Latino	240	pats-814482
+pats-814491-baseline	4.3	M	White	Not Hispanic or Latino	240	pats-814491
+pats-814491-followup	5.6	M	White	Not Hispanic or Latino	240	pats-814491
+pats-814493-baseline	9.8	F	Black or African American	Not Hispanic or Latino	812	pats-814493
+pats-814493-followup	10.9	F	Black or African American	Not Hispanic or Latino	812	pats-814493
+pats-814512-baseline	6.3	M	White	Not Hispanic or Latino	812	pats-814512
+pats-814512-followup	8.1	M	White	Not Hispanic or Latino	812	pats-814512
+pats-814578-baseline	6.6	M	White	Not Hispanic or Latino	812	pats-814578
+pats-814578-followup	7.9	M	White	Not Hispanic or Latino	812	pats-814578
+pats-814606-baseline	3	M	White	Not Hispanic or Latino	339	pats-814606
+pats-814612-baseline	2.9	F	White	Not Hispanic or Latino	584	pats-814612
+pats-814612-followup	4.4	F	White	Not Hispanic or Latino	584	pats-814612
+pats-814636-baseline	6.3	F	White	Not Hispanic or Latino	812	pats-814636
+pats-814636-followup	7.6	F	White	Not Hispanic or Latino	812	pats-814636
+pats-814638-baseline	7.1	F	White	Not Hispanic or Latino	812	pats-814638
+pats-814664-baseline	3	M	White	Not Hispanic or Latino	339	pats-814664
+pats-814695-baseline	5	M	Asian	Not Hispanic or Latino	691	pats-814695
+pats-814704-baseline	8.2	F	White	Not Hispanic or Latino	584	pats-814704
+pats-814704-followup	9.5	F	White	Not Hispanic or Latino	584	pats-814704

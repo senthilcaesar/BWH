@@ -67,7 +67,7 @@ destrat tmp/waves.db +TLOCK -r SEC CH sCH
 destrat out/ecg.batch000*.db +TLOCK -r CH sCH SEC | gzip > res.sec.gz
 
 # Get channel, PDIM and SR
-destrat tmp/harmonized_header.db +HEADERS -r CH | awk '{print "\t" $2 "\t" $5 "\t" $10}' | sort | uniq -c | sort -nr
+destrat tmp/harmonized_header.db +HEADERS -r CH | awk -F '\t' '{print "\t" $2 "\t" $5 "\t" $10 "\t" $11}' | sort | uniq -c | sort -nr
 
 # Convert UNIT
 /data/nsrr/bin/dev-runner2.sh 20 sl/s4.lst . cmd/convert.txt o tmp/convert
@@ -77,3 +77,14 @@ luna sl/s4.lst vars=files/mesa5-ecg.dat < cmd/flip_ecg.txt
 
 # Correlation
 luna sl/s4.lst -o out.db -s 'MASK ifnot=N2 & RE & STAGE & CORREL epoch verbose sig=HR,pulse'
+
+# RESAMPLE
+luna s.lst -s 'RESAMPLE sig=DHR sr=1 & WRITE edf-tag=resample edf-dir=resample/'
+
+# Others
+luna sl/s2.lst 100 -s 'RESAMPLE sig=DHR sr=128 & SIGNALS drop=HR & CANONICAL file=mesa.sigs drop-originals & WRITE edf-dir=tmp/'
+
+# Set Headers
+luna sl/harmonized.lst -s 'SET-HEADERS sig=thorax,abdomen,thermistor unit=mV & WRITE edf-dir=harm2'
+luna sl/s4.lst < cmd/set-headers.txt
+luna sl/s4.lst < cmd/set-transducer.txt 

@@ -1,0 +1,9 @@
+IF trans_unit
+
+TRANS sig=nasal_pres expr=" nasal_pres = nasal_pres * 1000 "
+SET-HEADERS sig=nasal_pres unit=uV
+
+ENDIF trans_unit
+
+
+WRITE edf-dir=/data/nsrr/working/pats/harm2

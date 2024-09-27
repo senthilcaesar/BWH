@@ -1,0 +1,9 @@
+MASK all
+
+MASK unmask-if=N2
+
+RESTRUCTURE
+
+FLIP sig=${FLIP}
+
+SPINDLES sig=${eeg} fc=15 so mag=1.5

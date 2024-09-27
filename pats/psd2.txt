@@ -1,0 +1,4 @@
+RESAMPLE sig=C4 sr=128
+MASK ifnot=N2
+RE
+PSD sig=C4 dB spectrum max=65

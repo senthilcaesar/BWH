@@ -1,0 +1,29 @@
+EPOCH epoch=30 require=10
+
+MASK all
+MASK unmask-if=N2
+MASK unmask-if=N3
+
+RESTRUCTURE 
+
+EPOCH epoch=30 require=10
+
+uV signal=${eeg},${eog}
+
+RESAMPLE sig=${eeg} sr=100
+
+ARTIFACTS mask signal=${eeg}
+
+SIGSTATS signal=${eeg},${eog}
+
+RESTRUCTURE 
+
+EPOCH epoch=30 require=10
+
+% set flim to include spindle/SW range
+POL sig=${eeg} flim=15
+
+SPINDLES sig=${eeg} fc=15 sw q=0.3 f-lwr=0.3 f-upr=4 uV-neg=-40 uV-p2p=75 t-neg-lwr=0.3 t-neg-upr=1.5 t-pos-lwr=0 t-pos-upr=1
+
+% need to ensure same SR
+CORREL sig=${eeg},${eog} sr=100

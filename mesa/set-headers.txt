@@ -1,0 +1,7 @@
+SET-HEADERS sig=thorax,ROC,pleth,LOC,LAT_RAT,EMG,ECG,abdomen,thermistor unit=mV
+
+SET-HEADERS sig=Fz_Cz,Cz_Oz,C4_M1 unit=uV
+
+SET-HEADERS sig=PR unit=bpm
+
+WRITE edf-dir=/data/nsrr/working/mesa-5/harm2
