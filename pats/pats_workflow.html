@@ -1,0 +1,817 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>PATS data harmonization</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="113bdfa1-611d-800f-b472-c03e4cfa8b8b" class="page sans"><header><h1 class="page-title">PATS data harmonization</h1><p class="page-description"></p></header><div class="page-body"><h3 id="113bdfa1-611d-80f3-8992-fe86dd66dc7a" class=""><span style="border-bottom:0.05em solid">1) EMG channel referencing</span></h3><p id="118bdfa1-611d-8068-b2af-e2df5acc6091" class="">782 individuals have EMG channels thats needs to be appropriately referenced.</p><p id="118bdfa1-611d-8012-a6c2-f44c11b4f9c0" class="">We have used the following command to ensure all EMG channels are correctly referenced:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-803a-b6a1-f8dbbc0dc6b2" class="code"><code class="language-Python">luna sl/chin1.lst @param/alias &lt; cmd/emg_reference.txt</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-80bf-a5b4-d8114ab641a4" class="code"><code class="language-Plain Text">..................................................................
+CMD #1: REFERENCE
+options: new=EMG1 ref=RChin sig=LChin
+referencing LChin with respect to RChin --&gt; EMG1
+..................................................................
+CMD #2: REFERENCE
+options: new=EMG2 ref=CChin sig=LChin
+referencing LChin with respect to CChin --&gt; EMG2
+..................................................................
+CMD #3: REFERENCE
+options: new=EMG3 ref=CChin sig=RChin
+referencing RChin with respect to CChin --&gt; EMG3
+..................................................................</code></pre><p id="113bdfa1-611d-8081-9998-da1c077b7782" class="">Let’s look at the contents of the <code>emg_reference.txt</code> and the <code>alias</code> file</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-8006-a3ba-dcd1492cb9ae" class="code"><code class="language-Plain Text">cat cmd/emg_reference.txt</code></pre><p id="118bdfa1-611d-80f8-8e05-c2d0419734b7" class="">Both <code>sig</code> and <code>ref</code> are required parameters.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="118bdfa1-611d-8027-8a07-ca8c78bdc289" class="code"><code class="language-Plain Text">${ch=LChin}
+REFERENCE sig=${ch} ref=RChin new=EMG1
+
+${ch=LChin}
+REFERENCE sig=${ch} ref=CChin new=EMG2
+
+${ch=RChin}
+REFERENCE sig=${ch} ref=CChin new=EMG3
+
+WRITE edf-dir=derived  force-edf</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-8081-a73d-cbba6c87faee" class="code"><code class="language-Plain Text">cat param/alias</code></pre><p id="118bdfa1-611d-80e4-846a-c11ebc870ae2" class="">Aliases are different names for channels in an EDF</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="118bdfa1-611d-8047-9e30-f4e0391a91b8" class="code"><code class="language-Plain Text">alias RChin|RCHIN|R_Chin
+alias LChin|LCHIN|L_Chin
+alias CChin|CCHIN|C_Chin</code></pre><h3 id="113bdfa1-611d-80df-a772-fdeb2686afc2" class=""><span style="border-bottom:0.05em solid">2) EMG channel renaming</span></h3><p id="113bdfa1-611d-8092-b85e-f00149409efc" class="">227 individuals have their EMG channels already appropriately referenced as per our standard protocols. In order to streamline our data analysis and reporting, we will be renaming the channels as follows for better clarity:</p><ul id="113bdfa1-611d-8003-85c0-f7e91d61c657" class="bulleted-list"><li style="list-style-type:disc">LChin_RChin to EMG1</li></ul><ul id="113bdfa1-611d-80d4-bd71-c6c8a24d65a7" class="bulleted-list"><li style="list-style-type:disc">LChin_CChin to EMG2</li></ul><ul id="113bdfa1-611d-8015-a7a2-f4d895d039a2" class="bulleted-list"><li style="list-style-type:disc">RChin_CChin to EMG3</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-80f0-9d5e-f6cf1a87fa21" class="code"><code class="language-Python">luna sl/chin2.lst -s &#x27;RENAME sig=LChin_RChin,LChin_CChin,RChin_CChin new=EMG1,EMG2,EMG3 &amp; WRITE edf-dir=derived/ force-edf&#x27;
+luna sl/chin3.lst 1 -s &#x27;RENAME sig=LChin_CChin,RChin_CChin new=EMG2,EMG3 &amp; WRITE edf-dir=derived/ force-edf&#x27;
+luna sl/chin3.lst 2 -s &#x27;RENAME sig=LChin_RChin,RChin_CChin new=EMG1,EMG3 &amp; WRITE edf-dir=derived/ force-edf&#x27;
+luna sl/chin4.lst -s &#x27;RENAME sig=LChin_RChin new=EMG1 &amp; WRITE edf-dir=derived/ force-edf&#x27;</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-8074-ba29-f14ac5f92ae0" class="code"><code class="language-Plain Text">CMD #1: RENAME
+options: new=EMG1,EMG2,EMG3 sig=LChin_RChin,LChin_CChin,RChin_CChin
+renaming [LChin_RChin] as [EMG1]
+renaming [LChin_CChin] as [EMG2]
+renaming [RChin_CChin] as [EMG3]</code></pre><p id="118bdfa1-611d-80dd-bde2-dc30786e5a14" class="">Let’s build a sample list for the derived EDFs</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="118bdfa1-611d-80af-83ee-cb11bb80fc70" class="code"><code class="language-Plain Text">luna --build derived/ &gt; sl/derived.lst</code></pre><h3 id="113bdfa1-611d-8004-bf5b-db751e983f1e" class=""><span style="border-bottom:0.05em solid">3) </span><strong><span style="border-bottom:0.05em solid">ECG Channel Flip</span></strong></h3><p id="118bdfa1-611d-8062-84ba-ce1b0082df79" class="">While reviewing the ECG signal data, we observed an issue with the polarity of the ECG signals for a few subjects. These signals appeared to be flipped. To address this, we have corrected the polarity by flipping the signals back to their proper orientation.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-8002-acf8-e8c0e769ab17" class="code"><code class="language-Python">luna sl/derived.lst vars=files/pats-ecg.dat &lt; cmd/flip_ecg.txt
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-801f-ab80-d5b6ca1d38db" class="code"><code class="language-Plain Text">..................................................................
+CMD #1: RENAME
+options: new=_ECG sig=ECG1
+renaming [ECG1] as [_ECG]
+..................................................................
+CMD #2: mV
+options: sig=_ECG
+..................................................................
+CMD #3: FLIP
+options: sig=_ECG
+pats-800394-followup	FLIP	CH/_ECG	.	FLIP	1
+flipping polarity of _ECG
+..................................................................
+CMD #4: RENAME
+options: new=ECG sig=_ECG
+renaming [_ECG] as [ECG]
+..................................................................</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="114bdfa1-611d-8049-bbe6-df0a16529eac" class="code"><code class="language-Plain Text">cat cmd/flip_ecg.txt</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-807d-aa78-ccb72477bccc" class="code"><code class="language-Plain Text">RENAME sig=${CH} new=_ECG
+
+mV sig=_ECG
+
+[[FLIP
+
+FLIP sig=_ECG
+ 
+]]FLIP
+
+RENAME sig=_ECG new=ECG
+
+DESC
+
+WRITE edf-dir=/data/nsrr/working/pats/derived2</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="114bdfa1-611d-809c-9c2f-f7efabf501ae" class="code"><code class="language-Plain Text">less files/pats-ecg.dat</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-80da-8201-fb244bc1ea63" class="code"><code class="language-Python">
+ID      site    CH      FLIP
+pats-800003-baseline    S691    ECG1    0
+pats-800135-baseline    S691    ECG1    0
+pats-800394-baseline    S691    ECG1    0
+pats-800394-followup    S691    ECG1    1
+pats-800405-baseline    S691    ECG1    0
+pats-800478-baseline    S691    ECG1    0
+pats-800654-baseline    S691    ECG1    1
+pats-800669-baseline    S691    ECG1    0
+</code></pre><p id="118bdfa1-611d-801c-a848-edcfac5db72d" class="">After the ECG flip is done, move all the corrected files to the derived folder</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="114bdfa1-611d-806b-8d96-c80f9689f6c8" class="code"><code class="language-Plain Text">mv derived2/* derived</code></pre><h3 id="113bdfa1-611d-8059-8e3f-f852d901edd9" class=""><span style="border-bottom:0.05em solid">4) EEG Flip</span></h3><p id="113bdfa1-611d-807c-b768-caa398943eee" class="">We have identified a total of 289 individuals whose central EEG channels (C3,C4,C3_M2,C4_M1) need to be corrected by flipping.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-8003-8ac3-fb7515829d7a" class="code"><code class="language-Python">luna sl/flip.lst &lt; cmd/flip.txt</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-8081-be05-e9a86b647686" class="code"><code class="language-Python">cat cmd/flip.txt</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-80a7-9fd2-f99a8f80df1c" class="code"><code class="language-Python">FLIP sig=C3,C4,C3_M2,C4_M1
+WRITE edf-dir=/data/nsrr/working/pats/derived2</code></pre><p id="118bdfa1-611d-80e5-9aee-e8e06c8eb129" class="">After the EEG flip is done, move all the corrected files to the derived folder</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-80d4-9880-fe1971a5236e" class="code"><code class="language-Plain Text">mv derived2/* derived</code></pre><h3 id="113bdfa1-611d-80bb-91ef-c6abd0d577ac" class=""><span style="border-bottom:0.05em solid">5) CANONICAL</span></h3><p id="118bdfa1-611d-8040-94f8-e20925ac04d6" class="">The <code><a href="https://zzz.bwh.harvard.edu/luna/ref/canonical/#canonical-signal-definitions">CANONICAL</a></code> command is used to help producing sets of EDFs that have harmonized sets of channel labels and conventions.</p><p id="118bdfa1-611d-804e-98ad-eeef09d63784" class="">For the PATS study, we have created a specific signal definition file to guide this process. You can access and review the file here: <a href="https://gitlab-scm.partners.org/zzz-public/nsrr/-/blob/master/studies/pats/pats.sigs">pats.sigs</a>.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-80d9-b7cd-c372b48e312d" class="code"><code class="language-Python">luna sl/derived.lst -o tmp/canonical.db -s &#x27;CANONICAL file=pats.sigs drop-originals &amp; WRITE edf-dir=harmonized/&#x27;</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-80cc-807b-d46a188c84f6" class="code"><code class="language-Plain Text"> 28 signals from EDF
+  + generating canonical signal F3_M2 from existing signal(s) F3_M2
+  + generating canonical signal F4_M1 from existing signal(s) F4_M1
+  + generating canonical signal C3_M2 from existing signal(s) C3_M2
+  + generating canonical signal C4_M1 from existing signal(s) C4_M1
+  + generating canonical signal O1_M2 from existing signal(s) O1_M2
+  + generating canonical signal O2_M1 from existing signal(s) O2_M1
+  + generating canonical signal ECG from existing signal(s) ECG1
+  + generating canonical signal EMG from existing signal(s) EMG2 / EMG1
+  + generating canonical signal LOC from existing signal(s) E1_M2
+  + generating canonical signal ROC from existing signal(s) E2_M2
+  + generating canonical signal thorax from existing signal(s) CHEST
+  + generating canonical signal abdomen from existing signal(s) ABD
+  + generating canonical signal thermistor from existing signal(s) AIRFLOW
+  + generating canonical signal nasal_pres from existing signal(s) CANNULAFLOW
+  + generating canonical signal pleth from existing signal(s) PLETH
+  + generating canonical signal SpO2 from existing signal(s) SPO2
+  + generating canonical signal HR from existing signal(s) DHR
+  + generating canonical signal LAT from existing signal(s) LLEG
+  + generating canonical signal RAT from existing signal(s) RLEG
+  + generating canonical signal cap from existing signal(s) CAP
+  + generating canonical signal EtCO2 from existing signal(s) ETCO2
+  + generating canonical signal snore from existing signal(s) SNORE
+  now dropping all (non-canonical) original signals</code></pre><p id="118bdfa1-611d-80b7-83bb-fccad32569d6" class="">Let’s build a sample list for the harmonized EDFs</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="118bdfa1-611d-80dd-ad28-f7cff3e97a37" class="code"><code class="language-Plain Text">luna --build harmonized/ &gt; sl/harmonized.lst</code></pre><h3 id="113bdfa1-611d-8047-abb5-d9b250094127" class=""><span style="border-bottom:0.05em solid">6) Standardize Sample rate and Unit</span></h3><p id="118bdfa1-611d-80d8-8043-eec47fd9d231" class="">We have standardized the sample rate at <code>128 Hz</code> for the following channels:  EtCO2, cap, TcCO2, EMG, ECG, thorax, thermistor, LOC, ROC, RAT, LAT, HR, F4_M1, F3_M2, C4_M1, C3_M2, abdomen, O2_M1, O1_M2, nasal_pres, and pleth. The SpO2 channel will be sampled at <code>10 Hz</code>, and the snore channel at <code>256 Hz</code>.</p><p id="118bdfa1-611d-80ff-9b33-d3d92302b49f" class="">All EEG channels are being rescaled to microvolts (<code>µV</code>), and the Airflow signal to millivolts (<code>mV</code>). For the nasal pressure signal, we have opted to set an arbitrary unit ( <code>aU</code> ), scaling its range from 0 to 1.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-804f-bbb6-dcf61b59def3" class="code"><code class="language-Python">luna sl/harmonized.lst &lt; cmd/standardize.txt
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-8031-97e2-dc06abf87ccc" class="code"><code class="language-Python">cat cmd/standardize.txt</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-80a2-90c8-eb5020fc4544" class="code"><code class="language-Python">mV sig=AirFlow,Airflow
+
+uV sig=C4_M1,C3_M2,F3_M2,F4_M1,O1_M2,O2_M1
+
+SET-HEADERS sig=EtCO2,TcCO2,cap unit=mmHg
+
+SET-HEADERS sig=C4_M1,C3_M2,F3_M2,F4_M1,O1_M2,O2_M1 unit=uV
+
+SET-HEADERS sig=thorax,abdomen,thermistor,LAT,RAT unit=mV
+
+RESAMPLE sig=EtCO2,cap,TcCO2,EMG,ECG,thorax,thermistor,LOC,ROC,RAT,LAT,HR,F4_M1,F3_M2,C4_M1,C3_M2,abdomen,O2_M1,O1_M2,nasal_pres,pleth sr=128
+
+RESAMPLE sig=SpO2 sr=10
+
+RESAMPLE sig=snore sr=256
+
+TRANS sig=nasal_pres expr=&quot;mn = min( nasal_pres ); mx = max( nasal_pres ); mx = ifelse( mx&gt;mn , mx , mn + 1 ); nasal_pres = ( nasal_pres - mn ) / ( mx - mn )&quot;
+
+SET-HEADERS sig=nasal_pres unit=aU
+
+WRITE edf-dir=/data/nsrr/working/pats/derived2</code></pre><p id="118bdfa1-611d-8099-aaf2-f130f11a05b2" class="">After the standardization process is complete, move all the corrected files to the harmonized folder</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="115bdfa1-611d-8062-8612-e6f970b44c36" class="code"><code class="language-Plain Text">mv derived2/* harmonized</code></pre><p id="118bdfa1-611d-8079-b164-f570738d1e32" class="">I conducted an analysis of the signal data to ensure that their numerical distributions and ranges are broadly as expected. Specifically, I analyzed the typical amplitude of various signals, which is similar to assessing variance or root mean square values.</p><p id="118bdfa1-611d-8050-9f71-d48e03bc6f66" class="">During this review, I identified that the signals for approximately 66 individuals need adjustments. The signals from channels <code>LOC</code>, <code>ROC</code>, and <code>EMG</code> require scaling down to millivolts (<code>mV</code>).</p><p id="118bdfa1-611d-8055-b9ae-c987d75a063b" class="">Additionally, I noted that the <code>ECG</code> signals are generally satisfactory. However, there were instances of unit mislabeling for some individuals which will need correction.</p><p id="118bdfa1-611d-8029-bb86-c01034e2c380" class="">For the pleth signals, the majority were measured in volts (<code>V</code>). To maintain consistency across all individuals, I scaled the remaining signals to also reflect the unit in volts for harmonization purposes.</p><p id="118bdfa1-611d-80b1-b544-f906f5b3c858" class="">Below are the scripts that were used for the adjustments</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="118bdfa1-611d-80b0-938f-f827a7f9f5a7" class="code"><code class="language-Python">luna sl/locroc_miss.lst -s &#x27;TRANS sig=LOC expr=&quot;LOC = LOC / 1000&quot; &amp; SET-HEADERS sig=LOC unit=mV &amp; WRITE edf-dir=derived2&#x27;
+mv derived2/* harmonized/
+
+luna sl/locroc_miss.lst -s &#x27;TRANS sig=ROC expr=&quot;ROC = ROC / 1000&quot; &amp; SET-HEADERS sig=ROC unit=mV &amp; WRITE edf-dir=derived2&#x27;
+mv derived2/* harmonized/
+
+luna sl/ecg_miss.lst -s &#x27;SET-HEADERS sig=ECG unit=mV &amp; WRITE edf-dir=derived2&#x27;
+mv derived2/* harmonized/
+
+luna sl/emg_miss.lst -s &#x27;TRANS sig=EMG expr=&quot;EMG = EMG / 1000&quot; &amp; SET-HEADERS sig=EMG unit=mV &amp; WRITE edf-dir=derived2&#x27;
+mv derived2/* harmonized/
+
+luna sl/harmonized.lst -s &#x27;SET-HEADERS sig=LOC,ROC,ECG,EMG unit=mV &amp; WRITE edf-dir=derived2&#x27;
+mv derived2/* harmonized/
+
+luna sl/pleth_miss.lst -s &#x27;TRANS sig=pleth expr=&quot;pleth = pleth / 1000&quot; &amp; SET-HEADERS sig=pleth unit=V &amp; WRITE edf-dir=derived2&#x27;
+mv derived2/* harmonized/</code></pre><h3 id="113bdfa1-611d-80a3-a853-e41a5236fccf" class=""><span style="border-bottom:0.05em solid">7) Check HEADERS</span></h3><p id="118bdfa1-611d-80fa-8b5f-e746d47ee818" class="">I have re-examined the headers to ensure the units, sample rates, and channel names are correctly configured. They are now consistent and accurate across all individuals after scaling and labeling corrections.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-804a-9d5d-cc277ed95252" class="code"><code class="language-Python">luna sl/harmonized.lst -o tmp/harmonized_headers.db -s HEADERS signals</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="113bdfa1-611d-8080-b993-e2570fb47193" class="code"><code class="language-Python">destrat tmp/harmonized_headers.db +HEADERS -r CH | awk &#x27;{print &quot;\t&quot; $2 &quot;\t&quot; $5 &quot;\t&quot; $10}&#x27; | sort | uniq -c | sort -nr</code></pre><table id="118bdfa1-611d-8054-873a-d70c0c56b1e5" class="simple-table"><thead class="simple-table-header"><tr id="118bdfa1-611d-807c-a05e-cd536e14515d"><th id="zv]`" class="simple-table-header-color simple-table-header" style="width:172.5px"></th><th id="bi:q" class="simple-table-header-color simple-table-header" style="width:172.5px">CH</th><th id="FWrr" class="simple-table-header-color simple-table-header" style="width:172.5px">PDIM</th><th id="Fd@W" class="simple-table-header-color simple-table-header" style="width:172.5px">SR</th></tr></thead><tbody><tr id="118bdfa1-611d-80cb-ba99-f0af4643d253"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">thorax</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80b2-af1a-ee17a0039b26"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">thermistor</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80ff-977c-cdf05c9d06eb"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">SpO2</td><td id="FWrr" class="" style="width:172.5px">PERCENT</td><td id="Fd@W" class="" style="width:172.5px">10</td></tr><tr id="118bdfa1-611d-8038-8f04-f1a8b30d94c1"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">ROC</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80e0-8996-fbdec684ebe9"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">RAT</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80f2-9dc3-cf500924fabc"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">nasal_pres</td><td id="FWrr" class="" style="width:172.5px">aU</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-8066-8fdc-e4a444ba74e7"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">LOC</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80f4-8bbd-f7185d962347"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">LAT</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80ea-8761-d09a793f5caa"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">HR</td><td id="FWrr" class="" style="width:172.5px">bpm</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80de-8638-c80d2ade477f"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">F4_M1</td><td id="FWrr" class="" style="width:172.5px">uV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80ad-b33d-ca4638682fff"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">EMG</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80dc-9a65-fc9e898d9093"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">ECG</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80f2-a451-d0b80b688283"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">C4_M1</td><td id="FWrr" class="" style="width:172.5px">uV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-8046-b89d-f656171df4f5"><td id="zv]`" class="" style="width:172.5px">1009</td><td id="bi:q" class="" style="width:172.5px">abdomen</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80e9-862e-c671729dbb99"><td id="zv]`" class="" style="width:172.5px">1008</td><td id="bi:q" class="" style="width:172.5px">O2_M1</td><td id="FWrr" class="" style="width:172.5px">uV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-8041-8172-c2f0d7f4447c"><td id="zv]`" class="" style="width:172.5px">1006</td><td id="bi:q" class="" style="width:172.5px">EtCO2</td><td id="FWrr" class="" style="width:172.5px">mmHg</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80c2-9690-dab1e6ac9d9d"><td id="zv]`" class="" style="width:172.5px">1005</td><td id="bi:q" class="" style="width:172.5px">O1_M2</td><td id="FWrr" class="" style="width:172.5px">uV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-801a-a6a8-c138b85127ed"><td id="zv]`" class="" style="width:172.5px">1005</td><td id="bi:q" class="" style="width:172.5px">C3_M2</td><td id="FWrr" class="" style="width:172.5px">uV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-803e-b602-e9747101b0b9"><td id="zv]`" class="" style="width:172.5px">1004</td><td id="bi:q" class="" style="width:172.5px">F3_M2</td><td id="FWrr" class="" style="width:172.5px">uV</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-8012-be72-d145f4936817"><td id="zv]`" class="" style="width:172.5px">997</td><td id="bi:q" class="" style="width:172.5px">pleth</td><td id="FWrr" class="" style="width:172.5px">V</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-808c-a4f1-c069b6bcad93"><td id="zv]`" class="" style="width:172.5px">989</td><td id="bi:q" class="" style="width:172.5px">cap</td><td id="FWrr" class="" style="width:172.5px">mmHg</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-80d4-9a53-ca1bc0be43a3"><td id="zv]`" class="" style="width:172.5px">815</td><td id="bi:q" class="" style="width:172.5px">snore</td><td id="FWrr" class="" style="width:172.5px">mV</td><td id="Fd@W" class="" style="width:172.5px">256</td></tr><tr id="118bdfa1-611d-8092-838f-f57482542eed"><td id="zv]`" class="" style="width:172.5px">490</td><td id="bi:q" class="" style="width:172.5px">TcCO2</td><td id="FWrr" class="" style="width:172.5px">mmHg</td><td id="Fd@W" class="" style="width:172.5px">128</td></tr><tr id="118bdfa1-611d-8057-b4f9-fc7c83291272"><td id="zv]`" class="" style="width:172.5px">120</td><td id="bi:q" class="" style="width:172.5px">snore</td><td id="FWrr" class="" style="width:172.5px">.</td><td id="Fd@W" class="" style="width:172.5px">256</td></tr><tr id="118bdfa1-611d-80dd-8943-f611405e36d4"><td id="zv]`" class="" style="width:172.5px">65</td><td id="bi:q" class="" style="width:172.5px">snore</td><td id="FWrr" class="" style="width:172.5px">uV</td><td id="Fd@W" class="" style="width:172.5px">256</td></tr><tr id="118bdfa1-611d-80ab-93c7-c06c482aca15"><td id="zv]`" class="" style="width:172.5px">9</td><td id="bi:q" class="" style="width:172.5px">snore</td><td id="FWrr" class="" style="width:172.5px">V</td><td id="Fd@W" class="" style="width:172.5px">256</td></tr></tbody></table><p id="118bdfa1-611d-8070-ac16-c80e184c535d" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

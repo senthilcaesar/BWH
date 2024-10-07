@@ -61,3 +61,7 @@ luna /data/nsrr/working/pats/s.lst path=/data/nsrr/working/pats/ -o out.db  -s '
 
 
 luna sl/harmonized.lst 1 -s 'TRANS sig=nasal_pres expr="mn = min( nasal_pres ); mx = max( nasal_pres ); mx = ifelse( mx>mn , mx , mn + 1 ); nasal_pres = ( nasal_pres - mn ) / ( mx - mn )"  & STATS sig=nasal_pres & WRITE edf-dir=harm2/'
+
+
+
+cat files/pats-ecg.dat | awk -F'\t' 'NR==1 || $3=="ECG3"' > files/pats-ecg1.dat
